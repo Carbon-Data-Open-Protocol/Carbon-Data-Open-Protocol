@@ -1,0 +1,44 @@
+﻿schema,Pre-issuance Inclusion,field_id,field_name,associated_entity,cardinality,datatype,required_optional,data_source,Mutability,public_private,definition
+CDOP,yes,1,country code ,project,1..*,enum,required,project developer,immutable,public,ISO 3166-1 alpha-3 country code of where the project is located and being developed
+CDOP,yes,2,country code ,project stakeholder,1..*,enum,required,project developer,immutable,public,ISO 3166-1 alpha-3 country code of where the project stakeholder has their headquarters
+CDOP,yes,3,country code ,facility,0..*,enum,optional,project developer,immutable,public,ISO 3166-1 alpha-3 country code of where the facility is located 
+CDOP,yes,4,country name,project,1..*,enum,required,project developer,immutable,public,English short name of where the project is located and being developed
+CDOP,yes,5,country name,project stakeholder,1..*,enum,required,project developer,immutable,public,English short name of where the project stakeholder has their headquarters
+CDOP,yes,6,country name,facility,0..*,enum,optional,project developer,immutable,public,English short name of where the facility is located
+CDOP,yes,7,geographical region code,project,1..*,enum,required,project developer,immutable,public,M49 geographical region code of where the project is located and being developed
+CDOP,yes,8,geographical region code,project stakeholder,0..*,enum,optional,project developer,immutable,public,M49 geographical region code of where the project stakeholder has their headquarters
+CDOP,yes,9,geographical region code,facility,0..*,enum,optional,project developer,immutable,public,M49 geographical region code of where the facility is located
+CDOP,yes,10,geographical region name,project,1..*,enum,required,project developer,immutable,public,M49 geographical region code corresponding English name of where the project is located and being developed
+CDOP,yes,11,geographical region name,project stakeholder,0..*,enum,optional,project developer,immutable,public,M49 geographical region code corresponding English name of where the project stakeholder has their headquarters
+CDOP,yes,12,geographical region name,facility,0..*,enum,optional,project developer,immutable,public,M49 geographical region code corresponding English name of where the facility is located 
+CDOP,yes,13,address line 1,project,0..*,string,optional,"project developer, registry",immutable,private,Mailing address line 1 of where the project is located and being developed. Adherence to the ISO 19160 standard should be followed
+CDOP,yes,14,address line 2,project,0..*,string,optional,"project developer, registry",immutable,private,Mailing address line 2 of where the project is located and being developed. Adherence to the ISO 19160 standard should be followed
+CDOP,yes,15,address line 1,project stakeholder,0..*,string,optional,"project developer, registry",immutable,private,Mailing address line 1 of where the project stakeholder has their headquarters. Adherence to the ISO 19160 standard should be followed
+CDOP,yes,16,address line 2,project stakeholder,0..*,string,optional,"project developer, registry",immutable,private,Mailing address line 2 of where the project stakeholder has their headquarters. Adherence to the ISO 19160 standard should be followed
+CDOP,yes,17,address line 1,facility,0..*,string,optional,"project developer, registry",immutable,private,Mailing address line 1 of where the facility is located. Adherence to the ISO 19160 standard should be followed
+CDOP,yes,18,address line 2,facility,0..*,string,optional,"project developer, registry",immutable,private,Mailing address line 2 of where the facility is located. Adherence to the ISO 19160 standard should be followed
+CDOP,yes,19,alternative address,project,0..*,string,optional,project developer,immutable,private,"If a project doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information"
+CDOP,yes,20,alternative address,project stakeholder,0..*,string,optional,project developer,immutable,private,"If a project stakeholder doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information"
+CDOP,yes,21,alternative address,facility,0..*,string,optional,project developer,immutable,private,"If a facility doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information"
+CDOP,yes,22,country subdivision code,project,1..*,enum,required,"project developer, registry",immutable,private,ISO 3166-2 country subdivision code of where the project is located and being developed
+CDOP,yes,23,country subdivision code,project stakeholder,0..*,enum,optional,"project developer, registry",immutable,private,ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters
+CDOP,yes,24,country subdivision code,facility,0..*,enum,optional,"project developer, registry",immutable,private,ISO 3166-2 country subdivision code of where the facility is located 
+CDOP,yes,25,country subdivision name,project,1..*,enum,required,"project developer, registry",immutable,private,ISO 3166-2 country subdivision name of where the project is located and being developed
+CDOP,yes,26,country subdivision name,project stakeholder,0..*,enum,optional,"project developer, registry",immutable,private,ISO 3166-2 country subdivision name of where the project stakeholder has their headquarters
+CDOP,yes,27,country subdivision name,facility,0..*,enum,optional,"project developer, registry",immutable,private,ISO 3166-2 country subdivision name of where the facility is located 
+CDOP,yes,28,city,project,0..*,string,optional,"project developer, registry",immutable,private,The city where the project is located and being developed
+CDOP,yes,29,city,project stakeholder,0..*,string,optional,"project developer, registry",immutable,private,The city where the project stakeholder has their headquarters
+CDOP,yes,30,city,facility,0..*,string,optional,"project developer, registry",immutable,private,The city where the facility is located
+CDOP,yes,31,postal code,project,0..*,string,optional,"project developer, registry",immutable,private,The postal code where the project is located and being developed
+CDOP,yes,32,postal code,project stakeholder,0..*,string,optional,"project developer, registry",immutable,private,The postal code where the project stakeholder has their headquarters
+CDOP,yes,33,postal code,facility,0..*,string,optional,"project developer, registry",immutable,private,The postal code where the facility is located
+CDOP,yes,34,file name,geolocation file,1..1,string,required,"project developer, registry",immutable,public,Name of the GIS file 
+CDOP,yes,35,file format,geolocation file,1..1,enum,required,"project developer, registry",immutable,public,Format of  the GIS file 
+CDOP,yes,36,validity start date,geolocation file,1..1,time stamp,required,registry,immutable,public,Validity start date
+CDOP,yes,37,validity end date,geolocation file,0..1,time stamp,optional,registry,mutable,public,Validity end date
+CDOP,yes,38,file status,geolocation file,1..1,enum,required,registry,mutable,public,Status of the GIS file
+CDOP,yes,39,file created on,geolocation file,1..1,time stamp,required,registry,immutable,public,Time stamp for when file was created
+CDOP,yes,40,file edited on,geolocation file,0..1,time stamp,optional,registry,immutable,public,Time stamp for when file was edited
+CDOP,yes,41,file deleted on,geolocation file,0..1,time stamp,optional,registry,immutable,public,Time stamp for when file was deleted
+CDOP,yes,42,area type,geolocation file,1..*,enum,optional,project developer,immutable,public,Area type of GIS file
+CDOP,yes,43,geometry type,geolocation file,1..1,enum,optional,project developer,immutable,public,Geometry type of GIS file
