@@ -47,6 +47,16 @@ This tab provides a list of all the enumerated values for all the fields with an
 	
 ### ISO 3166-1 Table Tab	
 This tab provides a full table of the ISO 3166-1 standard country codes [STILL UNDER CONSTRUCTION]	
+
+## Adoption
+
+Adoption of the tool lends to greater collaboration and data sharing across the industry. Some of the key areas for adoption are;
+
+- **Registries and data platforms:**​ Making data available in CDOP format ensures partners can obtain and process data with greater efficiency​.
+- **Project developers​**: Submitting data in CDOP format allows for more standardisation and less bespoke work for publishing project information.
+- **Ratings agencies and data providers​**: Adopt CDOP schemas for data ingestion of data can improve efficiency of data sharing and publishing.
+
+To allow for adoption, [this tool](https://cdop-schema-validator.lovable.app/) can be used to validate a payload against the various cdop schemas. This allows users to ensure their api interfaces are compatible. 
 	
 # Frequently Asked Questions (FAQs)	
 - Can more than one value be reported for a particular field?	
