@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Approach and Details",
+  "type": "object",
+  "properties": {
+    "project_developer": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      }
+    },
+    "project_stakeholder": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Administrative service",
+            "Biodiversity advisory",
+            "Carbon Crediting Program/ Standard Setters",
+            "Feasibility study service",
+            "GIS Advisory",
+            "Infrastructure providers/ operators",
+            "Multilateral Organisations",
+            "Project developer",
+            "Project implementer",
+            "Project owner",
+            "Register/ accounting and tracking registry",
+            "Registry with Transaction Functionality",
+            "Technical consultant",
+            "Verification Accreditation Agency"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "report": {
+          "type": "string"
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "report": {
+          "type": "string"
+        }
+      }
+    },
+    "monitoring": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "report": {
+          "type": "string"
+        },
+        "report_type": {
+          "type": "string"
+        },
+        "report_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "report_link": {
+          "type": "string"
+        }
+      }
+    },
+    "accreditation": {
+      "type": "object",
+      "properties": {
+        "accreditation": {
+          "type": "string",
+          "enum": [
+            "CCB",
+            "CORSIA",
+            "ICROA",
+            "ICVCM CCP",
+            "SDGs"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Accredited / eligible",
+            "In review",
+            "Not accredited / eligible",
+            "Rejected"
+          ]
+        },
+        "supporting_document_link": {
+          "type": "string"
+        }
+      }
+    },
+    "other_project_documentation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "[to be expanded upon]",
+            "loss event report",
+            "non-permanence risk assessment",
+            "project monitoring plan",
+            "project monitoring report",
+            "voluntary cancellation certification"
+          ]
+        },
+        "link": {
+          "type": "string"
+        }
+      }
+    },
+    "registry": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string",
+          "enum": [
+            "American Carbon Registry",
+            "BioCarbon Registry",
+            "CDM",
+            "Climate Action Reserve",
+            "Gold Standard",
+            "Isometric",
+            "Peatland Carbon Code",
+            "Plan Vivo",
+            "Puro Earth",
+            "Verra",
+            "Woodland Carbon Code"
+          ]
+        },
+        "current": {
+          "type": "string",
+          "enum": [
+            "American Carbon Registry",
+            "BioCarbon Registry",
+            "CDM",
+            "Climate Action Reserve",
+            "Gold Standard",
+            "Isometric",
+            "Peatland Carbon Code",
+            "Plan Vivo",
+            "Puro Earth",
+            "Verra",
+            "Woodland Carbon Code"
+          ]
+        },
+        "project_link": {
+          "type": "string"
+        }
+      }
+    },
+    "crediting_period": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "project_id_type": {
+      "type": "string",
+      "enum": [
+        "compliance market project id",
+        "current registry project id",
+        "global unique project id",
+        "internal project id",
+        "origin registry project id"
+      ]
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "project_description": {
+      "type": "string"
+    },
+    "project_design_document_link": {
+      "type": "string"
+    },
+    "project_website": {
+      "type": "string"
+    },
+    "project_email": {
+      "type": "string"
+    },
+    "project_phone": {
+      "type": "string"
+    },
+    "program_type": {
+      "type": "string",
+      "enum": [
+        "[to be expanded upon]"
+      ]
+    },
+    "activity_type": {
+      "type": "string"
+    },
+    "mitigation_type": {
+      "type": "string",
+      "enum": [
+        "[to be expanded upon]"
+      ]
+    },
+    "project_sector": {
+      "type": "string",
+      "enum": [
+        "[to be expanded upon]"
+      ]
+    },
+    "project_type": {
+      "type": "string",
+      "enum": [
+        "[to be expanded upon]"
+      ]
+    },
+    "carbon_crediting_program": {
+      "type": "string",
+      "enum": [
+        "[to be expanded upon]"
+      ]
+    },
+    "methodology": {
+      "type": "string",
+      "enum": [
+        "[to be expanded upon]"
+      ]
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "project_status": {
+      "type": "string",
+      "enum": [
+        "Approved",
+        "Authorized",
+        "Completed",
+        "De-registered",
+        "Inactive",
+        "Listed",
+        "Registered",
+        "Rejected",
+        "Validated",
+        "Withdrawn"
+      ]
+    },
+    "project_status_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "project_development_start_year": {
+      "type": "integer"
+    },
+    "project_development_end_year": {
+      "type": "integer"
+    },
+    "project_registration_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "project_list_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "estimated_annual_credit_issuance": {
+      "type": "integer"
+    },
+    "estimated_total_credit_issuance": {
+      "type": "integer"
+    }
+  }
+}
