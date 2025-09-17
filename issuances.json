@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Issuances",
+  "title": "Issuances Data Schema (with top-level audits)",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "project_identifier": {
       "type": "string",
@@ -10,46 +11,49 @@
 
     "crediting_period": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "estimated_start": {
           "type": "string",
           "format": "date",
-          "description": "Estimated first year of issuance period, historical if an established project"
+          "description": "Estimated first year of issuance period"
         },
         "estimated_end": {
           "type": "string",
           "format": "date",
           "description": "Estimated end year of issuance period"
         }
-      },
-      "additionalProperties": false
+      }
     },
 
-    "project": {
-      "type": "object",
-      "properties": {
-        "auditor_name": {
-          "type": "array",
-          "description": "The organizational name of project's auditor (e.g., VBB)",
-          "items": { "type": "string" }
+    "audits": {
+      "type": "array",
+      "description": "Audit records associated with the project and issuances",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "auditor_name": {
+            "type": "string",
+            "description": "Name of the auditor"
+          },
+          "site_visit_start_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date of the auditor’s site visit"
+          },
+          "site_visit_end_date": {
+            "type": "string",
+            "format": "date",
+            "description": "End date of the auditor’s site visit"
+          },
+          "description": {
+            "type": "string",
+            "description": "Additional notes about the audit"
+          }
         },
-        "auditor_site_visit_start_date": {
-          "type": "array",
-          "description": "Start date for Auditor (e.g., VVB) site visit",
-          "items": { "type": "string", "format": "date" }
-        },
-        "auditor_site_visit_end_date": {
-          "type": "array",
-          "description": "End date for Auditor (e.g., VVB) site visit",
-          "items": { "type": "string", "format": "date" }
-        },
-        "verification_report": {
-          "type": "array",
-          "description": "Enter the text of the auditor's verification report",
-          "items": { "type": "string" }
-        }
-      },
-      "additionalProperties": false
+        "required": ["auditor_name"]
+      }
     },
 
     "issuance_forecast": {
@@ -58,25 +62,18 @@
       "minItems": 1,
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
-          "forecast_year": {
-            "type": "string",
-            "format": "date",
-            "description": "Each year aligned with forecast annual issuance"
-          },
-          "forecast_annual_issuance": {
-            "type": "number",
-            "description": "The estimated annual credit generation of the project before starting issuance, per year of the project lifetime"
-          }
+          "forecast_year": { "type": "string", "format": "date" },
+          "forecast_annual_issuance": { "type": "number" }
         },
-        "required": ["forecast_year", "forecast_annual_issuance"],
-        "additionalProperties": false
+        "required": ["forecast_year", "forecast_annual_issuance"]
       }
     },
 
     "forecast_total_issuance": {
       "type": "array",
-      "description": "The forecasted total lifetime credit generation volume of the project",
+      "description": "Forecasted total lifetime credit generation",
       "minItems": 1,
       "items": { "type": "number" }
     },
@@ -86,41 +83,28 @@
       "description": "Issued credit batches and related verification periods",
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
-          "batch_identifier": {
+          "batch_identifier": { "type": "string" },
+          "issuance_url": { "type": "string" },
+          "date_of_issuance": { "type": "string", "format": "date" },
+          "date_of_verification": { "type": "string", "format": "date" },
+          "verification_period_start": { "type": "string", "format": "date" },
+          "verification_period_end": { "type": "string", "format": "date" },
+          "batch_issued_volume": { "type": "number" },
+          "verification_report": {
             "type": "string",
-            "description": "Global unique identifier for the batch of credits issued"
-          },
-          "issuance_url": {
-            "type": "string",
-            "description": "Link to the issuance page on registry"
-          },
-          "date_of_issuance": {
-            "type": "string",
-            "format": "date",
-            "description": "The date that credits were issued"
-          },
-          "date_of_verification": {
-            "type": "string",
-            "format": "date",
-            "description": "The date that the issued credits were verified"
-          },
-          "verification_period_start": {
-            "type": "string",
-            "format": "date",
-            "description": "Start date of credit verification period"
-          },
-          "verification_period_end": {
-            "type": "string",
-            "format": "date",
-            "description": "End date of credit verification period"
-          },
-          "batch_issued_volume": {
-            "type": "number",
-            "description": "The total volume of credits issued in batch"
+            "description": "Verification report associated with this issuance"
           }
         },
-        "additionalProperties": false
+        "required": [
+          "batch_identifier",
+          "date_of_issuance",
+          "verification_period_start",
+          "verification_period_end",
+          "batch_issued_volume",
+          "verification_report"
+        ]
       }
     },
 
@@ -130,10 +114,5 @@
     }
   },
 
-  "required": [
-    "issuance_forecast",
-    "forecast_total_issuance"
-  ],
-
-  "additionalProperties": false
+  "required": ["issuance_forecast", "forecast_total_issuance", "audits"]
 }
