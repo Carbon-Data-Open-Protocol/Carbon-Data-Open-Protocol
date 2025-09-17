@@ -1,0 +1,46 @@
+{
+  "project_identifier": "MR-2025-001",
+  "crediting_period": {
+    "estimated_start": "2025-01-01",
+    "estimated_end": "2045-12-31"
+  },
+  "project": {
+    "auditor_name": [
+      "EnviroCert Ltd"
+    ],
+    "auditor_site_visit_start_date": [
+      "2024-10-15"
+    ],
+    "auditor_site_visit_end_date": [
+      "2024-10-20"
+    ],
+    "verification_report": [
+      "Verification report 2024: Verified by EnviroCert Ltd"
+    ]
+  },
+  "issuance_forecast": [
+    {
+      "forecast_year": "2025-01-01",
+      "forecast_annual_issuance": 50000
+    },
+    {
+      "forecast_year": "2026-01-01",
+      "forecast_annual_issuance": 52000
+    }
+  ],
+  "forecast_total_issuance": [
+    1000000
+  ],
+  "issuances": [
+    {
+      "batch_identifier": "MR-2025-001-B1",
+      "issuance_url": "https://registry.goldstandard.org/projects/12345/issuances/1",
+      "date_of_issuance": "2025-06-15",
+      "date_of_verification": "2025-05-01",
+      "verification_period_start": "2024-01-01",
+      "verification_period_end": "2024-12-31",
+      "batch_issued_volume": 48000
+    }
+  ],
+  "cumulative_issued_volume": 48000
+}

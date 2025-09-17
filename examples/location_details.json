@@ -1,0 +1,102 @@
+{
+  "project": {
+    "country_code": [
+      "IDN"
+    ],
+    "country_name": [
+      "Indonesia"
+    ],
+    "geographical_region_code": [
+      "035"
+    ],
+    "geographical_region_name": [
+      "South-Eastern Asia"
+    ],
+    "address_line_1": [
+      "Jl. Mangrove No. 12"
+    ],
+    "country_subdivision_code": [
+      "ID-JK"
+    ],
+    "country_subdivision_name": [
+      "Jakarta"
+    ],
+    "city": [
+      "Jakarta"
+    ],
+    "postal_code": [
+      "14450"
+    ]
+  },
+  "project_stakeholder": {
+    "country_code": [
+      "GBR"
+    ],
+    "country_name": [
+      "United Kingdom"
+    ],
+    "geographical_region_code": [
+      "154"
+    ],
+    "geographical_region_name": [
+      "Northern Europe"
+    ],
+    "address_line_1": [
+      "123 Sustainability St"
+    ],
+    "country_subdivision_code": [
+      "GB-ENG"
+    ],
+    "country_subdivision_name": [
+      "England"
+    ],
+    "city": [
+      "London"
+    ],
+    "postal_code": [
+      "W1A 1AA"
+    ]
+  },
+  "facility": {
+    "country_code": [
+      "IDN"
+    ],
+    "country_name": [
+      "Indonesia"
+    ],
+    "geographical_region_code": [
+      "035"
+    ],
+    "geographical_region_name": [
+      "South-Eastern Asia"
+    ],
+    "address_line_1": [
+      "Mangrove Restoration Site"
+    ],
+    "country_subdivision_code": [
+      "ID-JB"
+    ],
+    "country_subdivision_name": [
+      "West Java"
+    ],
+    "city": [
+      "Bekasi"
+    ],
+    "postal_code": [
+      "17121"
+    ]
+  },
+  "geolocation_file": {
+    "file_name": "mangrove_project_area.shp",
+    "file_format": "SHP",
+    "validity_start_date": "2025-01-01T00:00:00Z",
+    "validity_end_date": "2035-12-31T23:59:59Z",
+    "file_status": "active",
+    "file_created_on": "2025-01-05T09:15:00Z",
+    "file_edited_on": "2025-02-10T12:30:00Z",
+    "area_type": [
+      "Project boundary"
+    ],
+    "geometry_type": "Polygon"
+  }
+}
