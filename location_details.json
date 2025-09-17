@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Location",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country_code": {
+          "type": "array",
+          "description": "ISO 3166-1 alpha-3 country code(s) of where the project is located and being developed.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "country_name": {
+          "type": "array",
+          "description": "English short country name(s) of where the project is located and being developed.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "geographical_region_code": {
+          "type": "array",
+          "description": "UN M49 geographical region code(s) of where the project is located and being developed.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "geographical_region_name": {
+          "type": "array",
+          "description": "English name(s) corresponding to the UN M49 geographical region code(s) of where the project is located and being developed.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "address_line_1": {
+          "type": "array",
+          "description": "Mailing address line 1 (ISO 19160 guidance).",
+          "items": { "type": "string" }
+        },
+        "address_line_2": {
+          "type": "array",
+          "description": "Mailing address line 2 (ISO 19160 guidance).",
+          "items": { "type": "string" }
+        },
+        "alternative_address": {
+          "type": "array",
+          "description": "Free-text alternative address when ISO 19160 structure is unavailable/partial.",
+          "items": { "type": "string" }
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "description": "ISO 3166-2 subdivision code(s) where the project is located and being developed.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "country_subdivision_name": {
+          "type": "array",
+          "description": "ISO 3166-2 subdivision name(s) where the project is located and being developed.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "city": {
+          "type": "array",
+          "description": "City/cities where the project is located and being developed.",
+          "items": { "type": "string" }
+        },
+        "postal_code": {
+          "type": "array",
+          "description": "Postal code(s) where the project is located and being developed.",
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "country_code",
+        "country_name",
+        "geographical_region_code",
+        "geographical_region_name",
+        "country_subdivision_code",
+        "country_subdivision_name"
+      ]
+    },
+
+    "project_stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country_code": {
+          "type": "array",
+          "description": "ISO 3166-1 alpha-3 country code(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "country_name": {
+          "type": "array",
+          "description": "English short country name(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "geographical_region_code": {
+          "type": "array",
+          "description": "UN M49 region code(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" }
+        },
+        "geographical_region_name": {
+          "type": "array",
+          "description": "English name(s) corresponding to the UN M49 region code(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" }
+        },
+        "address_line_1": {
+          "type": "array",
+          "description": "Mailing address line 1 (ISO 19160 guidance).",
+          "items": { "type": "string" }
+        },
+        "address_line_2": {
+          "type": "array",
+          "description": "Mailing address line 2 (ISO 19160 guidance).",
+          "items": { "type": "string" }
+        },
+        "alternative_address": {
+          "type": "array",
+          "description": "Free-text alternative address when ISO 19160 structure is unavailable/partial.",
+          "items": { "type": "string" }
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "description": "ISO 3166-2 subdivision code(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" }
+        },
+        "country_subdivision_name": {
+          "type": "array",
+          "description": "ISO 3166-2 subdivision name(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" }
+        },
+        "city": {
+          "type": "array",
+          "description": "City/cities where the stakeholder has headquarters.",
+          "items": { "type": "string" }
+        },
+        "postal_code": {
+          "type": "array",
+          "description": "Postal code(s) where the stakeholder has headquarters.",
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "country_code",
+        "country_name"
+      ]
+    },
+
+    "facility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country_code": {
+          "type": "array",
+          "description": "ISO 3166-1 alpha-3 country code(s) where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "country_name": {
+          "type": "array",
+          "description": "English short country name(s) where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "geographical_region_code": {
+          "type": "array",
+          "description": "UN M49 region code(s) where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "geographical_region_name": {
+          "type": "array",
+          "description": "English name(s) corresponding to UN M49 region code(s) where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "address_line_1": {
+          "type": "array",
+          "description": "Mailing address line 1 (ISO 19160 guidance).",
+          "items": { "type": "string" }
+        },
+        "address_line_2": {
+          "type": "array",
+          "description": "Mailing address line 2 (ISO 19160 guidance).",
+          "items": { "type": "string" }
+        },
+        "alternative_address": {
+          "type": "array",
+          "description": "Free-text alternative address when ISO 19160 structure is unavailable/partial.",
+          "items": { "type": "string" }
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "description": "ISO 3166-2 subdivision code(s) where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "country_subdivision_name": {
+          "type": "array",
+          "description": "ISO 3166-2 subdivision name(s) where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "city": {
+          "type": "array",
+          "description": "City/cities where the facility is located.",
+          "items": { "type": "string" }
+        },
+        "postal_code": {
+          "type": "array",
+          "description": "Postal code(s) where the facility is located.",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "geolocation_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "Name of the GIS file."
+        },
+        "file_format": {
+          "type": "string",
+          "description": "Format of the GIS file (enumerated by source; values not provided in spec)."
+        },
+        "validity_start_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Validity start date/time."
+        },
+        "validity_end_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Validity end date/time."
+        },
+        "file_status": {
+          "type": "string",
+          "description": "Status of the GIS file (enumerated by source; values not provided in spec)."
+        },
+        "file_created_on": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when file was created."
+        },
+        "file_edited_on": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when file was edited."
+        },
+        "file_deleted_on": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when file was deleted."
+        },
+        "area_type": {
+          "type": "array",
+          "description": "Area type(s) represented in the GIS file (enumerated by source; values not provided in spec).",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "geometry_type": {
+          "type": "string",
+          "description": "Geometry type of the GIS file (enumerated by source; values not provided in spec)."
+        }
+      },
+      "required": [
+        "file_name",
+        "file_format",
+        "validity_start_date",
+        "file_status",
+        "file_created_on"
+      ]
+    }
+  }
+}
