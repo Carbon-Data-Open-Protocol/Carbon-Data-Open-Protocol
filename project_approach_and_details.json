@@ -1,231 +1,555 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/project_approach_and_details.json",
+  "$defs": {
+    "assessmentType": {
+      "type": "string",
+      "enum": [
+        "full",
+        "provisional",
+        "estimated",
+        "screening",
+        "other"
+      ]
+    },
+    "scoreRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "min",
+        "max"
+      ]
+    },
+    "assessmentDimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Machine-friendly identifier, e.g. 'additionality', 'carbon_accounting'."
+        },
+        "label": {
+          "type": "string",
+          "description": "Human-friendly name."
+        },
+        "score": {
+          "type": "number"
+        },
+        "range": {
+          "$ref": "#/$defs/scoreRange"
+        },
+        "weight": {
+          "type": "number",
+          "description": "Optional weighting (0–1 or %)."
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "score",
+        "range"
+      ]
+    },
+    "projectIdType": {
+      "type": "string",
+      "enum": [
+        "internal_project_id",
+        "current_registry_project_id",
+        "origin_registry_project_id",
+        "compliance_market_project_id",
+        "global_unique_project_id"
+      ]
+    },
+    "projectDocType": {
+      "type": "string",
+      "enum": [
+        "project_monitoring_plan",
+        "project_monitoring_report",
+        "non_permanence_risk_assessment",
+        "voluntary_cancellation_certification",
+        "loss_event_report",
+        "to_be_expanded_upon"
+      ]
+    },
+    "projectStatus": {
+      "type": "string",
+      "enum": [
+        "listed",
+        "validated",
+        "registered",
+        "approved",
+        "authorized",
+        "completed",
+        "withdrawn",
+        "de_registered",
+        "inactive",
+        "rejected"
+      ]
+    },
+    "registryName": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "verra",
+            "gold_standard",
+            "plan_vivo",
+            "cdm",
+            "woodland_carbon_code",
+            "peatland_carbon_code",
+            "isometric",
+            "puro_earth",
+            "climate_action_reserve",
+            "american_carbon_registry",
+            "biocarbon_registry",
+            "social_carbon"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^x_[A-Za-z0-9_]+$"
+        }
+      ]
+    },
+    "stakeholderType": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "project_developer",
+            "registry_accounting_and_tracking",
+            "registry_with_transaction_functionality",
+            "infrastructure_provider_operator",
+            "multilateral_organization",
+            "carbon_crediting_program",
+            "verification_accreditation_agency",
+            "project_owner",
+            "project_implementer",
+            "technical_consultant",
+            "gis_advisory",
+            "feasibility_study_service",
+            "technical_document_service",
+            "administrative_service",
+            "biodiversity_advisory",
+            "political_advocacy",
+            "mrv_data_provider",
+            "other"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^x_[A-Za-z0-9_]+$"
+        }
+      ]
+    },
+    "registryListing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/registryName"
+        },
+        "listing_start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the project began being listed on this registry."
+        },
+        "listing_end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the project stopped being listed on this registry (omit if still active)."
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "contactInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?[0-9 .()-]{7,}$"
+        }
+      }
+    },
+    "stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "stakeholder_type": {
+          "$ref": "#/$defs/stakeholderType"
+        },
+        "contact": {
+          "$ref": "#/$defs/contactInfo"
+        }
+      },
+      "required": [
+        "name",
+        "stakeholder_type"
+      ]
+    }
+  },
   "title": "Project Approach and Details (CDOP-aligned)",
   "type": "object",
   "additionalProperties": false,
+  "patternProperties": {
+    "^x_[A-Za-z0-9_]+$": {
+      "description": "Custom top-level extension property. Must start with x_.",
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "object",
+        "array",
+        "null"
+      ]
+    }
+  },
   "properties": {
     "crediting_program": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "crediting_program_name": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The name of the carbon crediting program issuing the project's credits"
+      "type": "array",
+      "description": "List of carbon crediting programs issuing the project's credits, including associated standards and versions.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "program_name": {
+            "type": "string",
+            "description": "The name of the carbon crediting program issuing the project's credits."
+          },
+          "standard_name": {
+            "type": "string",
+            "description": "The name of the standard associated with the project's credits."
+          },
+          "initial_standard_version": {
+            "type": "string",
+            "description": "The version of the standard under which the project was initially registered."
+          },
+          "current_standard_version": {
+            "type": "string",
+            "description": "The version of the standard under which the project is currently registered."
+          }
         },
-        "standard_name": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The name of the standard associated with the project's credits."
-        },
-        "initial_standard_version": {
-          "type": "string",
-          "description": "The version of the standard under which the project was initially registered."
-        },
-        "current_standard_version": {
-          "type": "string",
-          "description": "The version of the standard under which the project is currently registered."
-        }
+        "required": [
+          "program_name"
+        ]
       }
     },
-
     "methodology": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "methodology": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The methodology that the project is following."
+      "type": "array",
+      "description": "List of methodologies applied to the project, including all versions and documentation.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "versions": {
+            "type": "array",
+            "description": "All methodology versions applied to the project (current and historical).",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "version": {
+                  "type": "string",
+                  "description": "Version identifier (e.g. v1.0, v2.2)."
+                },
+                "document": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Link to documentation for this version."
+                },
+                "is_current": {
+                  "type": "boolean",
+                  "description": "True if this is the version currently in use."
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            "minItems": 1,
+            "contains": {
+              "type": "object",
+              "properties": {
+                "is_current": {
+                  "const": true
+                }
+              },
+              "required": [
+                "is_current"
+              ]
+            },
+            "minContains": 1,
+            "maxContains": 1
+          }
         },
-        "initial_methodology_version": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The version of the methodology initially used for the first credit issuance."
-        },
-        "current_methodology_version": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The version of the methodology currently being used."
-        },
-        "current_methodology_document": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The link to the documentation for the current methodology being used."
-        }
+        "required": [
+          "name",
+          "versions"
+        ]
       }
     },
-
     "project": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "project_name": {
+        "name": {
           "type": "string",
-          "description": "The name of the project."
+          "description": "The name of the project.",
+          "minLength": 1
         },
-        "project_id_type": {
+        "identifiers": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "The type of project id (e.g., registry id, universally unique identifier id)"
-        },
-        "project_id": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The project's identification code."
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "identifier_type": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/projectIdType"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^x_[A-Za-z0-9_]+$",
+                    "description": "Custom identifier type; must start with 'x_'."
+                  }
+                ]
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "identifier_type",
+              "value"
+            ]
+          }
         },
         "project_description": {
           "type": "string",
-          "description": "Description of the mitigation activities undertaken by the project, preferably the registry’s public description."
+          "description": "Description of the mitigation activities undertaken by the project, preferably the registry’s public description.",
+          "minLength": 1
         },
-        "project_design_document_link": {
+        "design_document_link": {
           "type": "string",
-          "description": "The link to the project's project design documentation (PDD)."
+          "format": "uri",
+          "description": "The link to the project's design documentation (PDD).",
+          "minLength": 1
         },
         "exemptions": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "If relevant, any approved deviations from methodology requirements granted by the registry."
         },
         "program_type": {
           "type": "string",
-          "description": "If referring to a program of activities, specify the type of program."
+          "description": "If referring to a program of activities, specify the type of program.",
+          "minLength": 1
         },
         "activity_type": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "If the project (activity) is part of a broader program of activities, specify which type of project the activity is."
         },
         "mitigation_type": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "The type of offset the project is expected to generate."
         },
-        "project_sector": {
+        "sector": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "The sector in which the project is developed and the mitigation activities conducted."
         },
         "project_type": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "The emission reduction or sequestration pathway of project."
         },
-        "current_registry_project_link": {
+        "registry_link": {
           "type": "string",
-          "description": "The link to the project on its current registry."
+          "format": "uri",
+          "description": "The link to the project on its current registry.",
+          "minLength": 1
         },
-        "project_status": {
-          "type": "string",
+        "status": {
+          "$ref": "#/$defs/projectStatus",
           "description": "The current status of the project."
         },
-        "project_status_updated_at": {
+        "status_updated_at": {
           "type": "string",
           "format": "date",
-          "description": "The date of the current status of the project"
+          "description": "The date of the current status of the project."
         },
-        "number_of_crediting_periods": {
-          "type": "integer",
-          "description": "The total number of crediting periods assigned to the project over its lifetime as defined by the methodology or registry."
-        },
-        "crediting_period_length": {
+        "crediting_periods": {
           "type": "array",
-          "items": { "type": "integer" },
-          "description": "The duration (in years) of each crediting period granted to the project under the applicable methodology or registry."
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "length_years": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "The duration (in years) of each crediting period granted to the project under the applicable methodology or registry."
+              },
+              "start_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "end_date": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "length_years"
+            ]
+          }
         },
-        "project_registration_date": {
+        "registration_date": {
           "type": "string",
           "format": "date",
           "description": "The date the project was registered on the registry."
         },
-        "project_list_date": {
+        "list_date": {
           "type": "string",
           "format": "date",
           "description": "The date the project was first listed on a registry."
         },
-        "other_project_documentation_type": {
+        "documents": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "The type(s) of additional project documentation."
-        },
-        "other_project_documentation_link": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The link(s) to the project's additional project documentation."
+          "description": "Additional project documentation entries.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "document_type": {
+                "$ref": "#/$defs/projectDocType"
+              },
+              "link": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "document_type",
+              "link"
+            ]
+          }
         }
       },
       "required": [
-        "project_name",
+        "identifiers",
+        "name",
         "project_description",
-        "project_status",
-        "project_status_updated_at"
+        "status",
+        "status_updated_at"
       ]
     },
-
     "project_stakeholder": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "project_developer_name": {
-          "type": "string",
-          "description": "The name of the primary developer of the project."
+        "primary_developer": {
+          "type": "object",
+          "description": "The primary project developer.",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "contact": {
+              "$ref": "#/$defs/contactInfo"
+            }
+          },
+          "required": [
+            "name"
+          ]
         },
-        "project_developer_website": {
-          "type": "string",
-          "description": "The website of the primary developer of the project."
-        },
-        "project_developer_email": {
-          "type": "string",
-          "description": "The email of the primary developer of the project."
-        },
-        "project_developer_phone": {
-          "type": "string",
-          "description": "The phone number of the primary developer of the project."
-        },
-        "project_stakeholder_type": {
+        "stakeholders": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "The role of the stakeholder in relation to the project (e.g., verifier, technical consultant, etc.)."
-        },
-        "project_stakeholder_name": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The name of the selected stakeholder type."
-        },
-        "project_stakeholder_website": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The website of the selected stakeholder type."
-        },
-        "project_stakeholder_email": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The email address of the selected stakeholder type."
-        },
-        "project_stakeholder_phone": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "The phone number of the selected stakeholder type."
+          "description": "Other stakeholders involved with the project.",
+          "items": {
+            "$ref": "#/$defs/stakeholder"
+          }
         }
       },
-      "required": ["project_developer_name"]
+      "required": [
+        "primary_developer"
+      ]
     },
-
     "registry": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "origin_registry": {
-          "type": "string",
-          "description": "The name of the project's original registry (if it has moved registries)"
-        },
         "current_registry": {
-          "type": "string",
-          "description": "The name of the project's current registry."
+          "description": "The project's current registry and (optionally) the listing start/end dates.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/registryListing"
+            },
+            {
+              "not": {
+                "required": [
+                  "listing_end_date"
+                ]
+              }
+            }
+          ]
+        },
+        "previous_registries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/registryListing"
+          },
+          "description": "Any previous registries where the project was listed, with optional listing dates."
         }
-      }
+      },
+      "required": [
+        "current_registry"
+      ]
     },
-
     "validation": {
       "type": "object",
       "additionalProperties": false,
@@ -241,8 +565,79 @@
         },
         "validation_report": {
           "type": "string",
+          "format": "uri",
           "description": "The link to the project's validation report (if applicable)."
         }
+      }
+    },
+    "assessment": {
+      "type": "array",
+      "description": "Third-party or internal assessments of the project.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "type": "string",
+            "description": "Assessment provider"
+          },
+          "assessment_type": {
+            "type": "string",
+            "description": "The assessment provider's classification of the assessment."
+          },
+          "issued_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "rating": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Provider's overall rating (if any)."
+          },
+          "version": {
+            "type": "string",
+            "description": "Assessment version."
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "One or more URLs to the assessment or provider page.",
+            "minItems": 1
+          },
+          "dimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/assessmentDimension"
+            },
+            "description": "Breakdown of component scores (e.g., additionality, permanence)."
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Provider-specific optional fields.",
+            "patternProperties": {
+              "^x_[A-Za-z0-9_]+$": {
+                "type": [
+                  "string",
+                  "number",
+                  "boolean",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "body",
+          "assessment_type",
+          "issued_at",
+          "links"
+        ]
       }
     }
   }
