@@ -1,0 +1,99 @@
+{
+  "crediting_program": {
+    "crediting_program_name": [
+      "Verra"
+    ],
+    "standard_name": [
+      "Verified Carbon Standard"
+    ],
+    "initial_standard_version": "VCS v3",
+    "current_standard_version": "VCS v4"
+  },
+  "methodology": {
+    "methodology": [
+      "ARR"
+    ],
+    "initial_methodology_version": [
+      "1.0"
+    ],
+    "current_methodology_version": [
+      "2.1"
+    ],
+    "current_methodology_document": [
+      "https://verra.org/methodologies/arr-v2.1"
+    ]
+  },
+  "project": {
+    "project_name": "Mangrove Restoration Initiative",
+    "project_id_type": [
+      "internal project id"
+    ],
+    "project_id": [
+      "MR-2025-001"
+    ],
+    "project_description": "Restoration of degraded mangroves in Southeast Asia for carbon sequestration.",
+    "project_design_document_link": "https://example.org/docs/mangrove_pdd.pdf",
+    "exemptions": [
+      "Deviation approved for soil sampling frequency"
+    ],
+    "program_type": "Program of Activities",
+    "activity_type": [
+      "Afforestation/Reforestation"
+    ],
+    "mitigation_type": [
+      "Nature-based"
+    ],
+    "project_sector": [
+      "Forestry"
+    ],
+    "project_type": [
+      "ARR"
+    ],
+    "current_registry_project_link": "https://registry.verra.org/projects/12345",
+    "project_status": "Registered",
+    "project_status_updated_at": "2025-05-01",
+    "number_of_crediting_periods": 2,
+    "crediting_period_length": [
+      10,
+      10
+    ],
+    "project_registration_date": "2024-03-15",
+    "project_list_date": "2024-02-01",
+    "other_project_documentation_type": [
+      "Monitoring plan"
+    ],
+    "other_project_documentation_link": [
+      "https://example.org/docs/monitoring_plan.pdf"
+    ]
+  },
+  "project_stakeholder": {
+    "project_developer_name": "Blue Carbon Ltd",
+    "project_developer_website": "https://bluecarbon.example.com",
+    "project_developer_email": "info@bluecarbon.example.com",
+    "project_developer_phone": "+44-20-1234-5678",
+    "project_stakeholder_type": [
+      "Technical consultant"
+    ],
+    "project_stakeholder_name": [
+      "EcoAdvisors"
+    ],
+    "project_stakeholder_website": [
+      "https://ecoadvisors.example.com"
+    ],
+    "project_stakeholder_email": [
+      "contact@ecoadvisors.example.com"
+    ],
+    "project_stakeholder_phone": [
+      "+1-202-555-0199"
+    ]
+  },
+  "registry": {
+    "origin_registry": "Verra",
+    "current_registry": "Gold Standard"
+  },
+  "validation": {
+    "validation_body_name": "EnviroCert Ltd",
+    "validation_date": "2024-12-01",
+    "validation_report": "https://example.org/reports/validation.pdf"
+  }
+}

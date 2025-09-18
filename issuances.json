@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Issuances",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project_identifier": {
+      "type": "string",
+      "description": "Global unique identifier for the project"
+    },
+
+    "crediting_period": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "estimated_start": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated first year of issuance period"
+        },
+        "estimated_end": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated end year of issuance period"
+        }
+      }
+    },
+
+    "audits": {
+      "type": "array",
+      "description": "Audit records associated with the project and issuances",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "auditor_name": {
+            "type": "string",
+            "description": "Name of the auditor"
+          },
+          "site_visit_start_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date of the auditor’s site visit"
+          },
+          "site_visit_end_date": {
+            "type": "string",
+            "format": "date",
+            "description": "End date of the auditor’s site visit"
+          },
+          "description": {
+            "type": "string",
+            "description": "Additional notes about the audit"
+          }
+        },
+        "required": ["auditor_name"]
+      }
+    },
+
+    "issuance_forecast": {
+      "type": "array",
+      "description": "Forecasted annual issuance by year for the project lifetime",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "forecast_year": { "type": "string", "format": "date" },
+          "forecast_annual_issuance": { "type": "number" }
+        },
+        "required": ["forecast_year", "forecast_annual_issuance"]
+      }
+    },
+
+    "forecast_total_issuance": {
+      "type": "array",
+      "description": "Forecasted total lifetime credit generation",
+      "minItems": 1,
+      "items": { "type": "number" }
+    },
+
+    "issuances": {
+      "type": "array",
+      "description": "Issued credit batches and related verification periods",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "batch_identifier": { "type": "string" },
+          "issuance_url": { "type": "string" },
+          "date_of_issuance": { "type": "string", "format": "date" },
+          "date_of_verification": { "type": "string", "format": "date" },
+          "verification_period_start": { "type": "string", "format": "date" },
+          "verification_period_end": { "type": "string", "format": "date" },
+          "batch_issued_volume": { "type": "number" },
+          "verification_report": {
+            "type": "string",
+            "description": "Verification report associated with this issuance"
+          }
+        },
+        "required": [
+          "batch_identifier",
+          "date_of_issuance",
+          "verification_period_start",
+          "verification_period_end",
+          "batch_issued_volume",
+          "verification_report"
+        ]
+      }
+    },
+
+    "cumulative_issued_volume": {
+      "type": "number",
+      "description": "The total volume of credits issued to date"
+    }
+  },
+
+  "required": ["issuance_forecast", "forecast_total_issuance", "audits"]
+}

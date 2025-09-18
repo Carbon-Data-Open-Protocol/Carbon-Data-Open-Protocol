@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Disclosures",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "attestations": {
+          "type": "array",
+          "description": "List of attestations (e.g., child labor, labor worker attestation), if verified credentials are supported.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "carbon_concession_contract_length": {
+          "type": "boolean",
+          "description": "Whether the concession contract is at least the same length as the crediting period."
+        },
+        "carbon_concession_contract": {
+          "type": "string",
+          "description": "Carbon concession contract (free text or link)."
+        },
+        "carbon_credit_ownership_attestation": {
+          "type": "boolean",
+          "description": "Indicates possession of carbon credit ownership documentation."
+        },
+        "carbon_credit_ownership_documentation": {
+          "type": "string",
+          "description": "Link to the contract of ownership."
+        },
+        "child_labor_attestation": {
+          "type": "boolean",
+          "description": "Compliance with age-related legal frameworks (ILO C138 and/or national laws)."
+        },
+        "child_labor_documentation": {
+          "type": "string",
+          "description": "Evidence of compliance with age-related legal frameworks."
+        },
+        "community_frameworks": {
+          "type": "string",
+          "description": "Measures taken to comply with frameworks governing rights of Indigenous, tribal, and local communities."
+        },
+        "cultural_site_borders": {
+          "type": "boolean",
+          "description": "Project site includes/borders archaeological sites or districts listed in registries."
+        },
+        "cultural_site_designation": {
+          "type": "boolean",
+          "description": "Registry recognition of cultural site designation."
+        },
+        "labor_worker_attestation": {
+          "type": "boolean",
+          "description": "Compliance with labor rights / code of conduct."
+        },
+        "labor_worker_documentation": {
+          "type": "string",
+          "description": "Link to evidence of labor rights documentation."
+        },
+        "land_right_attestation": {
+          "type": "boolean",
+          "description": "Possession of evidence of land rights."
+        },
+        "land_rights_documentation": {
+          "type": "string",
+          "description": "Link to evidence of land rights."
+        },
+        "land_ownership_attestation": {
+          "type": "boolean",
+          "description": "Possession of evidence of land ownership."
+        },
+        "land_ownership_documentation": {
+          "type": "string",
+          "description": "Land or facility ownership documentation (link or text)."
+        },
+        "legal_compliance_attestation": {
+          "type": "boolean",
+          "description": "Possession of legal compliance documentation and explanation of how legislation influenced project design."
+        },
+        "legal_compliance_documentation": {
+          "type": "string",
+          "description": "Link to the statement of compliance with all applicable national laws."
+        },
+        "list_of_landowners": {
+          "type": "string",
+          "description": "List all landowners within project activity (e.g., farmers)."
+        },
+        "project_governance_structure": {
+          "type": "string",
+          "description": "How the project is governed; stakeholders and decision-making systems."
+        },
+        "project_status": {
+          "type": "string",
+          "description": "Current status of the project."
+        },
+        "public_comment": {
+          "type": "boolean",
+          "description": "Whether there has been any public comment on the project."
+        },
+        "public_comment_summary": {
+          "type": "string",
+          "description": "Summary of outcomes of public comment process."
+        }
+      },
+      "required": [
+        "carbon_credit_ownership_attestation",
+        "carbon_credit_ownership_documentation",
+        "legal_compliance_attestation",
+        "legal_compliance_documentation",
+        "project_governance_structure",
+        "project_status"
+      ]
+    },
+    "project_stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "organization_team_experience": {
+          "type": "array",
+          "description": "Overview of team leads' experience and technical expertise; include carbon credit owner details at minimum.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "organization_role": {
+          "type": "array",
+          "description": "Organization role(s); carbon credit owner details required at minimum.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "organization_project_employees": {
+          "type": "array",
+          "description": "FT/PT employees and contractors who directly work on the project.",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "organization_employees": {
+          "type": "array",
+          "description": "FT/PT employees at the organization (not directly on the project).",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "organization_founding_year": {
+          "type": "array",
+          "description": "Organization founding year.",
+          "items": {
+            "type": "string",
+            "format": "date"
+          },
+          "minItems": 1
+        },
+        "organization_mission": {
+          "type": "array",
+          "description": "Organization purpose, values, and climate-related goals.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "organization_legal_name": {
+          "type": "array",
+          "description": "Legal entity name of the organization.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "organization_project_experience": {
+          "type": "array",
+          "description": "Total number of projects developed/owned/invested by the organization.",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "organization_url": {
+          "type": "array",
+          "description": "Verified URL(s) for information about the organization.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "organization_team_experience",
+        "organization_role",
+        "organization_project_employees",
+        "organization_employees",
+        "organization_founding_year",
+        "organization_mission",
+        "organization_legal_name",
+        "organization_project_experience",
+        "organization_url"
+      ]
+    },
+    "registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "previous_project_crediting_program": {
+          "type": "boolean",
+          "description": "Whether the project is receiving/sought credits under another program (historically or currently)."
+        },
+        "previous_project_crediting_program_name": {
+          "type": "array",
+          "description": "Crediting program name(s) previously or currently involved.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "previous_project_registration_id": {
+          "type": "array",
+          "description": "Registration number(s) for the project under other programs.",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "previous_project_rejection_date": {
+          "type": "array",
+          "description": "Date(s) of rejection by another crediting program.",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "previous_project_rejection_reason": {
+          "type": "array",
+          "description": "Program name(s), reason(s), and date(s) of rejection.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "current_project_issuance_registry": {
+          "type": "string",
+          "description": "Registry in which the project is currently issuing."
+        }
+      }
+    }
+  }
+}
