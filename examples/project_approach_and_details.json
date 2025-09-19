@@ -131,45 +131,5 @@
     "validation_date": "2024-12-01",
     "validation_report": "https://example.org/reports/validation.pdf"
   },
-  "assessment": [
-    {
-      "body": "Sylvera",
-      "assessment_type": "full",
-      "issued_at": "2025-06-10",
-      "rating": "BB",
-      "version": "2025.1",
-      "links": [
-        "https://sylvera.example.com/assessments/MR-2025-001"
-      ],
-      "dimensions": [
-        {
-          "key": "additionality",
-          "score": "0.72",
-          "range": { "min": "0", "max": "1" },
-          "notes": "Conservative baseline; moderate investment barrier evidence."
-        },
-        {
-          "key": "carbon_accounting",
-          "score": "0.81",
-          "range": { "min": "0", "max": "1" }
-        },
-        {
-          "key": "permanence",
-          "score": "0.63",
-          "range": { "min": "0", "max": "1" },
-          "notes": "Mangrove disturbance risks partially mitigated by buffer."
-        },
-        {
-          "key": "safeguards",
-          "score": "0.78",
-          "range": { "min": "0", "max": "1" }
-        }
-      ],
-      "metadata": {
-        "x_internal_method": "v3_stacked_model",
-        "x_confidence": 0.8
-      }
-    }
-  ],
   "x_ingestion_batch_id": "batch_2025_09_18_001"
 }
