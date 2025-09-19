@@ -155,7 +155,7 @@
       ]
     }
   },
-  "title": "Project Approach and Details (CDOP-aligned)",
+  "title": "Project Approach and Details",
   "type": "object",
   "additionalProperties": false,
   "patternProperties": {
