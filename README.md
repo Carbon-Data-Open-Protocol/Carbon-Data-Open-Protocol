@@ -1,10 +1,42 @@
 # Carbon-Data-Open-Protocol
 Repository storing technical specification and documentation for the CDOP schema.
+
 # CDOP Overview	
 The growth of carbon markets and their elevation into a mature, fully investable asset class are both inhibited by a lack of data standardization and fungibility. For example, any comparison between two projects from different registries currently requires a bespoke translation of a series of misaligned data fields. A common carbon data open protocol would create the basis for standardization, transparency and fungibility needed to improve integrity and dramatically scale the carbon market	
 	
 Through an open, multi-stakeholder process, our mission is to propose a Carbon Data Open Protocol (CDOP) that includes (1) a set of principles to inform the purpose, use, and development of (2) a common data schema, with definitions and rules that standardize data describing carbon crediting projects and carbon credits across markets, geographies and activity types (including applicable methodologies, project descriptions, and digital MRV formats), and (3) governance framework for maintaining and updating the protocol.	
 	
+# Contributing Guidelines
+
+We welcome contributions to this project! To ensure a smooth process, please follow the guidelines below.
+
+## Maintainers  
+This repository is maintained by members of the **CDOP Technical Working Group**.  
+If you would like to become a maintainer, please contact us at **contact@cdop** (TBD).
+
+### Raising Issues & Feature Requests  
+- Use [GitHub Issues](../../issues) to report bugs, propose features, or suggest improvements.  
+- When creating an issue, please apply one of the following labels (if possible):  
+  - `bug` – unexpected or broken behaviour  
+  - `enhancement` – new feature or functionality request  
+  - `documentation` – changes or additions to documentation  
+  - `discussion` – ideas or open questions for maintainers/community input  
+
+All issues and requests are reviewed during **fortnightly maintainer sessions** for consideration.
+
+### Pull Requests  
+We encourage contributions via pull requests (PRs).  
+- Fork the repository and create a feature branch.  
+- Reference any related issues in your PR description.  
+- Be clear and concise in commit messages.  
+
+PRs will be reviewed by maintainers during the regular review cycle. Please be patient and open to feedback.
+
+### General Contribution Guidelines  
+- Be respectful and collaborative.  
+- Add/update documentation when relevant.  
+- When in doubt, open an issue to discuss before submitting a large change.  
+
 ## Location Details Schema	
 The contents of this file encompass CDOP's Location Details Schema and associated materials and reosurces	
 	

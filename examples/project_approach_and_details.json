@@ -1,38 +1,47 @@
 {
-  "crediting_program": {
-    "crediting_program_name": [
-      "Verra"
-    ],
-    "standard_name": [
-      "Verified Carbon Standard"
-    ],
-    "initial_standard_version": "VCS v3",
-    "current_standard_version": "VCS v4"
-  },
-  "methodology": {
-    "methodology": [
-      "ARR"
-    ],
-    "initial_methodology_version": [
-      "1.0"
-    ],
-    "current_methodology_version": [
-      "2.1"
-    ],
-    "current_methodology_document": [
-      "https://verra.org/methodologies/arr-v2.1"
-    ]
-  },
+  "crediting_program": [
+    {
+      "program_name": "Verra",
+      "standard_name": "Verified Carbon Standard",
+      "initial_standard_version": "VCS v3",
+      "current_standard_version": "VCS v4"
+    }
+  ],
+  "methodology": [
+    {
+      "name": "ARR",
+      "versions": [
+        {
+          "version": "v1.0",
+          "document": "https://example.org/methodologies/arr-v1.0.pdf",
+          "is_current": false
+        },
+        {
+          "version": "v2.1",
+          "document": "https://verra.org/methodologies/arr-v2.1",
+          "is_current": true
+        }
+      ]
+    }
+  ],
   "project": {
-    "project_name": "Mangrove Restoration Initiative",
-    "project_id_type": [
-      "internal project id"
+    "name": "Mangrove Restoration Initiative",
+    "identifiers": [
+      {
+        "identifier_type": "internal_project_id",
+        "value": "MR-2025-001"
+      },
+      {
+        "identifier_type": "current_registry_project_id",
+        "value": "VCS-12345"
+      },
+      {
+        "identifier_type": "global_unique_project_id",
+        "value": "urn:cdop:project:MR-2025-001"
+      }
     ],
-    "project_id": [
-      "MR-2025-001"
-    ],
-    "project_description": "Restoration of degraded mangroves in Southeast Asia for carbon sequestration.",
-    "project_design_document_link": "https://example.org/docs/mangrove_pdd.pdf",
+    "project_description": "Restoration of degraded mangroves in Southeast Asia for carbon sequestration and coastal resilience.",
+    "design_document_link": "https://example.org/docs/mangrove_pdd.pdf",
     "exemptions": [
       "Deviation approved for soil sampling frequency"
     ],
@@ -43,57 +52,124 @@
     "mitigation_type": [
       "Nature-based"
     ],
-    "project_sector": [
+    "sector": [
       "Forestry"
     ],
     "project_type": [
       "ARR"
     ],
-    "current_registry_project_link": "https://registry.verra.org/projects/12345",
-    "project_status": "Registered",
-    "project_status_updated_at": "2025-05-01",
-    "number_of_crediting_periods": 2,
-    "crediting_period_length": [
-      10,
-      10
+    "registry_link": "https://registry.verra.org/app/projectDetail/VCS/12345",
+    "status": "registered",
+    "status_updated_at": "2025-05-01",
+    "crediting_periods": [
+      {
+        "length_years": 10,
+        "start_date": "2024-03-15",
+        "end_date": "2034-03-14"
+      },
+      {
+        "length_years": 10
+      }
     ],
-    "project_registration_date": "2024-03-15",
-    "project_list_date": "2024-02-01",
-    "other_project_documentation_type": [
-      "Monitoring plan"
-    ],
-    "other_project_documentation_link": [
-      "https://example.org/docs/monitoring_plan.pdf"
+    "registration_date": "2024-03-15",
+    "list_date": "2024-02-01",
+    "documents": [
+      {
+        "document_type": "project_monitoring_plan",
+        "link": "https://example.org/docs/monitoring_plan.pdf"
+      },
+      {
+        "document_type": "non_permanence_risk_assessment",
+        "link": "https://example.org/docs/npr_assessment.pdf"
+      }
     ]
   },
   "project_stakeholder": {
-    "project_developer_name": "Blue Carbon Ltd",
-    "project_developer_website": "https://bluecarbon.example.com",
-    "project_developer_email": "info@bluecarbon.example.com",
-    "project_developer_phone": "+44-20-1234-5678",
-    "project_stakeholder_type": [
-      "Technical consultant"
-    ],
-    "project_stakeholder_name": [
-      "EcoAdvisors"
-    ],
-    "project_stakeholder_website": [
-      "https://ecoadvisors.example.com"
-    ],
-    "project_stakeholder_email": [
-      "contact@ecoadvisors.example.com"
-    ],
-    "project_stakeholder_phone": [
-      "+1-202-555-0199"
+    "primary_developer": {
+      "name": "Blue Carbon Ltd",
+      "contact": {
+        "website": "https://bluecarbon.example.com",
+        "email": "info@bluecarbon.example.com",
+        "phone": "+44-20-1234-5678"
+      }
+    },
+    "stakeholders": [
+      {
+        "name": "EcoAdvisors",
+        "stakeholder_type": "technical_consultant",
+        "contact": {
+          "website": "https://ecoadvisors.example.com",
+          "email": "contact@ecoadvisors.example.com",
+          "phone": "+1 (202) 555-0199"
+        }
+      },
+      {
+        "name": "EnviroCert Ltd",
+        "stakeholder_type": "verification_accreditation_agency",
+        "contact": {
+          "website": "https://envirocert.example.com",
+          "email": "hello@envirocert.example.com"
+        }
+      }
     ]
   },
   "registry": {
-    "origin_registry": "Verra",
-    "current_registry": "Gold Standard"
+    "current_registry": {
+      "name": "verra",
+      "listing_start_date": "2024-02-01"
+    },
+    "previous_registries": [
+      {
+        "name": "gold_standard",
+        "listing_start_date": "2023-06-01",
+        "listing_end_date": "2024-01-31"
+      }
+    ]
   },
   "validation": {
     "validation_body_name": "EnviroCert Ltd",
     "validation_date": "2024-12-01",
     "validation_report": "https://example.org/reports/validation.pdf"
-  }
+  },
+  "assessment": [
+    {
+      "body": "Sylvera",
+      "assessment_type": "full",
+      "issued_at": "2025-06-10",
+      "rating": "BB",
+      "version": "2025.1",
+      "links": [
+        "https://sylvera.example.com/assessments/MR-2025-001"
+      ],
+      "dimensions": [
+        {
+          "key": "additionality",
+          "score": "0.72",
+          "range": { "min": "0", "max": "1" },
+          "notes": "Conservative baseline; moderate investment barrier evidence."
+        },
+        {
+          "key": "carbon_accounting",
+          "score": "0.81",
+          "range": { "min": "0", "max": "1" }
+        },
+        {
+          "key": "permanence",
+          "score": "0.63",
+          "range": { "min": "0", "max": "1" },
+          "notes": "Mangrove disturbance risks partially mitigated by buffer."
+        },
+        {
+          "key": "safeguards",
+          "score": "0.78",
+          "range": { "min": "0", "max": "1" }
+        }
+      ],
+      "metadata": {
+        "x_internal_method": "v3_stacked_model",
+        "x_confidence": 0.8
+      }
+    }
+  ],
+  "x_ingestion_batch_id": "batch_2025_09_18_001"
 }
