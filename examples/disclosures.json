@@ -1,0 +1,68 @@
+{
+  "project": {
+    "attestations": [
+      "child_labor_attestation",
+      "labor_worker_attestation"
+    ],
+    "carbon_concession_contract_length": true,
+    "carbon_concession_contract": "https://example.org/docs/concession_contract.pdf",
+    "carbon_credit_ownership_attestation": true,
+    "carbon_credit_ownership_documentation": "https://example.org/docs/ownership_contract.pdf",
+    "child_labor_attestation": true,
+    "child_labor_documentation": "https://example.org/docs/child_labor_policy.pdf",
+    "community_frameworks": "Engaged local indigenous councils; obtained FPIC; grievance redress mechanism in place.",
+    "cultural_site_borders": false,
+    "cultural_site_designation": false,
+    "labor_worker_attestation": true,
+    "labor_worker_documentation": "https://example.org/docs/labor_code_of_conduct.pdf",
+    "land_right_attestation": true,
+    "land_rights_documentation": "https://example.org/docs/land_rights_evidence.pdf",
+    "land_ownership_attestation": true,
+    "land_ownership_documentation": "https://example.org/docs/land_title_deed.pdf",
+    "legal_compliance_attestation": true,
+    "legal_compliance_documentation": "https://example.org/docs/legal_compliance_statement.pdf",
+    "list_of_landowners": "Farmer A; Cooperative B; Community Trust C",
+    "project_governance_structure": "Board-led governance; independent advisory committee; quarterly risk reviews; stakeholder consultation committee.",
+    "project_status": "Registered",
+    "public_comment": true,
+    "public_comment_summary": "Public consultation held Q1 2025; comments addressed in revised PDD."
+  },
+  "project_stakeholder": {
+    "organization_team_experience": [
+      "Team leads with 15+ years in forestry, MRV, and community engagement."
+    ],
+    "organization_role": [
+      "Carbon credit owner",
+      "Project implementer"
+    ],
+    "organization_project_employees": [
+      12
+    ],
+    "organization_employees": [
+      85
+    ],
+    "organization_founding_year": [
+      "2012-01-01"
+    ],
+    "organization_mission": [
+      "Advance nature-based climate solutions while protecting biodiversity and livelihoods."
+    ],
+    "organization_legal_name": [
+      "Blue Carbon Ltd"
+    ],
+    "organization_project_experience": [
+      18
+    ],
+    "organization_url": [
+      "https://bluecarbon.example.com/about"
+    ]
+  },
+  "registry": {
+    "previous_project_crediting_program": false,
+    "previous_project_crediting_program_name": [],
+    "previous_project_registration_id": [],
+    "previous_project_rejection_date": [],
+    "previous_project_rejection_reason": [],
+    "current_project_issuance_registry": "Verra"
+  }
+}
