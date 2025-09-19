@@ -2,56 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/project_approach_and_details.json",
   "$defs": {
-    "assessmentType": {
-      "type": "string",
-      "enum": [
-        "full",
-        "provisional",
-        "estimated",
-        "screening",
-        "other"
-      ]
-    },
-    "scoreRange": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "min": {
-          "type": "string"
-        },
-        "max": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "min",
-        "max"
-      ]
-    },
-    "assessmentDimension": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "key": {
-          "type": "string",
-          "description": "A dimension type (e.g., additionality, permanence)."
-        },
-        "score": {
-          "type": "string"
-        },
-        "range": {
-          "$ref": "#/$defs/scoreRange"
-        },
-        "notes": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "key",
-        "score",
-        "range"
-      ]
-    },
     "projectIdType": {
       "type": "string",
       "enum": [
@@ -558,76 +508,6 @@
           "format": "uri",
           "description": "The link to the project's validation report (if applicable)."
         }
-      }
-    },
-    "assessment": {
-      "type": "array",
-      "description": "Third-party or internal assessments of the project.",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "body": {
-            "type": "string",
-            "description": "Assessment provider"
-          },
-          "assessment_type": {
-            "type": "string",
-            "description": "The assessment provider's classification of the assessment."
-          },
-          "issued_at": {
-            "type": "string",
-            "format": "date"
-          },
-          "rating": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Provider's overall rating (if any)."
-          },
-          "version": {
-            "type": "string",
-            "description": "Assessment version."
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            },
-            "description": "One or more URLs to the assessment or provider page.",
-            "minItems": 1
-          },
-          "dimensions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/$defs/assessmentDimension"
-            },
-            "description": "Breakdown of component scores (e.g., additionality, permanence)."
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Provider-specific optional fields.",
-            "patternProperties": {
-              "^x_[A-Za-z0-9_]+$": {
-                "type": [
-                  "string",
-                  "number",
-                  "boolean",
-                  "null"
-                ]
-              }
-            },
-            "additionalProperties": false
-          }
-        },
-        "required": [
-          "body",
-          "assessment_type",
-          "issued_at",
-          "links"
-        ]
       }
     }
   }
