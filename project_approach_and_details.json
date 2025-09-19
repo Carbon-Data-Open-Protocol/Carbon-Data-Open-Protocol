@@ -17,10 +17,10 @@
       "additionalProperties": false,
       "properties": {
         "min": {
-          "type": "number"
+          "type": "string"
         },
         "max": {
-          "type": "number"
+          "type": "string"
         }
       },
       "required": [
@@ -34,21 +34,13 @@
       "properties": {
         "key": {
           "type": "string",
-          "description": "Machine-friendly identifier, e.g. 'additionality', 'carbon_accounting'."
-        },
-        "label": {
-          "type": "string",
-          "description": "Human-friendly name."
+          "description": "A dimension type (e.g., additionality, permanence)."
         },
         "score": {
-          "type": "number"
+          "type": "string"
         },
         "range": {
           "$ref": "#/$defs/scoreRange"
-        },
-        "weight": {
-          "type": "number",
-          "description": "Optional weighting (0–1 or %)."
         },
         "notes": {
           "type": "string"
@@ -482,9 +474,7 @@
       "required": [
         "identifiers",
         "name",
-        "project_description",
-        "status",
-        "status_updated_at"
+        "project_description"
       ]
     },
     "project_stakeholder": {
