@@ -36,49 +36,33 @@ PRs will be reviewed by maintainers during the regular review cycle. Please be p
 - Be respectful and collaborative.  
 - Add/update documentation when relevant.  
 - When in doubt, open an issue to discuss before submitting a large change.  
+- Please ensure that any schema changes are reflected in the examples provided.
 
-## Location Details Schema	
-The contents of this file encompass CDOP's Location Details Schema and associated materials and reosurces	
-	
-## Location Details Schema Related Links	
-[Link to CDOP website]	
-[Link to downloadable version of this Excel file]	
-[Link to downloadable version of csv file]	
-[Link to downloadable version of JSON file]	
-[Link to GitHub/Hosting site]	
-[Link to CDOP Principles]	
-	
-## Location Details Schema Development Process	
-CDOP's Technical Working Group (TWG) began the schema development process by collecting schemas from 15+ member organizations willing to share their schemas. Once these schemas were received, the TWG developed an organization system (hereafter known as the Mapping Tool) to map all the schemas against relevant metadata fields in preparation to compare and contrast these schemas, so that harmonization could occur effectively.	
-The next phase of the development process involved mapping and harmonization, which simply put, is the process by which the TWG used the Mapping Tool to unify the disparate schemas that were received and mapped the fields within them against relevant metadata fields into a unified CDOP schema - with Location Details being the first category to be harmonized and published. In order to organize all the submitted schemas, the TWG developed metadata fields to create an intuitive and clear structure in which each metadata field has a specific definition associated with it so that it is understood what information is required. Part of the harmonization process is striking a balance between having a robust set of fields that capture relevant and material information of and related to a carbon crediting project, without being overly exhaustive (i.e. including every single unique field we received in all the schemas).	
-Once an initial iteration was developed, we presented that iteration to the TWG membership in hopes of receiving feedback from our members. Twelve members stepped up and provided valuable feedback to improve the first iteration of the Location Details schema. The TWG then reviewed, analyzed, and ultimately incorporated all relevant feedback to develop a second iteration of the Location Details schema. This second iteration was then presented to membership for a final feedback round before publication.	
-	
-## Contents of Spreadsheet	
-This spreadsheet has 7 tabs in addition to this READ FIRST sheet: CDOP Location Data Schema, Visual Data Model, Metadata Fields Definitions, Entity Definitions, geo_location_file details, Enumerated Values List, ISO 3166-1 Table	
-	
-### CDOP Location Data Schema Tab	
-This tab contains all the fields included in CDOP's Location Details Schema 	
-	
+## CDOP Schemas
+
+CDOP's Technical Working Group (TWG) began the schema development process by collecting schemas from 15+ member organizations willing to share their schemas. Once these schemas were received, the TWG developed an organization system (hereafter known as the Mapping Tool) to map all the schemas against relevant metadata fields in preparation to compare and contrast these schemas, so that harmonization could occur effectively.
+
+Schemas are actively developed to ensure scalable data sharing across the industry. Contribution is actively encouraged through the contribution guidelines highlighted above. 
+
+## Location
+
+ The schema aims to capture all relevant information related to the location of the project and its stakeholders (e.g., the project developer). Aside from standard mailing addresses and ISO country codes, the schema also allows for GIS file inputs. 
+
 If it is technically feasible by an organization using this schema, the country code field can automatically inform a number of other fields relevant in this schema. It also would ideally be used to inform address format so that address formats are standardized using ISO 19160 Standard.	
-In the event that any of the associated entities (project, project developer, and/or facility) do not have a conventional address, use the 'alternative address' field as a means of capturing unconventional, partial, etc. aspects of an address	
-	
-### Visual Data Model Tab	
-This is visual model that highlights the relationships between different fields and associated entities	
-	
-### Metadata Fields Definitions Tab	
-This tab defines all the metadata columns present in the CDOP Location Data Schema tab	
-	
-### Entity Definitions Tab	
-This tab defines the associated entities used in the CDOP Location Data Schema tab	
-	
-### geo_location_file details Tab	
-This tab provides greater context around geolocation related fields in the CDOP Location Data Schema tab	
-	
-### Enumeratd Values List Tab	
-This tab provides a list of all the enumerated values for all the fields with an enum datatype in the CDOP Location Data Schema tab [STILL UNDER CONSTRUCTION]	
-	
-### ISO 3166-1 Table Tab	
-This tab provides a full table of the ISO 3166-1 standard country codes [STILL UNDER CONSTRUCTION]	
+
+In the event that any of the associated entities (project, project stakeholder, and/or facility) do not have a conventional address, use the 'alternative address' field as a means of capturing unconventional, partial, etc. aspects of a relevant address.
+
+## Project Approach and Details (PAD)
+
+The PAD schema aims to capture all relevant information related to the project’s approach and details, including its crediting program, registry, status, design, project type, methodology, project developer information, validation, and name. The majority of this information would be that which is already included in a project’s design document. 
+
+## Disclosures 
+
+The Disclosures schema aims to capture all relevant information related to project disclosures, including attestations (e.g., child labor and land rights), carbon ownership, project developer organization experience and details, public comment, and (if applicable) previous crediting program history. All fields are marked as Public.
+
+## Issuance
+
+The Issuance schema aims to capture all relevant information related to the project’s issuances, including its forecasted issuance volumes, estimated crediting period, date of issuance, and verification.
 
 ## Adoption
 
