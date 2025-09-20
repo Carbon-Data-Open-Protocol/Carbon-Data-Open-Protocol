@@ -6,6 +6,42 @@ The growth of carbon markets and their elevation into a mature, fully investable
 	
 Through an open, multi-stakeholder process, our mission is to propose a Carbon Data Open Protocol (CDOP) that includes (1) a set of principles to inform the purpose, use, and development of (2) a common data schema, with definitions and rules that standardize data describing carbon crediting projects and carbon credits across markets, geographies and activity types (including applicable methodologies, project descriptions, and digital MRV formats), and (3) governance framework for maintaining and updating the protocol.	
 	
+## CDOP Schemas
+
+CDOP's Technical Working Group (TWG) began the schema development process by collecting schemas from 15+ member organizations willing to share their schemas. Once these schemas were received, the TWG developed an organization system (hereafter known as the Mapping Tool) to map all the schemas against relevant metadata fields in preparation to compare and contrast these schemas, so that harmonization could occur effectively.
+
+Schemas are actively developed to ensure scalable data sharing across the industry. Contribution is actively encouraged through the contribution guidelines highlighted above. 
+
+## Location
+
+ The schema aims to capture all relevant information related to the location of the project and its stakeholders (e.g., the project developer). Aside from standard mailing addresses and ISO country codes, the schema also allows for GIS file inputs. 
+
+If it is technically feasible by an organization using this schema, the country code field can automatically inform a number of other fields relevant in this schema. It also would ideally be used to inform address format so that address formats are standardized using ISO 19160 Standard.	
+
+In the event that any of the associated entities (project, project stakeholder, and/or facility) do not have a conventional address, use the 'alternative address' field as a means of capturing unconventional, partial, etc. aspects of a relevant address.
+
+## Project Approach and Details (PAD)
+
+The PAD schema aims to capture all relevant information related to the project’s approach and details, including its crediting program, registry, status, design, project type, methodology, project developer information, validation, and name. The majority of this information would be that which is already included in a project’s design document. 
+
+## Disclosures 
+
+The Disclosures schema aims to capture all relevant information related to project disclosures, including attestations (e.g., child labor and land rights), carbon ownership, project developer organization experience and details, public comment, and (if applicable) previous crediting program history. All fields are marked as Public.
+
+## Issuance
+
+The Issuance schema aims to capture all relevant information related to the project’s issuances, including its forecasted issuance volumes, estimated crediting period, date of issuance, and verification.
+
+## Adoption
+
+Adoption of the tool lends to greater collaboration and data sharing across the industry. Some of the key areas for adoption are;
+
+- **Registries and data platforms**:​ Making data available in CDOP format ensures partners can obtain and process data with greater efficiency​.
+- **Project developers​**: Submitting data in CDOP format allows for more standardisation and less bespoke work for publishing project information.
+- **Ratings agencies and data providers​**: Adopt CDOP schemas for data ingestion of data can improve efficiency of data sharing and publishing.
+
+To allow for adoption, [this tool](https://cdop-schema-validator.lovable.app/) can be used to validate a payload against the various cdop schemas. This allows users to ensure their api interfaces are compatible. 
+
 # Contributing Guidelines
 
 We welcome contributions to this project! To ensure a smooth process, please follow the guidelines below.
@@ -38,41 +74,7 @@ PRs will be reviewed by maintainers during the regular review cycle. Please be p
 - When in doubt, open an issue to discuss before submitting a large change.  
 - Please ensure that any schema changes are reflected in the examples provided.
 
-## CDOP Schemas
 
-CDOP's Technical Working Group (TWG) began the schema development process by collecting schemas from 15+ member organizations willing to share their schemas. Once these schemas were received, the TWG developed an organization system (hereafter known as the Mapping Tool) to map all the schemas against relevant metadata fields in preparation to compare and contrast these schemas, so that harmonization could occur effectively.
-
-Schemas are actively developed to ensure scalable data sharing across the industry. Contribution is actively encouraged through the contribution guidelines highlighted above. 
-
-## Location
-
- The schema aims to capture all relevant information related to the location of the project and its stakeholders (e.g., the project developer). Aside from standard mailing addresses and ISO country codes, the schema also allows for GIS file inputs. 
-
-If it is technically feasible by an organization using this schema, the country code field can automatically inform a number of other fields relevant in this schema. It also would ideally be used to inform address format so that address formats are standardized using ISO 19160 Standard.	
-
-In the event that any of the associated entities (project, project stakeholder, and/or facility) do not have a conventional address, use the 'alternative address' field as a means of capturing unconventional, partial, etc. aspects of a relevant address.
-
-## Project Approach and Details (PAD)
-
-The PAD schema aims to capture all relevant information related to the project’s approach and details, including its crediting program, registry, status, design, project type, methodology, project developer information, validation, and name. The majority of this information would be that which is already included in a project’s design document. 
-
-## Disclosures 
-
-The Disclosures schema aims to capture all relevant information related to project disclosures, including attestations (e.g., child labor and land rights), carbon ownership, project developer organization experience and details, public comment, and (if applicable) previous crediting program history. All fields are marked as Public.
-
-## Issuance
-
-The Issuance schema aims to capture all relevant information related to the project’s issuances, including its forecasted issuance volumes, estimated crediting period, date of issuance, and verification.
-
-## Adoption
-
-Adoption of the tool lends to greater collaboration and data sharing across the industry. Some of the key areas for adoption are;
-
-- **Registries and data platforms:**​ Making data available in CDOP format ensures partners can obtain and process data with greater efficiency​.
-- **Project developers​**: Submitting data in CDOP format allows for more standardisation and less bespoke work for publishing project information.
-- **Ratings agencies and data providers​**: Adopt CDOP schemas for data ingestion of data can improve efficiency of data sharing and publishing.
-
-To allow for adoption, [this tool](https://cdop-schema-validator.lovable.app/) can be used to validate a payload against the various cdop schemas. This allows users to ensure their api interfaces are compatible. 
 	
 # Frequently Asked Questions (FAQs)	
 - Can more than one value be reported for a particular field?	
