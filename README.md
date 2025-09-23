@@ -18,6 +18,8 @@ A summary of the status of the TWG work plan can be found [HERE](https://github.
 
 A visual diagram of the CDOP Schema can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/CDOP%20Schema%20Visual%20Diagram.pdf).
 
+The enumerated values lists for the schema can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/CDOP%20Enumerated%20Values%20Lists.xlsx).
+
 Any other supporting documents and information can be found in the Wiki page of the repository, located [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/wiki).
 
 
