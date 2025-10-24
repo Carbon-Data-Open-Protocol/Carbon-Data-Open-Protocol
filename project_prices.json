@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/project_prices.json",
+  "$defs": {
+    "projectIdType": {
+      "type": "string",
+      "enum": [
+        "internal_project_id",
+        "current_registry_project_id",
+        "origin_registry_project_id",
+        "compliance_market_project_id",
+        "global_unique_project_id"
+      ]
+    },
+    "priceConfidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "limited"
+      ],
+      "description": "The confidence level in the price estimate or the reported price."
+    },
+    "insightType": {
+      "type": "string",
+      "enum": [
+        "estimated",
+        "reported"
+      ],
+      "description": "Type of price insight."
+    },
+    "vintage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Start of credit vintage range."
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "End of credit vintage range."
+        },
+        "start_year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100,
+          "description": "Year of credit vintage. When a credit has a vintage range that spans multiple years, the first year is taken."
+        }
+      },
+      "required": [
+        "start_year"
+      ]
+    },
+    "basePrice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "The currency code in ISO 4217 format. If not provided, USD is assumed."
+        }
+      },
+      "required": [
+        "amount"
+      ]
+    },
+    "insightPrice": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/basePrice"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "confidence": {
+              "$ref": "#/$defs/priceConfidence"
+            },
+            "priced_date": {
+              "type": "string",
+              "format": "date",
+              "description": "The date when the price was estimated or reported."
+            },
+            "week_on_week_percent_change": {
+              "type": "number",
+              "description": "The percent change in price compared to one week prior."
+            },
+            "week_on_week_absolute_change": {
+              "type": "number",
+              "description": "The absolute change in price compared to one week prior."
+            },
+            "four_week_rolling_percent_change": {
+              "type": "number",
+              "description": "The percent change in price compared to the average price of the four prior weeks."
+            }
+          },
+          "required": [
+            "priced_date"
+          ]
+        }
+      ]
+    }
+  },
+  "title": "Project prices",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x_[A-Za-z0-9_]+$": {
+      "description": "Custom top-level extension property. Must start with x_.",
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "object",
+        "array",
+        "null"
+      ]
+    }
+  },
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the project.",
+          "minLength": 1
+        },
+        "identifiers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "identifier_type": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/projectIdType"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^x_[A-Za-z0-9_]+$",
+                    "description": "Custom identifier type; must start with 'x_'."
+                  }
+                ]
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "identifier_type",
+              "value"
+            ]
+          }
+        },
+        "vintages": {
+          "type": "array",
+          "items": {
+            "type": "#/$defs/vintage"
+          },
+          "description": "The vintages of project."
+        }
+      },
+      "required": [
+        "identifiers",
+        "name"
+      ]
+    },
+    "known_transactions": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "patternProperties": {
+          "^x_[A-Za-z0-9_]+$": {
+            "description": "Custom known_transactions extension property. Must start with x_.",
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "array",
+              "null"
+            ]
+          }
+        },
+        "properties": {
+          "vintage": {
+            "type": "#/$defs/vintage",
+            "description": "The vintage year of the credits transacted."
+          },
+          "credit_volume": {
+            "type": "number",
+            "description": "Number of credits transacted."
+          },
+          "price_per_credit": {
+            "$ref": "#/$defs/basePrice",
+            "description": "Price per credit in the transaction."
+          },
+          "total_paid": {
+            "$ref": "#/$defs/basePrice",
+            "description": "Total amount paid for the transaction. If not provided, can be assumed as credit_volume * price_per_credit."
+          },
+          "buyer": {
+            "type": "string",
+            "description": "Name of the buyer in the transaction."
+          },
+          "seller": {
+            "type": "string",
+            "description": "Name of the seller in the transaction."
+          },
+          "marketplace": {
+            "type": "string",
+            "description": "Name of the marketplace or broker where the transaction took place."
+          },
+          "transaction_type": {
+            "type": "string",
+            "description": "Type of transaction (e.g. retirement, offtake)."
+          },
+          "transaction_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Date when the transaction took place."
+          },
+          "transaction_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "A URL linking to more information about the transaction."
+          }
+        },
+        "required": [
+          "credit_volume",
+          "price_per_credit",
+          "transaction_date"
+        ]
+      },
+      "description": "Transactions that are known to have taken place for a project, and associated price information."
+    },
+    "price_insights": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "patternProperties": {
+          "^x_[A-Za-z0-9_]+$": {
+            "description": "Custom price_insights extension property. Must start with x_.",
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "array",
+              "null"
+            ]
+          }
+        },
+        "properties": {
+          "vintage": {
+            "type": "#/$defs/vintage",
+            "description": "The vintage year of the credits being priced."
+          },
+          "credit_volume": {
+            "type": "number",
+            "description": "Benchmark number of credits being priced."
+          },
+          "price_per_credit": {
+            "$ref": "#/$defs/insightPrice",
+            "description": "Price per credit in the insight."
+          },
+          "insight_type": {
+            "$ref": "#/$defs/insightType"
+          },
+          "insight_kind": {
+            "type": "string",
+            "description": "Kind of price the insight reports on or estimates (e.g. bid, offer, retail, OTC)."
+          },
+          "insight_source": {
+            "type": "string",
+            "description": "Source of the price insight (e.g. name developer or marketplace who reported, name of data provider who estimated)."
+          }
+        },
+        "required": [
+          "price_per_credit",
+          "insight_type",
+          "insight_kind"
+        ]
+      },
+      "description": "Transactions that are known to have taken place for a project, and associated price information."
+    }
+  }
+}
