@@ -26,13 +26,13 @@ By leveraging both Issues and Discussions, we aim to ensure that feedback, suppo
 
 In the context of maintaining the carbon market schema project on GitHub, the following four roles are essential for ensuring effective collaboration, quality assurance, and transparent development:
 
-Administrator: Administrators oversee the overall management of the carbon market schema project on GitHub, ensuring that collaboration and operations run smoothly. They are responsible for configuring repository settings, managing permissions for other roles, and maintaining the integrity and security of the project. Administrators may also coordinate releases, resolve conflicts, and enforce compliance with workflow and documentation standards, providing essential leadership and support to the contributor community.
+- Administrator: Administrators oversee the overall management of the carbon market schema project on GitHub, ensuring that collaboration and operations run smoothly. They are responsible for configuring repository settings, managing permissions for other roles, and maintaining the integrity and security of the project. Administrators may also coordinate releases, resolve conflicts, and enforce compliance with workflow and documentation standards, providing essential leadership and support to the contributor community.
 
-Reviewer: Reviewers are responsible for assessing proposed changes, typically via pull requests, to ensure they meet the project's standards for accuracy, completeness, and style. They provide constructive feedback, request clarifications or improvements, and ultimately approve or reject changes before they are merged into the main branch. Reviewers play a key role in maintaining the integrity of the schema and ensuring that all updates are well-documented and thoroughly vetted.
+- Reviewer: Reviewers are responsible for assessing proposed changes, typically via pull requests, to ensure they meet the project's standards for accuracy, completeness, and style. They provide constructive feedback, request clarifications or improvements, and ultimately approve or reject changes before they are merged into the main branch. Reviewers play a key role in maintaining the integrity of the schema and ensuring that all updates are well-documented and thoroughly vetted.
 
-Contributor: Contributors actively participate in developing the schema by creating new features, fixing bugs, or refining documentation. They work on dedicated branches, submit pull requests for their changes, and engage in discussions to address feedback from reviewers and other team members. Contributors are instrumental in driving the project forward and are expected to follow collaborative workflows, version control practices, and documentation standards.
+- Contributor: Contributors actively participate in developing the schema by creating new features, fixing bugs, or refining documentation. They work on dedicated branches, submit pull requests for their changes, and engage in discussions to address feedback from reviewers and other team members. Contributors are instrumental in driving the project forward and are expected to follow collaborative workflows, version control practices, and documentation standards.
 
-Viewer: Viewers primarily observe the project's progress, access documentation, and stay informed about ongoing developments. While they do not directly contribute code or documentation, viewers may participate in GitHub Issues and Discussions by asking questions, reporting problems, or suggesting ideas. Their engagement helps ensure the project remains accessible and responsive to broader community needs.
+- Viewer: Viewers primarily observe the project's progress, access documentation, and stay informed about ongoing developments. While they do not directly contribute code or documentation, viewers may participate in GitHub Issues and Discussions by asking questions, reporting problems, or suggesting ideas. Their engagement helps ensure the project remains accessible and responsive to broader community needs.
 
 It's worth noting, that Contributor and Reviewer roles can be assigned to one and the same user but Contributors should not be reviewing their own work.
 
@@ -44,19 +44,19 @@ Together, these roles support a collaborative and well-structured approach to pr
 
 The following workflow outlines the collaborative process for making changes to the carbon market schema, updating documentation, and merging approved updates into the main branch. Each role—Administrator, Reviewer, Contributor, and Viewer—has distinct responsibilities that ensure the project remains robust, transparent, and responsive to community needs.
 
-- Branch Creation and File Checkout
+1. Branch Creation and File Checkout
 The Contributor begins by creating a new branch from the main repository, ensuring their work remains isolated and traceable. The Administrator may assist in configuring branch permissions and verifying that the Contributor has access to necessary files and tools.
-- Schema and Documentation Updates
+2. Schema and Documentation Updates
 On the new branch, the Contributor makes targeted changes to the schema and updates accompanying documentation to reflect any modifications. This step includes refining features, resolving bugs, and ensuring all changes are accurately documented for future reference.
-- Committing and Pushing Changes
+3. Committing and Pushing Changes
 Upon completion, the Contributor commits their updates with clear messages and pushes the branch to the remote repository. Adherence to version control standards and descriptive commit logs is essential for maintaining transparency.
-- Pull Request Submission
+4. Pull Request Submission
 The Contributor initiates a pull request (PR), summarising the proposed changes and referencing updated documentation. This formal request signals readiness for review and invites feedback from the project team.
-- Review of Changes
+5. Review of Changes
 The Reviewer examines the pull request, assessing both code and documentation for accuracy, completeness, and alignment with project standards. Constructive feedback may be provided, and the Contributor addresses any requested revisions. The Reviewer ensures that Contributors do not review their own submissions, upholding impartiality.
-- Merging Approved Changes
+6. Merging Approved Changes
 Once the Reviewer is satisfied, they approve the pull request. The Administrator then finalises the merge into the main branch, updating repository settings as needed and coordinating any necessary releases or notifications.
-- Viewer Engagement and Feedback
+7. Viewer Engagement and Feedback
 Viewers observe the progress through GitHub Issues or Discussions, offering feedback, reporting potential problems, and suggesting future improvements. Their participation keeps the project accessible and ensures that updates are responsive to the wider community.
 
 In summary, this workflow fosters a collaborative environment where each role contributes to the quality and transparency of the carbon market schema. By following these structured steps, the project team ensures that updates are well-managed, thoroughly reviewed, and openly communicated to all stakeholders.
