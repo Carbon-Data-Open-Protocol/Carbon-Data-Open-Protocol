@@ -12,13 +12,13 @@ CDOP's Technical Working Group (TWG) began the schema development process by col
 
 Schemas are actively developed to ensure scalable data sharing across the industry. Contribution is actively encouraged through the contribution guidelines highlighted above. 
 
-The CDOP Schema can be found as an Excel file [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/CDOP_SCHEMA.xlsx).
+The CDOP Schema can be found as an Excel file [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/docs/CDOP_SCHEMA.xlsx).
 
-A summary of the status of the TWG work plan can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/CDOP_TWG_WORK_STATUS.pdf).
+A summary of the status of the TWG work plan can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/docs/CDOP%20Work%20Flow.md).
 
 A visual diagram of the CDOP Schema can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/CDOP%20Schema%20Visual%20Diagram.pdf).
 
-The enumerated values lists for the schema can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/CDOP%20Enumerated%20Values%20Lists.xlsx).
+The enumerated values lists for the schema can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/docs/CDOP%20Enumerated%20Values%20Lists.xlsx).
 
 Any other supporting documents and information can be found in the Wiki page of the repository, located [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/wiki).
 
