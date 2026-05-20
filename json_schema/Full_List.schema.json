@@ -1,0 +1,2056 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Full_List.schema.json",
+  "title": "Full List",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code of where the project is located and being developed",
+            "x-cdop-field-id": 1,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "country name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "English short name of where the project is located and being developed",
+            "x-cdop-field-id": 4,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geographical region code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code of where the project is located and being developed",
+            "x-cdop-field-id": 7,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geographical region name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code corresponding English name of where the project is located and being developed",
+            "x-cdop-field-id": 10,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "address line 1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 1 of where the project is located and being developed. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 13,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address line 2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 2 of where the project is located and being developed. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 14,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "alternative address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If a project doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information",
+            "x-cdop-field-id": 19,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country subdivision code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the project is located and being developed",
+            "x-cdop-field-id": 22,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "country subdivision name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision name of where the project is located and being developed",
+            "x-cdop-field-id": 25,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "city": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The city where the project is located and being developed",
+            "x-cdop-field-id": 28,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "postal code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The postal code where the project is located and being developed",
+            "x-cdop-field-id": 31,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_name": {
+          "type": "string",
+          "description": "The name of the project.",
+          "x-cdop-field-id": 52,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_id_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The type of project id (e.g., registry id, universally unique identifier id)",
+            "x-cdop-field-id": 53,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_id": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The project's identification code.",
+            "x-cdop-field-id": 54,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_description": {
+          "type": "string",
+          "description": "Description of the mitigation activities undertaken by the project, preferably the registry’s public description.",
+          "x-cdop-field-id": 55,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_design_document_link": {
+          "type": "string",
+          "description": "The link to the project's project design documentation (PDD).",
+          "x-cdop-field-id": 56,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "exemptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If relevant, any approved deviations from methodology requirements granted by the registry.",
+            "x-cdop-field-id": 57,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "program_type": {
+          "type": "string",
+          "description": "If referring to a program of activities, specify the type of program.",
+          "x-cdop-field-id": 58,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "activity_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If the project (activity) is part of a broader program of activities, specify which type of project the activity is.",
+            "x-cdop-field-id": 59,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "mitigation_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The type of offset the project is expected to generate.",
+            "x-cdop-field-id": 60,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_sector": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The sector in which the project is developed and the mitigation activities conducted.",
+            "x-cdop-field-id": 61,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The emission reduction or sequestration pathway of project.",
+            "x-cdop-field-id": 62,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "current_registry_project_link": {
+          "type": "string",
+          "description": "The link to the project on its current registry.",
+          "x-cdop-field-id": 63,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_status": {
+          "type": "string",
+          "description": "The current status of the project.",
+          "x-cdop-field-id": 64,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_status_updated_at": {
+          "type": "string",
+          "format": "date",
+          "description": "The date of the current status of the project",
+          "x-cdop-field-id": 65,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "number_of_crediting_periods": {
+          "type": "integer",
+          "description": "The total number of crediting periods assigned to the project over its lifetime as defined by the methodology or registry.",
+          "x-cdop-field-id": 66,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "crediting_period_length": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "The duration (in years) of each crediting period granted to the project under the applicable methodology or registry.",
+            "x-cdop-field-id": 67,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_registration_date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date the project was registered on the registry.",
+          "x-cdop-field-id": 68,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_list_date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date the project was first listed on a registry.",
+          "x-cdop-field-id": 69,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "other_project_documentation_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The type(s) of additional project documentation.",
+            "x-cdop-field-id": 70,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "other_project_documentation_link": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The link(s) to the project's additional project documentation.",
+            "x-cdop-field-id": 71,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "country code",
+        "country name",
+        "country subdivision code",
+        "country subdivision name",
+        "geographical region code",
+        "geographical region name",
+        "project_description",
+        "project_name",
+        "project_status",
+        "project_status_updated_at"
+      ]
+    },
+    "project stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 2,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "country name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "English short name of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 5,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geographical region code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 8,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "geographical region name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code corresponding English name of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 11,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address line 1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 1 of where the project stakeholder has their headquarters. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 15,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address line 2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 2 of where the project stakeholder has their headquarters. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 16,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "alternative address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If a project stakeholder doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information",
+            "x-cdop-field-id": 20,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country subdivision code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 23,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country subdivision name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision name of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 26,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "city": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The city where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 29,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "postal code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The postal code where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 32,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_developer_name": {
+          "type": "string",
+          "description": "The name of the primary developer of the project.",
+          "x-cdop-field-id": 72,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_developer_website": {
+          "type": "string",
+          "description": "The website of the primary developer of the project.",
+          "x-cdop-field-id": 73,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_developer_email": {
+          "type": "string",
+          "description": "The email of the primary developer of the project.",
+          "x-cdop-field-id": 74,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_developer_phone": {
+          "type": "string",
+          "description": "The phone number of the primary developer of the project.",
+          "x-cdop-field-id": 75,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_stakeholder_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The role of the stakeholder in relation to the project (e.g., verifier, technical consultant, etc.).",
+            "x-cdop-field-id": 76,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_stakeholder_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The name of the selected stakeholder type.",
+            "x-cdop-field-id": 77,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_stakeholder_website": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The website of the selected stakeholder type.",
+            "x-cdop-field-id": 78,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_stakeholder_email": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The email address of the selected stakeholder type.",
+            "x-cdop-field-id": 79,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "project_stakeholder_phone": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The phone number of the selected stakeholder type.",
+            "x-cdop-field-id": 80,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "country code",
+        "country name",
+        "project_developer_name"
+      ]
+    },
+    "facility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code of where the facility is located",
+            "x-cdop-field-id": 3,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "English short name of where the facility is located",
+            "x-cdop-field-id": 6,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "geographical region code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code of where the facility is located",
+            "x-cdop-field-id": 9,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "geographical region name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code corresponding English name of where the facility is located",
+            "x-cdop-field-id": 12,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address line 1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 1 of where the facility is located. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 17,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address line 2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 2 of where the facility is located. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 18,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "alternative address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If a facility doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information",
+            "x-cdop-field-id": 21,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country subdivision code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the facility is located",
+            "x-cdop-field-id": 24,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country subdivision name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision name of where the facility is located",
+            "x-cdop-field-id": 27,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "city": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The city where the facility is located",
+            "x-cdop-field-id": 30,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "postal code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The postal code where the facility is located",
+            "x-cdop-field-id": 33,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": []
+    },
+    "geolocation file": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file name": {
+          "type": "string",
+          "description": "Name of the GIS file",
+          "x-cdop-field-id": 34,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer, registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file format": {
+          "type": "string",
+          "description": "Format of  the GIS file",
+          "x-cdop-field-id": 35,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer, registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "validity start date": {
+          "type": "string",
+          "description": "Validity start date",
+          "x-cdop-field-id": 36,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "validity end date": {
+          "type": "string",
+          "description": "Validity end date",
+          "x-cdop-field-id": 37,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file status": {
+          "type": "string",
+          "description": "Status of the GIS file",
+          "x-cdop-field-id": 38,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file created on": {
+          "type": "string",
+          "description": "Time stamp for when file was created",
+          "x-cdop-field-id": 39,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file edited on": {
+          "type": "string",
+          "description": "Time stamp for when file was edited",
+          "x-cdop-field-id": 40,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file deleted on": {
+          "type": "string",
+          "description": "Time stamp for when file was deleted",
+          "x-cdop-field-id": 41,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "area type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Area type of GIS file",
+            "x-cdop-field-id": 42,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geometry type": {
+          "type": "string",
+          "description": "Geometry type of GIS file",
+          "x-cdop-field-id": 43,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "file created on",
+        "file format",
+        "file name",
+        "file status",
+        "validity start date"
+      ]
+    },
+    "crediting program": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "crediting_program_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The name of the carbon crediting program issuing the project's credits",
+            "x-cdop-field-id": 44,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "standard_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The name of the standard associated with the project's credits.",
+            "x-cdop-field-id": 45,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "initial_standard_version": {
+          "type": "string",
+          "description": "The version of the standard under which the project was initially registered.",
+          "x-cdop-field-id": 46,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "current_standard_version": {
+          "type": "string",
+          "description": "The version of the standard under which the project is currently registered.",
+          "x-cdop-field-id": 47,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": []
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "methodology": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The methodology that the project is following.",
+            "x-cdop-field-id": 48,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "*..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          }
+        },
+        "initial_methodology_version": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The version of the methodology initially used for the first credit issuance.",
+            "x-cdop-field-id": 49,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "current_methodology_version": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The version of the methodology currently being used.",
+            "x-cdop-field-id": 50,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "current_methodology_document": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The link to the documentation for the current methodology being used.",
+            "x-cdop-field-id": 51,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": []
+    },
+    "registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "origin_registry": {
+          "type": "string",
+          "description": "The name of the project's original registry (if it has moved registries)",
+          "x-cdop-field-id": 81,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "current_registry": {
+          "type": "string",
+          "description": "The name of the project's current registry.",
+          "x-cdop-field-id": 82,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "previous_project_crediting_program_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Select which crediting program(s) the project has recieved or seeking/has receieved or sought credits from",
+            "x-cdop-field-id": 135,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "previous_project_registration_ID": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "Registration number for project under other crediting program",
+            "x-cdop-field-id": 136,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "previous_project_rejection_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the project has been rejected by another crediting program",
+            "x-cdop-field-id": 137,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "previous_project_rejection_reason": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Program name(s), reason(s) and date of rejection",
+            "x-cdop-field-id": 138,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "current_project_issuance_registry": {
+          "type": "string",
+          "description": "Registry in which the project is currently issuing under",
+          "x-cdop-field-id": 140,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": []
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "validation_body_name": {
+          "type": "string",
+          "description": "The name of the validation body that validated the project (if applicable).",
+          "x-cdop-field-id": 83,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "validation_date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date on which the project was validated (if applicable).",
+          "x-cdop-field-id": 84,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "validation_report": {
+          "type": "string",
+          "description": "The link to the project's validation report (if applicable).",
+          "x-cdop-field-id": 85,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": []
+    },
+    "Issuance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "forecast_annual_issuance": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "The estimated annual credit generation of the project before starting issuance, per year of the project lifetime",
+            "x-cdop-field-id": 86,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "forecast_year": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Each year aligned with forecast annual issuance",
+            "x-cdop-field-id": 87,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "estimated_crediting_period_start": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated end year of issuance period",
+          "x-cdop-field-id": 94,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimated_crediting_period_end": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated first year of issuance period, historical if an established project",
+          "x-cdop-field-id": 95,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "forecast_total_issuance": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "The forecasted total lifetime credit generation volume of the project",
+            "x-cdop-field-id": 96,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "Batch_Identifier": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Global unique identifier for the batch of credits issued",
+            "x-cdop-field-id": 97,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "issuance_URL": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "link to the issuance page on registry",
+            "x-cdop-field-id": 98,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "date_of_issuance": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that credits were issued",
+            "x-cdop-field-id": 99,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "date_of_verification": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that the issued credits were verified",
+            "x-cdop-field-id": 100,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_period_start": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date of credit verification period",
+            "x-cdop-field-id": 101,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_period_end": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "End date of credit verification period",
+            "x-cdop-field-id": 102,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "batch_issued_volume": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "the total volume of credits issued in batch",
+            "x-cdop-field-id": 103,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "cumulative_issued_volume": {
+          "type": "number",
+          "description": "the total volume of credits issued to date",
+          "x-cdop-field-id": 104,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "issuance_status": {
+          "type": "string",
+          "description": "Indicate the status of project issuance",
+          "x-cdop-field-id": 105,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "forecast_annual_issuance",
+        "forecast_total_issuance",
+        "forecast_year"
+      ]
+    },
+    "Project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Project_Identifier": {
+          "type": "string",
+          "description": "Global unique identifier for the project",
+          "x-cdop-field-id": 88,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "auditor_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The organizational name of project's auditor (e.g., VBB)",
+            "x-cdop-field-id": 89,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "auditor_site_visit_start_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "End date for Auditor (e.g., VVB) site visit",
+            "x-cdop-field-id": 90,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "auditor_site_visit_end_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date for Auditor (e.g., VVB) site visit",
+            "x-cdop-field-id": 91,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_report_url": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Enter the link to the auditor's verification report",
+            "x-cdop-field-id": 92,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_report_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Enter the date the verification report was issued",
+            "x-cdop-field-id": 93,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "attestations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "list of attestations (e.g, child labor, labor worker attestation), if verified credentials are supported",
+            "x-cdop-field-id": 106,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "carbon_concession_contract_length": {
+          "type": "boolean",
+          "description": "Indicate whether the concession contract is at least the same length as the crediting period",
+          "x-cdop-field-id": 107,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "carbon_concession_contract": {
+          "type": "string",
+          "description": "Enter the carbon concession contract",
+          "x-cdop-field-id": 108,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "carbon_credit_ownership_attestation": {
+          "type": "boolean",
+          "description": "Indicate possession of carbon credit ownership documentation",
+          "x-cdop-field-id": 109,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "carbon_credit_ownership_documentation": {
+          "type": "string",
+          "description": "Enter the link to the contract of ownership.",
+          "x-cdop-field-id": 110,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "child_labor_attestation": {
+          "type": "boolean",
+          "description": "Project complies with age-related legal frameworks. Indicates compliance with the ILO Convention 138 Minimum Age Convention 1973 and/or national labor laws related to minimum age",
+          "x-cdop-field-id": 111,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "child_labor_documentation": {
+          "type": "string",
+          "description": "Evidence of compliance with age-related legal frameworks and ILO Convention 148 Minimum Age Convention 1973 and/or national labor laws related to minimum age",
+          "x-cdop-field-id": 112,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "community_frameworks": {
+          "type": "string",
+          "description": "Summarize measures taken to comply with frameworks governing the rights of Indigenous, tribal, and local communities",
+          "x-cdop-field-id": 113,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "cultural_site_borders": {
+          "type": "boolean",
+          "description": "The project site includes or borders archaeological sites or districts listed in national or international registries of historical or cultural significance",
+          "x-cdop-field-id": 114,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "cultural_site_designation": {
+          "type": "boolean",
+          "description": "Registry recognition of cultral site designation",
+          "x-cdop-field-id": 115,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "labor_worker_attestation": {
+          "type": "boolean",
+          "description": "Statement of compliance with international standards-compliant code of conduct or other labor rights documentation",
+          "x-cdop-field-id": 116,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "labor_worker_documentation": {
+          "type": "string",
+          "description": "Enter the link to evidence of international standards-compliant code of conduct or other labor rights documentation",
+          "x-cdop-field-id": 117,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "land_right_attestation": {
+          "type": "boolean",
+          "description": "Indicate the possesion of evidence of land rights",
+          "x-cdop-field-id": 118,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "land_rights_documentation": {
+          "type": "string",
+          "description": "Enter the link to evidence of land rights",
+          "x-cdop-field-id": 119,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "land_ownership_attestation": {
+          "type": "boolean",
+          "description": "Indicate the possesion of evidence of land ownership",
+          "x-cdop-field-id": 120,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "land_ownership_documentation": {
+          "type": "string",
+          "description": "Land or facility ownership documentation",
+          "x-cdop-field-id": 121,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "legal_compliance_attestation": {
+          "type": "boolean",
+          "description": "Indicate posession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
+          "x-cdop-field-id": 122,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "legal_compliance_documentation": {
+          "type": "string",
+          "description": "Enter the link to the statement of compliance with all applicable national laws",
+          "x-cdop-field-id": 123,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "previous_project_crediting_program": {
+          "type": "boolean",
+          "description": "Indicate whether project is receiving or seeking credit for reductions and removals under another crediting program, or has done previously",
+          "x-cdop-field-id": 134,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "project_governance_structure": {
+          "type": "string",
+          "description": "How the project is governed; all stakeholders involved and systems that guide the organization's decision-making and operations",
+          "x-cdop-field-id": 139,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "public_comment": {
+          "type": "boolean",
+          "description": "Indicate whether there has been any public comment on the project",
+          "x-cdop-field-id": 141,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "public_comment_summary": {
+          "type": "string",
+          "description": "Summary of outcomes of public comment procress",
+          "x-cdop-field-id": 142,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "carbon_credit_ownership_attestation",
+        "carbon_credit_ownership_documentation",
+        "legal_compliance_attestation",
+        "legal_compliance_documentation",
+        "project_governance_structure"
+      ]
+    },
+    "Project stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "list_of_landowner(s)": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "List all landowners within project activity, such as farmers",
+            "x-cdop-field-id": 124,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "*..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          }
+        },
+        "organization_team_experience": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Describe an overview of the team leads' experience and technical expertise, the details and results of projects the organization(s)has developed (if applicable), and any other significant historical aspects of the Project Proponent organization. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 125,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_role": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Organization role. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 126,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_project_employees": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "Full-time and part-time employees and contractors who directly work on the project. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 127,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_employees": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "Full-time and part-time employees who work at the organization (not directly on the project)",
+            "x-cdop-field-id": 128,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_founding_year": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Organization founding year. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 129,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_mission": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Summarize your organization’s purpose, values, and goals related to climate action. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 130,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_legal_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Legal entity name of the organisation. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 131,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_project_experience": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "The total number of projects developed/owned/invested in by the organization. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 132,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "organization_URL": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A verified URL for information about the organization. Carbon credit owners details is the minimum requirement for this field.",
+            "x-cdop-field-id": 133,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project stakeholder",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "organization_URL",
+        "organization_employees",
+        "organization_founding_year",
+        "organization_legal_name",
+        "organization_mission",
+        "organization_project_employees",
+        "organization_project_experience",
+        "organization_role",
+        "organization_team_experience"
+      ]
+    }
+  },
+  "required": [
+    "Issuance",
+    "Project",
+    "Project stakeholder",
+    "crediting program",
+    "facility",
+    "geolocation file",
+    "methodology",
+    "project",
+    "project stakeholder",
+    "registry",
+    "validation"
+  ]
+}
