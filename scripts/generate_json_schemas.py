@@ -70,6 +70,15 @@ def safe_filename(value):
     return value.strip("_") or "schema"
 
 
+def normalize_schema_key(value):
+    if value is None:
+        return ""
+
+    value = str(value).strip().lower()
+    value = re.sub(r"[^a-z0-9]+", "_", value)
+    return value.strip("_")
+
+
 def map_type(datatype):
     if datatype is None:
         return "string"
@@ -240,6 +249,14 @@ def build_field_schema(record):
     return base_schema
 
 
+def register_normalized_key(seen_keys, normalized_key, original_value):
+    existing_value = seen_keys.get(normalized_key)
+
+    if existing_value is None:
+        seen_keys[normalized_key] = original_value
+    return existing_value
+
+
 def worksheet_to_json_schema(ws):
     rows = list(ws.iter_rows(values_only=True))
 
@@ -271,6 +288,8 @@ def worksheet_to_json_schema(ws):
     }
 
     required_by_entity = {}
+    entity_name_map = {}
+    field_name_maps_by_entity = {}
 
     for row in rows[1:]:
         record = {
@@ -285,8 +304,29 @@ def worksheet_to_json_schema(ws):
         if not associated_entity or not field_name:
             continue
 
-        entity_key = str(associated_entity).strip()
-        field_key = str(field_name).strip()
+        associated_entity = str(associated_entity).strip()
+        field_name = str(field_name).strip()
+
+        entity_key = normalize_schema_key(associated_entity)
+        field_key = normalize_schema_key(field_name)
+
+        if not entity_key:
+            raise ValueError(
+                f"Sheet '{ws.title}' has an associated_entity value that cannot be "
+                f"normalized into a JSON property name: '{associated_entity}'."
+            )
+
+        if not field_key:
+            raise ValueError(
+                f"Sheet '{ws.title}' has a field_name value that cannot be "
+                f"normalized into a JSON property name: '{field_name}'."
+            )
+
+        register_normalized_key(
+            entity_name_map,
+            entity_key,
+            associated_entity,
+        )
 
         if entity_key not in schema["properties"]:
             schema["properties"][entity_key] = {
@@ -296,6 +336,13 @@ def worksheet_to_json_schema(ws):
                 "required": [],
             }
             required_by_entity[entity_key] = set()
+            field_name_maps_by_entity[entity_key] = {}
+
+        register_normalized_key(
+            field_name_maps_by_entity[entity_key],
+            field_key,
+            field_name,
+        )
 
         schema["properties"][entity_key]["properties"][field_key] = build_field_schema(record)
 
