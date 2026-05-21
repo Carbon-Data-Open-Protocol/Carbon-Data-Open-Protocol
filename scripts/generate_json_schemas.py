@@ -352,7 +352,11 @@ def worksheet_to_json_schema(ws):
     for entity_key, required_fields in required_by_entity.items():
         schema["properties"][entity_key]["required"] = sorted(required_fields)
 
-    schema["required"] = sorted(schema["properties"].keys())
+    schema["required"] = sorted(
+        entity_key
+        for entity_key, required_fields in required_by_entity.items()
+        if required_fields
+    )
 
     return schema
 
