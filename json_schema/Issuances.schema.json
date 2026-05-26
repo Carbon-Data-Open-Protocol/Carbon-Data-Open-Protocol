@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "Issuance": {
+    "issuance": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -79,7 +79,7 @@
           },
           "minItems": 1
         },
-        "Batch_Identifier": {
+        "batch_identifier": {
           "type": "array",
           "items": {
             "type": "string",
@@ -94,7 +94,7 @@
           },
           "minItems": 0
         },
-        "issuance_URL": {
+        "issuance_url": {
           "type": "array",
           "items": {
             "type": "string",
@@ -217,11 +217,11 @@
         "forecast_year"
       ]
     },
-    "Project": {
+    "project": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "Project_Identifier": {
+        "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 88,
@@ -315,7 +315,6 @@
     }
   },
   "required": [
-    "Issuance",
-    "Project"
+    "issuance"
   ]
 }

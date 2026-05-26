@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "Project": {
+    "project": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -264,11 +264,11 @@
         "project_governance_structure"
       ]
     },
-    "Project stakeholder": {
+    "project_stakeholder": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "list_of_landowner(s)": {
+        "list_of_landowner_s": {
           "type": "array",
           "items": {
             "type": "string",
@@ -403,7 +403,7 @@
           },
           "minItems": 1
         },
-        "organization_URL": {
+        "organization_url": {
           "type": "array",
           "items": {
             "type": "string",
@@ -420,7 +420,6 @@
         }
       },
       "required": [
-        "organization_URL",
         "organization_employees",
         "organization_founding_year",
         "organization_legal_name",
@@ -428,7 +427,8 @@
         "organization_project_employees",
         "organization_project_experience",
         "organization_role",
-        "organization_team_experience"
+        "organization_team_experience",
+        "organization_url"
       ]
     },
     "registry": {
@@ -450,7 +450,7 @@
           },
           "minItems": 0
         },
-        "previous_project_registration_ID": {
+        "previous_project_registration_id": {
           "type": "array",
           "items": {
             "type": "integer",
@@ -512,8 +512,7 @@
     }
   },
   "required": [
-    "Project",
-    "Project stakeholder",
-    "registry"
+    "project",
+    "project_stakeholder"
   ]
 }
