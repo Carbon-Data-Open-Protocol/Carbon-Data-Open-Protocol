@@ -13,7 +13,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "list of attestations (e.g, child labor, labor worker attestation), if verified credentials are supported",
+            "description": "list of attestations (e.g., child labor, labor worker attestation), if verified credentials are supported",
             "x-cdop-field-id": 106,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
@@ -147,7 +147,7 @@
         },
         "land_right_attestation": {
           "type": "boolean",
-          "description": "Indicate the possesion of evidence of land rights",
+          "description": "Indicate the possession of evidence of land rights",
           "x-cdop-field-id": 118,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -169,7 +169,7 @@
         },
         "land_ownership_attestation": {
           "type": "boolean",
-          "description": "Indicate the possesion of evidence of land ownership",
+          "description": "Indicate the possession of evidence of land ownership",
           "x-cdop-field-id": 120,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -191,7 +191,7 @@
         },
         "legal_compliance_attestation": {
           "type": "boolean",
-          "description": "Indicate posession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
+          "description": "Indicate possession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
           "x-cdop-field-id": 122,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
@@ -246,7 +246,7 @@
         },
         "public_comment_summary": {
           "type": "string",
-          "description": "Summary of outcomes of public comment procress",
+          "description": "Summary of outcomes of public comment process",
           "x-cdop-field-id": 142,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -440,7 +440,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Select which crediting program(s) the project has received or seeking/has receieved or sought credits from",
+            "description": "Select which crediting program(s) the project has received or seeking/has received or sought credits from",
             "x-cdop-field-id": 135,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
