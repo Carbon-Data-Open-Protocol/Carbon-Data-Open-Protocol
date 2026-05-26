@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "crediting program": {
+    "crediting_program": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -406,7 +406,7 @@
         "project_status_updated_at"
       ]
     },
-    "project stakeholder": {
+    "project_stakeholder": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -606,11 +606,7 @@
     }
   },
   "required": [
-    "crediting program",
-    "methodology",
     "project",
-    "project stakeholder",
-    "registry",
-    "validation"
+    "project_stakeholder"
   ]
 }
