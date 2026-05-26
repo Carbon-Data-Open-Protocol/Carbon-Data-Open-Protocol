@@ -631,7 +631,7 @@
         },
         "cultural_site_designation": {
           "type": "boolean",
-          "description": "Registry recognition of cultral site designation",
+          "description": "Registry recognition of cultural site designation",
           "x-cdop-field-id": 115,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -1079,19 +1079,20 @@
           },
           "minItems": 0
         },
-        "list_of_landowner_s": {
+        "list_of_landowners": {
           "type": "array",
           "items": {
             "type": "string",
             "description": "List all landowners within project activity, such as farmers",
             "x-cdop-field-id": 124,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "*..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
             "x-cdop-mutability": "mutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP"
-          }
+          },
+          "minItems": 0
         },
         "organization_team_experience": {
           "type": "array",
@@ -1614,12 +1615,13 @@
             "description": "The methodology that the project is following.",
             "x-cdop-field-id": 48,
             "x-cdop-pre-issuance-inclusion": "yes",
-            "x-cdop-cardinality": "*..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
             "x-cdop-mutability": "Immutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP"
-          }
+          },
+          "minItems": 0
         },
         "initial_methodology_version": {
           "type": "array",
@@ -1849,7 +1851,7 @@
         "estimated_crediting_period_start": {
           "type": "string",
           "format": "date",
-          "description": "Estimated end year of issuance period",
+          "description": "Estimated first year of issuance period, historical if an established project",
           "x-cdop-field-id": 94,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -1861,7 +1863,7 @@
         "estimated_crediting_period_end": {
           "type": "string",
           "format": "date",
-          "description": "Estimated first year of issuance period, historical if an established project",
+          "description": "Estimated end year of issuance period",
           "x-cdop-field-id": 95,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",

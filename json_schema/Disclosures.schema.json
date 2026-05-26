@@ -114,7 +114,7 @@
         },
         "cultural_site_designation": {
           "type": "boolean",
-          "description": "Registry recognition of cultral site designation",
+          "description": "Registry recognition of cultural site designation",
           "x-cdop-field-id": 115,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -268,19 +268,20 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "list_of_landowner_s": {
+        "list_of_landowners": {
           "type": "array",
           "items": {
             "type": "string",
             "description": "List all landowners within project activity, such as farmers",
             "x-cdop-field-id": 124,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "*..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
             "x-cdop-mutability": "mutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP"
-          }
+          },
+          "minItems": 0
         },
         "organization_team_experience": {
           "type": "array",
@@ -439,7 +440,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Select which crediting program(s) the project has recieved or seeking/has receieved or sought credits from",
+            "description": "Select which crediting program(s) the project has received or seeking/has receieved or sought credits from",
             "x-cdop-field-id": 135,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
