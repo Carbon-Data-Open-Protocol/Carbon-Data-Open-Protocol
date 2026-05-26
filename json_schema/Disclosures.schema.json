@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "Project": {
+    "project": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -13,7 +13,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "list of attestations (e.g, child labor, labor worker attestation), if verified credentials are supported",
+            "description": "list of attestations (e.g., child labor, labor worker attestation), if verified credentials are supported",
             "x-cdop-field-id": 106,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
@@ -114,7 +114,7 @@
         },
         "cultural_site_designation": {
           "type": "boolean",
-          "description": "Registry recognition of cultral site designation",
+          "description": "Registry recognition of cultural site designation",
           "x-cdop-field-id": 115,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -147,7 +147,7 @@
         },
         "land_right_attestation": {
           "type": "boolean",
-          "description": "Indicate the possesion of evidence of land rights",
+          "description": "Indicate the possession of evidence of land rights",
           "x-cdop-field-id": 118,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -169,7 +169,7 @@
         },
         "land_ownership_attestation": {
           "type": "boolean",
-          "description": "Indicate the possesion of evidence of land ownership",
+          "description": "Indicate the possession of evidence of land ownership",
           "x-cdop-field-id": 120,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -191,7 +191,7 @@
         },
         "legal_compliance_attestation": {
           "type": "boolean",
-          "description": "Indicate posession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
+          "description": "Indicate possession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
           "x-cdop-field-id": 122,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
@@ -246,7 +246,7 @@
         },
         "public_comment_summary": {
           "type": "string",
-          "description": "Summary of outcomes of public comment procress",
+          "description": "Summary of outcomes of public comment process",
           "x-cdop-field-id": 142,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -264,23 +264,24 @@
         "project_governance_structure"
       ]
     },
-    "Project stakeholder": {
+    "project_stakeholder": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "list_of_landowner(s)": {
+        "list_of_landowners": {
           "type": "array",
           "items": {
             "type": "string",
             "description": "List all landowners within project activity, such as farmers",
             "x-cdop-field-id": 124,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "*..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
             "x-cdop-mutability": "mutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP"
-          }
+          },
+          "minItems": 0
         },
         "organization_team_experience": {
           "type": "array",
@@ -403,7 +404,7 @@
           },
           "minItems": 1
         },
-        "organization_URL": {
+        "organization_url": {
           "type": "array",
           "items": {
             "type": "string",
@@ -420,7 +421,6 @@
         }
       },
       "required": [
-        "organization_URL",
         "organization_employees",
         "organization_founding_year",
         "organization_legal_name",
@@ -428,7 +428,8 @@
         "organization_project_employees",
         "organization_project_experience",
         "organization_role",
-        "organization_team_experience"
+        "organization_team_experience",
+        "organization_url"
       ]
     },
     "registry": {
@@ -439,7 +440,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Select which crediting program(s) the project has recieved or seeking/has receieved or sought credits from",
+            "description": "Select which crediting program(s) the project has received or seeking/has received or sought credits from",
             "x-cdop-field-id": 135,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
@@ -450,7 +451,7 @@
           },
           "minItems": 0
         },
-        "previous_project_registration_ID": {
+        "previous_project_registration_id": {
           "type": "array",
           "items": {
             "type": "integer",
@@ -512,8 +513,7 @@
     }
   },
   "required": [
-    "Project",
-    "Project stakeholder",
-    "registry"
+    "project",
+    "project_stakeholder"
   ]
 }

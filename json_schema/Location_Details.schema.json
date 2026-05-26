@@ -9,7 +9,7 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "country code": {
+        "country_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -24,7 +24,7 @@
           },
           "minItems": 1
         },
-        "country name": {
+        "country_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -39,7 +39,7 @@
           },
           "minItems": 1
         },
-        "geographical region code": {
+        "geographical_region_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -54,7 +54,7 @@
           },
           "minItems": 1
         },
-        "geographical region name": {
+        "geographical_region_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -69,7 +69,7 @@
           },
           "minItems": 1
         },
-        "address line 1": {
+        "address_line_1": {
           "type": "array",
           "items": {
             "type": "string",
@@ -84,7 +84,7 @@
           },
           "minItems": 0
         },
-        "address line 2": {
+        "address_line_2": {
           "type": "array",
           "items": {
             "type": "string",
@@ -99,7 +99,7 @@
           },
           "minItems": 0
         },
-        "alternative address": {
+        "alternative_address": {
           "type": "array",
           "items": {
             "type": "string",
@@ -114,7 +114,7 @@
           },
           "minItems": 0
         },
-        "country subdivision code": {
+        "country_subdivision_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -129,7 +129,7 @@
           },
           "minItems": 1
         },
-        "country subdivision name": {
+        "country_subdivision_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -159,7 +159,7 @@
           },
           "minItems": 0
         },
-        "postal code": {
+        "postal_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -176,19 +176,19 @@
         }
       },
       "required": [
-        "country code",
-        "country name",
-        "country subdivision code",
-        "country subdivision name",
-        "geographical region code",
-        "geographical region name"
+        "country_code",
+        "country_name",
+        "country_subdivision_code",
+        "country_subdivision_name",
+        "geographical_region_code",
+        "geographical_region_name"
       ]
     },
-    "project stakeholder": {
+    "project_stakeholder": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "country code": {
+        "country_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -203,7 +203,7 @@
           },
           "minItems": 1
         },
-        "country name": {
+        "country_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -218,7 +218,7 @@
           },
           "minItems": 1
         },
-        "geographical region code": {
+        "geographical_region_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -233,7 +233,7 @@
           },
           "minItems": 0
         },
-        "geographical region name": {
+        "geographical_region_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -248,7 +248,7 @@
           },
           "minItems": 0
         },
-        "address line 1": {
+        "address_line_1": {
           "type": "array",
           "items": {
             "type": "string",
@@ -263,7 +263,7 @@
           },
           "minItems": 0
         },
-        "address line 2": {
+        "address_line_2": {
           "type": "array",
           "items": {
             "type": "string",
@@ -278,7 +278,7 @@
           },
           "minItems": 0
         },
-        "alternative address": {
+        "alternative_address": {
           "type": "array",
           "items": {
             "type": "string",
@@ -293,7 +293,7 @@
           },
           "minItems": 0
         },
-        "country subdivision code": {
+        "country_subdivision_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -308,7 +308,7 @@
           },
           "minItems": 0
         },
-        "country subdivision name": {
+        "country_subdivision_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -338,7 +338,7 @@
           },
           "minItems": 0
         },
-        "postal code": {
+        "postal_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -355,15 +355,15 @@
         }
       },
       "required": [
-        "country code",
-        "country name"
+        "country_code",
+        "country_name"
       ]
     },
     "facility": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "country code": {
+        "country_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -378,7 +378,7 @@
           },
           "minItems": 0
         },
-        "country name": {
+        "country_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -393,7 +393,7 @@
           },
           "minItems": 0
         },
-        "geographical region code": {
+        "geographical_region_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -408,7 +408,7 @@
           },
           "minItems": 0
         },
-        "geographical region name": {
+        "geographical_region_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -423,7 +423,7 @@
           },
           "minItems": 0
         },
-        "address line 1": {
+        "address_line_1": {
           "type": "array",
           "items": {
             "type": "string",
@@ -438,7 +438,7 @@
           },
           "minItems": 0
         },
-        "address line 2": {
+        "address_line_2": {
           "type": "array",
           "items": {
             "type": "string",
@@ -453,7 +453,7 @@
           },
           "minItems": 0
         },
-        "alternative address": {
+        "alternative_address": {
           "type": "array",
           "items": {
             "type": "string",
@@ -468,7 +468,7 @@
           },
           "minItems": 0
         },
-        "country subdivision code": {
+        "country_subdivision_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -483,7 +483,7 @@
           },
           "minItems": 0
         },
-        "country subdivision name": {
+        "country_subdivision_name": {
           "type": "array",
           "items": {
             "type": "string",
@@ -513,7 +513,7 @@
           },
           "minItems": 0
         },
-        "postal code": {
+        "postal_code": {
           "type": "array",
           "items": {
             "type": "string",
@@ -531,11 +531,11 @@
       },
       "required": []
     },
-    "geolocation file": {
+    "geolocation_file": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "file name": {
+        "file_name": {
           "type": "string",
           "description": "Name of the GIS file",
           "x-cdop-field-id": 34,
@@ -546,7 +546,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "file format": {
+        "file_format": {
           "type": "string",
           "description": "Format of  the GIS file",
           "x-cdop-field-id": 35,
@@ -557,7 +557,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "validity start date": {
+        "validity_start_date": {
           "type": "string",
           "description": "Validity start date",
           "x-cdop-field-id": 36,
@@ -568,7 +568,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "validity end date": {
+        "validity_end_date": {
           "type": "string",
           "description": "Validity end date",
           "x-cdop-field-id": 37,
@@ -579,7 +579,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "file status": {
+        "file_status": {
           "type": "string",
           "description": "Status of the GIS file",
           "x-cdop-field-id": 38,
@@ -590,7 +590,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "file created on": {
+        "file_created_on": {
           "type": "string",
           "description": "Time stamp for when file was created",
           "x-cdop-field-id": 39,
@@ -601,7 +601,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "file edited on": {
+        "file_edited_on": {
           "type": "string",
           "description": "Time stamp for when file was edited",
           "x-cdop-field-id": 40,
@@ -612,7 +612,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "file deleted on": {
+        "file_deleted_on": {
           "type": "string",
           "description": "Time stamp for when file was deleted",
           "x-cdop-field-id": 41,
@@ -623,7 +623,7 @@
           "x-cdop-public-private": "public",
           "x-cdop-schema": "CDOP"
         },
-        "area type": {
+        "area_type": {
           "type": "array",
           "items": {
             "type": "string",
@@ -638,7 +638,7 @@
           },
           "minItems": 1
         },
-        "geometry type": {
+        "geometry_type": {
           "type": "string",
           "description": "Geometry type of GIS file",
           "x-cdop-field-id": 43,
@@ -651,18 +651,17 @@
         }
       },
       "required": [
-        "file created on",
-        "file format",
-        "file name",
-        "file status",
-        "validity start date"
+        "file_created_on",
+        "file_format",
+        "file_name",
+        "file_status",
+        "validity_start_date"
       ]
     }
   },
   "required": [
-    "facility",
-    "geolocation file",
+    "geolocation_file",
     "project",
-    "project stakeholder"
+    "project_stakeholder"
   ]
 }

@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "Issuance": {
+    "issuance": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -43,7 +43,7 @@
         "estimated_crediting_period_start": {
           "type": "string",
           "format": "date",
-          "description": "Estimated end year of issuance period",
+          "description": "Estimated first year of issuance period, historical if an established project",
           "x-cdop-field-id": 94,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -55,7 +55,7 @@
         "estimated_crediting_period_end": {
           "type": "string",
           "format": "date",
-          "description": "Estimated first year of issuance period, historical if an established project",
+          "description": "Estimated end year of issuance period",
           "x-cdop-field-id": 95,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -79,7 +79,7 @@
           },
           "minItems": 1
         },
-        "Batch_Identifier": {
+        "batch_identifier": {
           "type": "array",
           "items": {
             "type": "string",
@@ -94,7 +94,7 @@
           },
           "minItems": 0
         },
-        "issuance_URL": {
+        "issuance_url": {
           "type": "array",
           "items": {
             "type": "string",
@@ -217,11 +217,11 @@
         "forecast_year"
       ]
     },
-    "Project": {
+    "project": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "Project_Identifier": {
+        "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 88,
@@ -315,7 +315,6 @@
     }
   },
   "required": [
-    "Issuance",
-    "Project"
+    "issuance"
   ]
 }
