@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Issuances.schema.json",
+  "title": "Issuances",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Issuance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "forecast_annual_issuance": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "The estimated annual credit generation of the project before starting issuance, per year of the project lifetime",
+            "x-cdop-field-id": 86,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "forecast_year": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Each year aligned with forecast annual issuance",
+            "x-cdop-field-id": 87,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "estimated_crediting_period_start": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated end year of issuance period",
+          "x-cdop-field-id": 94,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimated_crediting_period_end": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated first year of issuance period, historical if an established project",
+          "x-cdop-field-id": 95,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "forecast_total_issuance": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "The forecasted total lifetime credit generation volume of the project",
+            "x-cdop-field-id": 96,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "Batch_Identifier": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Global unique identifier for the batch of credits issued",
+            "x-cdop-field-id": 97,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "issuance_URL": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "link to the issuance page on registry",
+            "x-cdop-field-id": 98,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "date_of_issuance": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that credits were issued",
+            "x-cdop-field-id": 99,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "date_of_verification": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that the issued credits were verified",
+            "x-cdop-field-id": 100,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_period_start": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date of credit verification period",
+            "x-cdop-field-id": 101,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_period_end": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "End date of credit verification period",
+            "x-cdop-field-id": 102,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "batch_issued_volume": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "the total volume of credits issued in batch",
+            "x-cdop-field-id": 103,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "cumulative_issued_volume": {
+          "type": "number",
+          "description": "the total volume of credits issued to date",
+          "x-cdop-field-id": 104,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "issuance_status": {
+          "type": "string",
+          "description": "Indicate the status of project issuance",
+          "x-cdop-field-id": 105,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "forecast_annual_issuance",
+        "forecast_total_issuance",
+        "forecast_year"
+      ]
+    },
+    "Project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Project_Identifier": {
+          "type": "string",
+          "description": "Global unique identifier for the project",
+          "x-cdop-field-id": 88,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "auditor_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The organizational name of project's auditor (e.g., VBB)",
+            "x-cdop-field-id": 89,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "auditor_site_visit_start_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date for Auditor (e.g., VVB) site visit",
+            "x-cdop-field-id": 90,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "auditor_site_visit_end_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "End date for Auditor (e.g., VVB) site visit",
+            "x-cdop-field-id": 91,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_report_url": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Enter the link to the auditor's verification report",
+            "x-cdop-field-id": 92,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "verification_report_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Enter the date the verification report was issued",
+            "x-cdop-field-id": 93,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "Issuance",
+    "Project"
+  ]
+}
