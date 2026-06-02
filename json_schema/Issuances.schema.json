@@ -79,7 +79,7 @@
           },
           "minItems": 1
         },
-        "batch_identifier": {
+        "batch_Identifier": {
           "type": "array",
           "items": {
             "type": "string",
@@ -221,7 +221,7 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "project_identifier": {
+        "project_Identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 88,
@@ -313,8 +313,5 @@
       },
       "required": []
     }
-  },
-  "required": [
-    "issuance"
-  ]
+  }
 }
