@@ -606,11 +606,7 @@
     }
   },
   "required": [
-    "crediting_program",
-    "methodology",
     "project",
-    "project_stakeholder",
-    "registry",
-    "validation"
+    "project_stakeholder"
   ]
 }

@@ -514,7 +514,6 @@
   },
   "required": [
     "project",
-    "project_stakeholder",
-    "registry"
+    "project_stakeholder"
   ]
 }
