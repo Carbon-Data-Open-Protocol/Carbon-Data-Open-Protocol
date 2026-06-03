@@ -3,11 +3,11 @@
   "$id": "Issuances.schema.json",
   "title": "Issuances",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "issuance": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "forecast_annual_issuance": {
           "type": "array",
@@ -79,7 +79,7 @@
           },
           "minItems": 1
         },
-        "batch_Identifier": {
+        "batch_identifier": {
           "type": "array",
           "items": {
             "type": "string",
@@ -219,9 +219,9 @@
     },
     "project": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
-        "project_Identifier": {
+        "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 88,
