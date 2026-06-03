@@ -241,7 +241,10 @@ def add_field_path_property(root_schema, field_path, record):
     """
     parts = [part.strip() for part in str(field_path).split(".") if part.strip()]
     if len(parts) < 2:
-        return
+        raise ValueError(
+            f"Invalid field_path '{field_path}' for {record.get('associated_entity')}.{record.get('field_name')} "
+            f"(expected at least one '.' separator)"
+        )
 
     current = root_schema
 
