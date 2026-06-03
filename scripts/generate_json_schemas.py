@@ -298,7 +298,7 @@ def add_parent_field_property(root_schema, record):
             "type": "array",
             "items": {
                 "type": "object",
-                "additionalProperties": False,
+                "additionalProperties": True,
                 "properties": {},
                 "required": [],
             },
