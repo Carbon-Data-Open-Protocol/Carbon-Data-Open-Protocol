@@ -293,6 +293,21 @@
           },
           "minItems": 0
         },
+        "country_subdivision_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 23,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
         "country_subdivision_name": {
           "type": "array",
           "items": {
@@ -504,28 +519,6 @@
             "type": "string",
             "description": "The postal code where the facility is located",
             "x-cdop-field-id": 33,
-            "x-cdop-pre-issuance-inclusion": "yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "project developer, registry",
-            "x-cdop-mutability": "immutable",
-            "x-cdop-public-private": "private",
-            "x-cdop-schema": "CDOP"
-          },
-          "minItems": 0
-        }
-      },
-      "required": []
-    },
-    "project stakeholder": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "country_subdivision_code": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
-            "x-cdop-field-id": 23,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer, registry",

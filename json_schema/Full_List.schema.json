@@ -437,7 +437,7 @@
           },
           "minItems": 0
         },
-        "project_Identifier": {
+        "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 88,
@@ -894,6 +894,21 @@
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 23,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
             "x-cdop-mutability": "immutable",
             "x-cdop-public-private": "private",
             "x-cdop-schema": "CDOP"
@@ -1403,28 +1418,6 @@
       },
       "required": []
     },
-    "project stakeholder": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "country_subdivision_code": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
-            "x-cdop-field-id": 23,
-            "x-cdop-pre-issuance-inclusion": "yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "project developer, registry",
-            "x-cdop-mutability": "immutable",
-            "x-cdop-public-private": "private",
-            "x-cdop-schema": "CDOP"
-          },
-          "minItems": 0
-        }
-      },
-      "required": []
-    },
     "geolocation_file": {
       "type": "object",
       "additionalProperties": true,
@@ -1894,7 +1887,7 @@
           },
           "minItems": 1
         },
-        "batch_Identifier": {
+        "batch_identifier": {
           "type": "array",
           "items": {
             "type": "string",
