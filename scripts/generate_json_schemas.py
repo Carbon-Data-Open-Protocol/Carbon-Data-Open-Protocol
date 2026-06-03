@@ -293,7 +293,7 @@ def add_parent_field_property(root_schema, record):
 
         return
 
-    parent_field = str(parent_field).strip()
+    parent_field = normalize_header(parent_field)
     parent_schema = entity_schema["properties"].get(parent_field)
 
     if parent_schema is None:
