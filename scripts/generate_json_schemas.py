@@ -187,7 +187,7 @@ def build_field_schema(record):
     if datatype == "array" and item_type == "object":
         base_schema = {
             "type": "object",
-            "additionalProperties": False,
+            "additionalProperties": True,
             "properties": {},
             "required": [],
         }
@@ -201,7 +201,7 @@ def ensure_object_property(parent_schema, property_name):
     if property_name not in props:
         props[property_name] = {
             "type": "object",
-            "additionalProperties": False,
+            "additionalProperties": True,
             "properties": {},
             "required": [],
         }
@@ -222,7 +222,7 @@ def get_array_items_schema(array_schema):
 
     items = array_schema.setdefault("items", {
         "type": "object",
-        "additionalProperties": False,
+        "additionalProperties": True,
         "properties": {},
         "required": [],
     })
@@ -263,7 +263,7 @@ def add_field_path_property(root_schema, field_path, record):
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "additionalProperties": False,
+                        "additionalProperties": True,
                         "properties": {},
                         "required": [],
                     },
@@ -331,7 +331,7 @@ def worksheet_to_json_schema(ws):
         "$id": f"{safe_filename(ws.title)}.schema.json",
         "title": ws.title,
         "type": "object",
-        "additionalProperties": False,
+        "additionalProperties": True,
         "properties": {},
         "required": [],
     }
