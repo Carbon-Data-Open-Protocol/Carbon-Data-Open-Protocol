@@ -55,7 +55,7 @@ The generated schemas allow undeclared properties at the top level and inside ea
 Recommended action:
 
 - additional fields in your payload will not cause validation failures
-- a set prefix may be useful for your own documentation, but is not required
+- a prefix may be useful for your own documentation, but is not required
 - you may still want to document or constrain extra fields in your own application logic if stricter control is needed
 
 ### 4. Required top-level objects are now enforced
