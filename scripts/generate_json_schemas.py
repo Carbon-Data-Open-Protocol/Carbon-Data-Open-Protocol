@@ -276,8 +276,8 @@ def add_field_path_property(root_schema, field_path, record):
 
 
 def add_parent_field_property(root_schema, record):
-    entity = str(record.get("associated_entity")).strip()
-    field_name = str(record.get("field_name")).strip()
+    entity = normalize_header(record.get("associated_entity"))
+    field_name = normalize_header(record.get("field_name"))
     parent_field = record.get("parent_field")
 
     entity_schema = ensure_object_property(root_schema, entity)
