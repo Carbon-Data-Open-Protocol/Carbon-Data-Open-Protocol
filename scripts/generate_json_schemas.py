@@ -372,8 +372,7 @@ def worksheet_to_json_schema(ws):
         for record in records:
             add_parent_field_property(schema, record)
 
-   # schema["required"] = sorted(schema["properties"].keys())
-    schema.pop("required", None)
+    schema["required"] = sorted(schema["properties"].keys())
 
     return schema
 
