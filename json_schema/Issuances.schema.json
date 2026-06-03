@@ -3,11 +3,11 @@
   "$id": "Issuances.schema.json",
   "title": "Issuances",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "issuance": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "forecast_annual_issuance": {
           "type": "array",
@@ -219,7 +219,7 @@
     },
     "project": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "project_Identifier": {
           "type": "string",

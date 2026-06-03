@@ -3,11 +3,11 @@
   "$id": "Full_List.schema.json",
   "title": "Full List",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "project": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_code": {
           "type": "array",
@@ -793,7 +793,7 @@
     },
     "project_stakeholder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_code": {
           "type": "array",
@@ -1233,7 +1233,7 @@
     },
     "facility": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_code": {
           "type": "array",
@@ -1405,7 +1405,7 @@
     },
     "project stakeholder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_subdivision_code": {
           "type": "array",
@@ -1427,7 +1427,7 @@
     },
     "geolocation_file": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "file_name": {
           "type": "string",
@@ -1554,7 +1554,7 @@
     },
     "crediting_program": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "crediting_program_name": {
           "type": "array",
@@ -1613,7 +1613,7 @@
     },
     "methodology": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "methodology": {
           "type": "array",
@@ -1680,7 +1680,7 @@
     },
     "registry": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "origin_registry": {
           "type": "string",
@@ -1781,7 +1781,7 @@
     },
     "validation": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "validation_body_name": {
           "type": "string",
@@ -1822,7 +1822,7 @@
     },
     "issuance": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "forecast_annual_issuance": {
           "type": "array",

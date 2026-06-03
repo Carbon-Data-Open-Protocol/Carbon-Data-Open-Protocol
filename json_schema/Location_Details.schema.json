@@ -3,11 +3,11 @@
   "$id": "Location_Details.schema.json",
   "title": "Location Details",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "project": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_code": {
           "type": "array",
@@ -186,7 +186,7 @@
     },
     "project_stakeholder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_code": {
           "type": "array",
@@ -346,7 +346,7 @@
     },
     "facility": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_code": {
           "type": "array",
@@ -518,7 +518,7 @@
     },
     "project stakeholder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "country_subdivision_code": {
           "type": "array",
@@ -540,7 +540,7 @@
     },
     "geolocation_file": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "file_name": {
           "type": "string",
