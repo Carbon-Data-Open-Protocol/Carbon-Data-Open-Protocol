@@ -2025,5 +2025,16 @@
         "forecast_year"
       ]
     }
-  }
+  },
+  "required": [
+    "crediting_program",
+    "facility",
+    "geolocation_file",
+    "issuance",
+    "methodology",
+    "project",
+    "project_stakeholder",
+    "registry",
+    "validation"
+  ]
 }

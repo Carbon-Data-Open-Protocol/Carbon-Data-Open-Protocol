@@ -511,5 +511,10 @@
       },
       "required": []
     }
-  }
+  },
+  "required": [
+    "project",
+    "project_stakeholder",
+    "registry"
+  ]
 }
