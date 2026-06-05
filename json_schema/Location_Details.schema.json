@@ -1,0 +1,667 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Location_Details.schema.json",
+  "title": "Location Details",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code of where the project is located and being developed",
+            "x-cdop-field-id": 1,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "country_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "English short name of where the project is located and being developed",
+            "x-cdop-field-id": 4,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geographical_region_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code of where the project is located and being developed",
+            "x-cdop-field-id": 7,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geographical_region_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code corresponding English name of where the project is located and being developed",
+            "x-cdop-field-id": 10,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "address_line_1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 1 of where the project is located and being developed. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 13,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address_line_2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 2 of where the project is located and being developed. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 14,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "alternative_address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If a project doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information",
+            "x-cdop-field-id": 19,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the project is located and being developed",
+            "x-cdop-field-id": 22,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "country_subdivision_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision name of where the project is located and being developed",
+            "x-cdop-field-id": 25,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "city": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The city where the project is located and being developed",
+            "x-cdop-field-id": 28,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "postal_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The postal code where the project is located and being developed",
+            "x-cdop-field-id": 31,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "country_code",
+        "country_name",
+        "country_subdivision_code",
+        "country_subdivision_name",
+        "geographical_region_code",
+        "geographical_region_name"
+      ]
+    },
+    "project_stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 2,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "country_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "English short name of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 5,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geographical_region_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 8,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "geographical_region_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code corresponding English name of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 11,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address_line_1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 1 of where the project stakeholder has their headquarters. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 15,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address_line_2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 2 of where the project stakeholder has their headquarters. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 16,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "alternative_address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If a project stakeholder doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information",
+            "x-cdop-field-id": 20,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 23,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_subdivision_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision name of where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 26,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "city": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The city where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 29,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "postal_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The postal code where the project stakeholder has their headquarters",
+            "x-cdop-field-id": 32,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "country_code",
+        "country_name"
+      ]
+    },
+    "facility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code of where the facility is located",
+            "x-cdop-field-id": 3,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "English short name of where the facility is located",
+            "x-cdop-field-id": 6,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "geographical_region_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code of where the facility is located",
+            "x-cdop-field-id": 9,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "geographical_region_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "M49 geographical region code corresponding English name of where the facility is located",
+            "x-cdop-field-id": 12,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address_line_1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 1 of where the facility is located. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 17,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "address_line_2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Mailing address line 2 of where the facility is located. Adherence to the ISO 19160 standard should be followed",
+            "x-cdop-field-id": 18,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "alternative_address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "If a facility doesn't have an address that neatly aligns with the ISO 19160 standard or is only partially available, use this 'alternative address' field to include relevant address related information",
+            "x-cdop-field-id": 21,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_subdivision_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision code of where the facility is located",
+            "x-cdop-field-id": 24,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "country_subdivision_name": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-2 country subdivision name of where the facility is located",
+            "x-cdop-field-id": 27,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "city": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The city where the facility is located",
+            "x-cdop-field-id": 30,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "postal_code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The postal code where the facility is located",
+            "x-cdop-field-id": 33,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "project developer, registry",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": []
+    },
+    "geolocation_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "Name of the GIS file",
+          "x-cdop-field-id": 34,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer, registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file_format": {
+          "type": "string",
+          "description": "Format of  the GIS file",
+          "x-cdop-field-id": 35,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer, registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "validity_start_date": {
+          "type": "string",
+          "description": "Validity start date",
+          "x-cdop-field-id": 36,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "validity_end_date": {
+          "type": "string",
+          "description": "Validity end date",
+          "x-cdop-field-id": 37,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file_status": {
+          "type": "string",
+          "description": "Status of the GIS file",
+          "x-cdop-field-id": 38,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file_created_on": {
+          "type": "string",
+          "description": "Time stamp for when file was created",
+          "x-cdop-field-id": 39,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file_edited_on": {
+          "type": "string",
+          "description": "Time stamp for when file was edited",
+          "x-cdop-field-id": 40,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "file_deleted_on": {
+          "type": "string",
+          "description": "Time stamp for when file was deleted",
+          "x-cdop-field-id": 41,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        },
+        "area_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Area type of GIS file",
+            "x-cdop-field-id": 42,
+            "x-cdop-pre-issuance-inclusion": "yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "project developer",
+            "x-cdop-mutability": "immutable",
+            "x-cdop-public-private": "public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "geometry_type": {
+          "type": "string",
+          "description": "Geometry type of GIS file",
+          "x-cdop-field-id": 43,
+          "x-cdop-pre-issuance-inclusion": "yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "immutable",
+          "x-cdop-public-private": "public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "file_created_on",
+        "file_format",
+        "file_name",
+        "file_status",
+        "validity_start_date"
+      ]
+    }
+  },
+  "required": [
+    "geolocation_file",
+    "project",
+    "project_stakeholder"
+  ]
+}
