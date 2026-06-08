@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Unit_Description.schema.json",
+  "title": "Unit Description",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "current_registry_project_id": {
+          "type": "string",
+          "description": "Identifier used to track the project in the current registry.",
+          "x-cdop-field-id": 143,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Registry",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "current_registry_project_id"
+      ]
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "metric": {
+          "type": "string",
+          "description": "Unit of measurment for quantifying the reduction or removal",
+          "x-cdop-field-id": 144,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "owner_account_id": {
+          "type": "string",
+          "description": "identifier for the owner of the unit",
+          "x-cdop-field-id": 145,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Private",
+          "x-cdop-schema": "CDOP"
+        },
+        "retirement_beneficiary": {
+          "type": "string",
+          "description": "Entity name on behalf of which the retirement occurred",
+          "x-cdop-field-id": 146,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "retirement_detail": {
+          "type": "string",
+          "description": "Additional context describing the retirements",
+          "x-cdop-field-id": 147,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "serial_number": {
+          "type": "string",
+          "description": "Serial number of the unit",
+          "x-cdop-field-id": 148,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "source_serial_number": {
+          "type": "string",
+          "description": "Identifier used to track the unit to the original issuance it was part of.",
+          "x-cdop-field-id": 149,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "status": {
+          "type": "string",
+          "description": "Unit state, indicating which lifecycle the unit is currently in",
+          "x-cdop-field-id": 150,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "status_reason": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Select the status that best desribes the current state of the units.",
+            "x-cdop-field-id": 151,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "User Input",
+            "x-cdop-mutability": "mutable",
+            "x-cdop-public-private": "Private",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Descirbes the type of unit.",
+            "x-cdop-field-id": 152,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Quantity of units included in the credit block that a particular record represents",
+          "x-cdop-field-id": 153,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "block_end": {
+          "type": "integer",
+          "description": "Number indicating the last unit within a credit block",
+          "x-cdop-field-id": 154,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        },
+        "block_start": {
+          "type": "integer",
+          "description": "Number indicating the first unit within a credit block",
+          "x-cdop-field-id": 155,
+          "x-cdop-pre-issuance-inclusion": "No",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
+          "x-cdop-mutability": "mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "block_end",
+        "block_start",
+        "metric",
+        "owner_account_id",
+        "quantity",
+        "serial_number",
+        "status",
+        "type"
+      ]
+    },
+    "vintage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "vintage": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "Temporal period when the envrionmental benefit occurred",
+            "x-cdop-field-id": 156,
+            "x-cdop-pre-issuance-inclusion": "No",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "vintage"
+      ]
+    }
+  },
+  "required": [
+    "project",
+    "unit",
+    "vintage"
+  ]
+}
