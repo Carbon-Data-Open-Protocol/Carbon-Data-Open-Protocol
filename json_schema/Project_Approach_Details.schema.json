@@ -318,37 +318,11 @@
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP"
         },
-        "number_of_crediting_periods": {
-          "type": "integer",
-          "description": "The total number of crediting periods assigned to the project over its lifetime as defined by the methodology or registry.",
-          "x-cdop-field-id": 66,
-          "x-cdop-pre-issuance-inclusion": "yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "project developer",
-          "x-cdop-mutability": "Immutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP"
-        },
-        "crediting_period_length": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "description": "The duration (in years) of each crediting period granted to the project under the applicable methodology or registry.",
-            "x-cdop-field-id": 67,
-            "x-cdop-pre-issuance-inclusion": "yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "project developer",
-            "x-cdop-mutability": "Immutable",
-            "x-cdop-public-private": "Public",
-            "x-cdop-schema": "CDOP"
-          },
-          "minItems": 0
-        },
         "project_registration_date": {
           "type": "string",
           "format": "date",
           "description": "The date the project was registered on the registry.",
-          "x-cdop-field-id": 68,
+          "x-cdop-field-id": 66,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -360,7 +334,7 @@
           "type": "string",
           "format": "date",
           "description": "The date the project was first listed on a registry.",
-          "x-cdop-field-id": 69,
+          "x-cdop-field-id": 67,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -373,7 +347,7 @@
           "items": {
             "type": "string",
             "description": "The type(s) of additional project documentation.",
-            "x-cdop-field-id": 70,
+            "x-cdop-field-id": 68,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -388,7 +362,7 @@
           "items": {
             "type": "string",
             "description": "The link(s) to the project's additional project documentation.",
-            "x-cdop-field-id": 71,
+            "x-cdop-field-id": 69,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -413,7 +387,7 @@
         "project_developer_name": {
           "type": "string",
           "description": "The name of the primary developer of the project.",
-          "x-cdop-field-id": 72,
+          "x-cdop-field-id": 70,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -424,7 +398,7 @@
         "project_developer_website": {
           "type": "string",
           "description": "The website of the primary developer of the project.",
-          "x-cdop-field-id": 73,
+          "x-cdop-field-id": 71,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -435,7 +409,7 @@
         "project_developer_email": {
           "type": "string",
           "description": "The email of the primary developer of the project.",
-          "x-cdop-field-id": 74,
+          "x-cdop-field-id": 72,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -446,7 +420,7 @@
         "project_developer_phone": {
           "type": "string",
           "description": "The phone number of the primary developer of the project.",
-          "x-cdop-field-id": 75,
+          "x-cdop-field-id": 73,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -459,7 +433,7 @@
           "items": {
             "type": "string",
             "description": "The role of the stakeholder in relation to the project (e.g., verifier, technical consultant, etc.).",
-            "x-cdop-field-id": 76,
+            "x-cdop-field-id": 74,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -474,7 +448,7 @@
           "items": {
             "type": "string",
             "description": "The name of the selected stakeholder type.",
-            "x-cdop-field-id": 77,
+            "x-cdop-field-id": 75,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -489,7 +463,7 @@
           "items": {
             "type": "string",
             "description": "The website of the selected stakeholder type.",
-            "x-cdop-field-id": 78,
+            "x-cdop-field-id": 76,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -504,7 +478,7 @@
           "items": {
             "type": "string",
             "description": "The email address of the selected stakeholder type.",
-            "x-cdop-field-id": 79,
+            "x-cdop-field-id": 77,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -519,7 +493,7 @@
           "items": {
             "type": "string",
             "description": "The phone number of the selected stakeholder type.",
-            "x-cdop-field-id": 80,
+            "x-cdop-field-id": 78,
             "x-cdop-pre-issuance-inclusion": "yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -541,7 +515,7 @@
         "origin_registry": {
           "type": "string",
           "description": "The name of the project's original registry (if it has moved registries)",
-          "x-cdop-field-id": 81,
+          "x-cdop-field-id": 79,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -552,7 +526,7 @@
         "current_registry": {
           "type": "string",
           "description": "The name of the project's current registry.",
-          "x-cdop-field-id": 82,
+          "x-cdop-field-id": 80,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -570,7 +544,7 @@
         "validation_body_name": {
           "type": "string",
           "description": "The name of the validation body that validated the project (if applicable).",
-          "x-cdop-field-id": 83,
+          "x-cdop-field-id": 81,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -582,7 +556,7 @@
           "type": "string",
           "format": "date",
           "description": "The date on which the project was validated (if applicable).",
-          "x-cdop-field-id": 84,
+          "x-cdop-field-id": 82,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -593,7 +567,7 @@
         "validation_report": {
           "type": "string",
           "description": "The link to the project's validation report (if applicable).",
-          "x-cdop-field-id": 85,
+          "x-cdop-field-id": 83,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
