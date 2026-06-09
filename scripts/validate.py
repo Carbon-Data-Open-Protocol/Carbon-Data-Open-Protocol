@@ -70,7 +70,10 @@ def validate(data_path: pathlib.Path, schema_path: pathlib.Path) -> bool:
         resolver = jsonschema.RefResolver(base_uri=base_uri, referrer=schema)
         validator = Draft202012Validator(schema, resolver=resolver)
 
-    errors = sorted(validator.iter_errors(data), key=lambda e: list(e.absolute_path))
+    errors = sorted(
+        validator.iter_errors(data),
+        key=lambda e: "/".join(str(p) for p in e.absolute_path),
+    )
 
     if not errors:
         print(f"OK  '{data_path}' is valid against '{schema_path.name}'.")
