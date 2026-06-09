@@ -57,12 +57,19 @@ def validate(data_path: pathlib.Path, schema_path: pathlib.Path) -> bool:
         from referencing import Registry, Resource
         from referencing.jsonschema import DRAFT202012
 
+        from urllib.parse import unquote, urlparse
+        from urllib.request import url2pathname
+
         def _load_resource(uri: str):
-            path = pathlib.Path(uri.replace("file:///", "").replace("file://", ""))
+            parsed = urlparse(uri)
+            if parsed.scheme == "file":
+                path = pathlib.Path(url2pathname(unquote(parsed.path)))
+            else:
+                path = (schema_path.parent / uri).resolve()
+
             if path.exists():
                 return Resource.from_contents(load_json(path), default_specification=DRAFT202012)
-            raise jsonschema.exceptions.RefResolutionError(f"Cannot resolve: {uri}")
-
+            raise FileNotFoundError(f"Cannot resolve: {uri} (resolved to {path})")
         registry = Registry(retrieve=_load_resource)
         validator = Draft202012Validator(schema, registry=registry)
     except ImportError:
