@@ -100,7 +100,11 @@ def validate(data_path: pathlib.Path, schema_path: pathlib.Path) -> bool:
 
 def _structural_keys(schema_node: dict) -> dict:
     """Return a copy of a schema node with cosmetic keys removed."""
-    return {k: v for k, v in schema_node.items() if k not in _COSMETIC_KEYS}
+    return {
+        k: v
+        for k, v in schema_node.items()
+        if k not in _COSMETIC_KEYS and not k.startswith("x-cdop-")
+    }
 
 
 def _diff_schemas(user: object, canonical: object, path: str, diffs: list[str]) -> None:
