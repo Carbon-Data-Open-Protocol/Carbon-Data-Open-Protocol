@@ -71,7 +71,48 @@ Adoption of the tool lends to greater collaboration and data sharing across the 
 - **Project developers​**: Submitting data in CDOP format allows for more standardisation and less bespoke work for publishing project information.
 - **Ratings agencies and data providers​**: Adopt CDOP schemas for data ingestion of data can improve efficiency of data sharing and publishing.
 
-To allow for adoption, [this tool](https://cdop-schema-validator.lovable.app/) can be used to validate a payload against the various cdop schemas. This allows users to ensure their api interfaces are compatible. 
+## Validating Your Data
+
+CDOP provides two lightweight options for validating a JSON payload against the schemas locally.
+
+### Option 1 — Command-line tools
+
+Several off-the-shelf CLI validators support JSON Schema draft 2020-12. The examples below use [`check-jsonschema`](https://check-jsonschema.readthedocs.io/), which can be installed with pip:
+
+```bash
+pip install check-jsonschema
+```
+
+**Validate a single file:**
+```bash
+check-jsonschema --schemafile json_schema/Disclosures.schema.json my_disclosures.json
+```
+
+### Option 2 — Python validation script
+
+A helper script is included at `scripts/validate.py`. It requires Python 3.10+ and the `jsonschema` package:
+
+```bash
+pip install jsonschema
+```
+
+**Validate a data file:**
+```bash
+python scripts/validate.py my_data.json --schema json_schema/Issuances.schema.json
+```
+
+**Compare your own schema against the canonical CDOP schema:**
+```bash
+python scripts/validate.py my_schema.json --compare --schema json_schema/Disclosures.schema.json
+```
+
+The `--compare` flag treats the input file as a schema and checks it structurally against the canonical CDOP schema — same properties, types, and required fields. Cosmetic differences (descriptions, `$id`, `title`) are ignored. This is useful for confirming that a custom schema implementation stays in sync with the official CDOP definition.
+
+The script exits with code `0` on success and `1` on failure, making it easy to integrate into CI pipelines. Differences are printed with the JSON path and a description of each issue.
+
+### Legacy Schema Validation
+
+CDOP recommends following the canonical schemas and validation approaches above. However, if using legacy schemas, [this tool](https://cdop-schema-validator.lovable.app/) can be used to validate a payload.
 
 # Contributing Guidelines
 
