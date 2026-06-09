@@ -3,11 +3,11 @@
   "$id": "Disclosures.schema.json",
   "title": "Disclosures",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "project": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "attestations": {
           "type": "array",
@@ -266,7 +266,7 @@
     },
     "project_stakeholder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "list_of_landowners": {
           "type": "array",
@@ -434,7 +434,7 @@
     },
     "registry": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "previous_project_crediting_program_name": {
           "type": "array",

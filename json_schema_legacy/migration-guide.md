@@ -48,15 +48,15 @@ The new schemas are organized by entity sections such as:
 
 If your current API or validation flow flattens fields into a single object, you will need a transformation layer that groups fields into the required entity object.
 
-### 3. `additionalProperties: false` is enforced broadly
+### 3. `additionalProperties: true` is set broadly — additional properties are permitted
 
-The generated schemas disallow undeclared properties at the top level and inside each entity object. This is important for API frameworks that previously accepted pass-through fields.
+The generated schemas allow undeclared properties at the top level and inside each entity object. API frameworks and validators will accept pass-through fields without errors.
 
 Recommended action:
 
-- reject unknown fields before submission, or
-- strip unknown fields in a preprocessing step, or
-- map internal-only fields to a separate non-CDOP payload
+- additional fields in your payload will not cause validation failures
+- a prefix may be useful for your own documentation, but is not required
+- you may still want to document or constrain extra fields in your own application logic if stricter control is needed
 
 ### 4. Required top-level objects are now enforced
 
@@ -163,7 +163,6 @@ Examples:
 
 - switching to the new file name
 - honoring required top-level objects
-- honoring `additionalProperties: false`
 - consuming the `x-cdop-*` annotations if useful
 
 ### Required top-level objects
@@ -465,7 +464,7 @@ Business validation is still useful for:
 - Update schema file references to `json_schema/*.schema.json`.
 - Regenerate typed models or DTOs from the new schema files.
 - Add or update a transformation layer from legacy payload shape to new CDOP payload shape.
-- Enforce `additionalProperties: false` handling.
+- Note that `additionalProperties: true` is set — extra fields in payloads will not cause schema validation failures.
 - Ensure required top-level entity objects are present.
 - Move renamed and relocated fields to their new entity sections.
 - Convert legacy arrays of objects into aligned CDOP arrays where required.

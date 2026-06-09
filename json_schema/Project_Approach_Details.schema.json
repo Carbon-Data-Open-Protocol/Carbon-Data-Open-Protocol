@@ -3,11 +3,11 @@
   "$id": "Project_Approach_Details.schema.json",
   "title": "Project Approach & Details",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "crediting_program": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "crediting_program_name": {
           "type": "array",
@@ -66,7 +66,7 @@
     },
     "methodology": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "methodology": {
           "type": "array",
@@ -133,7 +133,7 @@
     },
     "project": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "project_name": {
           "type": "string",
@@ -408,7 +408,7 @@
     },
     "project_stakeholder": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "project_developer_name": {
           "type": "string",
@@ -536,7 +536,7 @@
     },
     "registry": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "origin_registry": {
           "type": "string",
@@ -565,7 +565,7 @@
     },
     "validation": {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "validation_body_name": {
           "type": "string",
