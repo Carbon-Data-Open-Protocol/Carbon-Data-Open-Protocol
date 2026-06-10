@@ -35,7 +35,7 @@ If it is technically feasible by an organization using this schema, the country 
 
 In the event that any of the associated entities (project, project stakeholder, and/or facility) do not have a conventional address, use the 'alternative address' field as a means of capturing unconventional, partial, etc. aspects of a relevant address.
 
-The Location JSON can be found [HERE](/json_schema/location_details.json).
+The Location JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Location_Details.schema.json).
 
 Legacy version [HERE](/json_schema_legacy/location_details.json)
 
@@ -43,7 +43,7 @@ Legacy version [HERE](/json_schema_legacy/location_details.json)
 
 The PAD schema aims to capture all relevant information related to the project’s approach and details, including its crediting program, registry, status, design, project type, methodology, project developer information, validation, and name. The majority of this information would be that which is already included in a project’s design document. 
 
-The PAD JSON can be found [HERE](/json_schema/project_approach_and_details.json).
+The PAD JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Project_Approach_Details.schema.json).
 
 Legacy version [HERE](/json_schema_legacy/project_approach_and_details.json)
 
@@ -51,7 +51,7 @@ Legacy version [HERE](/json_schema_legacy/project_approach_and_details.json)
 
 The Disclosures schema aims to capture all relevant information related to project disclosures, including attestations (e.g., child labor and land rights), carbon ownership, project developer organization experience and details, public comment, and (if applicable) previous crediting program history. All fields are marked as Public.
 
-The Disclosures JSON can be found [HERE](/json_schema/disclosures.json).
+The Disclosures JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Disclosures.schema.json).
 
 Legacy version [HERE](/json_schema_legacy/disclosures.json)
 
@@ -59,9 +59,27 @@ Legacy version [HERE](/json_schema_legacy/disclosures.json)
 
 The Issuance schema aims to capture all relevant information related to the project’s issuances, including its forecasted issuance volumes, estimated crediting period, date of issuance, and verification.
 
-The Issuance JSON can be found [HERE](/json_schema/issuances.json).
+The Issuance JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Issuances.schema.json).
 
 Legacy version [HERE](/json_schema_legacy/issuances.json)
+
+## Unit Description
+
+The Unit Description schema aims to capture all relevant information associated with the unit of any particular project. This includes its serial number, status, type, quantity, vintage, and metric among other properties.
+
+The Unit Description JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Unit_Description.schema.json).
+
+## Crediting Period
+
+The Crediting Period schema aims to capture all relevant information related to the project's crediting period including the crediting period type, current crediting period duration, maximum cumulative crediting duration, and maximum number of crediting periods.
+
+The Crediting Period JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Crediting_Period.schema.json).
+
+## Estimations
+
+The Estimations schema aims to capture all relevant information related to estimations around emissions mitigation per vintage, monitoring period, issuance, and status. It also captures information relevant to estimated annual and total emissions mitigation along with the estimated total years for the project. 
+
+The Estimations JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Estimations.schema.json).
 
 ## Adoption
 
