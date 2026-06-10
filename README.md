@@ -1,7 +1,7 @@
 # Carbon-Data-Open-Protocol
 Repository storing technical specification and documentation for the CDOP schema.
 
-<span style="color:orange">As of May 26, 2026, the supported versions of the CDOP JSON schema files are available under `json_schema/`. Legacy schema files are still available under `json_schema_legacy/`.</span>
+<span style="color:orange">As of May 26, 2026, the supported versions of the CDOP JSON schema files are available under `json_schema/`. Legacy schema files are still available under `json_schema_legacy/`. The supported version of the CDOP JSON schema files reflect breaking changes compared to the legacy schema files. Internal systems will need to be recalibrated to reflect these changes. For those who have adopted the legacy schema files, please refer to the [migration guide](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema_legacy/migration-guide.md) for guidance on migrating over the new supported versions.</span>
 
 
 # CDOP Overview	
