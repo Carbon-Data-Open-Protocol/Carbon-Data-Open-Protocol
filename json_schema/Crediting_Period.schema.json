@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Crediting_Period.schema.json",
+  "title": "Crediting Period",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "validation": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "validation_id": {
+          "type": "integer",
+          "description": "Validation Identifier is simply an integer that is used to query this data table. An individual data entry is required for each validation event (e.g., validation of project activities by a VVB). The ID can be numbered from 1-n where n is the number of validation events.",
+          "x-cdop-field-id": 150,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "current_crediting_period_start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Start date for the project's current crediting period, as validated by this validation event",
+          "x-cdop-field-id": 151,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "current_crediting_period_end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "End date for the project's current crediting period, as validated by this validation event",
+          "x-cdop-field-id": 152,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "current_crediting_period_number": {
+          "type": "integer",
+          "description": "The number identifying the current crediting period, distinguishing the initial period from subsequent eligible renewals.",
+          "x-cdop-field-id": 153,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "current_crediting_period_end_date",
+        "current_crediting_period_number",
+        "current_crediting_period_start_date",
+        "validation_id"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "project_crediting_period_type": {
+          "type": "string",
+          "description": "The designation of the crediting period as either fixed (=expiring after a single defined term), or renewable, allowing for extension through multiple eligible renewals",
+          "x-cdop-field-id": 154,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "maximum_cumulative_crediting_duration": {
+          "type": "integer",
+          "description": "The maximum cumulative duration (in years) for which the project can generate units, encompassing the initial period and all eligible renewals granted to the project under the applicable methodology and Carbon Crediting Program.",
+          "x-cdop-field-id": 155,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "maximum_number_of_crediting_periods": {
+          "type": "integer",
+          "description": "The maximum number of total crediting periods for which a project is eligible, encompassing the initial crediting period and the maximum number of renewals permitted under the applicable methodology and Carbon Crediting Program",
+          "x-cdop-field-id": 156,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "current_crediting_period_duration": {
+          "type": "integer",
+          "description": "The specific duration (in years) of a single crediting period granted to the project under the applicable methodology and Carbon Crediting Program. For projects with a fixed project crediting period type, this field is equal to the maximum total crediting duration.",
+          "x-cdop-field-id": 157,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "validation"
+  ]
+}

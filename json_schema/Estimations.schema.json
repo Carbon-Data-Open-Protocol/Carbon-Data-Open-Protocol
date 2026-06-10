@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Estimations.schema.json",
+  "title": "Estimations",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "estimations": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "estimation_id": {
+          "type": "integer",
+          "description": "Unique identifier for a specific estimation event. An individual data entry is required for each estimation event. The ID can be numbered from 1-n where n is the number of estimations events.",
+          "x-cdop-field-id": 158,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimation_event_date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date on which the estimation event took place",
+          "x-cdop-field-id": 159,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimation_status": {
+          "type": "string",
+          "description": "Indicates the status of the Estimated Emissions Mitigations, distinguishing between unvalidated and validated values",
+          "x-cdop-field-id": 160,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimated_status_reason": {
+          "type": "string",
+          "description": "The reason for updating the estimation status associated with the current estimation event. Examples include validation set by Carbon Crediting Programs or ad-hoc assessments, such as internal project reviews",
+          "x-cdop-field-id": 161,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "vintage_year": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "The specific vintage year in which the  estimated vintage mitigation outcome is expected to occurr.  All values below are associated with the vintage year forecasted in an array format",
+            "x-cdop-field-id": 167,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer, Standard",
+            "x-cdop-mutability": "Public",
+            "x-cdop-public-private": "Mutable",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "estimated_vintage_emissions_mitigation": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": "Estimated ex-ante amount of emissions reduction, avoidance or removal expected to occur per vintage year over the total crediting years of the project, net of buffer contributions.",
+            "x-cdop-field-id": 168,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer, Standard",
+            "x-cdop-mutability": "Public",
+            "x-cdop-public-private": "Mutable",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "estimated_monitoring_period_start_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The estimated start date of the monitoring period associated with the current estimation event and vintage year forecasted",
+            "x-cdop-field-id": 169,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Public",
+            "x-cdop-public-private": "Mutable",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "estimated_monitoring_period_end_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The estimated end date of the monitoring period associated with the current estimation event and vintage year forecasted",
+            "x-cdop-field-id": 170,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Public",
+            "x-cdop-public-private": "Mutable",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        },
+        "estimated_issuance_date": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "The estimated issuance date associated with the current estimation event and vintage forecasted",
+            "x-cdop-field-id": 171,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Public",
+            "x-cdop-public-private": "Mutable",
+            "x-cdop-schema": "CDOP"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "estimated_status_reason",
+        "estimation_event_date",
+        "estimation_id",
+        "estimation_status"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "estimated_annual_emissions_mitigation": {
+          "type": "number",
+          "description": "Estimated ex-ante annual average amount of emissions reduction, avoidance or removal over the current crediting period, net of buffer contributions. This can be calculated by the optional per vintage data, if available.",
+          "x-cdop-field-id": 162,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimated_total_emissions_mitigation": {
+          "type": "number",
+          "description": "Estimated ex-ante total amount of emissions reduction, avoidance or removal as included in the current estimation event, net of buffer contributions.This can be calculated by the optional per vintage data, if available.",
+          "x-cdop-field-id": 163,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "estimated_total_years": {
+          "type": "integer",
+          "description": "The total number of years included in the current estimation event.",
+          "x-cdop-field-id": 164,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer, Standard",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Mutable",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "estimated_annual_emissions_mitigation",
+        "estimated_total_emissions_mitigation",
+        "estimated_total_years"
+      ]
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "validation_id": {
+          "type": "integer",
+          "description": "Unique identifier for a specific vaidation event. An individual data entry is required for each validation event. The ID can be numbered from 1-n where n is the number of validation events.",
+          "x-cdop-field-id": 165,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        },
+        "validation_type": {
+          "type": "string",
+          "description": "The aspect of the project that is covered by this validation event.",
+          "x-cdop-field-id": 166,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Public",
+          "x-cdop-public-private": "Immutable",
+          "x-cdop-schema": "CDOP"
+        }
+      },
+      "required": [
+        "validation_id",
+        "validation_type"
+      ]
+    }
+  },
+  "required": [
+    "estimations",
+    "project",
+    "validation"
+  ]
+}
