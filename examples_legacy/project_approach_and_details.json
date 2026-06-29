@@ -1,0 +1,135 @@
+{
+  "crediting_program": [
+    {
+      "program_name": "Verra",
+      "standard_name": "Verified Carbon Standard",
+      "initial_standard_version": "VCS v3",
+      "current_standard_version": "VCS v4"
+    }
+  ],
+  "methodology": [
+    {
+      "name": "ARR",
+      "versions": [
+        {
+          "version": "v1.0",
+          "document": "https://example.org/methodologies/arr-v1.0.pdf",
+          "is_current": false
+        },
+        {
+          "version": "v2.1",
+          "document": "https://verra.org/methodologies/arr-v2.1",
+          "is_current": true
+        }
+      ]
+    }
+  ],
+  "project": {
+    "name": "Mangrove Restoration Initiative",
+    "identifiers": [
+      {
+        "identifier_type": "internal_project_id",
+        "value": "MR-2025-001"
+      },
+      {
+        "identifier_type": "current_registry_project_id",
+        "value": "VCS-12345"
+      },
+      {
+        "identifier_type": "global_unique_project_id",
+        "value": "urn:cdop:project:MR-2025-001"
+      }
+    ],
+    "project_description": "Restoration of degraded mangroves in Southeast Asia for carbon sequestration and coastal resilience.",
+    "design_document_link": "https://example.org/docs/mangrove_pdd.pdf",
+    "exemptions": [
+      "Deviation approved for soil sampling frequency"
+    ],
+    "program_type": "Program of Activities",
+    "activity_type": [
+      "Afforestation/Reforestation"
+    ],
+    "mitigation_type": [
+      "Nature-based"
+    ],
+    "sector": [
+      "Forestry"
+    ],
+    "project_type": [
+      "ARR"
+    ],
+    "registry_link": "https://registry.verra.org/app/projectDetail/VCS/12345",
+    "status": "registered",
+    "status_updated_at": "2025-05-01",
+    "crediting_periods": [
+      {
+        "length_years": 10,
+        "start_date": "2024-03-15",
+        "end_date": "2034-03-14"
+      },
+      {
+        "length_years": 10
+      }
+    ],
+    "registration_date": "2024-03-15",
+    "list_date": "2024-02-01",
+    "documents": [
+      {
+        "document_type": "project_monitoring_plan",
+        "link": "https://example.org/docs/monitoring_plan.pdf"
+      },
+      {
+        "document_type": "non_permanence_risk_assessment",
+        "link": "https://example.org/docs/npr_assessment.pdf"
+      }
+    ]
+  },
+  "project_stakeholder": {
+    "primary_developer": {
+      "name": "Blue Carbon Ltd",
+      "contact": {
+        "website": "https://bluecarbon.example.com",
+        "email": "info@bluecarbon.example.com",
+        "phone": "+44-20-1234-5678"
+      }
+    },
+    "stakeholders": [
+      {
+        "name": "EcoAdvisors",
+        "stakeholder_type": "technical_consultant",
+        "contact": {
+          "website": "https://ecoadvisors.example.com",
+          "email": "contact@ecoadvisors.example.com",
+          "phone": "+1 (202) 555-0199"
+        }
+      },
+      {
+        "name": "EnviroCert Ltd",
+        "stakeholder_type": "verification_accreditation_agency",
+        "contact": {
+          "website": "https://envirocert.example.com",
+          "email": "hello@envirocert.example.com"
+        }
+      }
+    ]
+  },
+  "registry": {
+    "current_registry": {
+      "name": "verra",
+      "listing_start_date": "2024-02-01"
+    },
+    "previous_registries": [
+      {
+        "name": "gold_standard",
+        "listing_start_date": "2023-06-01",
+        "listing_end_date": "2024-01-31"
+      }
+    ]
+  },
+  "validation": {
+    "validation_body_name": "EnviroCert Ltd",
+    "validation_date": "2024-12-01",
+    "validation_report": "https://example.org/reports/validation.pdf"
+  },
+  "x_ingestion_batch_id": "batch_2025_09_18_001"
+}
