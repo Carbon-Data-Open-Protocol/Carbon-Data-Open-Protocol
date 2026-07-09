@@ -29,7 +29,7 @@
               },
               "is_current": {
                 "type": "boolean",
-                "description": "0 if not the current program name, 1 for the name of the current program issuing the project's credits",
+                "description": "False if not the current program name, True for the name of the current program issuing the project's credits",
                 "x-cdop-field-id": 45,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -63,7 +63,7 @@
               },
               "is_current": {
                 "type": "boolean",
-                "description": "0 if not the current standard associated with the project's credits, 1 for the current standard associated with the project's credits",
+                "description": "False if not the current standard associated with the project's credits, True for the current standard associated with the project's credits",
                 "x-cdop-field-id": 47,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -140,7 +140,7 @@
               },
               "is_current": {
                 "type": "boolean",
-                "description": "0 for previous methodologies, 1 for the methodology currently being used.",
+                "description": "False for previous methodologies, True for the methodology currently being used.",
                 "x-cdop-field-id": 52,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",

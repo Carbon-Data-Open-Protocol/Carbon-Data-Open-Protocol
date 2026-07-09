@@ -9,7 +9,7 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "project_Identifier": {
+        "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 86,
@@ -19,7 +19,7 @@
           "x-cdop-mutability": "Immutable",
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.project_Identifier"
+          "x-cdop-field-path": "project.project_identifier"
         },
         "audits": {
           "type": "array",
@@ -113,7 +113,7 @@
             "type": "object",
             "additionalProperties": true,
             "properties": {
-              "batch_Identifier": {
+              "batch_identifier": {
                 "type": "string",
                 "description": "Global unique identifier for the batch of credits issued",
                 "x-cdop-field-id": 92,
@@ -123,7 +123,7 @@
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "issuance.issuance[].batch_Identifier"
+                "x-cdop-field-path": "issuance.issuance[].batch_identifier"
               },
               "issuance_url": {
                 "type": "string",
