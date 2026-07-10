@@ -328,18 +328,17 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "project.project_status"
         },
-        "project_status_updated_at": {
+        "project_status_reason": {
           "type": "string",
-          "format": "date",
-          "description": "The date of the current status of the project",
+          "description": "The reason for updating the project status",
           "x-cdop-field-id": 67,
           "x-cdop-pre-issuance-inclusion": "yes",
-          "x-cdop-cardinality": "1..1",
+          "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
           "x-cdop-mutability": "Mutable",
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.project_status_updated_at"
+          "x-cdop-field-path": "project.project_status_reason"
         },
         "project_registration_date": {
           "type": "string",
@@ -872,8 +871,7 @@
         "project_description",
         "project_governance_structure",
         "project_name",
-        "project_status",
-        "project_status_updated_at"
+        "project_status"
       ]
     },
     "project_stakeholder": {
