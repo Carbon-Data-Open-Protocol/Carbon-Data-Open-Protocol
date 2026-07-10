@@ -19,7 +19,7 @@
     "project_description": "The Mida Creek Mangrove Restoration Project restores and protects approximately 1,200 hectares of degraded mangrove ecosystems along the Kenyan coast. Activities include active replanting of native mangrove species, removal of invasive vegetation, and community-based monitoring. The project generates carbon credits through sequestration and avoidance of further degradation, while delivering co-benefits including biodiversity habitat, coastal protection, and livelihood support for local fishing communities.",
     "project_design_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
     "project_status": "Registered",
-    "project_status_updated_at": "2023-06-01",
+    "project_status_reason": "Project completed registry review and was approved.",
     "project_registration_date": "2023-06-01",
     "project_list_date": "2022-11-15",
     "mitigation": [
@@ -31,7 +31,7 @@
     ],
     "current_registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
     "current_registry_project_id": "VCS-4721",
-    "project_Identifier": "cdop:KEN:VCS-4721",
+    "project_identifier": "cdop:KEN:VCS-4721",
     "documents": [
       {
         "other_project_documentation_type": "Monitoring Report",
@@ -76,7 +76,7 @@
     "public_comment_summary": "30-day public comment period held November 2022. Fifteen submissions received; key concerns related to fishing access rights and benefit distribution were addressed in the revised project design document.",
     "project_crediting_period_type": "renewable",
     "maximum_cumulative_crediting_duration": 60,
-    "maximum_number _of_crediting_periods": 2,
+    "maximum_number_of_crediting_periods": 2,
     "current_crediting_period_duration": 30,
     "estimated_annual_emissions_mitigation": 53920,
     "estimated_total_emissions_mitigation": 1617600,
@@ -201,7 +201,7 @@
   "issuance": {
     "issuance": [
       {
-        "batch_Identifier": "cdop:KEN:VCS-4721:B1",
+        "batch_identifier": "cdop:KEN:VCS-4721:B1",
         "issuance_url": "https://registry.verra.org/app/projectDetail/VCS/4721/issuances/1",
         "date_of_issuance": "2024-05-01",
         "date_of_verification": "2024-04-18",

@@ -1,6 +1,6 @@
 {
   "project": {
-    "project_Identifier": "cdop:KEN:VCS-4721",
+    "project_identifier": "cdop:KEN:VCS-4721",
     "audits": [
       {
         "auditor_name": "SCS Global Services",
@@ -21,7 +21,7 @@
   "issuance": {
     "issuance": [
       {
-        "batch_Identifier": "cdop:KEN:VCS-4721:B1",
+        "batch_identifier": "cdop:KEN:VCS-4721:B1",
         "issuance_url": "https://registry.verra.org/app/projectDetail/VCS/4721/issuances/1",
         "date_of_issuance": "2024-05-01",
         "date_of_verification": "2024-04-18",
@@ -32,7 +32,7 @@
         "issuance_status": "issued"
       },
       {
-        "batch_Identifier": "cdop:KEN:VCS-4721:B2",
+        "batch_identifier": "cdop:KEN:VCS-4721:B2",
         "issuance_url": "https://registry.verra.org/app/projectDetail/VCS/4721/issuances/2",
         "date_of_issuance": "2025-05-05",
         "date_of_verification": "2025-04-22",
