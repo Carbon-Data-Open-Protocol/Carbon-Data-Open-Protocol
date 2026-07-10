@@ -95,7 +95,7 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "project.maximum_cumulative_crediting_duration"
         },
-        "maximum_number _of_crediting_periods": {
+        "maximum_number_of_crediting_periods": {
           "type": "integer",
           "description": "The maximum number of total crediting periods for which a project is eligible, encompassing the initial crediting period and the maximum number of renewals permitted under the applicable methodology and Carbon Crediting Program",
           "x-cdop-field-id": 158,
@@ -105,7 +105,7 @@
           "x-cdop-mutability": "Public",
           "x-cdop-public-private": "Immutable",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.maximum_number _of_crediting_periods"
+          "x-cdop-field-path": "project.maximum_number_of_crediting_periods"
         },
         "current_crediting_period_duration": {
           "type": "integer",

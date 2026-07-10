@@ -404,7 +404,7 @@
             ]
           }
         },
-        "project_Identifier": {
+        "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
           "x-cdop-field-id": 86,
@@ -414,7 +414,7 @@
           "x-cdop-mutability": "Immutable",
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.project_Identifier"
+          "x-cdop-field-path": "project.project_identifier"
         },
         "audits": {
           "type": "array",
@@ -799,7 +799,7 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "project.maximum_cumulative_crediting_duration"
         },
-        "maximum_number _of_crediting_periods": {
+        "maximum_number_of_crediting_periods": {
           "type": "integer",
           "description": "The maximum number of total crediting periods for which a project is eligible, encompassing the initial crediting period and the maximum number of renewals permitted under the applicable methodology and Carbon Crediting Program",
           "x-cdop-field-id": 158,
@@ -809,7 +809,7 @@
           "x-cdop-mutability": "Public",
           "x-cdop-public-private": "Immutable",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.maximum_number _of_crediting_periods"
+          "x-cdop-field-path": "project.maximum_number_of_crediting_periods"
         },
         "current_crediting_period_duration": {
           "type": "integer",
@@ -969,6 +969,18 @@
                 "x-cdop-public-private": "private",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "project_stakeholder.location[].alternative_address"
+              },
+              "country_subdivision_code": {
+                "type": "string",
+                "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
+                "x-cdop-field-id": 23,
+                "x-cdop-pre-issuance-inclusion": "yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "project developer, registry",
+                "x-cdop-mutability": "immutable",
+                "x-cdop-public-private": "private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.location[].country_subdivision_code"
               },
               "country_subdivision_name": {
                 "type": "string",
@@ -1433,35 +1445,6 @@
       },
       "required": []
     },
-    "project stakeholder": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "location": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "country_subdivision_code": {
-                "type": "string",
-                "description": "ISO 3166-2 country subdivision code of where the project stakeholder has their headquarters",
-                "x-cdop-field-id": 23,
-                "x-cdop-pre-issuance-inclusion": "yes",
-                "x-cdop-cardinality": "0..1",
-                "x-cdop-data-source": "project developer, registry",
-                "x-cdop-mutability": "immutable",
-                "x-cdop-public-private": "private",
-                "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "project stakeholder.location[].country_subdivision_code"
-              }
-            },
-            "required": []
-          }
-        }
-      },
-      "required": []
-    },
     "geolocation_file": {
       "type": "object",
       "additionalProperties": true,
@@ -1629,7 +1612,7 @@
               },
               "is_current": {
                 "type": "boolean",
-                "description": "0 if not the current program name, 1 for the name of the current program issuing the project's credits",
+                "description": "False if not the current program name, True for the name of the current program issuing the project's credits",
                 "x-cdop-field-id": 45,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -1663,7 +1646,7 @@
               },
               "is_current": {
                 "type": "boolean",
-                "description": "0 if not the current standard associated with the project's credits, 1 for the current standard associated with the project's credits",
+                "description": "False if not the current standard associated with the project's credits, True for the current standard associated with the project's credits",
                 "x-cdop-field-id": 47,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -1740,7 +1723,7 @@
               },
               "is_current": {
                 "type": "boolean",
-                "description": "0 for previous methodologies, 1 for the methodology currently being used.",
+                "description": "False for previous methodologies, True for the methodology currently being used.",
                 "x-cdop-field-id": 52,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
@@ -1993,7 +1976,7 @@
             "type": "object",
             "additionalProperties": true,
             "properties": {
-              "batch_Identifier": {
+              "batch_identifier": {
                 "type": "string",
                 "description": "Global unique identifier for the batch of credits issued",
                 "x-cdop-field-id": 92,
@@ -2003,7 +1986,7 @@
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "issuance.issuance[].batch_Identifier"
+                "x-cdop-field-path": "issuance.issuance[].batch_identifier"
               },
               "issuance_url": {
                 "type": "string",
