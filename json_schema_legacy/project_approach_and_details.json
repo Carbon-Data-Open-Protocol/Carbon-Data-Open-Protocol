@@ -249,7 +249,7 @@
                 "is_current"
               ]
             },
-            "minCont>>ains": 1,
+            "minContains": 1,
             "maxContains": 1
           }
         },
