@@ -1,0 +1,40 @@
+{
+  "estimations": {
+    "estimation_id": 1,
+    "estimation_event_date": "2022-11-01",
+    "estimation_status": "validated",
+    "estimated_status_reason": "Estimation validated by SCS Global Services during initial project validation in May 2023",
+    "vintage_year": [2023, 2024, 2025, 2026, 2027],
+    "estimated_vintage_emissions_mitigation": [52000, 53500, 54200, 54800, 55100],
+    "estimated_monitoring_period_start_date": [
+      "2023-01-01",
+      "2024-01-01",
+      "2025-01-01",
+      "2026-01-01",
+      "2027-01-01"
+    ],
+    "estimated_monitoring_period_end_date": [
+      "2023-12-31",
+      "2024-12-31",
+      "2025-12-31",
+      "2026-12-31",
+      "2027-12-31"
+    ],
+    "estimated_issuance_date": [
+      "2024-06-30",
+      "2025-06-30",
+      "2026-06-30",
+      "2027-06-30",
+      "2028-06-30"
+    ]
+  },
+  "project": {
+    "estimated_annual_emissions_mitigation": 53920,
+    "estimated_total_emissions_mitigation": 1617600,
+    "estimated_total_years": 30
+  },
+  "validation": {
+    "validation_id": 1,
+    "validation_type": "project design and estimation"
+  }
+}

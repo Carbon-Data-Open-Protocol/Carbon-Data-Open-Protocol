@@ -94,3 +94,8 @@ celerybeat.pid
 # OS files
 .DS_Store
 Thumbs.db
+
+# claude
+.claude/
+modified_test.schema.json
+docs/CDOP_SCHEMA_standard.xlsx

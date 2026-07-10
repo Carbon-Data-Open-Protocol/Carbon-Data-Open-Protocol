@@ -1,0 +1,262 @@
+{
+  "project": {
+    "location": [
+      {
+        "country_code": "KEN",
+        "country_name": "Kenya",
+        "geographical_region_code": "014",
+        "geographical_region_name": "Eastern Africa",
+        "country_subdivision_code": "KE-300",
+        "country_subdivision_name": "Kilifi",
+        "address_line_1": "Plot 47, Mida Creek Road",
+        "city": "Watamu",
+        "postal_code": "80202"
+      }
+    ],
+    "project_name": "Mida Creek Mangrove Restoration Project",
+    "project_id_type": "registry_id",
+    "project_id": "VCS-4721",
+    "project_description": "The Mida Creek Mangrove Restoration Project restores and protects approximately 1,200 hectares of degraded mangrove ecosystems along the Kenyan coast. Activities include active replanting of native mangrove species, removal of invasive vegetation, and community-based monitoring. The project generates carbon credits through sequestration and avoidance of further degradation, while delivering co-benefits including biodiversity habitat, coastal protection, and livelihood support for local fishing communities.",
+    "project_design_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
+    "project_status": "Registered",
+    "project_status_reason": "Project completed registry review and was approved.",
+    "project_registration_date": "2023-06-01",
+    "project_list_date": "2022-11-15",
+    "mitigation": [
+      {
+        "mitigation_type": "removal",
+        "project_sector": "land use, land use change and forestry",
+        "project_type": "blue carbon / tidal wetland restoration"
+      }
+    ],
+    "current_registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
+    "current_registry_project_id": "VCS-4721",
+    "project_identifier": "cdop:KEN:VCS-4721",
+    "documents": [
+      {
+        "other_project_documentation_type": "Monitoring Report",
+        "other_project_documentation_link": "https://registry.verra.org/app/projectDetail/VCS/4721/monitoring"
+      }
+    ],
+    "audits": [
+      {
+        "auditor_name": "SCS Global Services",
+        "auditor_site_visit_start_date": "2024-02-05",
+        "auditor_site_visit_end_date": "2024-02-12",
+        "verification_report_url": "https://registry.verra.org/app/projectDetail/VCS/4721/verification/2024",
+        "verification_report_date": "2024-04-18"
+      }
+    ],
+    "attestations": [
+      "carbon_credit_ownership_attestation",
+      "child_labor_attestation",
+      "labor_worker_attestation",
+      "land_right_attestation",
+      "legal_compliance_attestation"
+    ],
+    "carbon_concession_contract_length": true,
+    "carbon_concession_contract": "https://example.org/docs/mida_creek_concession_contract.pdf",
+    "carbon_credit_ownership_attestation": true,
+    "carbon_credit_ownership_documentation": "https://example.org/docs/mida_creek_ownership_contract.pdf",
+    "child_labor_attestation": true,
+    "child_labor_documentation": "https://example.org/docs/mida_creek_child_labor_policy.pdf",
+    "community_frameworks": "Free, prior, and informed consent (FPIC) obtained from Giriama and Digo communities. Grievance redress mechanism established. Benefit-sharing agreement signed with three local cooperatives covering 640 community members.",
+    "cultural_site_borders": false,
+    "cultural_site_designation": false,
+    "labor_worker_attestation": true,
+    "labor_worker_documentation": "https://example.org/docs/mida_creek_labor_code_of_conduct.pdf",
+    "land_right_attestation": true,
+    "land_rights_documentation": "https://example.org/docs/mida_creek_land_rights_evidence.pdf",
+    "land_ownership_attestation": false,
+    "legal_compliance_attestation": true,
+    "legal_compliance_documentation": "https://example.org/docs/mida_creek_legal_compliance.pdf",
+    "previous_project_crediting_program": false,
+    "project_governance_structure": "Project governed by a joint steering committee comprising Blue Carbon Kenya Ltd, two elected community representatives, and the Kenya Forest Service. Decisions require 75% approval. Annual external audit of governance processes.",
+    "public_comment": true,
+    "public_comment_summary": "30-day public comment period held November 2022. Fifteen submissions received; key concerns related to fishing access rights and benefit distribution were addressed in the revised project design document.",
+    "project_crediting_period_type": "renewable",
+    "maximum_cumulative_crediting_duration": 60,
+    "maximum_number_of_crediting_periods": 2,
+    "current_crediting_period_duration": 30,
+    "estimated_annual_emissions_mitigation": 53920,
+    "estimated_total_emissions_mitigation": 1617600,
+    "estimated_total_years": 30
+  },
+  "project_stakeholder": {
+    "location": [
+      {
+        "country_code": "KEN",
+        "country_name": "Kenya",
+        "geographical_region_code": "014",
+        "geographical_region_name": "Eastern Africa",
+        "address_line_1": "14 Riverside Drive, Suite 300",
+        "city": "Nairobi",
+        "postal_code": "00100",
+        "country_subdivision_name": "Nairobi City"
+      }
+    ],
+    "project_developer_name": "Blue Carbon Kenya Ltd",
+    "project_developer_website": "https://bluecarbon.example.ke",
+    "project_developer_email": "projects@bluecarbon.example.ke",
+    "project_developer_phone": "+254 20 123 4567",
+    "stakeholders": [
+      {
+        "project_stakeholder_type": "verifier",
+        "project_stakeholder_name": "SCS Global Services",
+        "project_stakeholder_website": "https://www.scsglobalservices.com"
+      },
+      {
+        "project_stakeholder_type": "technical_consultant",
+        "project_stakeholder_name": "Coastal Ecology Partners",
+        "project_stakeholder_website": "https://coastalecology.example.com"
+      }
+    ],
+    "list_of_landowners": [
+      "Watamu Fishing Cooperative",
+      "Mida Creek Community Trust",
+      "Kenya Forest Service (state land)"
+    ],
+    "organization": [
+      {
+        "organization_legal_name": "Blue Carbon Kenya Ltd",
+        "organization_role": "Carbon credit owner and project developer",
+        "organization_mission": "To restore and protect coastal blue carbon ecosystems across East Africa, delivering verified carbon credits alongside biodiversity and livelihood co-benefits.",
+        "organization_team_experience": "Leadership team combines 20+ years of blue carbon science, MRV, and community development. Previously developed three certified mangrove projects in Mozambique and Tanzania totaling 3,800 ha.",
+        "organization_project_employees": 18,
+        "organization_employees": 62,
+        "organization_founding_year": "2015-03-01",
+        "organization_project_experience": 7,
+        "organization_url": "https://bluecarbon.example.ke/about"
+      }
+    ]
+  },
+  "facility": {
+    "location": [
+      {
+        "country_code": "KEN",
+        "country_name": "Kenya",
+        "geographical_region_code": "014",
+        "geographical_region_name": "Eastern Africa",
+        "country_subdivision_code": "KE-300",
+        "country_subdivision_name": "Kilifi",
+        "city": "Watamu",
+        "address_line_1": "Mida Creek Conservation Area"
+      }
+    ]
+  },
+  "geolocation_file": {
+    "location": [
+      {
+        "file_name": "mida_creek_project_boundary",
+        "file_format": "GeoJSON",
+        "validity_start_date": "2023-01-01",
+        "file_status": "active",
+        "file_created_on": "2023-01-15T09:00:00Z",
+        "area_type": "project boundary",
+        "geometry_type": "Polygon"
+      }
+    ]
+  },
+  "crediting_program": {
+    "crediting_program": [
+      {
+        "crediting_program_name": "Verra Verified Carbon Standard (VCS)",
+        "is_current": true
+      }
+    ],
+    "standard": [
+      {
+        "standard_name": "Verified Carbon Standard",
+        "is_current": true
+      }
+    ],
+    "initial_standard_version": "4.0",
+    "current_standard_version": "4.5"
+  },
+  "methodology": {
+    "versions": [
+      {
+        "methodology_name": "VM0033 Methodology for Tidal Wetland and Seagrass Restoration",
+        "version": "2.1",
+        "is_current": true,
+        "document": "https://verra.org/methodologies/vm0033-methodology-for-tidal-wetland-and-seagrass-restoration-v2-1/"
+      }
+    ]
+  },
+  "registry": {
+    "current_registry": "Verra",
+    "previous": [],
+    "current_project_issuance_registry": "Verra"
+  },
+  "validation": {
+    "validation_body_name": "SCS Global Services",
+    "validation_date": "2023-05-10",
+    "validation_report": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
+    "validation_id": 1,
+    "current_crediting_period_start_date": "2023-01-01",
+    "current_crediting_period_end_date": "2052-12-31",
+    "current_crediting_period_number": 1,
+    "validation_type": "project design and estimation"
+  },
+  "issuance": {
+    "issuance": [
+      {
+        "batch_identifier": "cdop:KEN:VCS-4721:B1",
+        "issuance_url": "https://registry.verra.org/app/projectDetail/VCS/4721/issuances/1",
+        "date_of_issuance": "2024-05-01",
+        "date_of_verification": "2024-04-18",
+        "verification_period_start": "2023-01-01",
+        "verification_period_end": "2023-12-31",
+        "batch_issued_volume": 52300,
+        "cumulative_issued_volume": 52300,
+        "issuance_status": "issued"
+      }
+    ]
+  },
+  "unit": {
+    "metric": "tCO2e",
+    "owner_account_id": "VCS-ACC-00183722",
+    "retirement_beneficiary": "Acme Corporation",
+    "retirement_detail": "Retired against Acme Corporation's 2024 Scope 3 Land Use & Forestry commitment",
+    "serial_number": "8339-449183249-449183748-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
+    "source_serial_number": "8339-449183000-449184000-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
+    "status": "retired",
+    "status_reason": [],
+    "type": "VCU",
+    "quantity": 500,
+    "block_start": 449183249,
+    "block_end": 449183748
+  },
+  "vintage": {
+    "vintage": "2023-01-01"
+  },
+  "estimations": {
+    "estimation_id": 1,
+    "estimation_event_date": "2022-11-01",
+    "estimation_status": "validated",
+    "estimated_status_reason": "Estimation validated by SCS Global Services during initial project validation in May 2023",
+    "vintage_year": [2023, 2024, 2025, 2026, 2027],
+    "estimated_vintage_emissions_mitigation": [52000, 53500, 54200, 54800, 55100],
+    "estimated_monitoring_period_start_date": [
+      "2023-01-01",
+      "2024-01-01",
+      "2025-01-01",
+      "2026-01-01",
+      "2027-01-01"
+    ],
+    "estimated_monitoring_period_end_date": [
+      "2023-12-31",
+      "2024-12-31",
+      "2025-12-31",
+      "2026-12-31",
+      "2027-12-31"
+    ],
+    "estimated_issuance_date": [
+      "2024-06-30",
+      "2025-06-30",
+      "2026-06-30",
+      "2027-06-30",
+      "2028-06-30"
+    ]
+  }
+}

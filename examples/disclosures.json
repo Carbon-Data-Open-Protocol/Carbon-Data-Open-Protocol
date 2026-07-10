@@ -1,68 +1,55 @@
 {
   "project": {
     "attestations": [
+      "carbon_credit_ownership_attestation",
       "child_labor_attestation",
-      "labor_worker_attestation"
+      "labor_worker_attestation",
+      "land_right_attestation",
+      "legal_compliance_attestation"
     ],
     "carbon_concession_contract_length": true,
-    "carbon_concession_contract": "https://example.org/docs/concession_contract.pdf",
+    "carbon_concession_contract": "https://example.org/docs/mida_creek_concession_contract.pdf",
     "carbon_credit_ownership_attestation": true,
-    "carbon_credit_ownership_documentation": "https://example.org/docs/ownership_contract.pdf",
+    "carbon_credit_ownership_documentation": "https://example.org/docs/mida_creek_ownership_contract.pdf",
     "child_labor_attestation": true,
-    "child_labor_documentation": "https://example.org/docs/child_labor_policy.pdf",
-    "community_frameworks": "Engaged local indigenous councils; obtained FPIC; grievance redress mechanism in place.",
+    "child_labor_documentation": "https://example.org/docs/mida_creek_child_labor_policy.pdf",
+    "community_frameworks": "Free, prior, and informed consent (FPIC) obtained from Giriama and Digo communities. Grievance redress mechanism established. Benefit-sharing agreement signed with three local cooperatives covering 640 community members.",
     "cultural_site_borders": false,
     "cultural_site_designation": false,
     "labor_worker_attestation": true,
-    "labor_worker_documentation": "https://example.org/docs/labor_code_of_conduct.pdf",
+    "labor_worker_documentation": "https://example.org/docs/mida_creek_labor_code_of_conduct.pdf",
     "land_right_attestation": true,
-    "land_rights_documentation": "https://example.org/docs/land_rights_evidence.pdf",
-    "land_ownership_attestation": true,
-    "land_ownership_documentation": "https://example.org/docs/land_title_deed.pdf",
+    "land_rights_documentation": "https://example.org/docs/mida_creek_land_rights_evidence.pdf",
+    "land_ownership_attestation": false,
     "legal_compliance_attestation": true,
-    "legal_compliance_documentation": "https://example.org/docs/legal_compliance_statement.pdf",
-    "list_of_landowners": "Farmer A; Cooperative B; Community Trust C",
-    "project_governance_structure": "Board-led governance; independent advisory committee; quarterly risk reviews; stakeholder consultation committee.",
-    "project_status": "Registered",
+    "legal_compliance_documentation": "https://example.org/docs/mida_creek_legal_compliance.pdf",
+    "previous_project_crediting_program": false,
+    "project_governance_structure": "Project governed by a joint steering committee comprising Blue Carbon Kenya Ltd, two elected community representatives, and the Kenya Forest Service. Decisions require 75% approval. Annual external audit of governance processes.",
     "public_comment": true,
-    "public_comment_summary": "Public consultation held Q1 2025; comments addressed in revised PDD."
+    "public_comment_summary": "30-day public comment period held November 2022. Fifteen submissions received; key concerns related to fishing access rights and benefit distribution were addressed in the revised project design document."
   },
   "project_stakeholder": {
-    "organization_team_experience": [
-      "Team leads with 15+ years in forestry, MRV, and community engagement."
+    "list_of_landowners": [
+      "Watamu Fishing Cooperative",
+      "Mida Creek Community Trust",
+      "Kenya Forest Service (state land)"
     ],
-    "organization_role": [
-      "Carbon credit owner",
-      "Project implementer"
-    ],
-    "organization_project_employees": [
-      12
-    ],
-    "organization_employees": [
-      85
-    ],
-    "organization_founding_year": [
-      "2012-01-01"
-    ],
-    "organization_mission": [
-      "Advance nature-based climate solutions while protecting biodiversity and livelihoods."
-    ],
-    "organization_legal_name": [
-      "Blue Carbon Ltd"
-    ],
-    "organization_project_experience": [
-      18
-    ],
-    "organization_url": [
-      "https://bluecarbon.example.com/about"
+    "organization": [
+      {
+        "organization_legal_name": "Blue Carbon Kenya Ltd",
+        "organization_role": "Carbon credit owner and project developer",
+        "organization_mission": "To restore and protect coastal blue carbon ecosystems across East Africa, delivering verified carbon credits alongside biodiversity and livelihood co-benefits.",
+        "organization_team_experience": "Leadership team combines 20+ years of blue carbon science, MRV, and community development. Previously developed three certified mangrove projects in Mozambique and Tanzania totaling 3,800 ha.",
+        "organization_project_employees": 18,
+        "organization_employees": 62,
+        "organization_founding_year": "2015-03-01",
+        "organization_project_experience": 7,
+        "organization_url": "https://bluecarbon.example.ke/about"
+      }
     ]
   },
   "registry": {
-    "previous_project_crediting_program": false,
-    "previous_project_crediting_program_name": [],
-    "previous_project_registration_id": [],
-    "previous_project_rejection_date": [],
-    "previous_project_rejection_reason": [],
+    "previous": [],
     "current_project_issuance_registry": "Verra"
   }
 }

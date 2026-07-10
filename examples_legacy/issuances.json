@@ -1,0 +1,61 @@
+{
+  "project_identifier": "PRJ-2025-001",
+  "crediting_period": {
+    "estimated_start": "2025-01-01",
+    "estimated_end": "2040-12-31"
+  },
+  "audits": [
+    {
+      "auditor_name": "EcoVerifiers Ltd",
+      "site_visit_start_date": "2024-07-15",
+      "site_visit_end_date": "2024-07-20",
+      "description": "Initial validation audit covering project design and baseline."
+    },
+    {
+      "auditor_name": "CarbonCheck International",
+      "site_visit_start_date": "2025-07-10",
+      "site_visit_end_date": "2025-07-16",
+      "description": "Annual audit verifying credit issuance for first monitoring period."
+    }
+  ],
+  "issuance_forecast": [
+    {
+      "forecast_year": "2025-01-01",
+      "forecast_annual_issuance": 45000
+    },
+    {
+      "forecast_year": "2026-01-01",
+      "forecast_annual_issuance": 47000
+    },
+    {
+      "forecast_year": "2027-01-01",
+      "forecast_annual_issuance": 48000
+    }
+  ],
+  "forecast_total_issuance": [
+    700000
+  ],
+  "issuances": [
+    {
+      "batch_identifier": "PRJ-2025-001-B1",
+      "issuance_url": "https://registry.verra.org/project/PRJ-2025-001/issuances/1",
+      "date_of_issuance": "2025-06-30",
+      "date_of_verification": "2025-05-15",
+      "verification_period_start": "2024-01-01",
+      "verification_period_end": "2024-12-31",
+      "batch_issued_volume": 44000,
+      "verification_report": "https://example.org/reports/verification-2024.pdf"
+    },
+    {
+      "batch_identifier": "PRJ-2025-001-B2",
+      "issuance_url": "https://registry.verra.org/project/PRJ-2025-001/issuances/2",
+      "date_of_issuance": "2026-06-30",
+      "date_of_verification": "2026-05-20",
+      "verification_period_start": "2025-01-01",
+      "verification_period_end": "2025-12-31",
+      "batch_issued_volume": 46000,
+      "verification_report": "https://example.org/reports/verification-2025.pdf"
+    }
+  ],
+  "cumulative_issued_volume": 90000
+}

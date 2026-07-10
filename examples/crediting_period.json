@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "validation_id": 1,
+    "current_crediting_period_start_date": "2023-01-01",
+    "current_crediting_period_end_date": "2052-12-31",
+    "current_crediting_period_number": 1
+  },
+  "project": {
+    "project_crediting_period_type": "renewable",
+    "maximum_cumulative_crediting_duration": 60,
+    "maximum_number_of_crediting_periods": 2,
+    "current_crediting_period_duration": 30
+  }
+}
