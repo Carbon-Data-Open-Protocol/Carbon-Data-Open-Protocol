@@ -2,7 +2,7 @@
   "estimations": {
     "estimation_id": 1,
     "estimation_event_date": "2022-11-01",
-    "estimation_status": "validated",
+    "estimation_status": "Validated",
     "estimated_status_reason": "Estimation validated by SCS Global Services during initial project validation in May 2023",
     "vintage_year": [2023, 2024, 2025, 2026, 2027],
     "estimated_vintage_emissions_mitigation": [52000, 53500, 54200, 54800, 55100],
@@ -35,6 +35,6 @@
   },
   "validation": {
     "validation_id": 1,
-    "validation_type": "project design and estimation"
+    "validation_type": "Validation of Project Design Document"
   }
 }

@@ -14,7 +14,13 @@
           "items": {
             "type": "string",
             "description": "list of attestations (e.g., child labor, labor worker attestation), if verified credentials are supported",
-            "x-cdop-field-id": 101,
+            "enum": [
+              "child labor attestation",
+              "labor worker attestation",
+              "legal land ownership attestation",
+              "human rights attestation"
+            ],
+            "x-cdop-field-id": 102,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -28,7 +34,7 @@
         "carbon_concession_contract_length": {
           "type": "boolean",
           "description": "Indicate whether the concession contract is at least the same length as the crediting period",
-          "x-cdop-field-id": 102,
+          "x-cdop-field-id": 103,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -40,7 +46,7 @@
         "carbon_concession_contract": {
           "type": "string",
           "description": "Enter the carbon concession contract",
-          "x-cdop-field-id": 103,
+          "x-cdop-field-id": 104,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -52,7 +58,7 @@
         "carbon_credit_ownership_attestation": {
           "type": "boolean",
           "description": "Indicate possession of carbon credit ownership documentation",
-          "x-cdop-field-id": 104,
+          "x-cdop-field-id": 105,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -64,7 +70,7 @@
         "carbon_credit_ownership_documentation": {
           "type": "string",
           "description": "Enter the link to the contract of ownership.",
-          "x-cdop-field-id": 105,
+          "x-cdop-field-id": 106,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -76,7 +82,7 @@
         "child_labor_attestation": {
           "type": "boolean",
           "description": "Project complies with age-related legal frameworks. Indicates compliance with the ILO Convention 138 Minimum Age Convention 1973 and/or national labor laws related to minimum age",
-          "x-cdop-field-id": 106,
+          "x-cdop-field-id": 107,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -88,7 +94,7 @@
         "child_labor_documentation": {
           "type": "string",
           "description": "Evidence of compliance with age-related legal frameworks and ILO Convention 148 Minimum Age Convention 1973 and/or national labor laws related to minimum age",
-          "x-cdop-field-id": 107,
+          "x-cdop-field-id": 108,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -100,7 +106,7 @@
         "community_frameworks": {
           "type": "string",
           "description": "Summarize measures taken to comply with frameworks governing the rights of Indigenous, tribal, and local communities",
-          "x-cdop-field-id": 108,
+          "x-cdop-field-id": 109,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -112,7 +118,7 @@
         "cultural_site_borders": {
           "type": "boolean",
           "description": "The project site includes or borders archaeological sites or districts listed in national or international registries of historical or cultural significance",
-          "x-cdop-field-id": 109,
+          "x-cdop-field-id": 110,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -124,7 +130,7 @@
         "cultural_site_designation": {
           "type": "boolean",
           "description": "Registry recognition of cultural site designation",
-          "x-cdop-field-id": 110,
+          "x-cdop-field-id": 111,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -136,7 +142,7 @@
         "labor_worker_attestation": {
           "type": "boolean",
           "description": "Statement of compliance with international standards-compliant code of conduct or other labor rights documentation",
-          "x-cdop-field-id": 111,
+          "x-cdop-field-id": 112,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -148,7 +154,7 @@
         "labor_worker_documentation": {
           "type": "string",
           "description": "Enter the link to evidence of international standards-compliant code of conduct or other labor rights documentation",
-          "x-cdop-field-id": 112,
+          "x-cdop-field-id": 113,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -160,7 +166,7 @@
         "land_right_attestation": {
           "type": "boolean",
           "description": "Indicate the possession of evidence of land rights",
-          "x-cdop-field-id": 113,
+          "x-cdop-field-id": 114,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -172,7 +178,7 @@
         "land_rights_documentation": {
           "type": "string",
           "description": "Enter the link to evidence of land rights",
-          "x-cdop-field-id": 114,
+          "x-cdop-field-id": 115,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -184,7 +190,7 @@
         "land_ownership_attestation": {
           "type": "boolean",
           "description": "Indicate the possession of evidence of land ownership",
-          "x-cdop-field-id": 115,
+          "x-cdop-field-id": 116,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -196,7 +202,7 @@
         "land_ownership_documentation": {
           "type": "string",
           "description": "Land or facility ownership documentation",
-          "x-cdop-field-id": 116,
+          "x-cdop-field-id": 117,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -208,7 +214,7 @@
         "legal_compliance_attestation": {
           "type": "boolean",
           "description": "Indicate possession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
-          "x-cdop-field-id": 117,
+          "x-cdop-field-id": 118,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -220,7 +226,7 @@
         "legal_compliance_documentation": {
           "type": "string",
           "description": "Enter the link to the statement of compliance with all applicable national laws",
-          "x-cdop-field-id": 118,
+          "x-cdop-field-id": 119,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -232,7 +238,7 @@
         "previous_project_crediting_program": {
           "type": "boolean",
           "description": "Indicate whether project is receiving or seeking credit for reductions and removals under another crediting program, or has done previously",
-          "x-cdop-field-id": 129,
+          "x-cdop-field-id": 130,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -244,7 +250,7 @@
         "project_governance_structure": {
           "type": "string",
           "description": "How the project is governed; all stakeholders involved and systems that guide the organization's decision-making and operations",
-          "x-cdop-field-id": 134,
+          "x-cdop-field-id": 135,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -256,7 +262,7 @@
         "public_comment": {
           "type": "boolean",
           "description": "Indicate whether there has been any public comment on the project",
-          "x-cdop-field-id": 136,
+          "x-cdop-field-id": 137,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -268,7 +274,7 @@
         "public_comment_summary": {
           "type": "string",
           "description": "Summary of outcomes of public comment process",
-          "x-cdop-field-id": 137,
+          "x-cdop-field-id": 138,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -295,7 +301,7 @@
           "items": {
             "type": "string",
             "description": "List all landowners within project activity, such as farmers",
-            "x-cdop-field-id": 119,
+            "x-cdop-field-id": 120,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -315,7 +321,7 @@
               "organization_team_experience": {
                 "type": "string",
                 "description": "Describe an overview of the team leads' experience and technical expertise, the details and results of projects the organization(s)has developed (if applicable), and any other significant historical aspects of the Project Proponent organization. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 120,
+                "x-cdop-field-id": 121,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -327,7 +333,27 @@
               "organization_role": {
                 "type": "string",
                 "description": "Organization role. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 121,
+                "enum": [
+                  "Project developer",
+                  "Register/ accounting and tracking registry",
+                  "Registry with Transaction Functionality",
+                  "Infrastructure providers/ operators",
+                  "Multilateral Organisations",
+                  "Carbon Crediting Program/ Standard Setters",
+                  "Verification Accreditation Agency",
+                  "Project owner",
+                  "Project implementer",
+                  "Technical consultant",
+                  "GIS Advisory",
+                  "Feasibility study service",
+                  "Technical document service",
+                  "Administrative service",
+                  "Biodiversity advisory",
+                  "Political advocacy",
+                  "MRV data provider",
+                  "Other"
+                ],
+                "x-cdop-field-id": 122,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -339,7 +365,7 @@
               "organization_project_employees": {
                 "type": "integer",
                 "description": "Full-time and part-time employees and contractors who directly work on the project. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 122,
+                "x-cdop-field-id": 123,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -351,7 +377,7 @@
               "organization_employees": {
                 "type": "integer",
                 "description": "Full-time and part-time employees who work at the organization (not directly on the project)",
-                "x-cdop-field-id": 123,
+                "x-cdop-field-id": 124,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -364,7 +390,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Organization founding year. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 124,
+                "x-cdop-field-id": 125,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -376,7 +402,7 @@
               "organization_mission": {
                 "type": "string",
                 "description": "Summarize your organization’s purpose, values, and goals related to climate action. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 125,
+                "x-cdop-field-id": 126,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -388,7 +414,7 @@
               "organization_legal_name": {
                 "type": "string",
                 "description": "Legal entity name of the organisation. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 126,
+                "x-cdop-field-id": 127,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -400,7 +426,7 @@
               "organization_project_experience": {
                 "type": "integer",
                 "description": "The total number of projects developed/owned/invested in by the organization. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 127,
+                "x-cdop-field-id": 128,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -412,7 +438,7 @@
               "organization_url": {
                 "type": "string",
                 "description": "A verified URL for information about the organization. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 128,
+                "x-cdop-field-id": 129,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -451,7 +477,7 @@
               "previous_project_crediting_program_name": {
                 "type": "string",
                 "description": "Select which crediting program(s) the project has received or seeking/has received or sought credits from",
-                "x-cdop-field-id": 130,
+                "x-cdop-field-id": 131,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -463,7 +489,7 @@
               "previous_project_registration_id": {
                 "type": "integer",
                 "description": "Registration number for project under other crediting program",
-                "x-cdop-field-id": 131,
+                "x-cdop-field-id": 132,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -476,7 +502,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Date the project has been rejected by another crediting program",
-                "x-cdop-field-id": 132,
+                "x-cdop-field-id": 133,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -488,7 +514,7 @@
               "previous_project_rejection_reason": {
                 "type": "string",
                 "description": "Program name(s), reason(s) and date of rejection",
-                "x-cdop-field-id": 133,
+                "x-cdop-field-id": 134,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -504,7 +530,7 @@
         "current_project_issuance_registry": {
           "type": "string",
           "description": "Registry in which the project is currently issuing under",
-          "x-cdop-field-id": 135,
+          "x-cdop-field-id": 136,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",

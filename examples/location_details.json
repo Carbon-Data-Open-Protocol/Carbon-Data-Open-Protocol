@@ -48,9 +48,9 @@
         "file_name": "mida_creek_project_boundary",
         "file_format": "GeoJSON",
         "validity_start_date": "2023-01-01",
-        "file_status": "active",
+        "file_status": "ACTIVE",
         "file_created_on": "2023-01-15T09:00:00Z",
-        "area_type": "project boundary",
+        "area_type": "Project Area",
         "geometry_type": "Polygon"
       }
     ]
