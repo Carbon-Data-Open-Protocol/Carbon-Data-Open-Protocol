@@ -110,22 +110,6 @@
               "unit_type": {
                 "type": "string",
                 "description": "The specific metric type used to quantify the selected co-benefit",
-                "enum": [
-                  "TREES Credit",
-                  "VCC",
-                  "CRT",
-                  "CER",
-                  "CFC",
-                  "ACC",
-                  "VER, CER",
-                  "Isometric credit",
-                  "JCM",
-                  "A6.4 ER, MCU",
-                  "PVC",
-                  "CORC",
-                  "VCU",
-                  "PIU"
-                ],
                 "x-cdop-field-id": 184,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",

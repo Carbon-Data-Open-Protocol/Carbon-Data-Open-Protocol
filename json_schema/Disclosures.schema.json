@@ -15,6 +15,7 @@
             "type": "string",
             "description": "list of attestations (e.g., child labor, labor worker attestation), if verified credentials are supported",
             "enum": [
+              "child labor attestation",
               "labor worker attestation",
               "legal land ownership attestation",
               "human rights attestation"
@@ -333,6 +334,7 @@
                 "type": "string",
                 "description": "Organization role. Carbon credit owners details is the minimum requirement for this field.",
                 "enum": [
+                  "Project developer",
                   "Register/ accounting and tracking registry",
                   "Registry with Transaction Functionality",
                   "Infrastructure providers/ operators",
