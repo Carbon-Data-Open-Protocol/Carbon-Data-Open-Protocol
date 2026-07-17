@@ -2,13 +2,13 @@
   "crediting_program": {
     "crediting_program": [
       {
-        "crediting_program_name": "Verra Verified Carbon Standard (VCS)",
+        "crediting_program_name": "Verra",
         "is_current": true
       }
     ],
     "standard": [
       {
-        "standard_name": "Verified Carbon Standard",
+        "standard_name": "Verificed Carbon Standard (VCS)",
         "is_current": true
       }
     ],
@@ -18,7 +18,7 @@
   "methodology": {
     "versions": [
       {
-        "methodology_name": "VM0033 Methodology for Tidal Wetland and Seagrass Restoration",
+        "methodology_name": "VCS - VM0033",
         "version": "2.1",
         "is_current": true,
         "document": "https://verra.org/methodologies/vm0033-methodology-for-tidal-wetland-and-seagrass-restoration-v2-1/"
@@ -27,7 +27,7 @@
   },
   "project": {
     "project_name": "Mida Creek Mangrove Restoration Project",
-    "project_id_type": "registry_id",
+    "project_id_type": "current registry project id",
     "project_id": "VCS-4721",
     "project_description": "The Mida Creek Mangrove Restoration Project restores and protects approximately 1,200 hectares of degraded mangrove ecosystems along the Kenyan coast. Activities include active replanting of native mangrove species, removal of invasive vegetation, and community-based monitoring. The project generates carbon credits through sequestration and avoidance of further degradation, while delivering co-benefits including biodiversity habitat, coastal protection, and livelihood support for local fishing communities.",
     "project_design_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
@@ -37,15 +37,15 @@
     "project_list_date": "2022-11-15",
     "mitigation": [
       {
-        "mitigation_type": "removal",
-        "project_sector": "land use, land use change and forestry",
-        "project_type": "blue carbon / tidal wetland restoration"
+        "mitigation_type": "Removal - nature",
+        "project_sector": "A02 - Forestry and logging",
+        "project_type": "Tidal"
       }
     ],
     "current_registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
     "documents": [
       {
-        "other_project_documentation_type": "Monitoring Report",
+        "other_project_documentation_type": "project monitoring report",
         "other_project_documentation_link": "https://registry.verra.org/app/projectDetail/VCS/4721/monitoring"
       }
     ]
@@ -57,12 +57,12 @@
     "project_developer_phone": "+254 20 123 4567",
     "stakeholders": [
       {
-        "project_stakeholder_type": "verifier",
+        "project_stakeholder_type": "Verification Accreditation Agency",
         "project_stakeholder_name": "SCS Global Services",
         "project_stakeholder_website": "https://www.scsglobalservices.com"
       },
       {
-        "project_stakeholder_type": "technical_consultant",
+        "project_stakeholder_type": "Technical consultant",
         "project_stakeholder_name": "Coastal Ecology Partners",
         "project_stakeholder_website": "https://coastalecology.example.com"
       }

@@ -14,7 +14,7 @@
       }
     ],
     "project_name": "Mida Creek Mangrove Restoration Project",
-    "project_id_type": "registry_id",
+    "project_id_type": "current registry project id",
     "project_id": "VCS-4721",
     "project_description": "The Mida Creek Mangrove Restoration Project restores and protects approximately 1,200 hectares of degraded mangrove ecosystems along the Kenyan coast. Activities include active replanting of native mangrove species, removal of invasive vegetation, and community-based monitoring. The project generates carbon credits through sequestration and avoidance of further degradation, while delivering co-benefits including biodiversity habitat, coastal protection, and livelihood support for local fishing communities.",
     "project_design_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
@@ -24,9 +24,9 @@
     "project_list_date": "2022-11-15",
     "mitigation": [
       {
-        "mitigation_type": "removal",
-        "project_sector": "land use, land use change and forestry",
-        "project_type": "blue carbon / tidal wetland restoration"
+        "mitigation_type": "Removal - nature",
+        "project_sector": "A02 - Forestry and logging",
+        "project_type": "Tidal"
       }
     ],
     "current_registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
@@ -34,7 +34,7 @@
     "project_identifier": "cdop:KEN:VCS-4721",
     "documents": [
       {
-        "other_project_documentation_type": "Monitoring Report",
+        "other_project_documentation_type": "project monitoring report",
         "other_project_documentation_link": "https://registry.verra.org/app/projectDetail/VCS/4721/monitoring"
       }
     ],
@@ -48,11 +48,10 @@
       }
     ],
     "attestations": [
-      "carbon_credit_ownership_attestation",
-      "child_labor_attestation",
-      "labor_worker_attestation",
-      "land_right_attestation",
-      "legal_compliance_attestation"
+      "child labor attestation",
+      "labor worker attestation",
+      "legal land ownership attestation",
+      "human rights attestation"
     ],
     "carbon_concession_contract_length": true,
     "carbon_concession_contract": "https://example.org/docs/mida_creek_concession_contract.pdf",
@@ -74,7 +73,7 @@
     "project_governance_structure": "Project governed by a joint steering committee comprising Blue Carbon Kenya Ltd, two elected community representatives, and the Kenya Forest Service. Decisions require 75% approval. Annual external audit of governance processes.",
     "public_comment": true,
     "public_comment_summary": "30-day public comment period held November 2022. Fifteen submissions received; key concerns related to fishing access rights and benefit distribution were addressed in the revised project design document.",
-    "project_crediting_period_type": "renewable",
+    "project_crediting_period_type": "Renewable",
     "maximum_cumulative_crediting_duration": 60,
     "maximum_number_of_crediting_periods": 2,
     "current_crediting_period_duration": 30,
@@ -101,12 +100,12 @@
     "project_developer_phone": "+254 20 123 4567",
     "stakeholders": [
       {
-        "project_stakeholder_type": "verifier",
+        "project_stakeholder_type": "Verification Accreditation Agency",
         "project_stakeholder_name": "SCS Global Services",
         "project_stakeholder_website": "https://www.scsglobalservices.com"
       },
       {
-        "project_stakeholder_type": "technical_consultant",
+        "project_stakeholder_type": "Technical consultant",
         "project_stakeholder_name": "Coastal Ecology Partners",
         "project_stakeholder_website": "https://coastalecology.example.com"
       }
@@ -119,7 +118,7 @@
     "organization": [
       {
         "organization_legal_name": "Blue Carbon Kenya Ltd",
-        "organization_role": "Carbon credit owner and project developer",
+        "organization_role": "Project developer",
         "organization_mission": "To restore and protect coastal blue carbon ecosystems across East Africa, delivering verified carbon credits alongside biodiversity and livelihood co-benefits.",
         "organization_team_experience": "Leadership team combines 20+ years of blue carbon science, MRV, and community development. Previously developed three certified mangrove projects in Mozambique and Tanzania totaling 3,800 ha.",
         "organization_project_employees": 18,
@@ -150,9 +149,9 @@
         "file_name": "mida_creek_project_boundary",
         "file_format": "GeoJSON",
         "validity_start_date": "2023-01-01",
-        "file_status": "active",
+        "file_status": "ACTIVE",
         "file_created_on": "2023-01-15T09:00:00Z",
-        "area_type": "project boundary",
+        "area_type": "Project Area",
         "geometry_type": "Polygon"
       }
     ]
@@ -160,13 +159,13 @@
   "crediting_program": {
     "crediting_program": [
       {
-        "crediting_program_name": "Verra Verified Carbon Standard (VCS)",
+        "crediting_program_name": "Verra",
         "is_current": true
       }
     ],
     "standard": [
       {
-        "standard_name": "Verified Carbon Standard",
+        "standard_name": "Verificed Carbon Standard (VCS)",
         "is_current": true
       }
     ],
@@ -176,7 +175,7 @@
   "methodology": {
     "versions": [
       {
-        "methodology_name": "VM0033 Methodology for Tidal Wetland and Seagrass Restoration",
+        "methodology_name": "VCS - VM0033",
         "version": "2.1",
         "is_current": true,
         "document": "https://verra.org/methodologies/vm0033-methodology-for-tidal-wetland-and-seagrass-restoration-v2-1/"
@@ -196,7 +195,7 @@
     "current_crediting_period_start_date": "2023-01-01",
     "current_crediting_period_end_date": "2052-12-31",
     "current_crediting_period_number": 1,
-    "validation_type": "project design and estimation"
+    "validation_type": "Validation of Project Design Document"
   },
   "issuance": {
     "issuance": [
@@ -209,7 +208,7 @@
         "verification_period_end": "2023-12-31",
         "batch_issued_volume": 52300,
         "cumulative_issued_volume": 52300,
-        "issuance_status": "issued"
+        "issuance_status": "Verified"
       }
     ]
   },
@@ -220,7 +219,7 @@
     "retirement_detail": "Retired against Acme Corporation's 2024 Scope 3 Land Use & Forestry commitment",
     "serial_number": "8339-449183249-449183748-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
     "source_serial_number": "8339-449183000-449184000-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
-    "status": "retired",
+    "status": "Retired",
     "status_reason": [],
     "type": "VCU",
     "quantity": 500,
@@ -233,7 +232,7 @@
   "estimations": {
     "estimation_id": 1,
     "estimation_event_date": "2022-11-01",
-    "estimation_status": "validated",
+    "estimation_status": "Validated",
     "estimated_status_reason": "Estimation validated by SCS Global Services during initial project validation in May 2023",
     "vintage_year": [2023, 2024, 2025, 2026, 2027],
     "estimated_vintage_emissions_mitigation": [52000, 53500, 54200, 54800, 55100],

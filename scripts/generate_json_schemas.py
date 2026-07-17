@@ -1,12 +1,17 @@
 from pathlib import Path
+from functools import lru_cache
+import csv
 import json
 import re
 from openpyxl import load_workbook
 
 
 INPUT_FILE = "docs/CDOP_SCHEMA.xlsx"
+ENUM_VALUES_FILE = "docs/CDOP Enumerated Values Lists.xlsx"
 OUTPUT_DIR = "json_schema"
 JSON_SCHEMA_VERSION = "https://json-schema.org/draft/2020-12/schema"
+
+UNMATCHED_ENUM_FIELDS = []
 
 
 TYPE_MAP = {
@@ -75,21 +80,54 @@ def is_required(value):
     return str(value).strip().lower() in {"required", "yes", "y", "true", "1"}
 
 
-def parse_enum_values(value):
-    if not value:
-        return None
+def load_enum_value_lookup(path=ENUM_VALUES_FILE):
+    input_path = Path(path)
 
-    raw = str(value).strip()
+    if not input_path.exists():
+        print(f"Warning: enum values file not found at {input_path}; enum fields will have no enum list")
+        return {}
 
-    if "|" in raw:
-        parts = raw.split("|")
-    elif ";" in raw:
-        parts = raw.split(";")
-    else:
-        parts = raw.split(",")
+    wb = load_workbook(input_path, data_only=True)
+    ws = wb.worksheets[0]
 
-    values = [part.strip() for part in parts if part.strip()]
-    return values or None
+    rows = list(ws.iter_rows(values_only=True))
+    header_row = rows[2]
+    data_rows = rows[4:]
+
+    lookup = {}
+
+    for col_index, header in enumerate(header_row):
+        if not clean_value(header):
+            continue
+
+        values = []
+        seen = set()
+        for row in data_rows:
+            value = clean_value(row[col_index]) if col_index < len(row) else None
+            if value is not None and value not in seen:
+                seen.add(value)
+                values.append(value)
+
+        if not values:
+            continue
+
+        for part in str(header).split("&"):
+            key = normalize_header(part)
+            if key:
+                lookup[key] = values
+
+    return lookup
+
+
+@lru_cache(maxsize=None)
+def get_enum_lookup():
+    return load_enum_value_lookup()
+
+
+def record_unmatched_enum_field(record):
+    UNMATCHED_ENUM_FIELDS.append(
+        (record.get("associated_entity"), record.get("field_name"))
+    )
 
 
 def parse_cardinality(cardinality):
@@ -149,9 +187,12 @@ def build_base_field_schema(record):
 
     if datatype_key == "enum":
         field_schema["type"] = "string"
-        enum_values = parse_enum_values(record.get("enum_values"))
+        field_name_key = normalize_header(record.get("field_name"))
+        enum_values = get_enum_lookup().get(field_name_key)
         if enum_values:
             field_schema["enum"] = enum_values
+        else:
+            record_unmatched_enum_field(record)
 
     add_custom_annotations(field_schema, record)
 
@@ -408,6 +449,22 @@ def convert_workbook(input_file=INPUT_FILE, output_dir=OUTPUT_DIR):
             json.dump(schema, f, indent=2, ensure_ascii=False)
 
         print(f"Wrote {output_file}")
+
+    if UNMATCHED_ENUM_FIELDS:
+        seen = set()
+        deduped = []
+        for entry in UNMATCHED_ENUM_FIELDS:
+            if entry not in seen:
+                seen.add(entry)
+                deduped.append(entry)
+
+        report_file = output_path / "unmatched_enum_fields.csv"
+        with report_file.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["associated_entity", "field_name"])
+            writer.writerows(deduped)
+
+        print(f"Wrote {len(deduped)} unmatched enum fields to {report_file}")
 
 
 if __name__ == "__main__":

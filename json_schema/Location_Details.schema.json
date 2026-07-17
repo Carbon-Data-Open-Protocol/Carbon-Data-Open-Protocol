@@ -487,6 +487,10 @@
               "file_format": {
                 "type": "string",
                 "description": "Format of  the GIS file",
+                "enum": [
+                  "KML",
+                  "Shapefile"
+                ],
                 "x-cdop-field-id": 35,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
@@ -523,6 +527,15 @@
               "file_status": {
                 "type": "string",
                 "description": "Status of the GIS file",
+                "enum": [
+                  "ARCHIVED",
+                  "ACQUIRED",
+                  "CANCELLED",
+                  "FAILED",
+                  "PLANNED",
+                  "POTENTIAL",
+                  "REJECTED"
+                ],
                 "x-cdop-field-id": 38,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
@@ -571,6 +584,23 @@
               "area_type": {
                 "type": "string",
                 "description": "Area type of GIS file",
+                "enum": [
+                  "Reference Area",
+                  "Leakage Area",
+                  "Planting Area",
+                  "Project Accounting Area",
+                  "Donor Pool/Control Area",
+                  "Administrative Boundaries",
+                  "Deforested/Degraded Area",
+                  "Fire Analysis Area",
+                  "Land Ownership Area",
+                  "Buffer Area",
+                  "Canon Stocks",
+                  "Land Cover/Biomes",
+                  "Forest Loss/Gain/Change",
+                  "Canopy Cover Height",
+                  "Biomass"
+                ],
                 "x-cdop-field-id": 42,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -583,6 +613,9 @@
               "geometry_type": {
                 "type": "string",
                 "description": "Geometry type of GIS file",
+                "enum": [
+                  "MultiPolygon"
+                ],
                 "x-cdop-field-id": 43,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",

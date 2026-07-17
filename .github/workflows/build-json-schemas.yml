@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "docs/CDOP_SCHEMA.xlsx"
+      - "docs/CDOP Enumerated Values Lists.xlsx"
       - "scripts/generate_json_schemas.py"
       - ".github/workflows/build-json-schemas.yml"
   workflow_dispatch:

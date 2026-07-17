@@ -1,11 +1,10 @@
 {
   "project": {
     "attestations": [
-      "carbon_credit_ownership_attestation",
-      "child_labor_attestation",
-      "labor_worker_attestation",
-      "land_right_attestation",
-      "legal_compliance_attestation"
+      "child labor attestation",
+      "labor worker attestation",
+      "legal land ownership attestation",
+      "human rights attestation"
     ],
     "carbon_concession_contract_length": true,
     "carbon_concession_contract": "https://example.org/docs/mida_creek_concession_contract.pdf",
@@ -37,7 +36,7 @@
     "organization": [
       {
         "organization_legal_name": "Blue Carbon Kenya Ltd",
-        "organization_role": "Carbon credit owner and project developer",
+        "organization_role": "Project developer",
         "organization_mission": "To restore and protect coastal blue carbon ecosystems across East Africa, delivering verified carbon credits alongside biodiversity and livelihood co-benefits.",
         "organization_team_experience": "Leadership team combines 20+ years of blue carbon science, MRV, and community development. Previously developed three certified mangrove projects in Mozambique and Tanzania totaling 3,800 ha.",
         "organization_project_employees": 18,

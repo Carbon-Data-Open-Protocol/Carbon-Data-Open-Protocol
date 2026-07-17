@@ -29,7 +29,7 @@
         "verification_period_end": "2023-12-31",
         "batch_issued_volume": 52300,
         "cumulative_issued_volume": 52300,
-        "issuance_status": "issued"
+        "issuance_status": "Verified"
       },
       {
         "batch_identifier": "cdop:KEN:VCS-4721:B2",
@@ -40,7 +40,7 @@
         "verification_period_end": "2024-12-31",
         "batch_issued_volume": 54800,
         "cumulative_issued_volume": 107100,
-        "issuance_status": "issued"
+        "issuance_status": "Verified"
       }
     ]
   }

@@ -173,6 +173,11 @@
         "project_id_type": {
           "type": "string",
           "description": "The type of project id (e.g., registry id, universally unique identifier id)",
+          "enum": [
+            "current registry project id",
+            "origin registry project id",
+            "global unique project id"
+          ],
           "x-cdop-field-id": 55,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
@@ -237,6 +242,10 @@
         "program_type": {
           "type": "string",
           "description": "If referring to a program of activities, specify the type of program.",
+          "enum": [
+            "Nested project",
+            "Scaled up program"
+          ],
           "x-cdop-field-id": 60,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
@@ -267,6 +276,13 @@
               "mitigation_type": {
                 "type": "string",
                 "description": "The type of offset the project is expected to generate.",
+                "enum": [
+                  "Reduction - nature",
+                  "Reduction - technical",
+                  "Removal - nature",
+                  "Removal - technical",
+                  "Not Determined"
+                ],
                 "x-cdop-field-id": 62,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -291,6 +307,36 @@
               "project_type": {
                 "type": "string",
                 "description": "The emission reduction or sequestration pathway of project.",
+                "enum": [
+                  "Afforestation",
+                  "Agriculture",
+                  "Biogas",
+                  "Biomass Energy",
+                  "Cement",
+                  "CO2 usage",
+                  "Coal bed/mine methane",
+                  "Energy distribution",
+                  "Energy Efficiency households",
+                  "Energy Efficiency Industry",
+                  "Energy Efficiency own generation",
+                  "Energy Efficiency service",
+                  "Energy Efficiency supply side",
+                  "Fossil fuel switch",
+                  "Fugitive",
+                  "Geothermal",
+                  "Hydro",
+                  "Landfill gas",
+                  "Methane avoidance",
+                  "N2O",
+                  "PFCs and SF6",
+                  "Reforestation",
+                  "Solar",
+                  "Tidal",
+                  "Transport",
+                  "Waste",
+                  "Wind",
+                  "Any combination of the above"
+                ],
                 "x-cdop-field-id": 64,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -299,9 +345,36 @@
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "project.mitigation[].project_type"
+              },
+              "estimated_annual_emissions_mitigation": {
+                "type": "number",
+                "description": "Estimated ex-ante annual average amount of emissions reduction, avoidance or removal over the current crediting period, net of buffer contributions. This can be calculated by the optional per vintage data, if available.",
+                "x-cdop-field-id": 167,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.mitigation[].estimated_annual_emissions_mitigation"
+              },
+              "estimated_total_emissions_mitigation": {
+                "type": "number",
+                "description": "Estimated ex-ante total amount of emissions reduction, avoidance or removal as included in the current estimation event, net of buffer contributions.This can be calculated by the optional per vintage data, if available.",
+                "x-cdop-field-id": 168,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.mitigation[].estimated_total_emissions_mitigation"
               }
             },
-            "required": []
+            "required": [
+              "estimated_annual_emissions_mitigation",
+              "estimated_total_emissions_mitigation"
+            ]
           }
         },
         "current_registry_project_link": {
@@ -316,35 +389,78 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "project.current_registry_project_link"
         },
-        "project_status": {
-          "type": "string",
-          "description": "The current status of the project.",
-          "x-cdop-field-id": 66,
-          "x-cdop-pre-issuance-inclusion": "yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "project developer",
-          "x-cdop-mutability": "Mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.project_status"
-        },
-        "project_status_reason": {
-          "type": "string",
-          "description": "The reason for updating the project status",
-          "x-cdop-field-id": 67,
-          "x-cdop-pre-issuance-inclusion": "yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "project developer",
-          "x-cdop-mutability": "Mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.project_status_reason"
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "project_status": {
+                "type": "string",
+                "description": "The current status of the project.",
+                "enum": [
+                  "Pre-feasibility",
+                  "Feasibility",
+                  "Project design drafting",
+                  "Project design finalization",
+                  "Listed",
+                  "Validation",
+                  "Validated",
+                  "Registered",
+                  "Approved",
+                  "Authorized",
+                  "Verified and issuing",
+                  "Completed",
+                  "Withdrawn",
+                  "De-registered",
+                  "Inactive",
+                  "Rejected"
+                ],
+                "x-cdop-field-id": 66,
+                "x-cdop-pre-issuance-inclusion": "yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.status[].project_status"
+              },
+              "project_status_reason": {
+                "type": "string",
+                "description": "The reason for updating the project status",
+                "x-cdop-field-id": 67,
+                "x-cdop-pre-issuance-inclusion": "yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.status[].project_status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 68,
+                "x-cdop-pre-issuance-inclusion": "yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.status[].is_current"
+              }
+            },
+            "required": [
+              "is_current",
+              "project_status"
+            ]
+          }
         },
         "project_registration_date": {
           "type": "string",
           "format": "date",
           "description": "The date the project was registered on the registry.",
-          "x-cdop-field-id": 68,
+          "x-cdop-field-id": 69,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -357,7 +473,7 @@
           "type": "string",
           "format": "date",
           "description": "The date the project was first listed on a registry.",
-          "x-cdop-field-id": 69,
+          "x-cdop-field-id": 70,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -375,7 +491,14 @@
               "other_project_documentation_type": {
                 "type": "string",
                 "description": "The type(s) of additional project documentation.",
-                "x-cdop-field-id": 70,
+                "enum": [
+                  "project monitoring report",
+                  "non-permanence risk assessment",
+                  "voluntary cancellation certification",
+                  "loss event report",
+                  "consultation record"
+                ],
+                "x-cdop-field-id": 71,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -387,7 +510,7 @@
               "other_project_documentation_link": {
                 "type": "string",
                 "description": "The link(s) to the project's additional project documentation.",
-                "x-cdop-field-id": 71,
+                "x-cdop-field-id": 72,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -406,7 +529,7 @@
         "project_identifier": {
           "type": "string",
           "description": "Global unique identifier for the project",
-          "x-cdop-field-id": 86,
+          "x-cdop-field-id": 87,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -424,7 +547,7 @@
               "auditor_name": {
                 "type": "string",
                 "description": "The organizational name of project's auditor (e.g., VBB)",
-                "x-cdop-field-id": 87,
+                "x-cdop-field-id": 88,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -437,7 +560,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Start date for Auditor (e.g., VVB) site visit",
-                "x-cdop-field-id": 88,
+                "x-cdop-field-id": 89,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -450,7 +573,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "End date for Auditor (e.g., VVB) site visit",
-                "x-cdop-field-id": 89,
+                "x-cdop-field-id": 90,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -462,7 +585,7 @@
               "verification_report_url": {
                 "type": "string",
                 "description": "Enter the link to the auditor's verification report",
-                "x-cdop-field-id": 90,
+                "x-cdop-field-id": 91,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -475,7 +598,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Enter the date the verification report was issued",
-                "x-cdop-field-id": 91,
+                "x-cdop-field-id": 92,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -499,7 +622,12 @@
           "items": {
             "type": "string",
             "description": "list of attestations (e.g., child labor, labor worker attestation), if verified credentials are supported",
-            "x-cdop-field-id": 101,
+            "enum": [
+              "labor worker attestation",
+              "legal land ownership attestation",
+              "human rights attestation"
+            ],
+            "x-cdop-field-id": 102,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -513,7 +641,7 @@
         "carbon_concession_contract_length": {
           "type": "boolean",
           "description": "Indicate whether the concession contract is at least the same length as the crediting period",
-          "x-cdop-field-id": 102,
+          "x-cdop-field-id": 103,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -525,7 +653,7 @@
         "carbon_concession_contract": {
           "type": "string",
           "description": "Enter the carbon concession contract",
-          "x-cdop-field-id": 103,
+          "x-cdop-field-id": 104,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -537,7 +665,7 @@
         "carbon_credit_ownership_attestation": {
           "type": "boolean",
           "description": "Indicate possession of carbon credit ownership documentation",
-          "x-cdop-field-id": 104,
+          "x-cdop-field-id": 105,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -549,7 +677,7 @@
         "carbon_credit_ownership_documentation": {
           "type": "string",
           "description": "Enter the link to the contract of ownership.",
-          "x-cdop-field-id": 105,
+          "x-cdop-field-id": 106,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -561,7 +689,7 @@
         "child_labor_attestation": {
           "type": "boolean",
           "description": "Project complies with age-related legal frameworks. Indicates compliance with the ILO Convention 138 Minimum Age Convention 1973 and/or national labor laws related to minimum age",
-          "x-cdop-field-id": 106,
+          "x-cdop-field-id": 107,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -573,7 +701,7 @@
         "child_labor_documentation": {
           "type": "string",
           "description": "Evidence of compliance with age-related legal frameworks and ILO Convention 148 Minimum Age Convention 1973 and/or national labor laws related to minimum age",
-          "x-cdop-field-id": 107,
+          "x-cdop-field-id": 108,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -585,7 +713,7 @@
         "community_frameworks": {
           "type": "string",
           "description": "Summarize measures taken to comply with frameworks governing the rights of Indigenous, tribal, and local communities",
-          "x-cdop-field-id": 108,
+          "x-cdop-field-id": 109,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -597,7 +725,7 @@
         "cultural_site_borders": {
           "type": "boolean",
           "description": "The project site includes or borders archaeological sites or districts listed in national or international registries of historical or cultural significance",
-          "x-cdop-field-id": 109,
+          "x-cdop-field-id": 110,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -609,7 +737,7 @@
         "cultural_site_designation": {
           "type": "boolean",
           "description": "Registry recognition of cultural site designation",
-          "x-cdop-field-id": 110,
+          "x-cdop-field-id": 111,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -621,7 +749,7 @@
         "labor_worker_attestation": {
           "type": "boolean",
           "description": "Statement of compliance with international standards-compliant code of conduct or other labor rights documentation",
-          "x-cdop-field-id": 111,
+          "x-cdop-field-id": 112,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -633,7 +761,7 @@
         "labor_worker_documentation": {
           "type": "string",
           "description": "Enter the link to evidence of international standards-compliant code of conduct or other labor rights documentation",
-          "x-cdop-field-id": 112,
+          "x-cdop-field-id": 113,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -645,7 +773,7 @@
         "land_right_attestation": {
           "type": "boolean",
           "description": "Indicate the possession of evidence of land rights",
-          "x-cdop-field-id": 113,
+          "x-cdop-field-id": 114,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -657,7 +785,7 @@
         "land_rights_documentation": {
           "type": "string",
           "description": "Enter the link to evidence of land rights",
-          "x-cdop-field-id": 114,
+          "x-cdop-field-id": 115,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -669,7 +797,7 @@
         "land_ownership_attestation": {
           "type": "boolean",
           "description": "Indicate the possession of evidence of land ownership",
-          "x-cdop-field-id": 115,
+          "x-cdop-field-id": 116,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -681,7 +809,7 @@
         "land_ownership_documentation": {
           "type": "string",
           "description": "Land or facility ownership documentation",
-          "x-cdop-field-id": 116,
+          "x-cdop-field-id": 117,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -693,7 +821,7 @@
         "legal_compliance_attestation": {
           "type": "boolean",
           "description": "Indicate possession of legal compliance documentation and of explanation of how legislation informed and/or influenced project design",
-          "x-cdop-field-id": 117,
+          "x-cdop-field-id": 118,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -705,7 +833,7 @@
         "legal_compliance_documentation": {
           "type": "string",
           "description": "Enter the link to the statement of compliance with all applicable national laws",
-          "x-cdop-field-id": 118,
+          "x-cdop-field-id": 119,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -717,7 +845,7 @@
         "previous_project_crediting_program": {
           "type": "boolean",
           "description": "Indicate whether project is receiving or seeking credit for reductions and removals under another crediting program, or has done previously",
-          "x-cdop-field-id": 129,
+          "x-cdop-field-id": 130,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -729,7 +857,7 @@
         "project_governance_structure": {
           "type": "string",
           "description": "How the project is governed; all stakeholders involved and systems that guide the organization's decision-making and operations",
-          "x-cdop-field-id": 134,
+          "x-cdop-field-id": 135,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -741,7 +869,7 @@
         "public_comment": {
           "type": "boolean",
           "description": "Indicate whether there has been any public comment on the project",
-          "x-cdop-field-id": 136,
+          "x-cdop-field-id": 137,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -753,7 +881,7 @@
         "public_comment_summary": {
           "type": "string",
           "description": "Summary of outcomes of public comment process",
-          "x-cdop-field-id": 137,
+          "x-cdop-field-id": 138,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -765,7 +893,7 @@
         "current_registry_project_id": {
           "type": "string",
           "description": "Identifier used to track the project in the current registry.",
-          "x-cdop-field-id": 138,
+          "x-cdop-field-id": 139,
           "x-cdop-pre-issuance-inclusion": "No",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Registry",
@@ -774,104 +902,303 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "project.current_registry_project_id"
         },
-        "project_crediting_period_type": {
-          "type": "string",
-          "description": "The designation of the crediting period as either fixed (=expiring after a single defined term), or renewable, allowing for extension through multiple eligible renewals",
-          "x-cdop-field-id": 156,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.project_crediting_period_type"
+        "crediting_period": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "project_crediting_period_type": {
+                "type": "string",
+                "description": "The designation of the crediting period as either fixed (=expiring after a single defined term), or renewable, allowing for extension through multiple eligible renewals",
+                "enum": [
+                  "Renewable"
+                ],
+                "x-cdop-field-id": 158,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.crediting_period[].project_crediting_period_type"
+              },
+              "maximum_cumulative_crediting_duration": {
+                "type": "integer",
+                "description": "The maximum cumulative duration (in years) for which the project can generate units, encompassing the initial period and all eligible renewals granted to the project under the applicable methodology and Carbon Crediting Program.",
+                "x-cdop-field-id": 159,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.crediting_period[].maximum_cumulative_crediting_duration"
+              },
+              "maximum_number_of_crediting_periods": {
+                "type": "integer",
+                "description": "The maximum number of total crediting periods for which a project is eligible, encompassing the initial crediting period and the maximum number of renewals permitted under the applicable methodology and Carbon Crediting Program",
+                "x-cdop-field-id": 160,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.crediting_period[].maximum_number_of_crediting_periods"
+              }
+            },
+            "required": []
+          }
         },
-        "maximum_cumulative_crediting_duration": {
-          "type": "integer",
-          "description": "The maximum cumulative duration (in years) for which the project can generate units, encompassing the initial period and all eligible renewals granted to the project under the applicable methodology and Carbon Crediting Program.",
-          "x-cdop-field-id": 157,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.maximum_cumulative_crediting_duration"
-        },
-        "maximum_number_of_crediting_periods": {
-          "type": "integer",
-          "description": "The maximum number of total crediting periods for which a project is eligible, encompassing the initial crediting period and the maximum number of renewals permitted under the applicable methodology and Carbon Crediting Program",
-          "x-cdop-field-id": 158,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.maximum_number_of_crediting_periods"
-        },
-        "current_crediting_period_duration": {
-          "type": "integer",
-          "description": "The specific duration (in years) of a single crediting period granted to the project under the applicable methodology and Carbon Crediting Program. For projects with a fixed project crediting period type, this field is equal to the maximum total crediting duration.",
-          "x-cdop-field-id": 159,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.current_crediting_period_duration"
-        },
-        "estimated_annual_emissions_mitigation": {
-          "type": "number",
-          "description": "Estimated ex-ante annual average amount of emissions reduction, avoidance or removal over the current crediting period, net of buffer contributions. This can be calculated by the optional per vintage data, if available.",
-          "x-cdop-field-id": 164,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.estimated_annual_emissions_mitigation"
-        },
-        "estimated_total_emissions_mitigation": {
-          "type": "number",
-          "description": "Estimated ex-ante total amount of emissions reduction, avoidance or removal as included in the current estimation event, net of buffer contributions.This can be calculated by the optional per vintage data, if available.",
-          "x-cdop-field-id": 165,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.estimated_total_emissions_mitigation"
+        "crediting period": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "current_crediting_period_duration": {
+                "type": "integer",
+                "description": "The specific duration (in years) of a single crediting period granted to the project under the applicable methodology and Carbon Crediting Program. For projects with a fixed project crediting period type, this field is equal to the maximum total crediting duration.",
+                "x-cdop-field-id": 161,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.crediting period[].current_crediting_period_duration"
+              }
+            },
+            "required": []
+          }
         },
         "estimated_total_years": {
           "type": "integer",
           "description": "The total number of years included in the current estimation event.",
-          "x-cdop-field-id": 166,
+          "x-cdop-field-id": 169,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "project.estimated_total_years"
+        },
+        "buffer_pool": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "buffer_pool_deposits": {
+                "type": "integer",
+                "description": "For each project, this column aggregates buffer pool credits deposited across all issuance years. Values take into account buffer pool adjustments, such as when credits are transitioned between registries and when buffer pool credits are returned to the project as issuances. Credits used to cover reversals are not deducted from this buffer pool tally.",
+                "x-cdop-field-id": 196,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_deposits"
+              },
+              "buffer_pool_release": {
+                "type": "integer",
+                "description": "Total buffer credits returned to the project developer as issuances. E.g. VCS allows some buffer credits to be converted into issuances over time for projects that never experience a reversal.",
+                "x-cdop-field-id": 197,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_release"
+              },
+              "buffer_pool_reversal_coverage": {
+                "type": "integer",
+                "description": "Total buffer pool credits used in compensation for a reversal by the project.",
+                "x-cdop-field-id": 198,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_reversal_coverage"
+              },
+              "buffer_pool_reversal_non_coverage": {
+                "type": "integer",
+                "description": "Issued credits used in compensation for a reversal by the project. Most registries do not allow for the buffer pool to cover intentional reversals—losses caused by events under the control of the project proponent. All reversals listed in this column need to be replaced by the project proponent.",
+                "x-cdop-field-id": 199,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_reversal_non_coverage"
+              }
+            },
+            "required": [
+              "buffer_pool_deposits",
+              "buffer_pool_release",
+              "buffer_pool_reversal_coverage",
+              "buffer_pool_reversal_non_coverage"
+            ]
+          }
+        },
+        "project_risk": {
+          "type": "string",
+          "description": "A nested tree structure to provide a flexible way to store risk data in machine readable format for v1.0 in a way that does not require the large task of normalising all risk documentation across all registries and methodologies into a single schema. Implemented as a JSON format dictionary and stored as a string, this structure can be used to further nest data into sub-categories to support experimentation with structuring, before constraining the fields and types in a full risk schema in later versions. v1.0 recommends (but does not require) the keys: \"natural risks\", \"political risks\", \"business risks\", \"legal risks\" and \"performance risks\"",
+          "x-cdop-field-id": 200,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project.project_risk"
+        },
+        "financing_options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Types of financial agreements the project is open to",
+            "x-cdop-field-id": 201,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "project.financing_options"
+          },
+          "minItems": 0
+        },
+        "costs_and_revenue": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "expected_initial_costs": {
+                "type": "number",
+                "description": "Expected total initial costs in the current crediting period, including but not limited to CAPEX, implementation costs, data collection costs, registration fees, legal costs, initial VVB fee (USD).",
+                "x-cdop-field-id": 203,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.costs_and_revenue[].expected_initial_costs"
+              },
+              "expected_annual_costs": {
+                "type": "number",
+                "description": "Expected average annual ongoing costs including but not limited to operations, maintenance, data collection, monitoring, ongoing VVB fees, project developer and management overhead (USD).",
+                "x-cdop-field-id": 204,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.costs_and_revenue[].expected_annual_costs"
+              },
+              "expected_annual_revenue": {
+                "type": "number",
+                "description": "Expected average annual revenue of the project (USD).",
+                "x-cdop-field-id": 205,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.costs_and_revenue[].expected_annual_revenue"
+              }
+            },
+            "required": []
+          }
+        },
+        "declaring_entity_name": {
+          "type": "string",
+          "description": "Name of the organisation reporting on project's financial agreements (typically the project developer)",
+          "x-cdop-field-id": 207,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project.declaring_entity_name"
+        },
+        "community_benefit_mechanism_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Type of benefit-sharing mechanism (e.g., revenue sharing, equity stake, employment)",
+            "x-cdop-field-id": 225,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "project.community_benefit_mechanism_type"
+          },
+          "minItems": 0
+        },
+        "funding": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "project_total_funding_required": {
+                "type": "number",
+                "description": "Total external and internal funding required for the project to reach planned implementation and operation, in USD. This should include initial setup costs and any additional committed funding need before the project becomes self-sustaining.",
+                "x-cdop-field-id": 232,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.funding[].project_total_funding_required"
+              },
+              "project_total_funding_secured": {
+                "type": "number",
+                "description": "Total funding already secured for the project in USD, including signed equity, grants, debt, prepayments, and sponsor support. Only legally committed or formally awarded funding should be included.",
+                "x-cdop-field-id": 233,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.funding[].project_total_funding_secured"
+              }
+            },
+            "required": [
+              "project_total_funding_required",
+              "project_total_funding_secured"
+            ]
+          }
         }
       },
       "required": [
         "carbon_credit_ownership_attestation",
         "carbon_credit_ownership_documentation",
         "current_registry_project_id",
-        "estimated_annual_emissions_mitigation",
-        "estimated_total_emissions_mitigation",
+        "declaring_entity_name",
         "estimated_total_years",
         "legal_compliance_attestation",
         "legal_compliance_documentation",
         "project_description",
         "project_governance_structure",
-        "project_name",
-        "project_status"
+        "project_name"
       ]
     },
     "project_stakeholder": {
@@ -1026,7 +1353,7 @@
         "project_developer_name": {
           "type": "string",
           "description": "The name of the primary developer of the project.",
-          "x-cdop-field-id": 72,
+          "x-cdop-field-id": 73,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "project developer",
@@ -1038,7 +1365,7 @@
         "project_developer_website": {
           "type": "string",
           "description": "The website of the primary developer of the project.",
-          "x-cdop-field-id": 73,
+          "x-cdop-field-id": 74,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1050,7 +1377,7 @@
         "project_developer_email": {
           "type": "string",
           "description": "The email of the primary developer of the project.",
-          "x-cdop-field-id": 74,
+          "x-cdop-field-id": 75,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1062,7 +1389,7 @@
         "project_developer_phone": {
           "type": "string",
           "description": "The phone number of the primary developer of the project.",
-          "x-cdop-field-id": 75,
+          "x-cdop-field-id": 76,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1080,7 +1407,7 @@
               "project_stakeholder_type": {
                 "type": "string",
                 "description": "The role of the stakeholder in relation to the project (e.g., verifier, technical consultant, etc.).",
-                "x-cdop-field-id": 76,
+                "x-cdop-field-id": 77,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -1092,7 +1419,7 @@
               "project_stakeholder_name": {
                 "type": "string",
                 "description": "The name of the selected stakeholder type.",
-                "x-cdop-field-id": 77,
+                "x-cdop-field-id": 78,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "project developer",
@@ -1104,7 +1431,7 @@
               "project_stakeholder_website": {
                 "type": "string",
                 "description": "The website of the selected stakeholder type.",
-                "x-cdop-field-id": 78,
+                "x-cdop-field-id": 79,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1116,7 +1443,7 @@
               "project_stakeholder_email": {
                 "type": "string",
                 "description": "The email address of the selected stakeholder type.",
-                "x-cdop-field-id": 79,
+                "x-cdop-field-id": 80,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1128,7 +1455,7 @@
               "project_stakeholder_phone": {
                 "type": "string",
                 "description": "The phone number of the selected stakeholder type.",
-                "x-cdop-field-id": 80,
+                "x-cdop-field-id": 81,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1149,7 +1476,7 @@
           "items": {
             "type": "string",
             "description": "List all landowners within project activity, such as farmers",
-            "x-cdop-field-id": 119,
+            "x-cdop-field-id": 120,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "project developer",
@@ -1169,7 +1496,7 @@
               "organization_team_experience": {
                 "type": "string",
                 "description": "Describe an overview of the team leads' experience and technical expertise, the details and results of projects the organization(s)has developed (if applicable), and any other significant historical aspects of the Project Proponent organization. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 120,
+                "x-cdop-field-id": 121,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1181,7 +1508,26 @@
               "organization_role": {
                 "type": "string",
                 "description": "Organization role. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 121,
+                "enum": [
+                  "Register/ accounting and tracking registry",
+                  "Registry with Transaction Functionality",
+                  "Infrastructure providers/ operators",
+                  "Multilateral Organisations",
+                  "Carbon Crediting Program/ Standard Setters",
+                  "Verification Accreditation Agency",
+                  "Project owner",
+                  "Project implementer",
+                  "Technical consultant",
+                  "GIS Advisory",
+                  "Feasibility study service",
+                  "Technical document service",
+                  "Administrative service",
+                  "Biodiversity advisory",
+                  "Political advocacy",
+                  "MRV data provider",
+                  "Other"
+                ],
+                "x-cdop-field-id": 122,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1193,7 +1539,7 @@
               "organization_project_employees": {
                 "type": "integer",
                 "description": "Full-time and part-time employees and contractors who directly work on the project. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 122,
+                "x-cdop-field-id": 123,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1205,7 +1551,7 @@
               "organization_employees": {
                 "type": "integer",
                 "description": "Full-time and part-time employees who work at the organization (not directly on the project)",
-                "x-cdop-field-id": 123,
+                "x-cdop-field-id": 124,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1218,7 +1564,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Organization founding year. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 124,
+                "x-cdop-field-id": 125,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1230,7 +1576,7 @@
               "organization_mission": {
                 "type": "string",
                 "description": "Summarize your organization’s purpose, values, and goals related to climate action. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 125,
+                "x-cdop-field-id": 126,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1242,7 +1588,7 @@
               "organization_legal_name": {
                 "type": "string",
                 "description": "Legal entity name of the organisation. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 126,
+                "x-cdop-field-id": 127,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1254,7 +1600,7 @@
               "organization_project_experience": {
                 "type": "integer",
                 "description": "The total number of projects developed/owned/invested in by the organization. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 127,
+                "x-cdop-field-id": 128,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1266,7 +1612,7 @@
               "organization_url": {
                 "type": "string",
                 "description": "A verified URL for information about the organization. Carbon credit owners details is the minimum requirement for this field.",
-                "x-cdop-field-id": 128,
+                "x-cdop-field-id": 129,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project stakeholder",
@@ -1287,6 +1633,64 @@
               "organization_team_experience",
               "organization_url"
             ]
+          }
+        },
+        "expected_community_proceeds": {
+          "type": "number",
+          "description": "Projected percent of expected annual revenue going to Indigenous, tribal, and local communities (%)",
+          "x-cdop-field-id": 202,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project_stakeholder.expected_community_proceeds"
+        },
+        "counterparty": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "agreement_counterparty_sector": {
+                "type": "string",
+                "description": "Company sector of the organization involved in a financial agreement with the project.",
+                "x-cdop-field-id": 215,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.counterparty[].agreement_counterparty_sector"
+              },
+              "agreement_counterparty_name": {
+                "type": "string",
+                "description": "Name of the organisation involved in a financial agreement with the project, using Legal Entity Identifier (LEI).",
+                "x-cdop-field-id": 216,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.counterparty[].agreement_counterparty_name"
+              },
+              "agreement_counterparty_role": {
+                "type": "string",
+                "description": "Role of the organisation involved in a financial agreement with the project.",
+                "x-cdop-field-id": 217,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.counterparty[].agreement_counterparty_role"
+              }
+            },
+            "required": []
           }
         }
       },
@@ -1468,6 +1872,10 @@
               "file_format": {
                 "type": "string",
                 "description": "Format of  the GIS file",
+                "enum": [
+                  "KML",
+                  "Shapefile"
+                ],
                 "x-cdop-field-id": 35,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
@@ -1504,6 +1912,15 @@
               "file_status": {
                 "type": "string",
                 "description": "Status of the GIS file",
+                "enum": [
+                  "ARCHIVED",
+                  "ACQUIRED",
+                  "CANCELLED",
+                  "FAILED",
+                  "PLANNED",
+                  "POTENTIAL",
+                  "REJECTED"
+                ],
                 "x-cdop-field-id": 38,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "1..1",
@@ -1552,6 +1969,23 @@
               "area_type": {
                 "type": "string",
                 "description": "Area type of GIS file",
+                "enum": [
+                  "Reference Area",
+                  "Leakage Area",
+                  "Planting Area",
+                  "Project Accounting Area",
+                  "Donor Pool/Control Area",
+                  "Administrative Boundaries",
+                  "Deforested/Degraded Area",
+                  "Fire Analysis Area",
+                  "Land Ownership Area",
+                  "Buffer Area",
+                  "Canon Stocks",
+                  "Land Cover/Biomes",
+                  "Forest Loss/Gain/Change",
+                  "Canopy Cover Height",
+                  "Biomass"
+                ],
                 "x-cdop-field-id": 42,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -1564,6 +1998,9 @@
               "geometry_type": {
                 "type": "string",
                 "description": "Geometry type of GIS file",
+                "enum": [
+                  "MultiPolygon"
+                ],
                 "x-cdop-field-id": 43,
                 "x-cdop-pre-issuance-inclusion": "yes",
                 "x-cdop-cardinality": "0..1",
@@ -1698,9 +2135,506 @@
               "methodology_name": {
                 "type": "string",
                 "description": "The methodology name",
+                "enum": [
+                  "ACR - Advanced Refrigeration Systems",
+                  "ACR - Afforestation and Reforestation of Degraded Lands",
+                  "ACR - Avoided Conversion of Grasslands and Shrublands to Crop Production",
+                  "ACR - Capturing and Destroying Methane from Coal and Trona Mines in North America",
+                  "ACR - Carbon Capture and Storage Projects",
+                  "ACR - Certified Reclaimed HFC Refrigerants, Propellants, and Fire Suppressants",
+                  "ACR - Destruction of Ozone Depleting Substances and High-GWP Foam",
+                  "ACR - Destruction of Ozone Depleting Substances from International Sources",
+                  "ACR - Improved Forest Management (IFM) on Canadian Forestlands",
+                  "ACR - Improved Forest Management (IFM) on Non-Federal U.S. Forestlands",
+                  "ACR - Improved Forest Management (IFM) on Small Non-Industrial Private Forestlands",
+                  "ACR - Landfill Gas Destruction and Beneficial Use Projects",
+                  "ACR - Restoration of California Deltaic and Coastal Wetlands",
+                  "ACR - Restoration of Pocosin Wetlands",
+                  "ACR - Transition to Advanced Formulation Blowing Agents in Foam Manufacturing and Use",
+                  "ACR - Truck Stop Electrification",
+                  "BCR0001_ARR Activities",
+                  "BCR0002_Quantification of GHG Emission Reductions. REDD+ Projects",
+                  "BCR0003_Quantification of GHG emission Reductions. Activities that prevent land use change in high mountain ecosystems",
+                  "BCR0004_Quantification of GHG emission reductions. Activities that avoid Land Use change in continental wetlands",
+                  "BCR0005_Quantification of GHG Emissions Reduction. Activities that prevent Land Use Change in Natural Savannas",
+                  "BCR0006_Quantification of GHG Emission Reductions by converting gasoline vehicles to natural gas",
+                  "CAR - Adipic Acid Production",
+                  "CAR - Biochar",
+                  "CAR - Canada Grassland",
+                  "CAR - Coal Mine Methane",
+                  "CAR - Forest",
+                  "CAR - Grassland",
+                  "CAR - Mexico Boiler Efficiency",
+                  "CAR - Mexico Forest",
+                  "CAR - Mexico Halocarbon",
+                  "CAR - Mexico Landfill",
+                  "CAR - Mexico Livestock",
+                  "CAR - Mexico Ozone Depleting Substances",
+                  "CAR - Nitric Acid Production",
+                  "CAR - Nitrogen Management",
+                  "CAR - Organic Waste Composting",
+                  "CAR - Organic Waste Digestion",
+                  "CAR - Ozone Depleting Substances",
+                  "CAR - Rice Cultivation",
+                  "CAR - Soil Enrichment",
+                  "CAR - U.S. Landfill",
+                  "CAR - U.S. Livestock",
+                  "CAR - Urban Forest Management",
+                  "CAR - Urban Tree Planting",
+                  "CCB - M/E-ER01",
+                  "CCB - M/LU-REDD+",
+                  "CCB - M/UT/B-H01",
+                  "CCB - M/UT/F-A01",
+                  "CCER - Energy-Saving Highway Tunnel Lighting System (CCER-07-001)",
+                  "CCER - Forestation Carbon Sequestration (CCER-14-001)",
+                  "CCER - Grid-Connected Offshore Wind Power Generation (CCER-01-0022)",
+                  "CCER - Grid-Connected Solar Thermal Power Generation (CCER-01-001)",
+                  "CCER - Mangrove Afforestation (CCER-14-002)",
+                  "CCER - Utilization of Low-Concentration Coal Mine Methane and Ventilation Air Methane (CCER-10-001)",
+                  "CDM - ACM0001",
+                  "CDM - ACM0002",
+                  "CDM - ACM0003",
+                  "CDM - ACM0004",
+                  "CDM - ACM0005",
+                  "CDM - ACM0006",
+                  "CDM - ACM0007",
+                  "CDM - ACM0008",
+                  "CDM - ACM0009",
+                  "CDM - ACM0010",
+                  "CDM - ACM0011",
+                  "CDM - ACM0012",
+                  "CDM - ACM0013",
+                  "CDM - ACM0014",
+                  "CDM - ACM0015",
+                  "CDM - ACM0016",
+                  "CDM - ACM0017",
+                  "CDM - ACM0018",
+                  "CDM - ACM0019",
+                  "CDM - ACM0020",
+                  "CDM - ACM0021",
+                  "CDM - ACM0022",
+                  "CDM - ACM0023",
+                  "CDM - ACM0024",
+                  "CDM - ACM0025",
+                  "CDM - ACM0026",
+                  "CDM - AM0001",
+                  "CDM - AM0007",
+                  "CDM - AM0009",
+                  "CDM - AM0017",
+                  "CDM - AM0018",
+                  "CDM - AM0019",
+                  "CDM - AM0020",
+                  "CDM - AM0021",
+                  "CDM - AM0023",
+                  "CDM - AM0026",
+                  "CDM - AM0027",
+                  "CDM - AM0028",
+                  "CDM - AM0030",
+                  "CDM - AM0031",
+                  "CDM - AM0035",
+                  "CDM - AM0036",
+                  "CDM - AM0037",
+                  "CDM - AM0038",
+                  "CDM - AM0043",
+                  "CDM - AM0044",
+                  "CDM - AM0045",
+                  "CDM - AM0046",
+                  "CDM - AM0048",
+                  "CDM - AM0049",
+                  "CDM - AM0050",
+                  "CDM - AM0052",
+                  "CDM - AM0053",
+                  "CDM - AM0055",
+                  "CDM - AM0056",
+                  "CDM - AM0057",
+                  "CDM - AM0058",
+                  "CDM - AM0059",
+                  "CDM - AM0060",
+                  "CDM - AM0061",
+                  "CDM - AM0062",
+                  "CDM - AM0063",
+                  "CDM - AM0064",
+                  "CDM - AM0065",
+                  "CDM - AM0066",
+                  "CDM - AM0067",
+                  "CDM - AM0068",
+                  "CDM - AM0069",
+                  "CDM - AM0070",
+                  "CDM - AM0071",
+                  "CDM - AM0072",
+                  "CDM - AM0073",
+                  "CDM - AM0074",
+                  "CDM - AM0075",
+                  "CDM - AM0076",
+                  "CDM - AM0077",
+                  "CDM - AM0078",
+                  "CDM - AM0079",
+                  "CDM - AM0080",
+                  "CDM - AM0081",
+                  "CDM - AM0082",
+                  "CDM - AM0083",
+                  "CDM - AM0084",
+                  "CDM - AM0086",
+                  "CDM - AM0088",
+                  "CDM - AM0089",
+                  "CDM - AM0090",
+                  "CDM - AM0091",
+                  "CDM - AM0092",
+                  "CDM - AM0093",
+                  "CDM - AM0094",
+                  "CDM - AM0095",
+                  "CDM - AM0096",
+                  "CDM - AM0097",
+                  "CDM - AM0098",
+                  "CDM - AM0099",
+                  "CDM - AM0100",
+                  "CDM - AM0101",
+                  "CDM - AM0103",
+                  "CDM - AM0104",
+                  "CDM - AM0105",
+                  "CDM - AM0106",
+                  "CDM - AM0107",
+                  "CDM - AM0108",
+                  "CDM - AM0109",
+                  "CDM - AM0110",
+                  "CDM - AM0111",
+                  "CDM - AM0112",
+                  "CDM - AM0113",
+                  "CDM - AM0114",
+                  "CDM - AM0115",
+                  "CDM - AM0116",
+                  "CDM - AM0117",
+                  "CDM - AM0118",
+                  "CDM - AM0119",
+                  "CDM - AM0120",
+                  "CDM - AM0121",
+                  "CDM - AM0122",
+                  "CDM - AMS-I.A.",
+                  "CDM - AMS-I.B.",
+                  "CDM - AMS-I.C.",
+                  "CDM - AMS-I.D.",
+                  "CDM - AMS-I.E.",
+                  "CDM - AMS-I.F.",
+                  "CDM - AMS-I.G.",
+                  "CDM - AMS-I.H.",
+                  "CDM - AMS-I.I.",
+                  "CDM - AMS-I.J.",
+                  "CDM - AMS-I.K.",
+                  "CDM - AMS-I.L.",
+                  "CDM - AMS-I.M.",
+                  "CDM - AMS-II.A.",
+                  "CDM - AMS-II.B.",
+                  "CDM - AMS-II.C.",
+                  "CDM - AMS-II.D.",
+                  "CDM - AMS-II.E.",
+                  "CDM - AMS-II.F.",
+                  "CDM - AMS-II.G.",
+                  "CDM - AMS-II.H.",
+                  "CDM - AMS-II.I.",
+                  "CDM - AMS-II.J.",
+                  "CDM - AMS-II.K.",
+                  "CDM - AMS-II.L.",
+                  "CDM - AMS-II.M.",
+                  "CDM - AMS-II.N.",
+                  "CDM - AMS-II.O.",
+                  "CDM - AMS-II.P.",
+                  "CDM - AMS-II.Q.",
+                  "CDM - AMS-II.R.",
+                  "CDM - AMS-II.S.",
+                  "CDM - AMS-II.T.",
+                  "CDM - AMS-III.A.",
+                  "CDM - AMS-III.AA.",
+                  "CDM - AMS-III.AB.",
+                  "CDM - AMS-III.AC.",
+                  "CDM - AMS-III.AD.",
+                  "CDM - AMS-III.AE.",
+                  "CDM - AMS-III.AF.",
+                  "CDM - AMS-III.AG.",
+                  "CDM - AMS-III.AH.",
+                  "CDM - AMS-III.AI.",
+                  "CDM - AMS-III.AJ.",
+                  "CDM - AMS-III.AK.",
+                  "CDM - AMS-III.AL.",
+                  "CDM - AMS-III.AM.",
+                  "CDM - AMS-III.AN.",
+                  "CDM - AMS-III.AO.",
+                  "CDM - AMS-III.AP.",
+                  "CDM - AMS-III.AQ.",
+                  "CDM - AMS-III.AR.",
+                  "CDM - AMS-III.AS.",
+                  "CDM - AMS-III.AT.",
+                  "CDM - AMS-III.AU.",
+                  "CDM - AMS-III.AV.",
+                  "CDM - AMS-III.AW.",
+                  "CDM - AMS-III.AX.",
+                  "CDM - AMS-III.AY.",
+                  "CDM - AMS-III.B.",
+                  "CDM - AMS-III.BA.",
+                  "CDM - AMS-III.BB.",
+                  "CDM - AMS-III.BC.",
+                  "CDM - AMS-III.BD.",
+                  "CDM - AMS-III.BE.",
+                  "CDM - AMS-III.BF.",
+                  "CDM - AMS-III.BG.",
+                  "CDM - AMS-III.BH.",
+                  "CDM - AMS-III.BI.",
+                  "CDM - AMS-III.BJ.",
+                  "CDM - AMS-III.BK.",
+                  "CDM - AMS-III.BL.",
+                  "CDM - AMS-III.BM.",
+                  "CDM - AMS-III.BN.",
+                  "CDM - AMS-III.BO.",
+                  "CDM - AMS-III.BP.",
+                  "CDM - AMS-III.BQ.",
+                  "CDM - AMS-III.C.",
+                  "CDM - AMS-III.D.",
+                  "CDM - AMS-III.E.",
+                  "CDM - AMS-III.F.",
+                  "CDM - AMS-III.G.",
+                  "CDM - AMS-III.H.",
+                  "CDM - AMS-III.I.",
+                  "CDM - AMS-III.J.",
+                  "CDM - AMS-III.K.",
+                  "CDM - AMS-III.L.",
+                  "CDM - AMS-III.M.",
+                  "CDM - AMS-III.N.",
+                  "CDM - AMS-III.O.",
+                  "CDM - AMS-III.P.",
+                  "CDM - AMS-III.Q.",
+                  "CDM - AMS-III.R.",
+                  "CDM - AMS-III.S.",
+                  "CDM - AMS-III.T.",
+                  "CDM - AMS-III.U.",
+                  "CDM - AMS-III.V.",
+                  "CDM - AMS-III.W.",
+                  "CDM - AMS-III.X.",
+                  "CDM - AMS-III.Y.",
+                  "CDM - AMS-III.Z.",
+                  "CDM - AR-ACM0003",
+                  "CDM - AR-AM0014",
+                  "CDM - AR-AMS0003",
+                  "CDM - AR-AMS0007",
+                  "GS - AFFORESTATION/REFORESTATION GHG EMISSIONS REDUCTION & SEQUESTRATION",
+                  "GS - CARBON MINERALISATION USING REACTIVE MINERAL WASTE",
+                  "GS - CARBON SEQUESTRATION THROUGH ACCELERATED CARBONATION OF CONCRETE AGGREGATE",
+                  "GS - EMISSIONS REDUCTIONS FROM SAFE DRINKING WATER SUPPLY",
+                  "GS - METHANE EMISSIONS REDUCTION BY ADJUSTED WATER MANAGEMENT PRACTICE IN RICE CULTIVATION",
+                  "GS - METHANE EMISSIONS REDUCTION FROM ENTERIC FERMENTATION IN BEEF CATTLE THROUGH APPLICATION OF FEED SUPPLEMENTS",
+                  "GS - METHODOLOGY FOR ANIMAL MANURE MANAGEMENT AND BIOGAS USE FOR THERMAL ENERGY GENERATION",
+                  "GS - METHODOLOGY FOR BIOMASS FERMENTATION WITH CARBON CAPTURE AND GEOLOGIC STORAGE",
+                  "GS - METHODOLOGY FOR COLLECTION OF MACROALGAE TO AVOID EMISSIONS FROM DECOMPOSITION",
+                  "GS - METHODOLOGY FOR METERED & MEASURED ENERGY COOKING DEVICES",
+                  "GS - METHODOLOGY FOR RETROFIT ENERGY EFFICIENCY MEASURES IN SHIPPING",
+                  "GS - REDUCED EMISSIONS FROM COOKING AND HEATING – TECHNOLOGIES AND PRACTICES TO DISPLACE DECENTRALIZED THERMAL ENERGY CONSUMPTION (TPDDTEC)",
+                  "GS - SOIL ORGANIC CARBON ACTIVITY MODULE FOR APPLICATION OF ORGANIC SOIL IMPROVERS FROM PULP AND PAPER MILL SLUDGES",
+                  "GS - SOIL ORGANIC CARBON FRAMEWORK METHODOLOGY",
+                  "GS - SUSTAINABLE MANAGEMENT OF MANGROVES",
+                  "GS - THE GOLD STANDARD SIMPLIFIED METHODOLOGY FOR CLEAN AND EFFICIENT COOKSTOVES",
+                  "GS - TPDDTEC - TECHNOLOGIES AND PRACTICES TO DISPLACE DECENTRALIZED THERMAL ENERGY CONSUMPTION",
+                  "GS - TPDDTEC - TECHNOLOGIES TO DISPLACE DECENTRALIZED THERMAL ENERGY CONSUMPTION",
+                  "ISO - Biochar Production and Storage",
+                  "ISO - Biogenic Carbon Capture and Storage",
+                  "ISO - Biomass Geological Storage",
+                  "ISO - Bio-oil Geological Storage",
+                  "ISO - Direct Air Capture",
+                  "ISO - Direct Ocean Capture and Storage",
+                  "ISO - Electrolytic Seawater Mineralization",
+                  "ISO - Enhanced Weathering",
+                  "ISO - Enhanced Weathering in Agriculture",
+                  "ISO - Mineralization",
+                  "ISO - Ocean Alkalinity Enhancement from Coastal Outfalls",
+                  "ISO - Open System Ex-Situ Mineralization",
+                  "ISO - Reforestation",
+                  "ISO - River Alkalinity Enhancement",
+                  "ISO - Subsurface Biomass Carbon Removal and Storage",
+                  "ISO - Wastewater Alkalinity Enhancement",
+                  "JCM - BD_AM001",
+                  "JCM - BD_AM002",
+                  "JCM - BD_AM003",
+                  "JCM - CL_AM001",
+                  "JCM - CL_AM002",
+                  "JCM - CR_AM001",
+                  "JCM - CR_AM002",
+                  "JCM - CR_AM003",
+                  "JCM - ET_AM001",
+                  "JCM - ET_AM002",
+                  "JCM - ET_AM003",
+                  "JCM - ID_AM001",
+                  "JCM - ID_AM002",
+                  "JCM - ID_AM003",
+                  "JCM - ID_AM004",
+                  "JCM - ID_AM005",
+                  "JCM - ID_AM006",
+                  "JCM - ID_AM007",
+                  "JCM - ID_AM008",
+                  "JCM - ID_AM009",
+                  "JCM - ID_AM010",
+                  "JCM - ID_AM011",
+                  "JCM - ID_AM012",
+                  "JCM - ID_AM013",
+                  "JCM - ID_AM014",
+                  "JCM - ID_AM015",
+                  "JCM - ID_AM016",
+                  "JCM - ID_AM017",
+                  "JCM - ID_AM018",
+                  "JCM - ID_AM019",
+                  "JCM - ID_AM020",
+                  "JCM - ID_AM021",
+                  "JCM - ID_AM022",
+                  "JCM - ID_AM023",
+                  "JCM - ID_AM024",
+                  "JCM - ID_AM025",
+                  "JCM - ID_AM026",
+                  "JCM - ID_AM027",
+                  "JCM - ID_AM028",
+                  "JCM - KE_AM001",
+                  "JCM - KE_AM002",
+                  "JCM - KE_AM003",
+                  "JCM - KH_AM001",
+                  "JCM - KH_AM002",
+                  "JCM - KH_AM003",
+                  "JCM - KH_AM004",
+                  "JCM - KH_AM005",
+                  "JCM - LA_AM001",
+                  "JCM - LA_AM002",
+                  "JCM - LA_AM003",
+                  "JCM - LA_AM004",
+                  "JCM - MM_AM001",
+                  "JCM - MM_AM002",
+                  "JCM - MM_AM003",
+                  "JCM - MM_AM004",
+                  "JCM - MM_AM005",
+                  "JCM - MN_AM001",
+                  "JCM - MN_AM002",
+                  "JCM - MN_AM003",
+                  "JCM - MV_AM001",
+                  "JCM - MV_AM002",
+                  "JCM - MX_AM001",
+                  "JCM - PH_AM001",
+                  "JCM - PH_AM002",
+                  "JCM - PW_AM001",
+                  "JCM - SA_AM001",
+                  "JCM - TH_AM001",
+                  "JCM - TH_AM002",
+                  "JCM - TH_AM003",
+                  "JCM - TH_AM004",
+                  "JCM - TH_AM005",
+                  "JCM - TH_AM006",
+                  "JCM - TH_AM007",
+                  "JCM - TH_AM008",
+                  "JCM - TH_AM009",
+                  "JCM - TH_AM010",
+                  "JCM - TH_AM011",
+                  "JCM - TH_AM012",
+                  "JCM - TH_AM013",
+                  "JCM - TH_AM014",
+                  "JCM - TH_AM015",
+                  "JCM - TH_AM016",
+                  "JCM - TH_AM017",
+                  "JCM - VN_AM001",
+                  "JCM - VN_AM002",
+                  "JCM - VN_AM003",
+                  "JCM - VN_AM004",
+                  "JCM - VN_AM005",
+                  "JCM - VN_AM006",
+                  "JCM - VN_AM007",
+                  "JCM - VN_AM008",
+                  "JCM - VN_AM009",
+                  "JCM - VN_AM010",
+                  "JCM - VN_AM011",
+                  "JCM - VN_AM012",
+                  "JCM - VN_AM013",
+                  "JCM - VN_AM014",
+                  "JCM - VN_AM015",
+                  "NTC 6208",
+                  "PURO - Biochar",
+                  "PURO - Carbonated Materials",
+                  "PURO - Enhanced Rock Weathering",
+                  "PURO - Geologically Stored Carbon",
+                  "PURO - Marine Anoxic Carbon Storage",
+                  "PURO - Terrestrial Storage of Biomass",
+                  "PV - PM001",
+                  "PV - PT001",
+                  "PV - PT002",
+                  "PV - PT003",
+                  "PV - PT004",
+                  "PV - PU001",
+                  "PV - PU002",
+                  "PV - PU003",
+                  "PV - PU004",
+                  "PV - PU005",
+                  "TERO.001",
+                  "TERO.002",
+                  "TERO.003",
+                  "TERO.004",
+                  "TERO.005",
+                  "VCS - VM0001",
+                  "VCS - VM0002",
+                  "VCS - VM0003",
+                  "VCS - VM0004",
+                  "VCS - VM0005",
+                  "VCS - VM0006",
+                  "VCS - VM0007",
+                  "VCS - VM0008",
+                  "VCS - VM0009",
+                  "VCS - VM0010",
+                  "VCS - VM0011",
+                  "VCS - VM0012",
+                  "VCS - VM0013",
+                  "VCS - VM0014",
+                  "VCS - VM0015",
+                  "VCS - VM0016",
+                  "VCS - VM0017",
+                  "VCS - VM0018",
+                  "VCS - VM0019",
+                  "VCS - VM0020",
+                  "VCS - VM0021",
+                  "VCS - VM0022",
+                  "VCS - VM0023",
+                  "VCS - VM0024",
+                  "VCS - VM0025",
+                  "VCS - VM0026",
+                  "VCS - VM0027",
+                  "VCS - VM0028",
+                  "VCS - VM0029",
+                  "VCS - VM0030",
+                  "VCS - VM0031",
+                  "VCS - VM0032",
+                  "VCS - VM0033",
+                  "VCS - VM0034",
+                  "VCS - VM0035",
+                  "VCS - VM0036",
+                  "VCS - VM0037",
+                  "VCS - VM0038",
+                  "VCS - VM0039",
+                  "VCS - VM0040",
+                  "VCS - VM0041",
+                  "VCS - VM0042",
+                  "VCS - VM0043",
+                  "VCS - VM0044",
+                  "VCS - VM0045",
+                  "VCS - VM0046",
+                  "VCS - VM0047",
+                  "VCS - VM0048",
+                  "VCS - VM0049",
+                  "VCS - VM0050",
+                  "VCS - VM0051",
+                  "VCS - VM0052",
+                  "VCS - VMR000",
+                  "VCS - VMR004",
+                  "VCS - VMR005",
+                  "VCS - VMR006",
+                  "VCS - VMR007",
+                  "VCS - VMR008",
+                  "VCS - VMR009",
+                  "VCS - VMR010",
+                  "VCS - VMR012",
+                  "VCS - VMR013",
+                  "VCS - VMR014"
+                ],
                 "x-cdop-field-id": 50,
                 "x-cdop-pre-issuance-inclusion": "yes",
-                "x-cdop-cardinality": "1..1",
+                "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
@@ -1712,7 +2646,7 @@
                 "description": "The methodology version, if applicable",
                 "x-cdop-field-id": 51,
                 "x-cdop-pre-issuance-inclusion": "yes",
-                "x-cdop-cardinality": "1..1",
+                "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
@@ -1724,7 +2658,7 @@
                 "description": "False for previous methodologies, True for the methodology currently being used.",
                 "x-cdop-field-id": 52,
                 "x-cdop-pre-issuance-inclusion": "yes",
-                "x-cdop-cardinality": "1..1",
+                "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
                 "x-cdop-mutability": "Mutable",
                 "x-cdop-public-private": "Public",
@@ -1736,7 +2670,7 @@
                 "description": "The link to the documentation for the methodology",
                 "x-cdop-field-id": 53,
                 "x-cdop-pre-issuance-inclusion": "yes",
-                "x-cdop-cardinality": "1..1",
+                "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
                 "x-cdop-mutability": "Mutable",
                 "x-cdop-public-private": "Public",
@@ -1757,7 +2691,7 @@
         "origin_registry": {
           "type": "string",
           "description": "The name of the project's original registry (if it has moved registries)",
-          "x-cdop-field-id": 81,
+          "x-cdop-field-id": 82,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1769,7 +2703,7 @@
         "current_registry": {
           "type": "string",
           "description": "The name of the project's current registry.",
-          "x-cdop-field-id": 82,
+          "x-cdop-field-id": 83,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1787,7 +2721,7 @@
               "previous_project_crediting_program_name": {
                 "type": "string",
                 "description": "Select which crediting program(s) the project has received or seeking/has received or sought credits from",
-                "x-cdop-field-id": 130,
+                "x-cdop-field-id": 131,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1799,7 +2733,7 @@
               "previous_project_registration_id": {
                 "type": "integer",
                 "description": "Registration number for project under other crediting program",
-                "x-cdop-field-id": 131,
+                "x-cdop-field-id": 132,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1812,7 +2746,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Date the project has been rejected by another crediting program",
-                "x-cdop-field-id": 132,
+                "x-cdop-field-id": 133,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1824,7 +2758,7 @@
               "previous_project_rejection_reason": {
                 "type": "string",
                 "description": "Program name(s), reason(s) and date of rejection",
-                "x-cdop-field-id": 133,
+                "x-cdop-field-id": 134,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1840,7 +2774,7 @@
         "current_project_issuance_registry": {
           "type": "string",
           "description": "Registry in which the project is currently issuing under",
-          "x-cdop-field-id": 135,
+          "x-cdop-field-id": 136,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1859,7 +2793,7 @@
         "validation_body_name": {
           "type": "string",
           "description": "The name of the validation body that validated the project (if applicable).",
-          "x-cdop-field-id": 83,
+          "x-cdop-field-id": 84,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1872,7 +2806,7 @@
           "type": "string",
           "format": "date",
           "description": "The date on which the project was validated (if applicable).",
-          "x-cdop-field-id": 84,
+          "x-cdop-field-id": 85,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1884,7 +2818,7 @@
         "validation_report": {
           "type": "string",
           "description": "The link to the project's validation report (if applicable).",
-          "x-cdop-field-id": 85,
+          "x-cdop-field-id": 86,
           "x-cdop-pre-issuance-inclusion": "yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "project developer",
@@ -1893,76 +2827,115 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "validation.validation_report"
         },
-        "validation_id": {
-          "type": "integer",
-          "description": "Unique identifier for a specific vaidation event. An individual data entry is required for each validation event. The ID can be numbered from 1-n where n is the number of validation events.",
-          "x-cdop-field-id": 167,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "validation.validation_id"
+        "validation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "validation_id": {
+                "type": "integer",
+                "description": "Validation Identifier is simply an integer that is used to query this data table. An individual data entry is required for each validation event (e.g., validation of project activities by a VVB). The ID can be numbered from 1-n where n is the number of validation events.",
+                "x-cdop-field-id": 154,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation[].validation_id"
+              },
+              "current_crediting_period_start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date for the project's current crediting period, as validated by this validation event",
+                "x-cdop-field-id": 155,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation[].current_crediting_period_start_date"
+              },
+              "current_crediting_period_end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date for the project's current crediting period, as validated by this validation event",
+                "x-cdop-field-id": 156,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation[].current_crediting_period_end_date"
+              },
+              "current_crediting_period_number": {
+                "type": "integer",
+                "description": "The number identifying the current crediting period, distinguishing the initial period from subsequent eligible renewals.",
+                "x-cdop-field-id": 157,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation[].current_crediting_period_number"
+              }
+            },
+            "required": [
+              "current_crediting_period_end_date",
+              "current_crediting_period_number",
+              "current_crediting_period_start_date",
+              "validation_id"
+            ]
+          }
         },
-        "current_crediting_period_start_date": {
-          "type": "string",
-          "format": "date",
-          "description": "Start date for the project's current crediting period, as validated by this validation event",
-          "x-cdop-field-id": 153,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "validation.current_crediting_period_start_date"
-        },
-        "current_crediting_period_end_date": {
-          "type": "string",
-          "format": "date",
-          "description": "End date for the project's current crediting period, as validated by this validation event",
-          "x-cdop-field-id": 154,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "validation.current_crediting_period_end_date"
-        },
-        "current_crediting_period_number": {
-          "type": "integer",
-          "description": "The number identifying the current crediting period, distinguishing the initial period from subsequent eligible renewals.",
-          "x-cdop-field-id": 155,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "validation.current_crediting_period_number"
-        },
-        "validation_type": {
-          "type": "string",
-          "description": "The aspect of the project that is covered by this validation event.",
-          "x-cdop-field-id": 168,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Immutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "validation.validation_type"
+        "event": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "validation_id": {
+                "type": "integer",
+                "description": "Unique identifier for a specific vaidation event. An individual data entry is required for each validation event. The ID can be numbered from 1-n where n is the number of validation events.",
+                "x-cdop-field-id": 170,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.event[].validation_id"
+              },
+              "validation_type": {
+                "type": "string",
+                "description": "The aspect of the project that is covered by this validation event.",
+                "enum": [
+                  "Validation of Renewal of Credit Period",
+                  "Validation of Post Registration Change",
+                  "Other"
+                ],
+                "x-cdop-field-id": 171,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.event[].validation_type"
+              }
+            },
+            "required": [
+              "validation_id",
+              "validation_type"
+            ]
+          }
         }
       },
-      "required": [
-        "current_crediting_period_end_date",
-        "current_crediting_period_number",
-        "current_crediting_period_start_date",
-        "validation_id",
-        "validation_type"
-      ]
+      "required": []
     },
     "issuance": {
       "type": "object",
@@ -1977,7 +2950,7 @@
               "batch_identifier": {
                 "type": "string",
                 "description": "Global unique identifier for the batch of credits issued",
-                "x-cdop-field-id": 92,
+                "x-cdop-field-id": 93,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -1989,7 +2962,7 @@
               "issuance_url": {
                 "type": "string",
                 "description": "link to the issuance page on registry",
-                "x-cdop-field-id": 93,
+                "x-cdop-field-id": 94,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2002,7 +2975,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "The date that credits were issued",
-                "x-cdop-field-id": 94,
+                "x-cdop-field-id": 95,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2015,7 +2988,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "The date that the issued credits were verified",
-                "x-cdop-field-id": 95,
+                "x-cdop-field-id": 96,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2028,7 +3001,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Start date of credit verification period",
-                "x-cdop-field-id": 96,
+                "x-cdop-field-id": 97,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2041,7 +3014,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "End date of credit verification period",
-                "x-cdop-field-id": 97,
+                "x-cdop-field-id": 98,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2053,7 +3026,7 @@
               "batch_issued_volume": {
                 "type": "number",
                 "description": "the total volume of credits issued in batch",
-                "x-cdop-field-id": 98,
+                "x-cdop-field-id": 99,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2065,7 +3038,7 @@
               "cumulative_issued_volume": {
                 "type": "number",
                 "description": "the total volume of credits issued to date",
-                "x-cdop-field-id": 99,
+                "x-cdop-field-id": 100,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2077,7 +3050,14 @@
               "issuance_status": {
                 "type": "string",
                 "description": "Indicate the status of project issuance",
-                "x-cdop-field-id": 100,
+                "enum": [
+                  "Pending Issuance",
+                  "Issuing",
+                  "Pre-issuance",
+                  "Failed",
+                  "Complete"
+                ],
+                "x-cdop-field-id": 101,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "project developer",
@@ -2097,22 +3077,47 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "metric": {
-          "type": "string",
-          "description": "Unit of measurment for quantifying the reduction or removal",
-          "x-cdop-field-id": 139,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Immutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.metric"
+        "descriptor": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "metric": {
+                "type": "string",
+                "description": "Unit of measurment for quantifying the reduction or removal",
+                "x-cdop-field-id": 140,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.descriptor[].metric"
+              },
+              "type": {
+                "type": "string",
+                "description": "Describes the type of unit.",
+                "x-cdop-field-id": 149,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.descriptor[].type"
+              }
+            },
+            "required": [
+              "metric",
+              "type"
+            ]
+          }
         },
         "owner_account_id": {
           "type": "string",
           "description": "identifier for the owner of the unit",
-          "x-cdop-field-id": 140,
+          "x-cdop-field-id": 141,
           "x-cdop-pre-issuance-inclusion": "No",
           "x-cdop-cardinality": "1..1",
           "x-cdop-mutability": "mutable",
@@ -2120,134 +3125,195 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "unit.owner_account_id"
         },
-        "retirement_beneficiary": {
-          "type": "string",
-          "description": "Entity name on behalf of which the retirement occurred",
-          "x-cdop-field-id": 141,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.retirement_beneficiary"
-        },
-        "retirement_detail": {
-          "type": "string",
-          "description": "Additional context describing the retirements",
-          "x-cdop-field-id": 142,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.retirement_detail"
-        },
-        "serial_number": {
-          "type": "string",
-          "description": "Serial number of the unit",
-          "x-cdop-field-id": 143,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-mutability": "Immutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.serial_number"
-        },
-        "source_serial_number": {
-          "type": "string",
-          "description": "Identifier used to track the unit to the original issuance it was part of.",
-          "x-cdop-field-id": 144,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-mutability": "Immutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.source_serial_number"
-        },
-        "status": {
-          "type": "string",
-          "description": "Unit state, indicating which lifecycle the unit is currently in",
-          "x-cdop-field-id": 145,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.status"
-        },
-        "status_reason": {
+        "retirement": {
           "type": "array",
           "items": {
-            "type": "string",
-            "description": "Select the status that best desribes the current state of the units.",
-            "x-cdop-field-id": 146,
-            "x-cdop-pre-issuance-inclusion": "No",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "User Input",
-            "x-cdop-mutability": "mutable",
-            "x-cdop-public-private": "Private",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "unit.status_reason"
-          },
-          "minItems": 0
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "retirement_beneficiary": {
+                "type": "string",
+                "description": "Entity name on behalf of which the retirement occurred",
+                "x-cdop-field-id": 142,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.retirement[].retirement_beneficiary"
+              },
+              "retirement_detail": {
+                "type": "string",
+                "description": "Additional context describing the retirements",
+                "x-cdop-field-id": 143,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.retirement[].retirement_detail"
+              }
+            },
+            "required": []
+          }
         },
-        "type": {
-          "type": "string",
-          "description": "Descirbes the type of unit.",
-          "x-cdop-field-id": 147,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer",
-          "x-cdop-mutability": "Immutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.type"
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "serial_number": {
+                "type": "string",
+                "description": "Serial number of the unit",
+                "x-cdop-field-id": 144,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.reference[].serial_number"
+              },
+              "source_serial_number": {
+                "type": "string",
+                "description": "Identifier used to track the unit to the original issuance it was part of.",
+                "x-cdop-field-id": 145,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.reference[].source_serial_number"
+              }
+            },
+            "required": [
+              "serial_number"
+            ]
+          }
         },
-        "quantity": {
-          "type": "integer",
-          "description": "Quantity of units included in the credit block that a particular record represents",
-          "x-cdop-field-id": 148,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.quantity"
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "status": {
+                "type": "string",
+                "description": "The current status of the unit",
+                "x-cdop-field-id": 146,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.status[].status"
+              },
+              "status_reason": {
+                "type": "string",
+                "description": "The reason for updating the unit status",
+                "x-cdop-field-id": 147,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "User Input",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.status[].status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 148,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.status[].is_current"
+              }
+            },
+            "required": [
+              "is_current",
+              "status"
+            ]
+          }
         },
-        "block_end": {
-          "type": "integer",
-          "description": "Number indicating the last unit within a credit block",
-          "x-cdop-field-id": 149,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.block_end"
+        "credit_block": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "quantity": {
+                "type": "integer",
+                "description": "Quantity of units included in the credit block that a particular record represents",
+                "x-cdop-field-id": 150,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.credit_block[].quantity"
+              },
+              "block_end": {
+                "type": "integer",
+                "description": "Number indicating the last unit within a credit block",
+                "x-cdop-field-id": 151,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.credit_block[].block_end"
+              }
+            },
+            "required": [
+              "block_end",
+              "quantity"
+            ]
+          }
         },
-        "block_start": {
+        "credit_blockblock_start": {
           "type": "integer",
           "description": "Number indicating the first unit within a credit block",
-          "x-cdop-field-id": 150,
+          "x-cdop-field-id": 152,
           "x-cdop-pre-issuance-inclusion": "No",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
           "x-cdop-mutability": "mutable",
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.block_start"
+          "x-cdop-field-path": "unit.credit_block[]block_start"
+        },
+        "expected_carbon_credit_price": {
+          "type": "number",
+          "description": "The expected price per carbon credit at which the project is to be sold (USD)",
+          "x-cdop-field-id": 206,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Private",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "unit.expected_carbon_credit_price"
+        },
+        "realized_transaction_price": {
+          "type": "number",
+          "description": "Actual price per tCO₂e achieved at point of sale under a financial agreement, in the currency specified by agreement_currency. Distinguishes realized prices from the projected expected_carbon_credit_price.",
+          "x-cdop-field-id": 228,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Private",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "unit.realized_transaction_price"
         }
       },
       "required": [
-        "block_end",
-        "block_start",
-        "metric",
-        "owner_account_id",
-        "quantity",
-        "serial_number",
-        "status",
-        "type"
+        "credit_blockblock_start",
+        "owner_account_id"
       ]
     },
     "vintage": {
@@ -2258,7 +3324,7 @@
           "type": "string",
           "format": "date",
           "description": "Temporal period when the envrionmental benefit occurred",
-          "x-cdop-field-id": 151,
+          "x-cdop-field-id": 153,
           "x-cdop-pre-issuance-inclusion": "No",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Project developer",
@@ -2276,153 +3342,869 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "estimation_id": {
-          "type": "integer",
-          "description": "Unique identifier for a specific estimation event. An individual data entry is required for each estimation event. The ID can be numbered from 1-n where n is the number of estimations events.",
-          "x-cdop-field-id": 160,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "estimations.estimation_id"
-        },
-        "estimation_event_date": {
-          "type": "string",
-          "format": "date",
-          "description": "The date on which the estimation event took place",
-          "x-cdop-field-id": 161,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "estimations.estimation_event_date"
-        },
-        "estimation_status": {
-          "type": "string",
-          "description": "Indicates the status of the Estimated Emissions Mitigations, distinguishing between unvalidated and validated values",
-          "x-cdop-field-id": 162,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "estimations.estimation_status"
-        },
-        "estimated_status_reason": {
-          "type": "string",
-          "description": "The reason for updating the estimation status associated with the current estimation event. Examples include validation set by Carbon Crediting Programs or ad-hoc assessments, such as internal project reviews",
-          "x-cdop-field-id": 163,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Project developer, Standard",
-          "x-cdop-mutability": "Public",
-          "x-cdop-public-private": "Mutable",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "estimations.estimated_status_reason"
-        },
-        "vintage_year": {
+        "estimation_event": {
           "type": "array",
           "items": {
-            "type": "integer",
-            "description": "The specific vintage year in which the  estimated vintage mitigation outcome is expected to occurr.  All values below are associated with the vintage year forecasted in an array format",
-            "x-cdop-field-id": 169,
-            "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "Project developer, Standard",
-            "x-cdop-mutability": "Public",
-            "x-cdop-public-private": "Mutable",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "estimations.vintage_year"
-          },
-          "minItems": 0
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "estimation_id": {
+                "type": "integer",
+                "description": "Unique identifier for a specific estimation event. An individual data entry is required for each estimation event. The ID can be numbered from 1-n where n is the number of estimations events.",
+                "x-cdop-field-id": 162,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.estimation_event[].estimation_id"
+              },
+              "estimation_event_date": {
+                "type": "string",
+                "format": "date",
+                "description": "The date on which the estimation event took place",
+                "x-cdop-field-id": 163,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.estimation_event[].estimation_event_date"
+              },
+              "estimated_issuance_date": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The estimated issuance date associated with the current estimation event and vintage forecasted",
+                  "x-cdop-field-id": 176,
+                  "x-cdop-pre-issuance-inclusion": "Yes",
+                  "x-cdop-cardinality": "0..*",
+                  "x-cdop-data-source": "Project developer",
+                  "x-cdop-mutability": "Mutable",
+                  "x-cdop-public-private": "Public",
+                  "x-cdop-schema": "CDOP",
+                  "x-cdop-field-path": "estimations.estimation_event[].estimated_issuance_date"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "estimation_event_date",
+              "estimation_id"
+            ]
+          }
         },
-        "estimated_vintage_emissions_mitigation": {
+        "status": {
           "type": "array",
           "items": {
-            "type": "number",
-            "description": "Estimated ex-ante amount of emissions reduction, avoidance or removal expected to occur per vintage year over the total crediting years of the project, net of buffer contributions.",
-            "x-cdop-field-id": 170,
-            "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "Project developer, Standard",
-            "x-cdop-mutability": "Public",
-            "x-cdop-public-private": "Mutable",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "estimations.estimated_vintage_emissions_mitigation"
-          },
-          "minItems": 0
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "estimation_status": {
+                "type": "string",
+                "description": "Indicates the status of the Estimated Emissions Mitigations, distinguishing between unvalidated and validated values",
+                "enum": [
+                  "Validated",
+                  "Superseded"
+                ],
+                "x-cdop-field-id": 164,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.status[].estimation_status"
+              },
+              "estimated_status_reason": {
+                "type": "string",
+                "description": "The reason for updating the estimation status associated with the current estimation event. Examples include validation set by Carbon Crediting Programs or ad-hoc assessments, such as internal project reviews",
+                "x-cdop-field-id": 165,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.status[].estimated_status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 166,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.status[].is_current"
+              }
+            },
+            "required": [
+              "estimation_status",
+              "is_current"
+            ]
+          }
         },
-        "estimated_monitoring_period_start_date": {
+        "vintage_mitigation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "vintage_year": {
+                "type": "integer",
+                "description": "The specific vintage year in which the  estimated vintage mitigation outcome is expected to occurr.  All values below are associated with the vintage year forecasted in an array format",
+                "x-cdop-field-id": 172,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.vintage_mitigation[].vintage_year"
+              },
+              "estimated_vintage_emissions_mitigation": {
+                "type": "number",
+                "description": "Estimated ex-ante amount of emissions reduction, avoidance or removal expected to occur per vintage year over the total crediting years of the project, net of buffer contributions.",
+                "x-cdop-field-id": 173,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer, Standard",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.vintage_mitigation[].estimated_vintage_emissions_mitigation"
+              }
+            },
+            "required": []
+          }
+        },
+        "monitoring": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "estimated_monitoring_period_start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "The estimated start date of the monitoring period associated with the current estimation event and vintage year forecasted",
+                "x-cdop-field-id": 174,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.monitoring[].estimated_monitoring_period_start_date"
+              },
+              "estimated_monitoring_period_end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "The estimated end date of the monitoring period associated with the current estimation event and vintage year forecasted",
+                "x-cdop-field-id": 175,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "estimations.monitoring[].estimated_monitoring_period_end_date"
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      "required": []
+    },
+    "cobenefits": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "sdgs_the_project_plans_to_contribute_to": {
           "type": "array",
           "items": {
             "type": "string",
-            "format": "date",
-            "description": "The estimated start date of the monitoring period associated with the current estimation event and vintage year forecasted",
-            "x-cdop-field-id": 171,
+            "description": "A standardized set of impact categories derived from the UN Sustainable Development Goals for classifying project benefits",
+            "x-cdop-field-id": 177,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "Project developer",
-            "x-cdop-mutability": "Public",
-            "x-cdop-public-private": "Mutable",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project Developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "estimations.estimated_monitoring_period_start_date"
+            "x-cdop-field-path": "cobenefits.sdgs_the_project_plans_to_contribute_to"
           },
-          "minItems": 0
+          "minItems": 1
         },
-        "estimated_monitoring_period_end_date": {
+        "methods_used_to_assess_sdgs_and_other_cobenefits": {
           "type": "array",
           "items": {
             "type": "string",
-            "format": "date",
-            "description": "The estimated end date of the monitoring period associated with the current estimation event and vintage year forecasted",
-            "x-cdop-field-id": 172,
+            "description": "The standardised tool(s) and methods() that were used to assess the project's additional environmental, social, and economic impacts (e.g., Gold Standard SDG Tool, SD VISta, CCB, etc)",
+            "x-cdop-field-id": 178,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "Project developer",
-            "x-cdop-mutability": "Public",
-            "x-cdop-public-private": "Mutable",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project Developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "estimations.estimated_monitoring_period_end_date"
+            "x-cdop-field-path": "cobenefits.methods_used_to_assess_sdgs_and_other_cobenefits"
           },
-          "minItems": 0
+          "minItems": 1
         },
-        "estimated_issuance_date": {
+        "cobenefit_target": {
           "type": "array",
           "items": {
-            "type": "string",
-            "format": "date",
-            "description": "The estimated issuance date associated with the current estimation event and vintage forecasted",
-            "x-cdop-field-id": 173,
-            "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-data-source": "Project developer",
-            "x-cdop-mutability": "Public",
-            "x-cdop-public-private": "Mutable",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "estimations.estimated_issuance_date"
-          },
-          "minItems": 0
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "cobenefits_type": {
+                "type": "string",
+                "description": "Social, environmental, and economic impacts additional to the project's carbon impact",
+                "x-cdop-field-id": 179,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].cobenefits_type"
+              },
+              "overview_of_the_projects_impact": {
+                "type": "string",
+                "description": "Description of the project's expected impact on the selected co-benefit domain",
+                "x-cdop-field-id": 180,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_impact"
+              },
+              "overview_of_the_projects_approach_to_ track_and_quantify": {
+                "type": "string",
+                "description": "Description of the measuring and monitoring plan for the selected co-benefit",
+                "x-cdop-field-id": 181,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_approach_to_ track_and_quantify"
+              },
+              "indicator_id": {
+                "type": "string",
+                "description": "Unique ID to distinguish between different indicators of a same co-benefit",
+                "x-cdop-field-id": 182,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].indicator_id"
+              },
+              "unit_description": {
+                "type": "string",
+                "description": "The unit used to track and measure the co-benefit (e.g., \"Number of jobs created\" may be a unit of quantification for \"employment and labor\" co-benefit)",
+                "x-cdop-field-id": 183,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_description"
+              },
+              "unit_type": {
+                "type": "string",
+                "description": "The specific metric type used to quantify the selected co-benefit",
+                "enum": [
+                  "TREES Credit",
+                  "VCC",
+                  "CRT",
+                  "CER",
+                  "CFC",
+                  "ACC",
+                  "VER, CER",
+                  "Isometric credit",
+                  "JCM",
+                  "A6.4 ER, MCU",
+                  "PVC",
+                  "CORC",
+                  "VCU",
+                  "PIU"
+                ],
+                "x-cdop-field-id": 184,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_type"
+              },
+              "unit_symbol": {
+                "type": "string",
+                "description": "Derived from the unit type, the symbol representing the unit of measurement",
+                "x-cdop-field-id": 185,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_symbol"
+              },
+              "unit_monitoring_frequency": {
+                "type": "string",
+                "description": "How often the indicator will be measured",
+                "x-cdop-field-id": 186,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_monitoring_frequency"
+              },
+              "baseline_value": {
+                "type": "string",
+                "description": "Measured or estimated starting-point value for the co-benefit before project intervention",
+                "x-cdop-field-id": 187,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].baseline_value"
+              },
+              "target_value": {
+                "type": "string",
+                "description": "Planned or projected value for the co-benefit by end of reporting period or project lifetime",
+                "x-cdop-field-id": 188,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].target_value"
+              },
+              "supporting_evidence": {
+                "type": "string",
+                "description": "Documentation supporting ex-ante claims (e.g., baseline survey report)",
+                "x-cdop-field-id": 189,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].supporting_evidence"
+              }
+            },
+            "required": [
+              "cobenefits_type"
+            ]
+          }
+        },
+        "cobenefit_impact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "cobenefits_type": {
+                "type": "string",
+                "description": "Social, environmental, and economic impacts additional to the project's carbon impact",
+                "x-cdop-field-id": 190,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].cobenefits_type"
+              },
+              "achieved_project_impact": {
+                "type": "string",
+                "description": "Description of the impact achieved",
+                "x-cdop-field-id": 191,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].achieved_project_impact"
+              },
+              "indicator_id": {
+                "type": "string",
+                "description": "Unique ID to distinguish between different indicators of a same co-benefit",
+                "x-cdop-field-id": 192,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].indicator_id"
+              },
+              "achieved_value": {
+                "type": "string",
+                "description": "Actual measured value for the co-benefit during the reporting period",
+                "x-cdop-field-id": 193,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].achieved_value"
+              },
+              "change_type": {
+                "type": "string",
+                "description": "How change is expressed — only applicable when metric type is Change",
+                "x-cdop-field-id": 194,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].change_type"
+              },
+              "supporting_evidence": {
+                "type": "string",
+                "description": "Documentation supporting ex-post outcomes (e.g. Monitoring Report)",
+                "x-cdop-field-id": 195,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].supporting_evidence"
+              }
+            },
+            "required": [
+              "cobenefits_type"
+            ]
+          }
         }
       },
       "required": [
-        "estimated_status_reason",
-        "estimation_event_date",
-        "estimation_id",
-        "estimation_status"
+        "methods_used_to_assess_sdgs_and_other_cobenefits",
+        "sdgs_the_project_plans_to_contribute_to"
+      ]
+    },
+    "agreement": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "agreement_notes": {
+          "type": "string",
+          "description": "Freeform text with any additional details about the agreement, its conditions, its parties, or its insurance",
+          "x-cdop-field-id": 208,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_notes"
+        },
+        "agreement_type": {
+          "type": "string",
+          "description": "Primary classification of each financial agreement. Equity financing: investor takes an ownership stake in the project in exchange for capital. Debt financing: Capital provided as a loan to the developer, repaid with interest over time. Offtake agreement: A contract committing a buyer to purchase a defined volume of carbon credits from a project at a set (or formula-based) price once the credits are issued. Forward purchase: A buyer pays upfront (or in tranches) for credits to be delivered in the future. Revenue share: investor receives a percentage of the project's credit sale proceeds in exchange for capital or services, rather than fixed repayment or equity. Grant: Non-repayable funding provided by a donor, government, or philanthropic body, usually tied to eligibility criteria or reporting obligations but not to financial returns. Guarantee: a commitment by a third party (e.g., insurer) to cover losses or obligations if the project fails to perform.",
+          "x-cdop-field-id": 209,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_type"
+        },
+        "offtake": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "offtake_agreement_contracted_credit_volume": {
+                "type": "integer",
+                "description": "Volume of carbon credits contracted in the offtake agreement in tCO₂e. Required when agreement_type is forward_purchase or offtake_agreement.",
+                "x-cdop-field-id": 210,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_contracted_credit_volume"
+              },
+              "offtake_agreement_contracted_credit_price": {
+                "type": "number",
+                "description": "Agreed price per tCO₂e of credits in offtake_agreement_contracted_credit_volume. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 211,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_contracted_credit_price"
+              },
+              "offtake_agreement_credit_vintage_start": {
+                "type": "integer",
+                "description": "Earliest vintage year (ISO 8601 year) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 212,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_credit_vintage_start"
+              },
+              "offtake_agreement_credit_vintage_end": {
+                "type": "integer",
+                "description": "Latest vintage year (ISO 8601 year) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 213,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_credit_vintage_end"
+              },
+              "offtake_agreement_credit_requirements": {
+                "type": "string",
+                "description": "Freeform text describing requirements (quality, certification) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 214,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_credit_requirements"
+              }
+            },
+            "required": []
+          }
+        },
+        "date": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "agreement_effective_date": {
+                "type": "string",
+                "format": "date",
+                "description": "ISO 8601 date on which the financial arrangement became legally binding",
+                "x-cdop-field-id": 218,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.date[].agreement_effective_date"
+              },
+              "agreement_expiry_date": {
+                "type": "string",
+                "format": "date",
+                "description": "ISO 8601 date on which the arrangement is scheduled to expire or be repaid, if applicable",
+                "x-cdop-field-id": 219,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.date[].agreement_expiry_date"
+              }
+            },
+            "required": []
+          }
+        },
+        "agreement_commitment_amount": {
+          "type": "number",
+          "description": "Committed amount by a counterparty organisation, in the financial agreement (USD)",
+          "x-cdop-field-id": 220,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_commitment_amount"
+        },
+        "insurance": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "agreement_insurance_policy_exists": {
+                "type": "boolean",
+                "description": "Whether an insurance policy is in place for this agreement.",
+                "x-cdop-field-id": 221,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurance_policy_exists"
+              },
+              "agreement_insurer_name": {
+                "type": "string",
+                "description": "Name of the insurer organisation. Required when agreement_insurance_policy_exists is true",
+                "x-cdop-field-id": 222,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurer_name"
+              },
+              "agreement_insurance_policy_reference": {
+                "type": "string",
+                "description": "Policy number or reference ID of the insurance policy.",
+                "x-cdop-field-id": 223,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurance_policy_reference"
+              },
+              "agreement_insurance_coverage_type": {
+                "type": "string",
+                "description": "What the insurance policy covers. Non-delivery: protection against under or non-delivery of future carbon credits. Non-payment: protection against the risk of non-payment under project finance, prepayment facilities, offtake receivables and other credit exposures. Counterparty: protection against project failure risk, such as the counterparty abandoning the project or becoming insolvent, such that future credits cannot be delivered. Buffer_depletion: protection against unexpectedly high loss levels threatening buffer integrity. Political_risk: protection against broad political uncertainties that may affect project implementation.",
+                "x-cdop-field-id": 224,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurance_coverage_type"
+              }
+            },
+            "required": [
+              "agreement_insurance_policy_exists"
+            ]
+          }
+        },
+        "agreement_currency": {
+          "type": "string",
+          "description": "ISO 4217 alphabetic currency code in which the financial agreement is denominated (e.g., USD, EUR, GBP)",
+          "x-cdop-field-id": 226,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_currency"
+        },
+        "agreement_marketplace_or_venue": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Name or identifier of the marketplace, exchange, or trading venue through which credits under this agreement are to be traded or settled.",
+            "x-cdop-field-id": 227,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Financial agreement counterparty",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "agreement.agreement_marketplace_or_venue"
+          },
+          "minItems": 0
+        },
+        "collateral_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Type of assets pledged as security (e.g., Land Title, Carbon Rights, Equipment, None).",
+            "x-cdop-field-id": 229,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "agreement.collateral_type"
+          },
+          "minItems": 0
+        },
+        "project_financing_stage": {
+          "type": "string",
+          "description": "Current financing stage of the project.",
+          "x-cdop-field-id": 230,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.project_financing_stage"
+        },
+        "agreement_governing_law": {
+          "type": "string",
+          "description": "Governing law specified in the financial agreement.",
+          "x-cdop-field-id": 231,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_governing_law"
+        },
+        "funding_details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "funding_source_category": {
+                "type": "string",
+                "description": "Category of the funding source for this agreement, such as equity, grant, debt, prepayment, sponsor support, or other.",
+                "x-cdop-field-id": 234,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_source_category"
+              },
+              "funding_source_expected_disbursement_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Expected date on which funds under this agreement will be disbursed or become available to the project. Use ISO 8601 date format.",
+                "x-cdop-field-id": 235,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_source_expected_disbursement_date"
+              },
+              "funding_source_disbursement_schedule": {
+                "type": "string",
+                "description": "Freeform description of how funding will be released, for example upfront, milestone-based, quarterly, on delivery, or subject to approval steps.",
+                "x-cdop-field-id": 236,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_source_disbursement_schedule"
+              },
+              "funding_conditions_precedent": {
+                "type": "string",
+                "description": "Freeform description of any conditions that must be satisfied before the counterparty is legally or practically required to provide funds, such as due diligence, board approval, registration, permitting, or verification milestones.",
+                "x-cdop-field-id": 237,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_conditions_precedent"
+              },
+              "funding_is_fully_committed": {
+                "type": "boolean",
+                "description": "Whether the funding under this agreement is fully committed and binding, rather than indicative, under discussion, or subject to major unresolved conditions.",
+                "x-cdop-field-id": 238,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_is_fully_committed"
+              },
+              "funding_commitment_status": {
+                "type": "string",
+                "description": "Status of the funding commitment. Signed: agreement has been executed by all parties; funding is contractually committed. Awarded: formal decision has been made to allocate funding to the project, but has not yet been implemented. Approval subject to conditions: funding body has agreed in principle, but disbursement is contingent on the project meeting specified requirements (e.g. due diligence, co-financing, regulatory approval). Under negotiation: Terms are actively being discussed between the project and the funder; no commitment has been made and the outcome is uncertain. Indicative only: funder has expressed non-binding interest or provided a preliminary figure; no formal process has been initiated and the commitment carries no obligation. Rejected: funder has declined to provide funding; the application or proposal was unsuccessful. Concluded: previously active funding arrangement has run its course and been formally closed out (disbursements complete, obligations fulfilled or terminated).",
+                "x-cdop-field-id": 239,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_commitment_status"
+              },
+              "funding_commitment_status_reason": {
+                "type": "string",
+                "description": "The reason for updating the unit status",
+                "x-cdop-field-id": 240,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_commitment_status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 241,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].is_current"
+              }
+            },
+            "required": [
+              "funding_source_category",
+              "is_current"
+            ]
+          }
+        }
+      },
+      "required": [
+        "agreement_type"
       ]
     }
   },
   "required": [
-    "estimations",
+    "agreement",
+    "cobenefits",
     "project",
     "project_stakeholder",
     "unit",
-    "validation",
     "vintage"
   ]
 }

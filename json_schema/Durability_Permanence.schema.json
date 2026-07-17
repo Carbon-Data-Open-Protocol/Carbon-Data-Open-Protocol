@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Durability_Permanence.schema.json",
+  "title": "Durability_Permanence",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "buffer_pool": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "buffer_pool_deposits": {
+                "type": "integer",
+                "description": "For each project, this column aggregates buffer pool credits deposited across all issuance years. Values take into account buffer pool adjustments, such as when credits are transitioned between registries and when buffer pool credits are returned to the project as issuances. Credits used to cover reversals are not deducted from this buffer pool tally.",
+                "x-cdop-field-id": 196,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_deposits"
+              },
+              "buffer_pool_release": {
+                "type": "integer",
+                "description": "Total buffer credits returned to the project developer as issuances. E.g. VCS allows some buffer credits to be converted into issuances over time for projects that never experience a reversal.",
+                "x-cdop-field-id": 197,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_release"
+              },
+              "buffer_pool_reversal_coverage": {
+                "type": "integer",
+                "description": "Total buffer pool credits used in compensation for a reversal by the project.",
+                "x-cdop-field-id": 198,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_reversal_coverage"
+              },
+              "buffer_pool_reversal_non_coverage": {
+                "type": "integer",
+                "description": "Issued credits used in compensation for a reversal by the project. Most registries do not allow for the buffer pool to cover intentional reversals—losses caused by events under the control of the project proponent. All reversals listed in this column need to be replaced by the project proponent.",
+                "x-cdop-field-id": 199,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.buffer_pool[].buffer_pool_reversal_non_coverage"
+              }
+            },
+            "required": [
+              "buffer_pool_deposits",
+              "buffer_pool_release",
+              "buffer_pool_reversal_coverage",
+              "buffer_pool_reversal_non_coverage"
+            ]
+          }
+        },
+        "project_risk": {
+          "type": "string",
+          "description": "A nested tree structure to provide a flexible way to store risk data in machine readable format for v1.0 in a way that does not require the large task of normalising all risk documentation across all registries and methodologies into a single schema. Implemented as a JSON format dictionary and stored as a string, this structure can be used to further nest data into sub-categories to support experimentation with structuring, before constraining the fields and types in a full risk schema in later versions. v1.0 recommends (but does not require) the keys: \"natural risks\", \"political risks\", \"business risks\", \"legal risks\" and \"performance risks\"",
+          "x-cdop-field-id": 200,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project.project_risk"
+        }
+      },
+      "required": []
+    }
+  }
+}

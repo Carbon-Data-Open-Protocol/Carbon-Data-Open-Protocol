@@ -1,0 +1,634 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Project_Finance.schema.json",
+  "title": "Project Finance",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "financing_options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Types of financial agreements the project is open to",
+            "x-cdop-field-id": 201,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "project.financing_options"
+          },
+          "minItems": 0
+        },
+        "costs_and_revenue": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "expected_initial_costs": {
+                "type": "number",
+                "description": "Expected total initial costs in the current crediting period, including but not limited to CAPEX, implementation costs, data collection costs, registration fees, legal costs, initial VVB fee (USD).",
+                "x-cdop-field-id": 203,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.costs_and_revenue[].expected_initial_costs"
+              },
+              "expected_annual_costs": {
+                "type": "number",
+                "description": "Expected average annual ongoing costs including but not limited to operations, maintenance, data collection, monitoring, ongoing VVB fees, project developer and management overhead (USD).",
+                "x-cdop-field-id": 204,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.costs_and_revenue[].expected_annual_costs"
+              },
+              "expected_annual_revenue": {
+                "type": "number",
+                "description": "Expected average annual revenue of the project (USD).",
+                "x-cdop-field-id": 205,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.costs_and_revenue[].expected_annual_revenue"
+              }
+            },
+            "required": []
+          }
+        },
+        "declaring_entity_name": {
+          "type": "string",
+          "description": "Name of the organisation reporting on project's financial agreements (typically the project developer)",
+          "x-cdop-field-id": 207,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project.declaring_entity_name"
+        },
+        "community_benefit_mechanism_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Type of benefit-sharing mechanism (e.g., revenue sharing, equity stake, employment)",
+            "x-cdop-field-id": 225,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "project.community_benefit_mechanism_type"
+          },
+          "minItems": 0
+        },
+        "funding": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "project_total_funding_required": {
+                "type": "number",
+                "description": "Total external and internal funding required for the project to reach planned implementation and operation, in USD. This should include initial setup costs and any additional committed funding need before the project becomes self-sustaining.",
+                "x-cdop-field-id": 232,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.funding[].project_total_funding_required"
+              },
+              "project_total_funding_secured": {
+                "type": "number",
+                "description": "Total funding already secured for the project in USD, including signed equity, grants, debt, prepayments, and sponsor support. Only legally committed or formally awarded funding should be included.",
+                "x-cdop-field-id": 233,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.funding[].project_total_funding_secured"
+              }
+            },
+            "required": [
+              "project_total_funding_required",
+              "project_total_funding_secured"
+            ]
+          }
+        }
+      },
+      "required": [
+        "declaring_entity_name"
+      ]
+    },
+    "project_stakeholder": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "expected_community_proceeds": {
+          "type": "number",
+          "description": "Projected percent of expected annual revenue going to Indigenous, tribal, and local communities (%)",
+          "x-cdop-field-id": 202,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project_stakeholder.expected_community_proceeds"
+        },
+        "counterparty": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "agreement_counterparty_sector": {
+                "type": "string",
+                "description": "Company sector of the organization involved in a financial agreement with the project.",
+                "x-cdop-field-id": 215,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.counterparty[].agreement_counterparty_sector"
+              },
+              "agreement_counterparty_name": {
+                "type": "string",
+                "description": "Name of the organisation involved in a financial agreement with the project, using Legal Entity Identifier (LEI).",
+                "x-cdop-field-id": 216,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.counterparty[].agreement_counterparty_name"
+              },
+              "agreement_counterparty_role": {
+                "type": "string",
+                "description": "Role of the organisation involved in a financial agreement with the project.",
+                "x-cdop-field-id": 217,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_stakeholder.counterparty[].agreement_counterparty_role"
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      "required": []
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "expected_carbon_credit_price": {
+          "type": "number",
+          "description": "The expected price per carbon credit at which the project is to be sold (USD)",
+          "x-cdop-field-id": 206,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Private",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "unit.expected_carbon_credit_price"
+        },
+        "realized_transaction_price": {
+          "type": "number",
+          "description": "Actual price per tCO₂e achieved at point of sale under a financial agreement, in the currency specified by agreement_currency. Distinguishes realized prices from the projected expected_carbon_credit_price.",
+          "x-cdop-field-id": 228,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Private",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "unit.realized_transaction_price"
+        }
+      },
+      "required": []
+    },
+    "agreement": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "agreement_notes": {
+          "type": "string",
+          "description": "Freeform text with any additional details about the agreement, its conditions, its parties, or its insurance",
+          "x-cdop-field-id": 208,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_notes"
+        },
+        "agreement_type": {
+          "type": "string",
+          "description": "Primary classification of each financial agreement. Equity financing: investor takes an ownership stake in the project in exchange for capital. Debt financing: Capital provided as a loan to the developer, repaid with interest over time. Offtake agreement: A contract committing a buyer to purchase a defined volume of carbon credits from a project at a set (or formula-based) price once the credits are issued. Forward purchase: A buyer pays upfront (or in tranches) for credits to be delivered in the future. Revenue share: investor receives a percentage of the project's credit sale proceeds in exchange for capital or services, rather than fixed repayment or equity. Grant: Non-repayable funding provided by a donor, government, or philanthropic body, usually tied to eligibility criteria or reporting obligations but not to financial returns. Guarantee: a commitment by a third party (e.g., insurer) to cover losses or obligations if the project fails to perform.",
+          "x-cdop-field-id": 209,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_type"
+        },
+        "offtake": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "offtake_agreement_contracted_credit_volume": {
+                "type": "integer",
+                "description": "Volume of carbon credits contracted in the offtake agreement in tCO₂e. Required when agreement_type is forward_purchase or offtake_agreement.",
+                "x-cdop-field-id": 210,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_contracted_credit_volume"
+              },
+              "offtake_agreement_contracted_credit_price": {
+                "type": "number",
+                "description": "Agreed price per tCO₂e of credits in offtake_agreement_contracted_credit_volume. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 211,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_contracted_credit_price"
+              },
+              "offtake_agreement_credit_vintage_start": {
+                "type": "integer",
+                "description": "Earliest vintage year (ISO 8601 year) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 212,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_credit_vintage_start"
+              },
+              "offtake_agreement_credit_vintage_end": {
+                "type": "integer",
+                "description": "Latest vintage year (ISO 8601 year) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 213,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_credit_vintage_end"
+              },
+              "offtake_agreement_credit_requirements": {
+                "type": "string",
+                "description": "Freeform text describing requirements (quality, certification) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
+                "x-cdop-field-id": 214,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.offtake[].offtake_agreement_credit_requirements"
+              }
+            },
+            "required": []
+          }
+        },
+        "date": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "agreement_effective_date": {
+                "type": "string",
+                "format": "date",
+                "description": "ISO 8601 date on which the financial arrangement became legally binding",
+                "x-cdop-field-id": 218,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.date[].agreement_effective_date"
+              },
+              "agreement_expiry_date": {
+                "type": "string",
+                "format": "date",
+                "description": "ISO 8601 date on which the arrangement is scheduled to expire or be repaid, if applicable",
+                "x-cdop-field-id": 219,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.date[].agreement_expiry_date"
+              }
+            },
+            "required": []
+          }
+        },
+        "agreement_commitment_amount": {
+          "type": "number",
+          "description": "Committed amount by a counterparty organisation, in the financial agreement (USD)",
+          "x-cdop-field-id": 220,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_commitment_amount"
+        },
+        "insurance": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "agreement_insurance_policy_exists": {
+                "type": "boolean",
+                "description": "Whether an insurance policy is in place for this agreement.",
+                "x-cdop-field-id": 221,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurance_policy_exists"
+              },
+              "agreement_insurer_name": {
+                "type": "string",
+                "description": "Name of the insurer organisation. Required when agreement_insurance_policy_exists is true",
+                "x-cdop-field-id": 222,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurer_name"
+              },
+              "agreement_insurance_policy_reference": {
+                "type": "string",
+                "description": "Policy number or reference ID of the insurance policy.",
+                "x-cdop-field-id": 223,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurance_policy_reference"
+              },
+              "agreement_insurance_coverage_type": {
+                "type": "string",
+                "description": "What the insurance policy covers. Non-delivery: protection against under or non-delivery of future carbon credits. Non-payment: protection against the risk of non-payment under project finance, prepayment facilities, offtake receivables and other credit exposures. Counterparty: protection against project failure risk, such as the counterparty abandoning the project or becoming insolvent, such that future credits cannot be delivered. Buffer_depletion: protection against unexpectedly high loss levels threatening buffer integrity. Political_risk: protection against broad political uncertainties that may affect project implementation.",
+                "x-cdop-field-id": 224,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Carbon Insurance",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.insurance[].agreement_insurance_coverage_type"
+              }
+            },
+            "required": [
+              "agreement_insurance_policy_exists"
+            ]
+          }
+        },
+        "agreement_currency": {
+          "type": "string",
+          "description": "ISO 4217 alphabetic currency code in which the financial agreement is denominated (e.g., USD, EUR, GBP)",
+          "x-cdop-field-id": 226,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_currency"
+        },
+        "agreement_marketplace_or_venue": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Name or identifier of the marketplace, exchange, or trading venue through which credits under this agreement are to be traded or settled.",
+            "x-cdop-field-id": 227,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Financial agreement counterparty",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "agreement.agreement_marketplace_or_venue"
+          },
+          "minItems": 0
+        },
+        "collateral_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Type of assets pledged as security (e.g., Land Title, Carbon Rights, Equipment, None).",
+            "x-cdop-field-id": 229,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Project developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "agreement.collateral_type"
+          },
+          "minItems": 0
+        },
+        "project_financing_stage": {
+          "type": "string",
+          "description": "Current financing stage of the project.",
+          "x-cdop-field-id": 230,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.project_financing_stage"
+        },
+        "agreement_governing_law": {
+          "type": "string",
+          "description": "Governing law specified in the financial agreement.",
+          "x-cdop-field-id": 231,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Financial agreement counterparty",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "agreement.agreement_governing_law"
+        },
+        "funding_details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "funding_source_category": {
+                "type": "string",
+                "description": "Category of the funding source for this agreement, such as equity, grant, debt, prepayment, sponsor support, or other.",
+                "x-cdop-field-id": 234,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_source_category"
+              },
+              "funding_source_expected_disbursement_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Expected date on which funds under this agreement will be disbursed or become available to the project. Use ISO 8601 date format.",
+                "x-cdop-field-id": 235,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_source_expected_disbursement_date"
+              },
+              "funding_source_disbursement_schedule": {
+                "type": "string",
+                "description": "Freeform description of how funding will be released, for example upfront, milestone-based, quarterly, on delivery, or subject to approval steps.",
+                "x-cdop-field-id": 236,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_source_disbursement_schedule"
+              },
+              "funding_conditions_precedent": {
+                "type": "string",
+                "description": "Freeform description of any conditions that must be satisfied before the counterparty is legally or practically required to provide funds, such as due diligence, board approval, registration, permitting, or verification milestones.",
+                "x-cdop-field-id": 237,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_conditions_precedent"
+              },
+              "funding_is_fully_committed": {
+                "type": "boolean",
+                "description": "Whether the funding under this agreement is fully committed and binding, rather than indicative, under discussion, or subject to major unresolved conditions.",
+                "x-cdop-field-id": 238,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_is_fully_committed"
+              },
+              "funding_commitment_status": {
+                "type": "string",
+                "description": "Status of the funding commitment. Signed: agreement has been executed by all parties; funding is contractually committed. Awarded: formal decision has been made to allocate funding to the project, but has not yet been implemented. Approval subject to conditions: funding body has agreed in principle, but disbursement is contingent on the project meeting specified requirements (e.g. due diligence, co-financing, regulatory approval). Under negotiation: Terms are actively being discussed between the project and the funder; no commitment has been made and the outcome is uncertain. Indicative only: funder has expressed non-binding interest or provided a preliminary figure; no formal process has been initiated and the commitment carries no obligation. Rejected: funder has declined to provide funding; the application or proposal was unsuccessful. Concluded: previously active funding arrangement has run its course and been formally closed out (disbursements complete, obligations fulfilled or terminated).",
+                "x-cdop-field-id": 239,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_commitment_status"
+              },
+              "funding_commitment_status_reason": {
+                "type": "string",
+                "description": "The reason for updating the unit status",
+                "x-cdop-field-id": 240,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].funding_commitment_status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 241,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Financial agreement counterparty",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Private",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "agreement.funding_details[].is_current"
+              }
+            },
+            "required": [
+              "funding_source_category",
+              "is_current"
+            ]
+          }
+        }
+      },
+      "required": [
+        "agreement_type"
+      ]
+    }
+  },
+  "required": [
+    "agreement",
+    "project"
+  ]
+}

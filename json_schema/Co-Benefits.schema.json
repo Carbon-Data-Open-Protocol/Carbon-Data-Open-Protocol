@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Co-Benefits.schema.json",
+  "title": "Co-Benefits",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "cobenefits": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "sdgs_the_project_plans_to_contribute_to": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A standardized set of impact categories derived from the UN Sustainable Development Goals for classifying project benefits",
+            "x-cdop-field-id": 177,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project Developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "cobenefits.sdgs_the_project_plans_to_contribute_to"
+          },
+          "minItems": 1
+        },
+        "methods_used_to_assess_sdgs_and_other_cobenefits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The standardised tool(s) and methods() that were used to assess the project's additional environmental, social, and economic impacts (e.g., Gold Standard SDG Tool, SD VISta, CCB, etc)",
+            "x-cdop-field-id": 178,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Project Developer",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "cobenefits.methods_used_to_assess_sdgs_and_other_cobenefits"
+          },
+          "minItems": 1
+        },
+        "cobenefit_target": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "cobenefits_type": {
+                "type": "string",
+                "description": "Social, environmental, and economic impacts additional to the project's carbon impact",
+                "x-cdop-field-id": 179,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].cobenefits_type"
+              },
+              "overview_of_the_projects_impact": {
+                "type": "string",
+                "description": "Description of the project's expected impact on the selected co-benefit domain",
+                "x-cdop-field-id": 180,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_impact"
+              },
+              "overview_of_the_projects_approach_to_ track_and_quantify": {
+                "type": "string",
+                "description": "Description of the measuring and monitoring plan for the selected co-benefit",
+                "x-cdop-field-id": 181,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_approach_to_ track_and_quantify"
+              },
+              "indicator_id": {
+                "type": "string",
+                "description": "Unique ID to distinguish between different indicators of a same co-benefit",
+                "x-cdop-field-id": 182,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].indicator_id"
+              },
+              "unit_description": {
+                "type": "string",
+                "description": "The unit used to track and measure the co-benefit (e.g., \"Number of jobs created\" may be a unit of quantification for \"employment and labor\" co-benefit)",
+                "x-cdop-field-id": 183,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_description"
+              },
+              "unit_type": {
+                "type": "string",
+                "description": "The specific metric type used to quantify the selected co-benefit",
+                "enum": [
+                  "TREES Credit",
+                  "VCC",
+                  "CRT",
+                  "CER",
+                  "CFC",
+                  "ACC",
+                  "VER, CER",
+                  "Isometric credit",
+                  "JCM",
+                  "A6.4 ER, MCU",
+                  "PVC",
+                  "CORC",
+                  "VCU",
+                  "PIU"
+                ],
+                "x-cdop-field-id": 184,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_type"
+              },
+              "unit_symbol": {
+                "type": "string",
+                "description": "Derived from the unit type, the symbol representing the unit of measurement",
+                "x-cdop-field-id": 185,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_symbol"
+              },
+              "unit_monitoring_frequency": {
+                "type": "string",
+                "description": "How often the indicator will be measured",
+                "x-cdop-field-id": 186,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].unit_monitoring_frequency"
+              },
+              "baseline_value": {
+                "type": "string",
+                "description": "Measured or estimated starting-point value for the co-benefit before project intervention",
+                "x-cdop-field-id": 187,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].baseline_value"
+              },
+              "target_value": {
+                "type": "string",
+                "description": "Planned or projected value for the co-benefit by end of reporting period or project lifetime",
+                "x-cdop-field-id": 188,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].target_value"
+              },
+              "supporting_evidence": {
+                "type": "string",
+                "description": "Documentation supporting ex-ante claims (e.g., baseline survey report)",
+                "x-cdop-field-id": 189,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].supporting_evidence"
+              }
+            },
+            "required": [
+              "cobenefits_type"
+            ]
+          }
+        },
+        "cobenefit_impact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "cobenefits_type": {
+                "type": "string",
+                "description": "Social, environmental, and economic impacts additional to the project's carbon impact",
+                "x-cdop-field-id": 190,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].cobenefits_type"
+              },
+              "achieved_project_impact": {
+                "type": "string",
+                "description": "Description of the impact achieved",
+                "x-cdop-field-id": 191,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].achieved_project_impact"
+              },
+              "indicator_id": {
+                "type": "string",
+                "description": "Unique ID to distinguish between different indicators of a same co-benefit",
+                "x-cdop-field-id": 192,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].indicator_id"
+              },
+              "achieved_value": {
+                "type": "string",
+                "description": "Actual measured value for the co-benefit during the reporting period",
+                "x-cdop-field-id": 193,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].achieved_value"
+              },
+              "change_type": {
+                "type": "string",
+                "description": "How change is expressed — only applicable when metric type is Change",
+                "x-cdop-field-id": 194,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].change_type"
+              },
+              "supporting_evidence": {
+                "type": "string",
+                "description": "Documentation supporting ex-post outcomes (e.g. Monitoring Report)",
+                "x-cdop-field-id": 195,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project Developer / Verification Body / Registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "cobenefits.cobenefit_impact[].supporting_evidence"
+              }
+            },
+            "required": [
+              "cobenefits_type"
+            ]
+          }
+        }
+      },
+      "required": [
+        "methods_used_to_assess_sdgs_and_other_cobenefits",
+        "sdgs_the_project_plans_to_contribute_to"
+      ]
+    }
+  },
+  "required": [
+    "cobenefits"
+  ]
+}
