@@ -249,29 +249,29 @@
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "unit.credit_block[].block_end"
+              },
+              "block_start": {
+                "type": "integer",
+                "description": "Number indicating the first unit within a credit block",
+                "x-cdop-field-id": 152,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.credit_block[].block_start"
               }
             },
             "required": [
               "block_end",
+              "block_start",
               "quantity"
             ]
           }
-        },
-        "credit_blockblock_start": {
-          "type": "integer",
-          "description": "Number indicating the first unit within a credit block",
-          "x-cdop-field-id": 152,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.credit_block[]block_start"
         }
       },
       "required": [
-        "credit_blockblock_start",
         "owner_account_id"
       ]
     },

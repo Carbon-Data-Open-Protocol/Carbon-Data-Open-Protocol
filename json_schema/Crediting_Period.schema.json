@@ -126,17 +126,7 @@
                 "x-cdop-public-private": "Immutable",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "project.crediting_period[].maximum_number_of_crediting_periods"
-              }
-            },
-            "required": []
-          }
-        },
-        "crediting period": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+              },
               "current_crediting_period_duration": {
                 "type": "integer",
                 "description": "The specific duration (in years) of a single crediting period granted to the project under the applicable methodology and Carbon Crediting Program. For projects with a fixed project crediting period type, this field is equal to the maximum total crediting duration.",
@@ -147,7 +137,7 @@
                 "x-cdop-mutability": "Public",
                 "x-cdop-public-private": "Immutable",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "project.crediting period[].current_crediting_period_duration"
+                "x-cdop-field-path": "project.crediting_period[].current_crediting_period_duration"
               }
             },
             "required": []
