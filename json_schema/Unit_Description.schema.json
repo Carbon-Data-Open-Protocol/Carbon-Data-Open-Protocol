@@ -39,10 +39,6 @@
               "metric": {
                 "type": "string",
                 "description": "Unit of measurment for quantifying the reduction or removal",
-                "enum": [
-                  "tCO2e",
-                  "tCO2"
-                ],
                 "x-cdop-field-id": 140,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "1..1",
@@ -55,23 +51,6 @@
               "type": {
                 "type": "string",
                 "description": "Describes the type of unit.",
-                "enum": [
-                  "ERT",
-                  "TREES Credit",
-                  "VCC",
-                  "CRT",
-                  "CER",
-                  "CFC",
-                  "ACC",
-                  "VER, CER",
-                  "Isometric credit",
-                  "JCM",
-                  "A6.4 ER, MCU",
-                  "PVC",
-                  "CORC",
-                  "VCU",
-                  "PIU"
-                ],
                 "x-cdop-field-id": 149,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "1..1",
@@ -174,15 +153,6 @@
               "status": {
                 "type": "string",
                 "description": "The current status of the unit",
-                "enum": [
-                  "Retired",
-                  "Active",
-                  "Cancelled",
-                  "On Hold",
-                  "Pending Transfer",
-                  "Accepted Pending Payment",
-                  "Deposited Released"
-                ],
                 "x-cdop-field-id": 146,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "1..1",

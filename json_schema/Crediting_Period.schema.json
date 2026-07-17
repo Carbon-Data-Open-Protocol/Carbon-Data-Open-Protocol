@@ -91,7 +91,6 @@
                 "type": "string",
                 "description": "The designation of the crediting period as either fixed (=expiring after a single defined term), or renewable, allowing for extension through multiple eligible renewals",
                 "enum": [
-                  "Fixed",
                   "Renewable"
                 ],
                 "x-cdop-field-id": 158,

@@ -74,7 +74,6 @@
                 "type": "string",
                 "description": "Indicates the status of the Estimated Emissions Mitigations, distinguishing between unvalidated and validated values",
                 "enum": [
-                  "Unvalidated",
                   "Validated",
                   "Superseded"
                 ],
@@ -275,7 +274,6 @@
                 "type": "string",
                 "description": "The aspect of the project that is covered by this validation event.",
                 "enum": [
-                  "Validation of Project Design Document",
                   "Validation of Renewal of Credit Period",
                   "Validation of Post Registration Change",
                   "Other"
