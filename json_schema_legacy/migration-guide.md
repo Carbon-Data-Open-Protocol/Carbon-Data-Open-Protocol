@@ -100,7 +100,6 @@ Recommended action:
 
 - use the new schema as the canonical contract for submission compatibility, including its enum constraints
 - keep supplemental business-rule validation if your process still depends on stricter checks such as URI validation or cross-field consistency
-- consult `json_schema/unmatched_enum_fields.csv` for enum fields that are not yet constrained in the generated schema
 
 ### 6. CDOP metadata is embedded as annotations
 
@@ -162,7 +161,6 @@ Examples of constraints still worth keeping as a second layer:
 
 - URI/email/phone formatting
 - one-to-one pairing rules across related arrays
-- enum lists for any field listed in `json_schema/unmatched_enum_fields.csv`
 
 ## Schema-By-Schema Guidance
 
@@ -194,7 +192,6 @@ then only minor changes should be required.
 ### API/validator guidance
 
 - Note that `additionalProperties: true` means your deserializer will accept undeclared fields inside each entity object; enforce a stricter contract in your own validation layer if needed.
-- Do not assume `project`, `project_stakeholder`, or `facility` are required by the schema — none are currently enforced as required.
 
 ### Project Approach & Details
 
@@ -273,13 +270,13 @@ Notably, the legacy requirement for `project.identifiers` is no longer present i
 
 ### Validation behavior changed
 
-The legacy schema included enum-like controls and custom extension support in some places. The new standardized schema enforces real `enum` constraints for fields whose CDOP datatype is `enum` (e.g., `crediting_program_name`, `standard_name`, `methodology_name`, `mitigation_type`, `project_sector`, `project_type`, `project_stakeholder_type`, `project_status`), sourced from `docs/CDOP Enumerated Values Lists.xlsx`. It does not support custom `x_*` extension keys.
+The legacy schema included enum-like controls and custom extension support in some places. The new standardized schema enforces real `enum` constraints for fields whose CDOP datatype is `enum` (e.g., `crediting_program_name`, `standard_name`, `methodology_name`, `mitigation_type`, `project_sector`, `project_type`, `project_stakeholder_type`, `project_status`), sourced from `docs/CDOP Enumerated Values Lists.xlsx`. 
 
 Recommended action:
 
 - use the values in each field's generated `enum` list rather than free text for statuses, registries, sectors, and stakeholder types
-- check `json_schema/unmatched_enum_fields.csv` for any `enum`-typed field that has no matching values list yet, and enforce a controlled list for it in your own application logic in the meantime
-- if you previously used `x_*` custom extension keys in submissions, move that data outside the validated CDOP payload unless and until the standard schema explicitly supports it
+
+
 
 ### Issuances
 
@@ -415,7 +412,6 @@ This is the recommended approach for most existing stakeholders.
 - Build a dedicated CDOP export mapper.
 - Validate only the export payload against the new schema.
 
-This is especially helpful where the new schemas use parallel arrays instead of arrays of objects.
 
 ### Pattern 2: Add a pre-validation normalization step
 
@@ -451,8 +447,8 @@ Business validation is still useful for:
 - Note that `additionalProperties: true` is set — extra fields in payloads will not cause schema validation failures.
 - Check each schema's actual `required` array before assuming a top-level entity object is mandatory — several sections (e.g., `Location_Details`, `Issuances`) currently have none.
 - Move renamed and relocated fields to their new entity sections.
-- Collapse `project.identifiers[]` into the single scalar pair `project.project_id_type` / `project.project_id`; other legacy arrays of objects (`documents[]`, `stakeholders[]`, `audits[]`, `issuances[]`) remain arrays of objects with renamed fields, not parallel arrays.
-- Use each field's generated `enum` list instead of free text, and check `json_schema/unmatched_enum_fields.csv` for fields not yet constrained.
+- Collapse `project.identifiers[]` into the single scalar pair `project.project_id_type` / `project.project_id`; other legacy arrays of objects (`documents[]`, `stakeholders[]`, `audits[]`, `issuances[]`) remain arrays of objects with renamed fields.
+- Use each field's generated `enum` list instead of free text.
 - Preserve any legacy-only business rules in a second validation layer if still needed.
 - Test sample submissions against the new schema before switching production submission flows.
 
@@ -465,4 +461,4 @@ For most stakeholders, the lowest-risk migration path is not to remodel internal
 3. validate the export payload against the new schema
 4. keep supplemental validation rules where the generated schema is intentionally less restrictive than prior implementations
 
-That approach will align submissions with the standardized CDOP schema while minimizing disruption to existing APIs and validation workflows.
+That approach will align with the standardized CDOP schema while minimizing disruption to existing APIs and validation workflows.
