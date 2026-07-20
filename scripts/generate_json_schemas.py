@@ -357,6 +357,28 @@ def add_parent_field_property(root_schema, record):
         add_required(item_schema, field_name)
 
 
+def schema_has_required(schema):
+    """Recursively check whether a schema (or any nested property/array item) has a
+    non-empty 'required' list, so top-level entities can be marked required even when
+    the required fields live inside nested arrays/objects rather than directly on the
+    entity itself."""
+    if not isinstance(schema, dict):
+        return False
+
+    if schema.get("required"):
+        return True
+
+    for prop_schema in schema.get("properties", {}).values():
+        if schema_has_required(prop_schema):
+            return True
+
+    items = schema.get("items")
+    if items is not None and schema_has_required(items):
+        return True
+
+    return False
+
+
 def worksheet_to_json_schema(ws):
     rows = list(ws.iter_rows(values_only=True))
     if not rows:
@@ -419,7 +441,7 @@ def worksheet_to_json_schema(ws):
     schema["required"] = sorted(
         entity
         for entity, entity_schema in schema.get("properties", {}).items()
-        if entity_schema.get("required")
+        if schema_has_required(entity_schema)
     )
     if not schema["required"]:
         schema.pop("required", None)

@@ -68,16 +68,15 @@ Recommended action:
 
 ### 4. Required top-level objects are now enforced
 
-A top-level entity object is only marked `required` in the generated schema when at least one field nested inside it is itself required. Sections with no required fields (even if fields exist) are not enforced as required top-level objects.
+A top-level entity object is marked `required` in the generated schema when at least one field is required anywhere within it — including fields nested inside its arrays (e.g. `project.location[].country_code`), not just fields directly on the entity itself. Sections with no required fields anywhere in their subtree are not enforced as required top-level objects.
 
 Examples:
 
-- `Location_Details.schema.json` has no required top-level objects — none of its entity sections (`project`, `project_stakeholder`, `facility`, `geolocation_file`) contain a required field
+- `Location_Details.schema.json` requires `project`, `project_stakeholder`, and `geolocation_file` (each has required fields nested inside its `location[]` array items); `facility` is not required
 - `Project_Approach_Details.schema.json` requires `project` (for `project_name`, `project_description`) and `project_stakeholder` (for `project_developer_name`)
-- `Issuances.schema.json` has no required top-level objects
-- `Disclosures.schema.json` requires `project` (for its attestation and governance fields); `project_stakeholder` is not required
+- `Issuances.schema.json` requires `project` (for nested audit fields); its `issuance` object is not required
+- `Disclosures.schema.json` requires `project` (for its attestation and governance fields) and `project_stakeholder`
 
-Even if some fields inside a section are optional, the section itself may still need to exist if any sibling field is required. Always check the generated schema's `required` array directly rather than assuming a section is mandatory.
 
 ### 5. Validation is more structural and less opinionated
 
@@ -176,7 +175,7 @@ Examples of constraints still worth keeping as a second layer:
 
 ### Required top-level objects
 
-The new schema does not currently require any top-level object — `project`, `project_stakeholder`, `facility`, and `geolocation_file` are all optional at the top level, and none of their nested fields are marked required either. Do not assume any section must be present; validate against the schema's `required` array directly.
+The new schema requires `project`, `project_stakeholder`, and `geolocation_file` at the top level — each has required fields nested inside its `location[]` array items (e.g. `country_code`, `country_name`). `facility` is the only optional top-level object; none of its nested fields are marked required.
 
 ### Payload guidance
 
@@ -334,13 +333,13 @@ Recommended action:
 
 ### Required fields changed
 
-Neither `Issuances.schema.json`'s top level nor its nested `project`/`issuance`/`project.audits[]`/`issuance.issuance[]` objects currently have any required fields. Always check the schema's `required` arrays directly rather than assuming a field is mandatory.
+`Issuances.schema.json` requires the top-level `project` object, because a field nested inside `project.audits[]` is required; `issuance` is not required.
 
 ### API/validator guidance
 
 - Update request models so `project_identifier` is nested under `project.project_identifier`, not top-level.
 - Route forecast/estimate submissions to the `Estimations` schema instead of expecting them here.
-- Treat both `project` and `issuance` as optional per the schema, but include `issuance` whenever actual issuance batch data is available.
+- Treat `project` as required and `issuance` as optional per the schema, but include `issuance` whenever actual issuance batch data is available.
 
 ### Disclosures
 
@@ -360,7 +359,7 @@ Legacy to new examples:
 
 ### Required fields changed
 
-The new schema requires top-level presence of `project` only; `project_stakeholder` is not currently required, even though `project_stakeholder.list_of_landowners` and the `organization[]` array live there.
+The new schema requires top-level presence of both `project` and `project_stakeholder` — `project_stakeholder` is required because a field nested inside its `organization[]` array is required.
 
 Within `project`, the following remain required:
 
@@ -445,7 +444,6 @@ Business validation is still useful for:
 - Regenerate typed models or DTOs from the new schema files.
 - Add or update a transformation layer from legacy payload shape to new CDOP payload shape.
 - Note that `additionalProperties: true` is set — extra fields in payloads will not cause schema validation failures.
-- Check each schema's actual `required` array before assuming a top-level entity object is mandatory — several sections (e.g., `Location_Details`, `Issuances`) currently have none.
 - Move renamed and relocated fields to their new entity sections.
 - Collapse `project.identifiers[]` into the single scalar pair `project.project_id_type` / `project.project_id`; other legacy arrays of objects (`documents[]`, `stakeholders[]`, `audits[]`, `issuances[]`) remain arrays of objects with renamed fields.
 - Use each field's generated `enum` list instead of free text.

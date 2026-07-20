@@ -217,6 +217,7 @@
                 "type": "string",
                 "description": "Indicate the status of project issuance",
                 "enum": [
+                  "Verified",
                   "Pending Issuance",
                   "Issuing",
                   "Pre-issuance",
@@ -239,5 +240,8 @@
       },
       "required": []
     }
-  }
+  },
+  "required": [
+    "project"
+  ]
 }
