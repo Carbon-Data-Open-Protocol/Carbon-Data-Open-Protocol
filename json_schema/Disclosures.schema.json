@@ -544,6 +544,7 @@
     }
   },
   "required": [
-    "project"
+    "project",
+    "project_stakeholder"
   ]
 }

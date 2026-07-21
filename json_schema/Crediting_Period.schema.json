@@ -146,5 +146,8 @@
       },
       "required": []
     }
-  }
+  },
+  "required": [
+    "validation"
+  ]
 }

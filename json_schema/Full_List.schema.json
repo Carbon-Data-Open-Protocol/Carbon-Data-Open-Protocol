@@ -6204,9 +6204,12 @@
   "required": [
     "agreement",
     "cobenefits",
+    "estimations",
+    "geolocation_file",
     "project",
     "project_stakeholder",
     "unit",
+    "validation",
     "vintage"
   ]
 }

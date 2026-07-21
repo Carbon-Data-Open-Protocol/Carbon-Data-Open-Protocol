@@ -81,6 +81,24 @@ The Estimations schema aims to capture all relevant information related to estim
 
 The Estimations JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Estimations.schema.json).
 
+## Co-Benefits
+
+The Co-Benefits schema aims to capture all relevant information related to a project's contribution to the UN Sustainable Development Goals (SDGs) and other co-benefits, including the assessment methods used, targeted and achieved co-benefit indicators, baseline and target values, and supporting evidence.
+
+The Co-Benefits JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Co-Benefits.schema.json).
+
+## Durability & Permanence
+
+The Durability & Permanence schema aims to capture all relevant information related to a project's non-permanence risk mitigation, including buffer pool deposits, releases, and reversal coverage, along with the project's overall risk profile.
+
+The Durability & Permanence JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Durability_Permanence.schema.json).
+
+## Project Finance
+
+The Project Finance schema aims to capture all relevant information related to a project's financing, including financing options, expected and realized costs/revenue, funding requirements, offtake and insurance agreements, and other transactional details between the project and its counterparties.
+
+The Project Finance JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Project_Finance.schema.json).
+
 ## Adoption
 
 Adoption of the tool lends to greater collaboration and data sharing across the industry. Some of the key areas for adoption are;

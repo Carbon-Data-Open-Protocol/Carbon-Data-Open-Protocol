@@ -240,5 +240,8 @@
       },
       "required": []
     }
-  }
+  },
+  "required": [
+    "project"
+  ]
 }

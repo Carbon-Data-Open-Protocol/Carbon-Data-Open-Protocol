@@ -2364,5 +2364,10 @@
       },
       "required": []
     }
-  }
+  },
+  "required": [
+    "geolocation_file",
+    "project",
+    "project_stakeholder"
+  ]
 }

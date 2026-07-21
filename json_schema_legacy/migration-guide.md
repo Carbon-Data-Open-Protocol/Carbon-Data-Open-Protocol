@@ -8,7 +8,15 @@ As of May 26, 2026, the supported CDOP JSON Schema files are the generated schem
 - `Project_Approach_Details.schema.json`
 - `Issuances.schema.json`
 - `Disclosures.schema.json`
+- `Unit_Description.schema.json`
+- `Crediting_Period.schema.json`
+- `Estimations.schema.json`
+- `Co-Benefits.schema.json`
+- `Durability_Permanence.schema.json`
+- `Project_Finance.schema.json`
 - `Full_List.schema.json`
+
+Only `Location_Details`, `Project_Approach_Details`, `Issuances`, and `Disclosures` have a legacy counterpart under `json_schema_legacy/`; the remaining generated schemas (`Unit_Description`, `Crediting_Period`, `Estimations`, `Co-Benefits`, `Durability_Permanence`, `Project_Finance`) are new additions with no legacy equivalent, and `Full_List` is the union of all supported schemas.
 
 Legacy schemas remain under `json_schema_legacy/` for reference, but end users should update validation and submission workflows to align with the standardized schemas in `json_schema/`.
 
@@ -60,16 +68,15 @@ Recommended action:
 
 ### 4. Required top-level objects are now enforced
 
-Several legacy schemas had few or no top-level `required` entries. The new schemas require whole sections to be present when those sections contain required fields.
+A top-level entity object is marked `required` in the generated schema when at least one field is required anywhere within it — including fields nested inside its arrays (e.g. `project.location[].country_code`), not just fields directly on the entity itself. Sections with no required fields anywhere in their subtree are not enforced as required top-level objects.
 
 Examples:
 
-- `Location_Details.schema.json` requires `project`, `project_stakeholder`, and `geolocation_file`
-- `Project_Approach_Details.schema.json` requires `project` and `project_stakeholder`
-- `Issuances.schema.json` requires `issuance`
-- `Disclosures.schema.json` requires `project` and `project_stakeholder`
+- `Location_Details.schema.json` requires `project`, `project_stakeholder`, and `geolocation_file` (each has required fields nested inside its `location[]` array items); `facility` is not required
+- `Project_Approach_Details.schema.json` requires `project` (for `project_name`, `project_description`) and `project_stakeholder` (for `project_developer_name`)
+- `Issuances.schema.json` requires `project` (for nested audit fields); its `issuance` object is not required
+- `Disclosures.schema.json` requires `project` (for its attestation and governance fields) and `project_stakeholder`
 
-Even if some fields inside a section are optional, the section itself may still need to exist.
 
 ### 5. Validation is more structural and less opinionated
 
@@ -82,15 +89,16 @@ Compared with some legacy schemas, the standardized generated schemas place more
 
 They place less emphasis on advanced constraints such as:
 
-- enumerated values
 - URI/email/phone formats
 - custom extension patterns such as `x_*`
 - rich object pairing rules between related arrays
 
+Fields whose CDOP datatype is `enum` are generated with a real `enum` constraint, sourced from `docs/CDOP Enumerated Values Lists.xlsx`. If a field is marked `enum` in the source workbook but has no matching entry in the enumerated values list, `scripts/generate_json_schemas.py` leaves it as an unconstrained string and records it in `json_schema/unmatched_enum_fields.csv` — check that file if a field you expect to be restricted isn't.
+
 Recommended action:
 
-- use the new schema as the canonical contract for submission compatibility
-- keep supplemental business-rule validation if your process still depends on stricter checks such as enum lists, URI validation, or cross-field consistency
+- use the new schema as the canonical contract for submission compatibility, including its enum constraints
+- keep supplemental business-rule validation if your process still depends on stricter checks such as URI validation or cross-field consistency
 
 ### 6. CDOP metadata is embedded as annotations
 
@@ -146,10 +154,10 @@ A pre-submit adapter should typically:
 
 If your current process relies on legacy constraints not present in the new generated schemas, keep them as a second validation layer after schema validation.
 
-Examples:
+Note that allowed registry names (`registry.current_registry`, `registry.origin_registry`, `crediting_program.crediting_program[].crediting_program_name`) and allowed project status values (`project.status[].project_status`) are now enforced directly by the generated schema's `enum` lists — you likely no longer need a separate business-rule check for those specific fields.
 
-- allowed registry names
-- allowed project status values
+Examples of constraints still worth keeping as a second layer:
+
 - URI/email/phone formatting
 - one-to-one pairing rules across related arrays
 
@@ -167,13 +175,7 @@ Examples:
 
 ### Required top-level objects
 
-The new schema requires:
-
-- `project`
-- `project_stakeholder`
-- `geolocation_file`
-
-The legacy file did not enforce these top-level objects as strictly.
+The new schema requires `project`, `project_stakeholder`, and `geolocation_file` at the top level — each has required fields nested inside its `location[]` array items (e.g. `country_code`, `country_name`). `facility` is the only optional top-level object; none of its nested fields are marked required.
 
 ### Payload guidance
 
@@ -188,9 +190,7 @@ then only minor changes should be required.
 
 ### API/validator guidance
 
-- Ensure your deserializer rejects undeclared fields inside each entity object.
-- Ensure `project` and `project_stakeholder` are always present when validating location submissions.
-- Do not assume `facility` is required.
+- Note that `additionalProperties: true` means your deserializer will accept undeclared fields inside each entity object; enforce a stricter contract in your own validation layer if needed.
 
 ### Project Approach & Details
 
@@ -221,43 +221,38 @@ Legacy to new examples:
 | `project.name` | `project.project_name` |
 | `project.design_document_link` | `project.project_design_document_link` |
 | `project.registry_link` | `project.current_registry_project_link` |
-| `project.status` | `project.project_status` |
-| `project.status_updated_at` | `project.project_status_updated_at` |
+| `project.status` | `project.status[].project_status` |
+| `project.status_updated_at` | removed; use `project.status[].is_current` to identify the current record instead of a timestamp |
 | `project.sector` | `project.project_sector` |
-| `project.identifiers[].identifier_type` | `project.project_id_type[]` |
-| `project.identifiers[].value` | `project.project_id[]` |
-| `project.crediting_periods[].length_years` | `project.crediting_period_length[]` |
+| `project.identifiers[].identifier_type` | `project.project_id_type` (single scalar, not an array — only one identifier type/value pair is carried in `Project_Approach_Details`) |
+| `project.identifiers[].value` | `project.project_id` (single scalar) |
+| `project.crediting_periods[].length_years` | moved out of this schema; see `Crediting_Period.schema.json` (`project.crediting_period[].current_crediting_period_duration`) |
 | `project.registration_date` | `project.project_registration_date` |
 | `project.list_date` | `project.project_list_date` |
-| `project.documents[].document_type` | `project.other_project_documentation_type[]` |
-| `project.documents[].link` | `project.other_project_documentation_link[]` |
+| `project.documents[].document_type` | `project.documents[].other_project_documentation_type` (array of objects, not a parallel array) |
+| `project.documents[].link` | `project.documents[].other_project_documentation_link` (array of objects, not a parallel array) |
 | `project_stakeholder.primary_developer.name` | `project_stakeholder.project_developer_name` |
 | `project_stakeholder.primary_developer.contact.website` | `project_stakeholder.project_developer_website` |
 | `project_stakeholder.primary_developer.contact.email` | `project_stakeholder.project_developer_email` |
 | `project_stakeholder.primary_developer.contact.phone` | `project_stakeholder.project_developer_phone` |
-| `project_stakeholder.stakeholders[].stakeholder_type` | `project_stakeholder.project_stakeholder_type[]` |
-| `project_stakeholder.stakeholders[].name` | `project_stakeholder.project_stakeholder_name[]` |
-| `project_stakeholder.stakeholders[].contact.website` | `project_stakeholder.project_stakeholder_website[]` |
-| `project_stakeholder.stakeholders[].contact.email` | `project_stakeholder.project_stakeholder_email[]` |
-| `project_stakeholder.stakeholders[].contact.phone` | `project_stakeholder.project_stakeholder_phone[]` |
+| `project_stakeholder.stakeholders[].stakeholder_type` | `project_stakeholder.stakeholders[].project_stakeholder_type` (still an array of objects) |
+| `project_stakeholder.stakeholders[].name` | `project_stakeholder.stakeholders[].project_stakeholder_name` |
+| `project_stakeholder.stakeholders[].contact.website` | `project_stakeholder.stakeholders[].project_stakeholder_website` |
+| `project_stakeholder.stakeholders[].contact.email` | `project_stakeholder.stakeholders[].project_stakeholder_email` |
+| `project_stakeholder.stakeholders[].contact.phone` | `project_stakeholder.stakeholders[].project_stakeholder_phone` |
 | `registry.current_registry.name` | `registry.current_registry` |
 | prior registry history | review and condense as needed into `registry.origin_registry` |
 
-### Important modeling change: arrays of objects to parallel arrays
+### Important modeling change: identifiers collapsed to a single scalar pair
 
-Several legacy structures preserved relationships inside each object record. The new schema often represents those values as parallel arrays instead.
+`project.identifiers[]` (an array of `{ identifier_type, value }` records) becomes a single scalar pair, `project.project_id_type` and `project.project_id` — only one identifier is carried per submission, not a list. If you track multiple identifier types (internal ID, registry ID, global unique ID) per project, pick the one you want to submit under this schema, or use `Full_List.schema.json` if you need to carry more context elsewhere.
 
-Examples:
-
-- `project.identifiers[]` becomes `project.project_id_type[]` plus `project.project_id[]`
-- `project.documents[]` becomes `project.other_project_documentation_type[]` plus `project.other_project_documentation_link[]`
-- `project_stakeholder.stakeholders[]` becomes several parallel arrays
+`project.documents[]` and `project_stakeholder.stakeholders[]` remain arrays of objects in the new schema (not parallel arrays) — only field names inside each object changed.
 
 Recommended action:
 
-- maintain ordering consistency across related arrays in your transform layer
+- decide which single identifier type/value to submit for `project.project_id_type` / `project.project_id`
 - keep your internal richer object model if it is already working
-- flatten into the CDOP parallel-array model only at export/validation time
 - decide explicitly how to handle legacy registry listing dates and prior-registry history, because the new schema does not preserve the same registry-history object structure
 
 ### Required fields changed
@@ -266,20 +261,21 @@ The new schema requires:
 
 - `project.project_name`
 - `project.project_description`
-- `project.project_status`
-- `project.project_status_updated_at`
 - `project_stakeholder.project_developer_name`
+
+`project.project_status` is not currently required, and it is no longer a flat scalar field — it now lives under `project.status[]`, an array of `{ project_status, project_status_reason, is_current }` records, allowing status history to be tracked over time rather than a single current value.
 
 Notably, the legacy requirement for `project.identifiers` is no longer present in the generated schema.
 
 ### Validation behavior changed
 
-The legacy schema included enum-like controls and custom extension support in some places. The new standardized schema does not currently enforce those same constraints.
+The legacy schema included enum-like controls and custom extension support in some places. The new standardized schema enforces real `enum` constraints for fields whose CDOP datatype is `enum` (e.g., `crediting_program_name`, `standard_name`, `methodology_name`, `mitigation_type`, `project_sector`, `project_type`, `project_stakeholder_type`, `project_status`), sourced from `docs/CDOP Enumerated Values Lists.xlsx`. 
 
 Recommended action:
 
-- if you still need controlled lists for statuses, registries, or stakeholder types, enforce them in your application logic
-- if you previously used `x_*` custom extension keys in submissions, move that data outside the validated CDOP payload unless and until the standard schema explicitly supports it
+- use the values in each field's generated `enum` list rather than free text for statuses, registries, sectors, and stakeholder types
+
+
 
 ### Issuances
 
@@ -299,8 +295,10 @@ The legacy schema used a mixed top-level model with:
 
 The new schema consolidates this into two entity objects:
 
-- `project`
-- `issuance`
+- `project` — holds `project_identifier` and an `audits[]` array
+- `issuance` — holds a nested `issuance.issuance[]` array of actual issuance batch records
+
+Forecast-related fields (`issuance_forecast[]`, `forecast_total_issuance[]`, and estimated crediting-period dates) are **not** part of `Issuances.schema.json` in the current generated schema. That information now belongs to the separate `Estimations.schema.json` (see the `estimations.vintage_mitigation[]`, `estimations.monitoring[]`, and `estimations.estimation_event[]` sections there). If your legacy payload combined actual issuances and forecasts in one document, split it across `Issuances` and `Estimations` when migrating.
 
 ### Key field and shape changes
 
@@ -309,54 +307,39 @@ Legacy to new examples:
 | Legacy shape | New shape |
 | --- | --- |
 | `project_identifier` | `project.project_identifier` |
-| `audits[].auditor_name` | `project.auditor_name[]` |
-| `audits[].site_visit_start_date` | `project.auditor_site_visit_start_date[]` |
-| `audits[].site_visit_end_date` | `project.auditor_site_visit_end_date[]` |
-| legacy verification report data | review and map into `project.verification_report_url[]` and `project.verification_report_date[]` when those values can be derived cleanly |
-| `crediting_period.estimated_start` | `issuance.estimated_crediting_period_start` |
-| `crediting_period.estimated_end` | `issuance.estimated_crediting_period_end` |
-| `issuance_forecast[].forecast_year` | `issuance.forecast_year[]` |
-| `issuance_forecast[].forecast_annual_issuance` | `issuance.forecast_annual_issuance[]` |
-| `forecast_total_issuance[]` | `issuance.forecast_total_issuance[]` |
-| `issuances[].batch_identifier` | `issuance.batch_identifier[]` |
-| `issuances[].issuance_url` | `issuance.issuance_url[]` |
-| `issuances[].date_of_issuance` | `issuance.date_of_issuance[]` |
-| `issuances[].date_of_verification` | `issuance.date_of_verification[]` |
-| `issuances[].verification_period_start` | `issuance.verification_period_start[]` |
-| `issuances[].verification_period_end` | `issuance.verification_period_end[]` |
-| `issuances[].batch_issued_volume` | `issuance.batch_issued_volume[]` |
-| `cumulative_issued_volume` | `issuance.cumulative_issued_volume` |
+| `audits[].auditor_name` | `project.audits[].auditor_name` (array of objects, not a parallel array) |
+| `audits[].site_visit_start_date` | `project.audits[].auditor_site_visit_start_date` |
+| `audits[].site_visit_end_date` | `project.audits[].auditor_site_visit_end_date` |
+| legacy verification report data | `project.audits[].verification_report_url` and `project.audits[].verification_report_date` |
+| `crediting_period.estimated_start` / `.estimated_end` | moved to `Estimations.schema.json` |
+| `issuance_forecast[]`, `forecast_total_issuance[]` | moved to `Estimations.schema.json` |
+| `issuances[].batch_identifier` | `issuance.issuance[].batch_identifier` |
+| `issuances[].issuance_url` | `issuance.issuance[].issuance_url` |
+| `issuances[].date_of_issuance` | `issuance.issuance[].date_of_issuance` |
+| `issuances[].date_of_verification` | `issuance.issuance[].date_of_verification` |
+| `issuances[].verification_period_start` | `issuance.issuance[].verification_period_start` |
+| `issuances[].verification_period_end` | `issuance.issuance[].verification_period_end` |
+| `issuances[].batch_issued_volume` | `issuance.issuance[].batch_issued_volume` |
+| `cumulative_issued_volume` | `issuance.issuance[].cumulative_issued_volume` (now per-batch, alongside a new `issuance_status` field) |
 
-### Important modeling change: issuance records become parallel arrays
+### Important modeling change: records stay as arrays of objects, not parallel arrays
 
-Like Project Approach & Details, the legacy `issuances[]` array of records becomes multiple related arrays under `issuance`.
+Unlike some other schemas, `project.audits[]` and `issuance.issuance[]` remain arrays of objects — each record's fields are nested together, matching the legacy shape more closely. There is no flattening into parallel top-level arrays here.
 
 Recommended action:
 
-- keep your internal issuance-batch record model if you already have one
-- generate CDOP export arrays from those records in a deterministic order
-- validate that all related issuance arrays have matching lengths before submission
-
-Example checks worth keeping in your application even if they are not enforced by schema:
-
-- `batch_identifier[]`, `date_of_issuance[]`, and `batch_issued_volume[]` should align by index
-- `forecast_year[]` and `forecast_annual_issuance[]` should align by index
+- keep your internal issuance-batch and audit record models if you already have them; map each record directly into the corresponding array item
+- route forecast/estimate data to `Estimations.schema.json` instead of `Issuances.schema.json`
 
 ### Required fields changed
 
-The new schema requires:
-
-- `issuance.forecast_annual_issuance`
-- `issuance.forecast_year`
-- `issuance.forecast_total_issuance`
-
-The legacy top-level requirement for `audits` no longer exists.
+`Issuances.schema.json` requires the top-level `project` object, because a field nested inside `project.audits[]` is required; `issuance` is not required.
 
 ### API/validator guidance
 
-- Update request models so `project_identifier` is no longer top-level.
-- Treat `project` as optional in schema terms, but include it whenever project-level audit or report information is available.
-- Treat `issuance` as the required submission section.
+- Update request models so `project_identifier` is nested under `project.project_identifier`, not top-level.
+- Route forecast/estimate submissions to the `Estimations` schema instead of expecting them here.
+- Treat `project` as required and `issuance` as optional per the schema, but include `issuance` whenever actual issuance batch data is available.
 
 ### Disclosures
 
@@ -376,10 +359,7 @@ Legacy to new examples:
 
 ### Required fields changed
 
-The new schema requires top-level presence of:
-
-- `project`
-- `project_stakeholder`
+The new schema requires top-level presence of both `project` and `project_stakeholder` — `project_stakeholder` is required because a field nested inside its `organization[]` array is required.
 
 Within `project`, the following remain required:
 
@@ -431,7 +411,6 @@ This is the recommended approach for most existing stakeholders.
 - Build a dedicated CDOP export mapper.
 - Validate only the export payload against the new schema.
 
-This is especially helpful where the new schemas use parallel arrays instead of arrays of objects.
 
 ### Pattern 2: Add a pre-validation normalization step
 
@@ -453,7 +432,7 @@ Use:
 
 Business validation is still useful for:
 
-- enum/value list enforcement
+- enum/value list enforcement for the fields listed in `json_schema/unmatched_enum_fields.csv` (fields marked `enum` in the source workbook with no matching entry in the enumerated values list, so the generated schema leaves them unconstrained)
 - URI/email/phone format checks
 - duplicate detection
 - cross-array alignment checks
@@ -465,9 +444,9 @@ Business validation is still useful for:
 - Regenerate typed models or DTOs from the new schema files.
 - Add or update a transformation layer from legacy payload shape to new CDOP payload shape.
 - Note that `additionalProperties: true` is set — extra fields in payloads will not cause schema validation failures.
-- Ensure required top-level entity objects are present.
 - Move renamed and relocated fields to their new entity sections.
-- Convert legacy arrays of objects into aligned CDOP arrays where required.
+- Collapse `project.identifiers[]` into the single scalar pair `project.project_id_type` / `project.project_id`; other legacy arrays of objects (`documents[]`, `stakeholders[]`, `audits[]`, `issuances[]`) remain arrays of objects with renamed fields.
+- Use each field's generated `enum` list instead of free text.
 - Preserve any legacy-only business rules in a second validation layer if still needed.
 - Test sample submissions against the new schema before switching production submission flows.
 
@@ -480,4 +459,4 @@ For most stakeholders, the lowest-risk migration path is not to remodel internal
 3. validate the export payload against the new schema
 4. keep supplemental validation rules where the generated schema is intentionally less restrictive than prior implementations
 
-That approach will align submissions with the standardized CDOP schema while minimizing disruption to existing APIs and validation workflows.
+That approach will align with the standardized CDOP schema while minimizing disruption to existing APIs and validation workflows.

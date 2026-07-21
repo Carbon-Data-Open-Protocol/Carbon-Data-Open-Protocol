@@ -301,6 +301,8 @@
     }
   },
   "required": [
-    "project"
+    "estimations",
+    "project",
+    "validation"
   ]
 }
