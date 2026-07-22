@@ -14,6 +14,25 @@
           "items": {
             "type": "string",
             "description": "A standardized set of impact categories derived from the UN Sustainable Development Goals for classifying project benefits",
+            "enum": [
+              "SDG 1: No Poverty",
+              "SDG 2: Zero Hunger",
+              "SDG 3: Good Health and Well-being",
+              "SDG 4: Quality Education",
+              "SDG 5: Gender Equality",
+              "SDG 6: Clean Water and Sanitation",
+              "SDG 7: Affordable and Clean Energy",
+              "SDG 8: Decent Work and Economic Growth",
+              "SDG 9: Industry, Innovation and Infrastructure",
+              "SDG 10: Reduced Inequalities",
+              "SDG 11: Sustainable Cities and Communities",
+              "SDG 12: Responsible Consumption and Production",
+              "SDG 13: Climate Action",
+              "SDG 14: Life Below Water",
+              "SDG 15: Life on Land",
+              "SDG 16: Peace, Justice and Strong Institutions",
+              "SDG 17: Partnerships for the Goals"
+            ],
             "x-cdop-field-id": 177,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
@@ -50,6 +69,19 @@
               "cobenefits_type": {
                 "type": "string",
                 "description": "Social, environmental, and economic impacts additional to the project's carbon impact",
+                "enum": [
+                  "Energy",
+                  "Air, land, and water",
+                  "Ecology and natural resources",
+                  "Human rights",
+                  "Labour",
+                  "Health and safety",
+                  "Gender equality",
+                  "Land acquisition and involuntary resettlement",
+                  "Indigenous Peoples",
+                  "Corruption",
+                  "Cultural heritage"
+                ],
                 "x-cdop-field-id": 179,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
@@ -110,6 +142,14 @@
               "unit_type": {
                 "type": "string",
                 "description": "The specific metric type used to quantify the selected co-benefit",
+                "enum": [
+                  "Count",
+                  "Percentage",
+                  "Area",
+                  "Value",
+                  "Change",
+                  "Binary"
+                ],
                 "x-cdop-field-id": 184,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
@@ -122,6 +162,15 @@
               "unit_symbol": {
                 "type": "string",
                 "description": "Derived from the unit type, the symbol representing the unit of measurement",
+                "enum": [
+                  "#",
+                  "%",
+                  "ha",
+                  "tCO2e",
+                  "USD",
+                  "Δ",
+                  "Y/N"
+                ],
                 "x-cdop-field-id": 185,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
@@ -134,6 +183,18 @@
               "unit_monitoring_frequency": {
                 "type": "string",
                 "description": "How often the indicator will be measured",
+                "enum": [
+                  "Continuous",
+                  "Hourly",
+                  "Daily",
+                  "Weekly",
+                  "Monthly",
+                  "Annually",
+                  "Every 2 years",
+                  "Every 5 years",
+                  "Sporadically",
+                  "Other"
+                ],
                 "x-cdop-field-id": 186,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
@@ -194,6 +255,19 @@
               "cobenefits_type": {
                 "type": "string",
                 "description": "Social, environmental, and economic impacts additional to the project's carbon impact",
+                "enum": [
+                  "Energy",
+                  "Air, land, and water",
+                  "Ecology and natural resources",
+                  "Human rights",
+                  "Labour",
+                  "Health and safety",
+                  "Gender equality",
+                  "Land acquisition and involuntary resettlement",
+                  "Indigenous Peoples",
+                  "Corruption",
+                  "Cultural heritage"
+                ],
                 "x-cdop-field-id": 190,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
@@ -242,6 +316,12 @@
               "change_type": {
                 "type": "string",
                 "description": "How change is expressed — only applicable when metric type is Change",
+                "enum": [
+                  "Absolute",
+                  "Relative",
+                  "Index",
+                  "Other"
+                ],
                 "x-cdop-field-id": 194,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
