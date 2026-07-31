@@ -1,9 +1,4 @@
 associated_entity,field_name
 project,activity_type
-crediting_program,carbon_standard_level_accreditation
-project,project_level_accreditation
-project,project_level_compliance_eligibility
 project,project_level_compliance_potential_eligibility
-unit,unit_level_accreditation
-unit,unit_level_compliance_eligibility
 unit,unit_level_compliance_potential_eligibility
