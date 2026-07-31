@@ -1873,11 +1873,164 @@
               "project_total_funding_secured"
             ]
           }
+        },
+        "compliance_market_id": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The project's ID within the compliance scheme, if applicable.",
+            "x-cdop-field-id": 243,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Market Regulators",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "project.compliance_market_id"
+          },
+          "minItems": 1
+        },
+        "other": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "other_accreditation": {
+                "type": "string",
+                "description": "Any other expected accreditations.",
+                "x-cdop-field-id": 244,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.other[].other_accreditation"
+              },
+              "other_accreditation_supporting_document": {
+                "type": "string",
+                "description": "Any other expected accreditations' documentation.",
+                "x-cdop-field-id": 245,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.other[].other_accreditation_supporting_document"
+              }
+            },
+            "required": []
+          }
+        },
+        "project_level": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "project_level_accreditation": {
+                "type": "string",
+                "description": "Project-level accreditation label(s)",
+                "x-cdop-field-id": 246,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_accreditation"
+              },
+              "project_level_accreditation_start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date that the project-level accreditation was given",
+                "x-cdop-field-id": 247,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_accreditation_start_date"
+              },
+              "project_level_accreditation_expiry_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date that the project-level accreditation expires/expired",
+                "x-cdop-field-id": 248,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_accreditation_expiry_date"
+              },
+              "project_level_accreditation_website": {
+                "type": "string",
+                "description": "Link to the webpage of the project's accreditation",
+                "x-cdop-field-id": 249,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_accreditation_website"
+              },
+              "project_level_compliance_eligibility": {
+                "type": "string",
+                "description": "Whether the project is eligible to supply credits under the listed compliance scheme",
+                "x-cdop-field-id": 250,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Market Regulators",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_compliance_eligibility"
+              },
+              "project_level_compliance_approval_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date that the project-level compliance approval was given, therefore making the project eligible",
+                "x-cdop-field-id": 251,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_compliance_approval_date"
+              },
+              "project_level_compliance_potential_eligibility": {
+                "type": "string",
+                "description": "Whether the project is potentially eligible to supply credits under the listed compliance scheme, pending realization of required characteristics/qualities",
+                "x-cdop-field-id": 252,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.project_level[].project_level_compliance_potential_eligibility"
+              }
+            },
+            "required": [
+              "project_level_accreditation_expiry_date",
+              "project_level_accreditation_start_date",
+              "project_level_accreditation_website",
+              "project_level_compliance_approval_date"
+            ]
+          }
         }
       },
       "required": [
         "carbon_credit_ownership_attestation",
         "carbon_credit_ownership_documentation",
+        "compliance_market_id",
         "current_registry_project_id",
         "declaring_entity_name",
         "estimated_total_years",
@@ -4155,7 +4308,7 @@
             "type": "object",
             "additionalProperties": true,
             "properties": {
-              "methodology_name": {
+              "methodology": {
                 "type": "string",
                 "description": "The methodology name",
                 "enum": [
@@ -4663,7 +4816,7 @@
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "methodology.versions[].methodology_name"
+                "x-cdop-field-path": "methodology.versions[].methodology"
               },
               "version": {
                 "type": "string",
@@ -5521,6 +5674,124 @@
           "x-cdop-public-private": "Private",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "unit.realized_transaction_price"
+        },
+        "unit_level": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "unit_level_accreditation": {
+                "type": "string",
+                "description": "Unit-level label accreditation, if applicable. This may be different to project-level accreditation depending on the unit's other qualities, like vintage.",
+                "x-cdop-field-id": 253,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_accreditation"
+              },
+              "unit_level_accreditation_start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date the unit-level accreditation was assigned",
+                "x-cdop-field-id": 254,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_accreditation_start_date"
+              },
+              "unit_level_accreditation_expiry_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date the unit-level accreditation expires/expired",
+                "x-cdop-field-id": 255,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_accreditation_expiry_date"
+              },
+              "unit_level_accreditation_id": {
+                "type": "string",
+                "description": "Unit-level accrediation associated ID",
+                "x-cdop-field-id": 256,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_accreditation_id"
+              },
+              "unit_level_accreditation_website": {
+                "type": "string",
+                "description": "Link to the webpage of the unit-level accreditation",
+                "x-cdop-field-id": 257,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_accreditation_website"
+              },
+              "unit_level_compliance_eligibility": {
+                "type": "string",
+                "description": "Whether the unit is eligible for use under the listed compliance scheme",
+                "x-cdop-field-id": 258,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_compliance_eligibility"
+              },
+              "unit_level_compliance_approval_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date the unit-level compliance approval was assigned, therefore making the unit eligible",
+                "x-cdop-field-id": 259,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_compliance_approval_date"
+              },
+              "unit_level_compliance_potential_eligibility": {
+                "type": "string",
+                "description": "Whether the unit is potentially eligible for use under the listed compliance scheme, pending realization of required characteristics/qualities (e.g., Article 6 authorization)",
+                "x-cdop-field-id": 260,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.unit_level[].unit_level_compliance_potential_eligibility"
+              }
+            },
+            "required": [
+              "unit_level_accreditation",
+              "unit_level_accreditation_expiry_date",
+              "unit_level_accreditation_id",
+              "unit_level_accreditation_start_date",
+              "unit_level_accreditation_website",
+              "unit_level_compliance_approval_date",
+              "unit_level_compliance_eligibility",
+              "unit_level_compliance_potential_eligibility"
+            ]
+          }
         }
       },
       "required": [
@@ -6696,6 +6967,25 @@
       "required": [
         "agreement_type"
       ]
+    },
+    "carbon_crediting_standard": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "carbon_standard_level_accreditation": {
+          "type": "string",
+          "description": "Project's crediting standard accreditation",
+          "x-cdop-field-id": 242,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Demand-side integrity standards",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "carbon_crediting_standard.carbon_standard_level_accreditation"
+        }
+      },
+      "required": []
     }
   },
   "required": [

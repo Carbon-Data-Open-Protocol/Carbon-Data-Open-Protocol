@@ -180,7 +180,7 @@
             "type": "object",
             "additionalProperties": true,
             "properties": {
-              "methodology_name": {
+              "methodology": {
                 "type": "string",
                 "description": "The methodology name",
                 "enum": [
@@ -688,7 +688,7 @@
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "methodology.versions[].methodology_name"
+                "x-cdop-field-path": "methodology.versions[].methodology"
               },
               "version": {
                 "type": "string",
