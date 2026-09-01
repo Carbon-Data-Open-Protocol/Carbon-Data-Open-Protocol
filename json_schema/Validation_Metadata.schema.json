@@ -1,0 +1,573 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Validation_Metadata.schema.json",
+  "title": "Validation_Metadata",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "validation": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "crediting_period": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "current_crediting_period_end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date for the project's current crediting period, as validated by this validation event",
+                "x-cdop-field-id": 271,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.crediting_period[].current_crediting_period_end_date"
+              },
+              "current_crediting_period_number": {
+                "type": "integer",
+                "description": "The number identifying the current crediting period, distinguishing the initial period from subsequent eligible renewals.",
+                "x-cdop-field-id": 272,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.crediting_period[].current_crediting_period_number"
+              },
+              "current_crediting_period_start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date for the project's current crediting period, as validated by this validation event",
+                "x-cdop-field-id": 273,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.crediting_period[].current_crediting_period_start_date"
+              }
+            },
+            "required": [
+              "current_crediting_period_end_date",
+              "current_crediting_period_number",
+              "current_crediting_period_start_date"
+            ]
+          }
+        },
+        "date": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "date_validation_expiration": {
+                "type": "string",
+                "format": "date",
+                "description": "Date validation expires",
+                "x-cdop-field-id": 277,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.date[].date_validation_expiration"
+              },
+              "date_validation_planned": {
+                "type": "string",
+                "format": "date",
+                "description": "Planned date of the validation event",
+                "x-cdop-field-id": 278,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.date[].date_validation_planned"
+              },
+              "date_validation_requested": {
+                "type": "string",
+                "format": "date",
+                "description": "Date validation was requested",
+                "x-cdop-field-id": 279,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.date[].date_validation_requested"
+              }
+            },
+            "required": [
+              "date_validation_expiration",
+              "date_validation_planned",
+              "date_validation_requested"
+            ]
+          }
+        },
+        "lca": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "lca_completed": {
+                "type": "boolean",
+                "description": "LCA has been completed",
+                "x-cdop-field-id": 280,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_completed"
+              },
+              "lca_emissions_quantification": {
+                "type": "boolean",
+                "description": "LCA is used to quantify emissions",
+                "x-cdop-field-id": 281,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_emissions_quantification"
+              },
+              "lca_link": {
+                "type": "string",
+                "description": "Link to LCA report",
+                "x-cdop-field-id": 282,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_link"
+              },
+              "lca_repository": {
+                "type": "string",
+                "description": "Link to LCA repository",
+                "x-cdop-field-id": 283,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_repository"
+              },
+              "lca_results": {
+                "type": "string",
+                "description": "LCA results",
+                "x-cdop-field-id": 284,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_results"
+              },
+              "lca_system_boundary_figure": {
+                "type": "string",
+                "description": "Link to LCA system boundary figure",
+                "x-cdop-field-id": 285,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_system_boundary_figure"
+              },
+              "lca_system_boundary_overview": {
+                "type": "string",
+                "description": "Overview description of LCA system boundary",
+                "x-cdop-field-id": 286,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.lca[].lca_system_boundary_overview"
+              }
+            },
+            "required": []
+          }
+        },
+        "validation_event": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "validation _id": {
+                "type": "integer",
+                "description": "Identification number of the validation event.",
+                "x-cdop-field-id": 287,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation_event[].validation _id"
+              },
+              "validation_type": {
+                "type": "string",
+                "description": "Type of validation being carried out",
+                "enum": [
+                  "Validation of Project Design Document",
+                  "Validation of Renewal of Credit Period",
+                  "Validation of Post Registration Change",
+                  "Other"
+                ],
+                "x-cdop-field-id": 288,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation_event[].validation_type"
+              },
+              "validation_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date of validation event",
+                "x-cdop-field-id": 296,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation_event[].validation_date"
+              },
+              "validation_is_planned": {
+                "type": "boolean",
+                "description": "Indicate whether the valiation event is planned.",
+                "x-cdop-field-id": 297,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation_event[].validation_is_planned"
+              },
+              "validation_period_end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date of the validation event. Estimate if needed.",
+                "x-cdop-field-id": 298,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation_event[].validation_period_end_date"
+              },
+              "validation_period_start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date of the validation event",
+                "x-cdop-field-id": 299,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.validation_event[].validation_period_start_date"
+              }
+            },
+            "required": [
+              "validation _id",
+              "validation_date",
+              "validation_is_planned",
+              "validation_period_end_date",
+              "validation_period_start_date",
+              "validation_type"
+            ]
+          }
+        },
+        "report": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "validation_report_link": {
+                "type": "string",
+                "description": "Link (URL) to the project's validation report (if applicable).",
+                "x-cdop-field-id": 300,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.report[].validation_report_link"
+              },
+              "validation_report_summary": {
+                "type": "string",
+                "description": "Enter the validation report's summary",
+                "x-cdop-field-id": 301,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.report[].validation_report_summary"
+              },
+              "validation_report_version": {
+                "type": "string",
+                "description": "Which version of the validation report is the current version",
+                "x-cdop-field-id": 306,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.report[].validation_report_version"
+              }
+            },
+            "required": []
+          }
+        },
+        "stage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "validation_stage_description": {
+                "type": "string",
+                "description": "Describe the stages of the validation event.",
+                "x-cdop-field-id": 302,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.stage[].validation_stage_description"
+              },
+              "validation_stage_document_link": {
+                "type": "string",
+                "description": "Link (URL) to the document that contains the description and details of the validation event stages",
+                "x-cdop-field-id": 303,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation.stage[].validation_stage_document_link"
+              },
+              "validation_stages": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "Select all validation event stages",
+                  "x-cdop-field-id": 304,
+                  "x-cdop-pre-issuance-inclusion": "Yes",
+                  "x-cdop-cardinality": "1..*",
+                  "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                  "x-cdop-public-private": "Public",
+                  "x-cdop-schema": "CDOP",
+                  "x-cdop-field-path": "validation.stage[].validation_stages"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "validation_stages"
+            ]
+          }
+        }
+      },
+      "required": []
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "validation_stage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "current_validation_stage": {
+                "type": "string",
+                "description": "Name of the current validation step",
+                "x-cdop-field-id": 274,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.validation_stage[].current_validation_stage"
+              },
+              "current_validation_stage_status": {
+                "type": "string",
+                "description": "Status of the current validation step",
+                "x-cdop-field-id": 275,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.validation_stage[].current_validation_stage_status"
+              }
+            },
+            "required": [
+              "current_validation_stage",
+              "current_validation_stage_status"
+            ]
+          }
+        },
+        "date": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "date_previous_validation": {
+                "type": "string",
+                "format": "date",
+                "description": "Date of the previous validation event",
+                "x-cdop-field-id": 276,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Project developer",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.date[].date_previous_validation"
+              }
+            },
+            "required": []
+          }
+        },
+        "validation_status": {
+          "type": "boolean",
+          "description": "Indicate whether the project has been validated.",
+          "x-cdop-field-id": 305,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Project developer",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project.validation_status"
+        }
+      },
+      "required": [
+        "validation_status"
+      ]
+    },
+    "validation_body": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "validation_body_accreditation": {
+                "type": "string",
+                "description": "List any accreditations of the validation body",
+                "x-cdop-field-id": 289,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation_body.details[].validation_body_accreditation"
+              },
+              "validation_body_id": {
+                "type": "string",
+                "description": "Identification number of the validation body",
+                "x-cdop-field-id": 290,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation_body.details[].validation_body_id"
+              },
+              "validation_body_name": {
+                "type": "string",
+                "description": "Name of the validation body",
+                "x-cdop-field-id": 291,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation_body.details[].validation_body_name"
+              },
+              "validator_name": {
+                "type": "string",
+                "description": "Name(s) of the validator(s)",
+                "x-cdop-field-id": 292,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation_body.details[].validator_name"
+              },
+              "validation_body_sectoral_scopes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "List the sectoral scopes the validation body is accredited to validate",
+                  "x-cdop-field-id": 293,
+                  "x-cdop-pre-issuance-inclusion": "Yes",
+                  "x-cdop-cardinality": "1..*",
+                  "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                  "x-cdop-public-private": "Public",
+                  "x-cdop-schema": "CDOP",
+                  "x-cdop-field-path": "validation_body.details[].validation_body_sectoral_scopes"
+                },
+                "minItems": 1
+              },
+              "validation_body_selection": {
+                "type": "string",
+                "description": "Describe how the validation body was selected",
+                "x-cdop-field-id": 294,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation_body.details[].validation_body_selection"
+              },
+              "validation_body_team_members_and_roles": {
+                "type": "string",
+                "description": "List the names of any other validation body team members and their roles (FIRST NAME - LAST NAME, ROLE)",
+                "x-cdop-field-id": 295,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "validation_body.details[].validation_body_team_members_and_roles"
+              }
+            },
+            "required": [
+              "validation_body_id",
+              "validation_body_name",
+              "validation_body_sectoral_scopes",
+              "validation_body_selection",
+              "validation_body_team_members_and_roles",
+              "validator_name"
+            ]
+          }
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "project",
+    "validation",
+    "validation_body"
+  ]
+}

@@ -1,2 +1,9 @@
 associated_entity,field_name
 project,activity_type
+project,current_validation_stage
+project,current_validation_stage_status
+validation_body,validation_body_sectoral_scopes
+validation,validation_stages
+verification,verification_claim_type
+verification,verification_quantity_uom
+verification,verification_audit_checkpoint_status

@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Registry_Metadata.schema.json",
+  "title": "Registry_Metadata",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "registry": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "identification": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "registry_identifier": {
+                "type": "integer",
+                "description": "Describes the current registry, that contains the information about the project, and units",
+                "x-cdop-field-id": 261,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.identification[].registry_identifier"
+              },
+              "registry_name": {
+                "type": "string",
+                "description": "Describes the current registry, that contains the information about the project, and units",
+                "x-cdop-field-id": 262,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.identification[].registry_name"
+              },
+              "registry_link": {
+                "type": "string",
+                "description": "Describes the current registry, that contains the information about the project, and units",
+                "x-cdop-field-id": 263,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.identification[].registry_link"
+              }
+            },
+            "required": [
+              "registry_identifier",
+              "registry_link",
+              "registry_name"
+            ]
+          }
+        },
+        "original": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "original_registry_identifier": {
+                "type": "integer",
+                "description": "Describes the first registry, where the project was registered",
+                "x-cdop-field-id": 264,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.original[].original_registry_identifier"
+              },
+              "original_registry_name": {
+                "type": "string",
+                "description": "Describes the first registry, where the project was registered",
+                "x-cdop-field-id": 265,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.original[].original_registry_name"
+              },
+              "original_registry_link": {
+                "type": "string",
+                "description": "Describes the first registry, where the project was registered",
+                "x-cdop-field-id": 266,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.original[].original_registry_link"
+              }
+            },
+            "required": [
+              "original_registry_identifier",
+              "original_registry_link",
+              "original_registry_name"
+            ]
+          }
+        },
+        "program": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "program_identifier": {
+                "type": "integer",
+                "description": "Describes the Crediting Program that the proejct is following for the implementationunits",
+                "x-cdop-field-id": 267,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "crediting program",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.program[].program_identifier"
+              },
+              "program_name": {
+                "type": "string",
+                "description": "Describes the Crediting Program that the proejct is following for the implementationunits",
+                "x-cdop-field-id": 268,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "crediting program",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "registry.program[].program_name"
+              }
+            },
+            "required": [
+              "program_identifier",
+              "program_name"
+            ]
+          }
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date that the project was first registered",
+          "x-cdop-field-id": 269,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "registry.creation_date"
+        },
+        "update_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of the last update",
+          "x-cdop-field-id": 270,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "registry.update_date"
+        }
+      },
+      "required": [
+        "creation_date"
+      ]
+    }
+  },
+  "required": [
+    "registry"
+  ]
+}
