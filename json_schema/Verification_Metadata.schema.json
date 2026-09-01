@@ -25,6 +25,14 @@
               "verification_claim_type": {
                 "type": "string",
                 "description": "The classification of the claim being verified (e.g., CARBON_REMOVAL, EMISSION_REDUCTION, BIODIVERSITY).",
+                "enum": [
+                  "Carbon removal",
+                  "Emission reduction",
+                  "Emission avoidance",
+                  "Biodiversity benefit",
+                  "Water conservation",
+                  "Community benefit"
+                ],
                 "x-cdop-field-id": 308,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-field-path": "verification.identification[].verification_claim_type"
@@ -106,6 +114,14 @@
               "verification_quantity_uom": {
                 "type": "string",
                 "description": "The Unit of Measure for the verified quantity (e.g., tCO2e, m3_biogas).",
+                "enum": [
+                  "tCO2e (Metric tonnes of CO2 equivalent)",
+                  "kgCO2e (Kilograms of CO2 equivalent)",
+                  "MWh (Megawatt-hours)",
+                  "m3_biogas (Cubic meters of biogas)",
+                  "ha (Hectares)",
+                  "kg_plastic (Kilograms of plastic recovered)"
+                ],
                 "x-cdop-field-id": 315,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-field-path": "verification.quantity[].verification_quantity_uom"
@@ -250,6 +266,13 @@
         "verification_audit_checkpoint_status": {
           "type": "string",
           "description": "Summary result of the checklist (e.g., PASS, PASS_WITH_RESERVATIONS, FAIL).",
+          "enum": [
+            "Pass (Fully compliant with zero reserves)",
+            "Pass with reservations (Approved, but with Forward Action Requests / FARs)",
+            "Requires corrective action (On hold pending CAR resolution)",
+            "Fail (Non-compliant / verification rejected)",
+            "Pending review (Audit currently in progress)"
+          ],
           "x-cdop-field-id": 329,
           "x-cdop-cardinality": "0..1",
           "x-cdop-field-path": "verification.verification_audit_checkpoint_status"

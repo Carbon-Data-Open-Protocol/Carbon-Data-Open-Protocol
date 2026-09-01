@@ -216,10 +216,8 @@
                 "type": "string",
                 "description": "Type of validation being carried out",
                 "enum": [
-                  "Validation of Project Design Document",
-                  "Validation of Renewal of Credit Period",
-                  "Validation of Post Registration Change",
-                  "Other"
+                  "Project validation",
+                  "Program validation"
                 ],
                 "x-cdop-field-id": 288,
                 "x-cdop-pre-issuance-inclusion": "Yes",
@@ -363,6 +361,13 @@
                 "items": {
                   "type": "string",
                   "description": "Select all validation event stages",
+                  "enum": [
+                    "Desk review",
+                    "On-site audits and interviews",
+                    "Public comment period",
+                    "Resolution of findings",
+                    "Final validation report issued"
+                  ],
                   "x-cdop-field-id": 304,
                   "x-cdop-pre-issuance-inclusion": "Yes",
                   "x-cdop-cardinality": "1..*",
@@ -395,6 +400,13 @@
               "current_validation_stage": {
                 "type": "string",
                 "description": "Name of the current validation step",
+                "enum": [
+                  "Desk review",
+                  "On-site audits and interviews",
+                  "Public comment period",
+                  "Resolution of findings",
+                  "Final validation report issued"
+                ],
                 "x-cdop-field-id": 274,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
@@ -406,6 +418,11 @@
               "current_validation_stage_status": {
                 "type": "string",
                 "description": "Status of the current validation step",
+                "enum": [
+                  "Not started",
+                  "In progress",
+                  "Completed"
+                ],
                 "x-cdop-field-id": 275,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
@@ -518,6 +535,23 @@
                 "items": {
                   "type": "string",
                   "description": "List the sectoral scopes the validation body is accredited to validate",
+                  "enum": [
+                    "1. Energy industries (renewable - / non-renewable sources)",
+                    "2. Energy distribution",
+                    "3. Energy demand",
+                    "4. Manufacturing industries",
+                    "5. Chemical industry",
+                    "6. Construction",
+                    "7. Transport",
+                    "8. Mining/Mineral production",
+                    "9. Metal production",
+                    "10. Fugitive emissions from fuels (solid, oil and gas)",
+                    "11. Fugitive emissions from production and consumption of halocarbons and sulphur hexafluoride",
+                    "12. Solvents use",
+                    "13. Waste handling and disposal",
+                    "14. Afforestation and reforestation",
+                    "15. Agriculture"
+                  ],
                   "x-cdop-field-id": 293,
                   "x-cdop-pre-issuance-inclusion": "Yes",
                   "x-cdop-cardinality": "1..*",

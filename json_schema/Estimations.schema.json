@@ -275,10 +275,8 @@
                 "type": "string",
                 "description": "The aspect of the project that is covered by this validation event.",
                 "enum": [
-                  "Validation of Project Design Document",
-                  "Validation of Renewal of Credit Period",
-                  "Validation of Post Registration Change",
-                  "Other"
+                  "Project validation",
+                  "Program validation"
                 ],
                 "x-cdop-field-id": 171,
                 "x-cdop-pre-issuance-inclusion": "Yes",
