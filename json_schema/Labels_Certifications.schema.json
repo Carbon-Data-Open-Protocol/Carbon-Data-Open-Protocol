@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": true,
   "properties": {
-    "carbon_crediting_standard": {
+    "crediting_program": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
@@ -26,7 +26,7 @@
           "x-cdop-mutability": "Mutable",
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "carbon_crediting_standard.carbon_standard_level_accreditation"
+          "x-cdop-field-path": "crediting_program.carbon_standard_level_accreditation"
         }
       },
       "required": []
