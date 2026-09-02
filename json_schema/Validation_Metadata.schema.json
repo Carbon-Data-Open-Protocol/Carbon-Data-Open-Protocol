@@ -201,7 +201,7 @@
             "type": "object",
             "additionalProperties": true,
             "properties": {
-              "validation _id": {
+              "validation_id": {
                 "type": "integer",
                 "description": "Identification number of the validation event.",
                 "x-cdop-field-id": 287,
@@ -210,7 +210,7 @@
                 "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "validation.validation_event[].validation _id"
+                "x-cdop-field-path": "validation.validation_event[].validation_id"
               },
               "validation_type": {
                 "type": "string",
@@ -276,8 +276,8 @@
               }
             },
             "required": [
-              "validation _id",
               "validation_date",
+              "validation_id",
               "validation_is_planned",
               "validation_period_end_date",
               "validation_period_start_date",
