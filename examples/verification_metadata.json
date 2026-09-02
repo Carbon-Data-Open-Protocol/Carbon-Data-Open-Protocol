@@ -1,0 +1,53 @@
+{
+  "verification": {
+    "identification": [
+      {
+        "verification_id": "cdop:KEN:VCS-4721:VER-2024",
+        "verification_claim_type": "Carbon removal",
+        "verification_project_id": "VCS-4721",
+        "verification_description": "First periodic verification of the Mida Creek Mangrove Restoration Project, covering the 2023 monitoring period. SCS Global Services reviewed the monitoring report, plot-level biomass measurements from 42 permanent sampling plots, and remote sensing evidence of canopy cover change, and conducted a site audit with community monitoring teams. Net verified removals of 52,300 tCO2e were confirmed after uncertainty, leakage, and buffer pool deductions. One Forward Action Request was raised regarding documentation of plot re-measurement intervals, to be closed at the next verification."
+      }
+    ],
+    "reporting": [
+      {
+        "verification_reporting_period_start": "2023-01-01",
+        "verification_reporting_period_end": "2023-12-31",
+        "verification_date": "2024-04-18"
+      }
+    ],
+    "quantity": [
+      {
+        "verified_quantity": 52300,
+        "verification_quantity_uom": "tCO2e (Metric tonnes of CO2 equivalent)"
+      }
+    ],
+    "body": [
+      {
+        "verification_body_name": "SCS Global Services",
+        "verification_body_id": "did:web:scsglobalservices.com"
+      }
+    ],
+    "standard": [
+      {
+        "verification_applied_standard": "Verra VCS v4.5",
+        "verification_applied_methodology_protocol": "VM0033 v2.1"
+      }
+    ],
+    "verification_report_url": [
+      "https://registry.verra.org/app/projectDetail/VCS/4721/verification/2024"
+    ],
+    "verification_credential_issuer_id": "did:web:registry.verra.org",
+    "verification_cryptographic_proof_type": "Ed25519Signature2020",
+    "verification_digital_signature_payload": "z3MvGcVxzRzzpKF1YnRRuDGRSjuMRHhP4B1Y6X6VnQ8Zk9YQ2ZzT5rHnW7cTQXwGx1bJfKZ8mQpS2VwR9dLcAo1n",
+    "leakage": [
+      {
+        "verification_leakage_risk_mitigation": true,
+        "verification_leakage_risk_mitigation_strategy": "Activity-shifting leakage is monitored across a 5 km belt surrounding the project area using annual high-resolution imagery and household fuelwood surveys. Alternative fuelwood woodlots and improved cookstoves were provided to the three adjacent communities to reduce displacement of harvesting pressure. See section 6.4 of the monitoring report: https://registry.verra.org/app/projectDetail/VCS/4721/monitoring",
+        "verification_leakage_deduction_quantity": 1150
+      }
+    ],
+    "verification_uncertainty_deduction_margin": 5,
+    "verification_buffer_pool_deduction_quantity": 9440,
+    "verification_audit_checkpoint_status": "Pass with reservations (Approved, but with Forward Action Requests / FARs)"
+  }
+}
