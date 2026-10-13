@@ -5,7 +5,7 @@
         "verification_id": "cdop:KEN:VCS-4721:VER-2024",
         "verification_claim_type": "Carbon removal",
         "verification_project_id": "VCS-4721",
-        "verification_description": "First periodic verification of the Mida Creek Mangrove Restoration Project, covering the 2023 monitoring period. SCS Global Services reviewed the monitoring report, plot-level biomass measurements from 42 permanent sampling plots, and remote sensing evidence of canopy cover change, and conducted a site audit with community monitoring teams. Net verified removals of 52,300 tCO2e were confirmed after uncertainty, leakage, and buffer pool deductions. One Forward Action Request was raised regarding documentation of plot re-measurement intervals, to be closed at the next verification."
+        "verification_description": "First periodic verification of the Mida Creek Mangrove Restoration Project, covering the 2023 monitoring period. SCS Global Services conducted a site audit at Mida Creek from 2024-02-05 to 2024-02-12, led by Grace Wanjiku as lead verifier, and reviewed the monitoring report, plot-level biomass measurements from 42 permanent sample plots, soil organic carbon sampling, and remote sensing evidence of canopy cover change. Net verified removals of 52,300 tCO2e were confirmed from 66,200 tCO2e of gross monitored removals, after a 5% uncertainty deduction of 3,310 tCO2e, a leakage deduction of 1,150 tCO2e, and a buffer pool contribution of 9,440 tCO2e. The verified quantity corresponds to issuance batch cdop:KEN:VCS-4721:B1, and the buffer pool contribution forms part of the 18,900 tCO2e of cumulative buffer pool deposits recorded in the project durability record. One Forward Action Request was raised regarding documentation of plot re-measurement intervals, to be closed at the next verification. All quantities, identifiers, signature payloads, and dates in this record are hypothetical."
       }
     ],
     "reporting": [
@@ -24,7 +24,7 @@
     "body": [
       {
         "verification_body_name": "SCS Global Services",
-        "verification_body_id": "did:web:scsglobalservices.com"
+        "verification_body_id": "VVB-SCS-0021"
       }
     ],
     "standard": [
