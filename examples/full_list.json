@@ -18,26 +18,25 @@
     "project_id": "VCS-4721",
     "project_description": "The Mida Creek Mangrove Restoration Project restores and protects approximately 1,200 hectares of degraded mangrove ecosystems along the Kenyan coast. Activities include active replanting of native mangrove species, removal of invasive vegetation, and community-based monitoring. The project generates carbon credits through sequestration and avoidance of further degradation, while delivering co-benefits including biodiversity habitat, coastal protection, and livelihood support for local fishing communities.",
     "project_design_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
-    "project_status": "Registered",
-    "project_status_reason": "Project completed registry review and was approved.",
-    "project_registration_date": "2023-06-01",
-    "project_list_date": "2022-11-15",
     "mitigation": [
       {
         "mitigation_type": "Removal - nature",
         "project_sector": "A02 - Forestry and logging",
-        "project_type": "Tidal"
+        "project_type": "Tidal",
+        "estimated_annual_emissions_mitigation": 53920,
+        "estimated_total_emissions_mitigation": 1617600
       }
     ],
     "current_registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
-    "current_registry_project_id": "VCS-4721",
-    "project_identifier": "cdop:KEN:VCS-4721",
+    "project_registration_date": "2023-06-01",
+    "project_list_date": "2022-11-15",
     "documents": [
       {
         "other_project_documentation_type": "project monitoring report",
         "other_project_documentation_link": "https://registry.verra.org/app/projectDetail/VCS/4721/monitoring"
       }
     ],
+    "project_identifier": "cdop:KEN:VCS-4721",
     "audits": [
       {
         "auditor_name": "SCS Global Services",
@@ -73,13 +72,61 @@
     "project_governance_structure": "Project governed by a joint steering committee comprising Blue Carbon Kenya Ltd, two elected community representatives, and the Kenya Forest Service. Decisions require 75% approval. Annual external audit of governance processes.",
     "public_comment": true,
     "public_comment_summary": "30-day public comment period held November 2022. Fifteen submissions received; key concerns related to fishing access rights and benefit distribution were addressed in the revised project design document.",
+    "current_registry_project_id": "VCS-4721",
+    "estimated_total_years": 30,
+    "buffer_pool": [
+      {
+        "buffer_pool_deposits": 18900,
+        "buffer_pool_release": 0,
+        "buffer_pool_reversal_coverage": 0,
+        "buffer_pool_reversal_non_coverage": 0
+      }
+    ],
+    "project_risk": "{\"project_risks\":{\"natural risks\":{\"wildfire_risk\":{\"description\":\"Risk of mangrove biomass loss from wildfire or smouldering combustion during prolonged drought, particularly in drier landward zones and adjacent coastal vegetation, during the crediting period.\",\"Likelihood_score\":0.25,\"impact_score\":0.7,\"risk_rating\":\"Medium\",\"mitigation_measures\":\"Maintain low fuel loads around nurseries and access routes, establish fire breaks in the landward buffer, prohibit uncontrolled burning, and maintain local fire response agreements with community patrols and county authorities.\",\"data_source\":\"Project Design Document, Section 5.2\",\"risk_specific_factors\":{\"historical_fire_frequency\":\"Low to moderate in adjacent coastal scrub, with episodic elevation during severe drought\",\"vegetation_type\":\"Tidal mangrove species with a drier landward fringe and adjacent coastal scrub\",\"climatic_conditions\":\"Seasonal droughts, high temperatures, and occasional drying of organic debris\"}},\"pest_and_disease_risk\":{\"description\":\"Risk of carbon reversal or reduced sequestration caused by pest infestation, fungal disease, or nursery-borne pathogens affecting restored mangrove stands.\",\"Likelihood_score\":0.15,\"impact_score\":0.4,\"risk_rating\":\"Low\",\"mitigation_measures\":\"Use a diverse mix of native mangrove species, screen nursery stock for disease, conduct ongoing ecological monitoring, and undertake targeted removal and replacement planting where impacts exceed intervention thresholds.\",\"data_source\":\"Project Design Document, Section 5.3\"}},\"political risks\":{\"host_country_A6_participation\":{\"description\":\"Risk that Kenya withdraws from or materially changes Article 6 participation or authorization arrangements relevant to any correspondingly adjusted units from the project during the crediting period.\",\"Likelihood_score\":0.1,\"impact_score\":0.9,\"risk_rating\":\"Medium\",\"mitigation_measures\":\"Maintain engagement with Kenya's national climate authorities, align project activities with the national climate strategy and coastal ecosystem priorities, and retain a Verra voluntary-market issuance pathway for units not authorized for Article 6 use.\",\"data_source\":\"Project Design Document, Section 8.1\"}},\"business risks\":{\"developer_financial_robustness\":{\"description\":\"Risk that the project developer faces financial instability that disrupts long-term mangrove monitoring, community patrols, nursery operations, replanting, or verification activities.\",\"Likelihood_score\":0.1,\"impact_score\":0.9,\"risk_rating\":\"Medium\",\"mitigation_measures\":\"Conduct periodic financial audits, maintain restricted reserve funds for core permanence activities, diversify carbon credit buyers and conservation funding, and phase non-essential expansion according to secured finance.\",\"data_source\":\"Project Design Document, Section 6.2\"}},\"legal risks\":{\"land_use_change_risk\":{\"description\":\"Risk that restored mangrove areas, adjacent conservation zones, or landward migration space are converted to aquaculture, settlement, tourism infrastructure, or another non-conservation use before the end of the permanence period.\",\"Likelihood_score\":0.1,\"impact_score\":0.9,\"risk_rating\":\"Medium\",\"mitigation_measures\":\"Maintain long-term land tenure and conservation agreements, document community and Kenya Forest Service rights and responsibilities, preserve mapped project boundaries, and review land-use pressures during annual monitoring.\",\"data_source\":\"Project Design Document, Section 4.1\"}},\"performance risks\":{\"technical_project_risk\":{\"description\":\"Risk that nursery failure, inappropriate species-to-site matching, altered tidal hydrology, monitoring equipment failure, or MRV data gaps reduce mangrove restoration performance or the reliability of quantified removals.\",\"Likelihood_score\":0.1,\"impact_score\":0.9,\"risk_rating\":\"Medium\",\"mitigation_measures\":\"Apply regular ecological monitoring and maintenance, use adaptive planting based on salinity and elevation conditions, maintain backup monitoring records and equipment, and conduct periodic technical and data-quality audits.\",\"data_source\":\"Project Design Document, Section 6.7\"}}}}",
+    "financing_options": [
+      "forward_purchase",
+      "offtake_agreement",
+      "grant",
+      "debt_financing",
+      "revenue_share"
+    ],
+    "costs_and_revenue": [
+      {
+        "expected_initial_costs": 4800000,
+        "expected_annual_costs": 720000,
+        "expected_annual_revenue": 1132320.0
+      }
+    ],
+    "declaring_entity_name": "Blue Carbon Kenya Ltd",
+    "community_benefit_mechanism_type": [
+      "revenue_share",
+      "employment",
+      "trust_fund",
+      "in_kind"
+    ],
+    "funding": [
+      {
+        "project_total_funding_required": 8400000,
+        "project_total_funding_secured": 5650000
+      }
+    ],
+    "compliance_market_id": [
+      "KEN-NCR-A6-4721"
+    ],
+    "validation_stage": [
+      {
+        "current_validation_stage": "Final validation report issued",
+        "current_validation_stage_status": "Completed"
+      }
+    ],
+    "date": [],
+    "validation_status": true,
+    "project_status": "Registered",
+    "project_status_reason": "Project completed registry review and was approved.",
     "project_crediting_period_type": "Renewable",
     "maximum_cumulative_crediting_duration": 60,
     "maximum_number_of_crediting_periods": 2,
-    "current_crediting_period_duration": 30,
-    "estimated_annual_emissions_mitigation": 53920,
-    "estimated_total_emissions_mitigation": 1617600,
-    "estimated_total_years": 30
+    "current_crediting_period_duration": 30
   },
   "project_stakeholder": {
     "location": [
@@ -126,6 +173,14 @@
         "organization_founding_year": "2015-03-01",
         "organization_project_experience": 7,
         "organization_url": "https://bluecarbon.example.ke/about"
+      }
+    ],
+    "expected_community_proceeds": 20.0,
+    "counterparty": [
+      {
+        "agreement_counterparty_sector": "L64 - Financial service activities, except insurance and pension funding",
+        "agreement_counterparty_name": "Coastal Resilience Buyers Ltd (hypothetical LEI: 549300MIDA0000000001)",
+        "agreement_counterparty_role": "offtaker"
       }
     ]
   },
@@ -185,12 +240,79 @@
   "registry": {
     "current_registry": "Verra",
     "previous": [],
-    "current_project_issuance_registry": "Verra"
+    "current_project_issuance_registry": "Verra",
+    "identification": [
+      {
+        "registry_identifier": 1,
+        "registry_name": "Verra",
+        "registry_link": "https://registry.verra.org/app/projectDetail/VCS/4721"
+      }
+    ],
+    "original": [
+      {
+        "original_registry_identifier": 1,
+        "original_registry_name": "Verra",
+        "original_registry_link": "https://registry.verra.org/app/projectDetail/VCS/4721"
+      }
+    ],
+    "program": [
+      {
+        "program_identifier": 1,
+        "program_name": "Verified Carbon Standard (VCS)"
+      }
+    ],
+    "creation_date": "2023-06-01",
+    "update_date": "2025-05-05"
   },
   "validation": {
     "validation_body_name": "SCS Global Services",
     "validation_date": "2023-05-10",
     "validation_report": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
+    "crediting_period": [
+      {
+        "current_crediting_period_start_date": "2023-01-01",
+        "current_crediting_period_end_date": "2052-12-31",
+        "current_crediting_period_number": 1
+      }
+    ],
+    "date": [
+      {
+        "date_validation_requested": "2022-12-05",
+        "date_validation_planned": "2023-03-06",
+        "date_validation_expiration": "2028-05-10"
+      }
+    ],
+    "lca": [],
+    "validation_event": [
+      {
+        "validation_id": 1,
+        "validation_type": "Project validation",
+        "validation_date": "2023-05-10",
+        "validation_is_planned": false,
+        "validation_period_start_date": "2023-03-06",
+        "validation_period_end_date": "2023-05-10"
+      }
+    ],
+    "report": [
+      {
+        "validation_report_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
+        "validation_report_summary": "SCS Global Services validated the Mida Creek Mangrove Restoration Project against VCS v4.5 and methodology VM0033 v2.1. The validation confirmed the project boundary of approximately 1,200 hectares, the additionality demonstration, the baseline scenario, and the monitoring plan. Four findings were raised during the desk review and site audit, all of which were resolved before the final report was issued. The validation team concluded that the project design conforms to the applied standard and methodology.",
+        "validation_report_version": "1.1"
+      }
+    ],
+    "stage": [
+      {
+        "validation_stages": [
+          "Desk review",
+          "On-site audits and interviews",
+          "Public comment period",
+          "Resolution of findings",
+          "Final validation report issued"
+        ],
+        "validation_stage_description": "Desk review of the project design document and supporting evidence, followed by a site audit at Mida Creek with community and project team interviews, a 30-day public comment period hosted on the registry, resolution of four findings raised by the validation team, and issuance of the final validation report.",
+        "validation_stage_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation"
+      }
+    ],
     "validation_id": 1,
     "current_crediting_period_start_date": "2023-01-01",
     "current_crediting_period_end_date": "2052-12-31",
@@ -213,18 +335,29 @@
     ]
   },
   "unit": {
-    "metric": "tCO2e",
     "owner_account_id": "VCS-ACC-00183722",
+    "status": [
+      {
+        "status": "Retired",
+        "status_reason": "Retired on behalf of Acme Corporation against its 2024 Scope 3 Land Use and Forestry commitment.",
+        "is_current": true
+      }
+    ],
+    "credit_block": [
+      {
+        "quantity": 500,
+        "block_start": 449183249,
+        "block_end": 449183748
+      }
+    ],
+    "expected_carbon_credit_price": 21.0,
+    "realized_transaction_price": 18.5,
+    "metric": "tCO2e",
     "retirement_beneficiary": "Acme Corporation",
     "retirement_detail": "Retired against Acme Corporation's 2024 Scope 3 Land Use & Forestry commitment",
     "serial_number": "8339-449183249-449183748-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
     "source_serial_number": "8339-449183000-449184000-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
-    "status": "Retired",
-    "status_reason": [],
-    "type": "VCU",
-    "quantity": 500,
-    "block_start": 449183249,
-    "block_end": 449183748
+    "type": "VCU"
   },
   "vintage": {
     "vintage": "2023-01-01"
@@ -256,6 +389,264 @@
       "2026-06-30",
       "2027-06-30",
       "2028-06-30"
+    ]
+  },
+  "cobenefits": {
+    "sdgs_the_project_plans_to_contribute_to": [
+      "SDG 1: No Poverty",
+      "SDG 5: Gender Equality",
+      "SDG 8: Decent Work and Economic Growth",
+      "SDG 13: Climate Action",
+      "SDG 14: Life Below Water",
+      "SDG 15: Life on Land"
+    ],
+    "methods_used_to_assess_sdgs_and_other_cobenefits": [
+      "Climate, Community & Biodiversity Standards (CCB) impact assessment framework",
+      "Verra Sustainable Development Verified Impact Standard (SD VISta) indicator mapping",
+      "Participatory rural appraisal and household socioeconomic baseline survey",
+      "GIS and remote-sensing change detection for mangrove extent and shoreline condition",
+      "Community-based ecological monitoring using fixed transects and permanent sample plots"
+    ],
+    "cobenefit_target": [
+      {
+        "cobenefits_type": "Ecology and natural resources",
+        "overview_of_the_projects_impact": "Restore degraded intertidal habitat with native mangrove species, improve habitat connectivity, and increase nursery habitat available to fish, crustaceans, birds, and other coastal wildlife.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Map the restoration boundary annually using satellite imagery and field-verified GIS surveys. Permanent sample plots are assessed twice each year for planted area, species composition, stem density, and seedling survival.",
+        "indicator_id": "CB-BIO-01",
+        "unit_description": "Area of degraded mangrove habitat restored and maintained under active project management",
+        "unit_type": "Area",
+        "unit_symbol": "ha",
+        "unit_monitoring_frequency": "Other",
+        "baseline_value": "0 hectares under project-led restoration at the project start date",
+        "target_value": "1,200 hectares restored and maintained by the end of project year 10",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_baseline_ecological_assessment.pdf"
+      },
+      {
+        "cobenefits_type": "Air, land, and water",
+        "overview_of_the_projects_impact": "Increase natural shoreline protection by restoring mangrove belts that reduce wave energy, stabilize sediments, and lower erosion exposure for nearby settlements and community infrastructure.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Establish fixed shoreline transects and erosion pins, combine field measurements with drone imagery, and confirm protected shoreline segments through annual community hazard-mapping exercises.",
+        "indicator_id": "CB-RES-01",
+        "unit_description": "Length of shoreline with restored mangrove cover providing enhanced natural protection",
+        "unit_type": "Value",
+        "unit_symbol": "#",
+        "unit_monitoring_frequency": "Annually",
+        "baseline_value": "0 km classified as enhanced by project intervention",
+        "target_value": "18 km of shoreline with enhanced mangrove-based protection by project year 10",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_shoreline_risk_baseline.pdf"
+      },
+      {
+        "cobenefits_type": "Labour",
+        "overview_of_the_projects_impact": "Create paid local employment and contracting opportunities in nursery operations, planting, monitoring, patrols, data collection, and restoration-linked enterprises, with priority for participating coastal communities.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Maintain payroll and contractor records, verify residence through cooperative membership records, remove duplicate individuals, and reconcile the total during each annual social monitoring cycle.",
+        "indicator_id": "CB-LIV-01",
+        "unit_description": "Number of local residents receiving paid project employment or project-funded contracts during a reporting year",
+        "unit_type": "Count",
+        "unit_symbol": "#",
+        "unit_monitoring_frequency": "Other",
+        "baseline_value": "0 local residents receiving project-funded employment before implementation",
+        "target_value": "At least 180 unique local residents receiving paid work or contracts annually by project year 5",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_household_livelihoods_baseline.pdf"
+      },
+      {
+        "cobenefits_type": "Gender equality",
+        "overview_of_the_projects_impact": "Increase women's participation in paid restoration, nursery, monitoring, cooperative leadership, and technical roles while applying equal-pay and safe-workplace requirements.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Track sex-disaggregated payroll and contractor records, review role categories and pay bands each quarter, and validate results through confidential worker interviews and cooperative records.",
+        "indicator_id": "CB-GEN-01",
+        "unit_description": "Change in the share of paid project roles held by women compared with the baseline share",
+        "unit_type": "Change",
+        "unit_symbol": "%",
+        "unit_monitoring_frequency": "Other",
+        "baseline_value": "22% of comparable paid conservation roles held by women in the baseline survey",
+        "target_value": "+23 percentage points, equivalent to women holding at least 45% of paid project roles by project year 5",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_gender_and_employment_baseline.pdf"
+      },
+      {
+        "cobenefits_type": "Human rights",
+        "overview_of_the_projects_impact": "Distribute restoration-linked benefits through local cooperatives and community institutions, supporting household priorities, small-enterprise development, training, and transparent participation in project decisions.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Reconcile benefit-payment registers, training attendance, cooperative membership records, and grievance logs. Community representatives review and sign off the consolidated beneficiary list each year.",
+        "indicator_id": "CB-COM-01",
+        "unit_description": "Number of unique community members receiving a documented monetary or in-kind project benefit during the reporting year",
+        "unit_type": "Count",
+        "unit_symbol": "#",
+        "unit_monitoring_frequency": "Other",
+        "baseline_value": "0 community members receiving project-generated benefits before implementation",
+        "target_value": "640 unique community members receiving documented benefits annually by project year 5",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_fpic_and_benefit_sharing_plan.pdf"
+      }
+    ],
+    "cobenefit_impact": [
+      {
+        "cobenefits_type": "Ecology and natural resources",
+        "achieved_project_impact": "By the end of the hypothetical 2024 monitoring period, 425 hectares of degraded mangrove habitat had been replanted or placed under assisted natural regeneration and active community monitoring.",
+        "indicator_id": "CB-BIO-01",
+        "achieved_value": "425 hectares",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_ecological_monitoring_report.pdf"
+      },
+      {
+        "cobenefits_type": "Air, land, and water",
+        "achieved_project_impact": "Field and drone surveys identified 7.5 km of shoreline where restored mangrove belts met the project's minimum width, vegetation density, and continuity criteria for enhanced natural protection.",
+        "indicator_id": "CB-RES-01",
+        "achieved_value": "7.5 km",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_shoreline_monitoring_report.pdf"
+      },
+      {
+        "cobenefits_type": "Labour",
+        "achieved_project_impact": "During the hypothetical 2024 reporting year, 136 unique local residents received paid work or project-funded contracts across nursery, planting, patrol, monitoring, and data-collection activities.",
+        "indicator_id": "CB-LIV-01",
+        "achieved_value": "136 people",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_employment_register_assurance.pdf"
+      },
+      {
+        "cobenefits_type": "Gender equality",
+        "achieved_project_impact": "Women held 41% of paid project roles during the hypothetical 2024 reporting year, compared with a 22% baseline share.",
+        "indicator_id": "CB-GEN-01",
+        "achieved_value": "+19 percentage points, equivalent to 41% of paid roles",
+        "change_type": "Absolute",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_gender_employment_audit.pdf"
+      },
+      {
+        "cobenefits_type": "Human rights",
+        "achieved_project_impact": "A reconciled beneficiary register recorded 512 unique community members receiving cooperative distributions, paid training, livelihood inputs, or other documented project-funded benefits during the hypothetical 2024 reporting year.",
+        "indicator_id": "CB-COM-01",
+        "achieved_value": "512 people",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_community_benefit_report.pdf"
+      }
+    ]
+  },
+  "agreement": {
+    "agreement_notes": "Illustrative forward-purchase arrangement for the Mida Creek Mangrove Restoration Project. The buyer prepays 40% of the committed amount, with the balance paid in three 20% tranches after verified issuance and registry transfer for the 2026, 2027, and 2028 vintages. Deliveries are capped at 50,000 tCO2e per eligible vintage and remain subject to methodology compliance, buffer deductions, no-double-counting checks, insurance conditions, and the project community benefit-sharing obligations. All counterparty, insurer, policy, price, volume, date, cost, revenue, and funding details in this record are hypothetical.",
+    "agreement_type": "forward_purchase",
+    "offtake": [
+      {
+        "offtake_agreement_contracted_credit_volume": 150000,
+        "offtake_agreement_contracted_credit_price": 18.5,
+        "offtake_agreement_credit_vintage_start": 2026,
+        "offtake_agreement_credit_vintage_end": 2028,
+        "offtake_agreement_credit_requirements": "Verified Carbon Units representing tCO2e removals from the Mida Creek project; eligible vintages 2026-2028; issued under the Verra VCS using VM0033 version 2.1; verified by an approved validation/verification body; net of applicable buffer contributions; free of prior retirement, cancellation, encumbrance, or double counting; and supported by registry transfer evidence."
+      }
+    ],
+    "date": [
+      {
+        "agreement_effective_date": "2026-03-01",
+        "agreement_expiry_date": "2030-12-31"
+      }
+    ],
+    "agreement_commitment_amount": 2775000.0,
+    "insurance": [
+      {
+        "agreement_insurance_policy_exists": true,
+        "agreement_insurer_name": "Coastal Carbon Assurance PCC (hypothetical)",
+        "agreement_insurance_policy_reference": "MIDA-ND-2026-001-HYP",
+        "agreement_insurance_coverage_type": "non-delivery"
+      },
+      {
+        "agreement_insurance_policy_exists": true,
+        "agreement_insurer_name": "Coastal Carbon Assurance PCC (hypothetical)",
+        "agreement_insurance_policy_reference": "MIDA-ND-2026-001-HYP",
+        "agreement_insurance_coverage_type": "political_risk"
+      }
+    ],
+    "agreement_currency": "USD",
+    "agreement_marketplace_or_venue": [
+      "Bilateral over-the-counter agreement",
+      "Verra Registry"
+    ],
+    "collateral_type": [
+      "Carbon_rights",
+      "Equipment"
+    ],
+    "project_financing_stage": "Verified and issuing",
+    "agreement_governing_law": "Laws of the Republic of Kenya",
+    "funding_details": [
+      {
+        "funding_source_category": "Prepayment",
+        "funding_source_expected_disbursement_date": "2026-04-15",
+        "funding_source_disbursement_schedule": "40% after satisfaction of conditions precedent, followed by 20% after each verified issuance and registry transfer for the 2026, 2027, and 2028 vintages.",
+        "funding_conditions_precedent": "Completion of KYC and AML review; evidence of project and carbon rights; confirmation of active registry standing; an updated monitoring plan; an executed community benefit-sharing protocol; and evidence that the non-delivery insurance policy is in force.",
+        "funding_is_fully_committed": true,
+        "funding_commitment_status": "Signed",
+        "funding_commitment_status_reason": "The agreement was executed by both parties on 2026-03-01; only routine documentary conditions remain before the initial prepayment is released.",
+        "is_current": true
+      },
+      {
+        "funding_source_category": "Prepayment",
+        "funding_source_expected_disbursement_date": "2026-05-31",
+        "funding_source_disbursement_schedule": "Proposed 30% upfront payment with the remaining amount payable on delivery.",
+        "funding_conditions_precedent": "Completion of technical, legal, registry, community-benefit, and counterparty due diligence.",
+        "funding_is_fully_committed": false,
+        "funding_commitment_status": "Under negotiation",
+        "funding_commitment_status_reason": "This non-binding term-sheet status was superseded when the parties agreed the final volume, pricing, insurance, and staged-disbursement terms.",
+        "is_current": false
+      }
+    ]
+  },
+  "validation_body": {
+    "details": [
+      {
+        "validation_body_id": "VVB-SCS-0021",
+        "validation_body_name": "SCS Global Services",
+        "validation_body_accreditation": "Accredited to ISO 14065 by the ANSI National Accreditation Board (ANAB); approved Verra VVB for the AFOLU sectoral scope",
+        "validator_name": "Amara Otieno",
+        "validation_body_sectoral_scopes": [
+          "14. Afforestation and reforestation"
+        ],
+        "validation_body_selection": "Selected by the project developer through a competitive tender open to Verra-approved validation and verification bodies with AFOLU sectoral scope accreditation and prior blue carbon experience in East Africa.",
+        "validation_body_team_members_and_roles": "Amara Otieno - Lead Validator; Daniel Mwangi - Technical Reviewer; Priya Raman - Quality Assurance Reviewer"
+      }
+    ]
+  },
+  "verification": {
+    "verification_id": "cdop:KEN:VCS-4721:VER-2024",
+    "verification_vvb_id": [
+      "VVB-SCS-0021"
+    ],
+    "details": [
+      {
+        "verification_claim_type": "Carbon removal",
+        "verification_description": "First periodic verification of the Mida Creek Mangrove Restoration Project, covering the 2023 monitoring period. SCS Global Services conducted a site audit at Mida Creek from 2024-02-05 to 2024-02-12, led by Grace Wanjiku as lead verifier, and reviewed the monitoring report, plot-level biomass measurements from 42 permanent sample plots, soil organic carbon sampling, and remote sensing evidence of canopy cover change. Net verified removals of 52,300 tCO2e were confirmed from 66,200 tCO2e of gross monitored removals, after a 5% uncertainty deduction of 3,310 tCO2e, a leakage deduction of 1,150 tCO2e, and a buffer pool contribution of 9,440 tCO2e. The verified quantity corresponds to issuance batch cdop:KEN:VCS-4721:B1, and the buffer pool contribution forms part of the 18,900 tCO2e of cumulative buffer pool deposits recorded in the project durability record. One Forward Action Request was raised regarding documentation of plot re-measurement intervals, to be closed at the next verification. All quantities, identifiers, signature payloads, and dates in this record are hypothetical."
+      }
+    ],
+    "verification_project_id": "VCS-4721",
+    "reporting": [
+      {
+        "verification_reporting_period_start": "2023-01-01",
+        "verification_reporting_period_end": "2023-12-31",
+        "verification_date": "2024-04-18"
+      }
+    ],
+    "quantity": [
+      {
+        "verified_quantity": 52300,
+        "verification_quantity_uom": "tCO2e (Metric tonnes of CO2 equivalent)"
+      }
+    ],
+    "standard": [
+      {
+        "verification_applied_standard": "Verra VCS v4.5",
+        "verification_applied_methodology_protocol": "VM0033 v2.1"
+      }
+    ],
+    "verification_report_url": [
+      "https://registry.verra.org/app/projectDetail/VCS/4721/verification/2024"
+    ],
+    "verification_credential_issuer_id": "did:web:registry.verra.org",
+    "verification_cryptographic_proof_type": "Ed25519Signature2020",
+    "verification_digital_signature_payload": "z3MvGcVxzRzzpKF1YnRRuDGRSjuMRHhP4B1Y6X6VnQ8Zk9YQ2ZzT5rHnW7cTQXwGx1bJfKZ8mQpS2VwR9dLcAo1n",
+    "deductions": [
+      {
+        "verification_leakage_risk_mitigation": true,
+        "verification_leakage_risk_mitigation_strategy": "Activity-shifting leakage is monitored across a 5 km belt surrounding the project area using annual high-resolution imagery and household fuelwood surveys. Alternative fuelwood woodlots and improved cookstoves were provided to the three adjacent communities to reduce displacement of harvesting pressure. See section 6.4 of the monitoring report: https://registry.verra.org/app/projectDetail/VCS/4721/monitoring",
+        "verification_leakage_deduction_quantity": 1150,
+        "verification_uncertainty_deduction_margin": 5,
+        "verification_buffer_pool_deduction_quantity": 9440
+      }
+    ],
+    "status": [
+      {
+        "verification_audit_checkpoint_status": "Pass with reservations (Approved, but with Forward Action Requests / FARs)",
+        "verification_audit_checkpoint_status_reason": "One Forward Action Request was raised regarding documentation of plot re-measurement intervals. The finding does not affect the verified quantity and is scheduled for closure at the next periodic verification.",
+        "is_current": true
+      }
     ]
   }
 }
