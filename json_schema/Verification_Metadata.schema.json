@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": true,
   "properties": {
-    "project": {
+    "verification": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
@@ -15,7 +15,7 @@
           "x-cdop-field-id": 307,
           "x-cdop-cardinality": "1..1",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_id"
+          "x-cdop-field-path": "verification.verification_id"
         },
         "verification_vvb_id": {
           "type": "array",
@@ -25,25 +25,46 @@
             "x-cdop-field-id": 308,
             "x-cdop-cardinality": "0..*",
             "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "project.verification_vvb_id"
+            "x-cdop-field-path": "verification.verification_vvb_id"
           },
           "minItems": 0
         },
-        "verification_claim_type": {
-          "type": "string",
-          "description": "The classification of the claim being verified (e.g., CARBON_REMOVAL, EMISSION_REDUCTION, BIODIVERSITY).",
-          "enum": [
-            "Carbon removal",
-            "Emission reduction",
-            "Emission avoidance",
-            "Biodiversity benefit",
-            "Water conservation",
-            "Community benefit"
-          ],
-          "x-cdop-field-id": 309,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_claim_type"
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "verification_claim_type": {
+                "type": "string",
+                "description": "The classification of the claim being verified (e.g., CARBON_REMOVAL, EMISSION_REDUCTION, BIODIVERSITY).",
+                "enum": [
+                  "Carbon removal",
+                  "Emission reduction",
+                  "Emission avoidance",
+                  "Biodiversity benefit",
+                  "Water conservation",
+                  "Community benefit"
+                ],
+                "x-cdop-field-id": 309,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.details[].verification_claim_type"
+              },
+              "verification_description": {
+                "type": "string",
+                "description": "A concise, human-readable summary of the verification scope and findings.",
+                "x-cdop-field-id": 311,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.details[].verification_description"
+              }
+            },
+            "required": [
+              "verification_claim_type",
+              "verification_description"
+            ]
+          }
         },
         "verification_project_id": {
           "type": "string",
@@ -51,82 +72,113 @@
           "x-cdop-field-id": 310,
           "x-cdop-cardinality": "1..1",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_project_id"
+          "x-cdop-field-path": "verification.verification_project_id"
         },
-        "verification_description": {
-          "type": "string",
-          "description": "A concise, human-readable summary of the verification scope and findings.",
-          "x-cdop-field-id": 311,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_description"
+        "reporting": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "verification_reporting_period_start": {
+                "type": "string",
+                "format": "date",
+                "description": "The start date of the monitoring/reporting period being verified.",
+                "x-cdop-field-id": 312,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.reporting[].verification_reporting_period_start"
+              },
+              "verification_reporting_period_end": {
+                "type": "string",
+                "format": "date",
+                "description": "The end date of the monitoring/reporting period being verified.",
+                "x-cdop-field-id": 313,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.reporting[].verification_reporting_period_end"
+              },
+              "verification_date": {
+                "type": "string",
+                "format": "date",
+                "description": "The official date the verification process was completed and signed off.",
+                "x-cdop-field-id": 314,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.reporting[].verification_date"
+              }
+            },
+            "required": [
+              "verification_date",
+              "verification_reporting_period_end",
+              "verification_reporting_period_start"
+            ]
+          }
         },
-        "verification_reporting_period_start": {
-          "type": "string",
-          "format": "date",
-          "description": "The start date of the monitoring/reporting period being verified.",
-          "x-cdop-field-id": 312,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_reporting_period_start"
+        "quantity": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "verified_quantity": {
+                "type": "number",
+                "description": "The final, audited, and verified net volume for this specific reporting period.",
+                "x-cdop-field-id": 315,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.quantity[].verified_quantity"
+              },
+              "verification_quantity_uom": {
+                "type": "string",
+                "description": "The Unit of Measure for the verified quantity (e.g., tCO2e, m3_biogas).",
+                "enum": [
+                  "tCO2e (Metric tonnes of CO2 equivalent)",
+                  "kgCO2e (Kilograms of CO2 equivalent)",
+                  "MWh (Megawatt-hours)",
+                  "m3_biogas (Cubic meters of biogas)",
+                  "ha (Hectares)",
+                  "kg_plastic (Kilograms of plastic recovered)"
+                ],
+                "x-cdop-field-id": 316,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.quantity[].verification_quantity_uom"
+              }
+            },
+            "required": [
+              "verification_quantity_uom",
+              "verified_quantity"
+            ]
+          }
         },
-        "verification_reporting_period_end": {
-          "type": "string",
-          "format": "date",
-          "description": "The end date of the monitoring/reporting period being verified.",
-          "x-cdop-field-id": 313,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_reporting_period_end"
-        },
-        "verification_date": {
-          "type": "string",
-          "format": "date",
-          "description": "The official date the verification process was completed and signed off.",
-          "x-cdop-field-id": 314,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_date"
-        },
-        "verified_quantity": {
-          "type": "number",
-          "description": "The final, audited, and verified net volume for this specific reporting period.",
-          "x-cdop-field-id": 315,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verified_quantity"
-        },
-        "verification_quantity_uom": {
-          "type": "string",
-          "description": "The Unit of Measure for the verified quantity (e.g., tCO2e, m3_biogas).",
-          "enum": [
-            "tCO2e (Metric tonnes of CO2 equivalent)",
-            "kgCO2e (Kilograms of CO2 equivalent)",
-            "MWh (Megawatt-hours)",
-            "m3_biogas (Cubic meters of biogas)",
-            "ha (Hectares)",
-            "kg_plastic (Kilograms of plastic recovered)"
-          ],
-          "x-cdop-field-id": 316,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_quantity_uom"
-        },
-        "verification_applied_standard": {
-          "type": "string",
-          "description": "The overarching registry framework (e.g., Verra_VCS_v4.5, Gold_Standard).",
-          "x-cdop-field-id": 317,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_applied_standard"
-        },
-        "verification_applied_methodology_protocol": {
-          "type": "string",
-          "description": "The specific methodology version applied (e.g., VM0047_v1.0, CAR_Soil_v1.1).",
-          "x-cdop-field-id": 318,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_applied_methodology_protocol"
+        "standard": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "verification_applied_standard": {
+                "type": "string",
+                "description": "The overarching registry framework (e.g., Verra_VCS_v4.5, Gold_Standard).",
+                "x-cdop-field-id": 317,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.standard[].verification_applied_standard"
+              },
+              "verification_applied_methodology_protocol": {
+                "type": "string",
+                "description": "The specific methodology version applied (e.g., VM0047_v1.0, CAR_Soil_v1.1).",
+                "x-cdop-field-id": 318,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.standard[].verification_applied_methodology_protocol"
+              }
+            },
+            "required": [
+              "verification_applied_standard"
+            ]
+          }
         },
         "verification_report_url": {
           "type": "array",
@@ -136,7 +188,7 @@
             "x-cdop-field-id": 319,
             "x-cdop-cardinality": "1..*",
             "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "project.verification_report_url"
+            "x-cdop-field-path": "verification.verification_report_url"
           },
           "minItems": 1
         },
@@ -146,7 +198,7 @@
           "x-cdop-field-id": 320,
           "x-cdop-cardinality": "1..1",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_credential_issuer_id"
+          "x-cdop-field-path": "verification.verification_credential_issuer_id"
         },
         "verification_cryptographic_proof_type": {
           "type": "string",
@@ -154,7 +206,7 @@
           "x-cdop-field-id": 321,
           "x-cdop-cardinality": "0..1",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_cryptographic_proof_type"
+          "x-cdop-field-path": "verification.verification_cryptographic_proof_type"
         },
         "verification_digital_signature_payload": {
           "type": "string",
@@ -162,98 +214,111 @@
           "x-cdop-field-id": 322,
           "x-cdop-cardinality": "0..1",
           "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_digital_signature_payload"
+          "x-cdop-field-path": "verification.verification_digital_signature_payload"
         },
-        "verification_leakage_risk_mitigation": {
-          "type": "boolean",
-          "description": "Indicates if leakage risk is accounted for on this verification event",
-          "x-cdop-field-id": 323,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_leakage_risk_mitigation"
+        "deductions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "verification_leakage_risk_mitigation": {
+                "type": "boolean",
+                "description": "Indicates if leakage risk is accounted for on this verification event",
+                "x-cdop-field-id": 323,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.deductions[].verification_leakage_risk_mitigation"
+              },
+              "verification_leakage_risk_mitigation_strategy": {
+                "type": "string",
+                "description": "links to or summarizes the mitigation strategy for this verification event",
+                "x-cdop-field-id": 324,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.deductions[].verification_leakage_risk_mitigation_strategy"
+              },
+              "verification_leakage_deduction_quantity": {
+                "type": "number",
+                "description": "Volume deducted for this specific reporting period to account for leakage.",
+                "x-cdop-field-id": 325,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.deductions[].verification_leakage_deduction_quantity"
+              },
+              "verification_uncertainty_deduction_margin": {
+                "type": "number",
+                "description": "Percentage or absolute deduction applied for this specific reporting period for uncertainty.",
+                "x-cdop-field-id": 326,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.deductions[].verification_uncertainty_deduction_margin"
+              },
+              "verification_buffer_pool_deduction_quantity": {
+                "type": "number",
+                "description": "Volume deducted for this specific reporting period and contributed to the buffer pool.",
+                "x-cdop-field-id": 327,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.deductions[].verification_buffer_pool_deduction_quantity"
+              }
+            },
+            "required": []
+          }
         },
-        "verification_leakage_risk_mitigation_strategy": {
-          "type": "string",
-          "description": "links to or summarizes the mitigation strategy for this verification event",
-          "x-cdop-field-id": 324,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_leakage_risk_mitigation_strategy"
-        },
-        "verification_leakage_deduction_quantity": {
-          "type": "number",
-          "description": "Volume deducted for this specific reporting period to account for leakage.",
-          "x-cdop-field-id": 325,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_leakage_deduction_quantity"
-        },
-        "verification_uncertainty_deduction_margin": {
-          "type": "number",
-          "description": "Percentage or absolute deduction applied for this specific reporting period for uncertainty.",
-          "x-cdop-field-id": 326,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_uncertainty_deduction_margin"
-        },
-        "verification_buffer_pool_deduction_quantity": {
-          "type": "number",
-          "description": "Volume deducted for this specific reporting period and contributed to the buffer pool.",
-          "x-cdop-field-id": 327,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_buffer_pool_deduction_quantity"
-        },
-        "verification_audit_checkpoint_status": {
-          "type": "string",
-          "description": "Summary result of the checklist (e.g., PASS, PASS_WITH_RESERVATIONS, FAIL).",
-          "enum": [
-            "Pass (Fully compliant with zero reserves)",
-            "Pass with reservations (Approved, but with Forward Action Requests / FARs)",
-            "Requires corrective action (On hold pending CAR resolution)",
-            "Fail (Non-compliant / verification rejected)",
-            "Pending review (Audit currently in progress)"
-          ],
-          "x-cdop-field-id": 328,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_audit_checkpoint_status"
-        },
-        "verification_audit_checkpoint_status_reason": {
-          "type": "string",
-          "description": "The reason for updating the project status",
-          "x-cdop-field-id": 329,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.verification_audit_checkpoint_status_reason"
-        },
-        "is_current": {
-          "type": "boolean",
-          "description": "False for previous statuses, True for the current status.",
-          "x-cdop-field-id": 330,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "project.is_current"
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "verification_audit_checkpoint_status": {
+                "type": "string",
+                "description": "Summary result of the checklist (e.g., PASS, PASS_WITH_RESERVATIONS, FAIL).",
+                "enum": [
+                  "Pass (Fully compliant with zero reserves)",
+                  "Pass with reservations (Approved, but with Forward Action Requests / FARs)",
+                  "Requires corrective action (On hold pending CAR resolution)",
+                  "Fail (Non-compliant / verification rejected)",
+                  "Pending review (Audit currently in progress)"
+                ],
+                "x-cdop-field-id": 328,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.status[].verification_audit_checkpoint_status"
+              },
+              "verification_audit_checkpoint_status_reason": {
+                "type": "string",
+                "description": "The reason for updating the project status",
+                "x-cdop-field-id": 329,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.status[].verification_audit_checkpoint_status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 330,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "verification.status[].is_current"
+              }
+            },
+            "required": [
+              "is_current"
+            ]
+          }
         }
       },
       "required": [
-        "is_current",
-        "verification_applied_standard",
-        "verification_claim_type",
         "verification_credential_issuer_id",
-        "verification_date",
-        "verification_description",
         "verification_id",
         "verification_project_id",
-        "verification_quantity_uom",
-        "verification_report_url",
-        "verification_reporting_period_end",
-        "verification_reporting_period_start",
-        "verified_quantity"
+        "verification_report_url"
       ]
     }
   },
   "required": [
-    "project"
+    "verification"
   ]
 }
