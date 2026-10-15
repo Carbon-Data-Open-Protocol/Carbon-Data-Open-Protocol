@@ -5,36 +5,32 @@
   "type": "object",
   "additionalProperties": true,
   "properties": {
-    "verification": {
+    "project": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "verification_id": {
-          "type": "string",
-          "description": "A globally unique identifier for the specific verification event or claim.",
-          "x-cdop-field-id": 307,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "verification.verification_id"
-        },
-        "verification_vvb_id": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "description": "A globally unique identifier for a validation or verification body (vvb).",
-            "x-cdop-field-id": 308,
-            "x-cdop-cardinality": "0..*",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "verification.verification_vvb_id"
-          },
-          "minItems": 0
-        },
-        "details": {
+        "verification": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": true,
             "properties": {
+              "verification_id": {
+                "type": "string",
+                "description": "A globally unique identifier for the specific verification event or claim.",
+                "x-cdop-field-id": 307,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_id"
+              },
+              "verification_vvb_id": {
+                "type": "string",
+                "description": "A globally unique identifier for a validation or verification body (vvb).",
+                "x-cdop-field-id": 308,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_vvb_id"
+              },
               "verification_claim_type": {
                 "type": "string",
                 "description": "The classification of the claim being verified (e.g., CARBON_REMOVAL, EMISSION_REDUCTION, BIODIVERSITY).",
@@ -49,7 +45,15 @@
                 "x-cdop-field-id": 309,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.details[].verification_claim_type"
+                "x-cdop-field-path": "project.verification[].verification_claim_type"
+              },
+              "verification_project_id": {
+                "type": "string",
+                "description": "The unique ID of the underlying project registered on the host registry.",
+                "x-cdop-field-id": 310,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_project_id"
               },
               "verification_description": {
                 "type": "string",
@@ -57,29 +61,8 @@
                 "x-cdop-field-id": 311,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.details[].verification_description"
-              }
-            },
-            "required": [
-              "verification_claim_type",
-              "verification_description"
-            ]
-          }
-        },
-        "verification_project_id": {
-          "type": "string",
-          "description": "The unique ID of the underlying project registered on the host registry.",
-          "x-cdop-field-id": 310,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "verification.verification_project_id"
-        },
-        "reporting": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+                "x-cdop-field-path": "project.verification[].verification_description"
+              },
               "verification_reporting_period_start": {
                 "type": "string",
                 "format": "date",
@@ -87,7 +70,7 @@
                 "x-cdop-field-id": 312,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.reporting[].verification_reporting_period_start"
+                "x-cdop-field-path": "project.verification[].verification_reporting_period_start"
               },
               "verification_reporting_period_end": {
                 "type": "string",
@@ -96,7 +79,7 @@
                 "x-cdop-field-id": 313,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.reporting[].verification_reporting_period_end"
+                "x-cdop-field-path": "project.verification[].verification_reporting_period_end"
               },
               "verification_date": {
                 "type": "string",
@@ -105,29 +88,15 @@
                 "x-cdop-field-id": 314,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.reporting[].verification_date"
-              }
-            },
-            "required": [
-              "verification_date",
-              "verification_reporting_period_end",
-              "verification_reporting_period_start"
-            ]
-          }
-        },
-        "quantity": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+                "x-cdop-field-path": "project.verification[].verification_date"
+              },
               "verified_quantity": {
                 "type": "number",
                 "description": "The final, audited, and verified net volume for this specific reporting period.",
                 "x-cdop-field-id": 315,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.quantity[].verified_quantity"
+                "x-cdop-field-path": "project.verification[].verified_quantity"
               },
               "verification_quantity_uom": {
                 "type": "string",
@@ -143,28 +112,15 @@
                 "x-cdop-field-id": 316,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.quantity[].verification_quantity_uom"
-              }
-            },
-            "required": [
-              "verification_quantity_uom",
-              "verified_quantity"
-            ]
-          }
-        },
-        "standard": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+                "x-cdop-field-path": "project.verification[].verification_quantity_uom"
+              },
               "verification_applied_standard": {
                 "type": "string",
                 "description": "The overarching registry framework (e.g., Verra_VCS_v4.5, Gold_Standard).",
                 "x-cdop-field-id": 317,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.standard[].verification_applied_standard"
+                "x-cdop-field-path": "project.verification[].verification_applied_standard"
               },
               "verification_applied_methodology_protocol": {
                 "type": "string",
@@ -172,63 +128,47 @@
                 "x-cdop-field-id": 318,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.standard[].verification_applied_methodology_protocol"
-              }
-            },
-            "required": [
-              "verification_applied_standard"
-            ]
-          }
-        },
-        "verification_report_url": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "description": "The direct, secure hyperlink to the official public verification report PDF.",
-            "x-cdop-field-id": 319,
-            "x-cdop-cardinality": "1..*",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "verification.verification_report_url"
-          },
-          "minItems": 1
-        },
-        "verification_credential_issuer_id": {
-          "type": "string",
-          "description": "The decentralized identifier (DID) of the entity issuing the digital verification token.",
-          "x-cdop-field-id": 320,
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "verification.verification_credential_issuer_id"
-        },
-        "verification_cryptographic_proof_type": {
-          "type": "string",
-          "description": "The security protocol used (e.g., Ed25519Signature2020, JSON-LD).",
-          "x-cdop-field-id": 321,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "verification.verification_cryptographic_proof_type"
-        },
-        "verification_digital_signature_payload": {
-          "type": "string",
-          "description": "The actual cryptographic signature, payload hash, or verifiable presentation metadata.",
-          "x-cdop-field-id": 322,
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "verification.verification_digital_signature_payload"
-        },
-        "deductions": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+                "x-cdop-field-path": "project.verification[].verification_applied_methodology_protocol"
+              },
+              "verification_report_url": {
+                "type": "string",
+                "description": "The direct, secure hyperlink to the official public verification report PDF.",
+                "x-cdop-field-id": 319,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_report_url"
+              },
+              "verification_credential_issuer_id": {
+                "type": "string",
+                "description": "The decentralized identifier (DID) of the entity issuing the digital verification token.",
+                "x-cdop-field-id": 320,
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_credential_issuer_id"
+              },
+              "verification_cryptographic_proof_type": {
+                "type": "string",
+                "description": "The security protocol used (e.g., Ed25519Signature2020, JSON-LD).",
+                "x-cdop-field-id": 321,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_cryptographic_proof_type"
+              },
+              "verification_digital_signature_payload": {
+                "type": "string",
+                "description": "The actual cryptographic signature, payload hash, or verifiable presentation metadata.",
+                "x-cdop-field-id": 322,
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project.verification[].verification_digital_signature_payload"
+              },
               "verification_leakage_risk_mitigation": {
                 "type": "boolean",
                 "description": "Indicates if leakage risk is accounted for on this verification event",
                 "x-cdop-field-id": 323,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.deductions[].verification_leakage_risk_mitigation"
+                "x-cdop-field-path": "project.verification[].verification_leakage_risk_mitigation"
               },
               "verification_leakage_risk_mitigation_strategy": {
                 "type": "string",
@@ -236,7 +176,7 @@
                 "x-cdop-field-id": 324,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.deductions[].verification_leakage_risk_mitigation_strategy"
+                "x-cdop-field-path": "project.verification[].verification_leakage_risk_mitigation_strategy"
               },
               "verification_leakage_deduction_quantity": {
                 "type": "number",
@@ -244,7 +184,7 @@
                 "x-cdop-field-id": 325,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.deductions[].verification_leakage_deduction_quantity"
+                "x-cdop-field-path": "project.verification[].verification_leakage_deduction_quantity"
               },
               "verification_uncertainty_deduction_margin": {
                 "type": "number",
@@ -252,7 +192,7 @@
                 "x-cdop-field-id": 326,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.deductions[].verification_uncertainty_deduction_margin"
+                "x-cdop-field-path": "project.verification[].verification_uncertainty_deduction_margin"
               },
               "verification_buffer_pool_deduction_quantity": {
                 "type": "number",
@@ -260,18 +200,8 @@
                 "x-cdop-field-id": 327,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.deductions[].verification_buffer_pool_deduction_quantity"
-              }
-            },
-            "required": []
-          }
-        },
-        "status": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+                "x-cdop-field-path": "project.verification[].verification_buffer_pool_deduction_quantity"
+              },
               "verification_audit_checkpoint_status": {
                 "type": "string",
                 "description": "Summary result of the checklist (e.g., PASS, PASS_WITH_RESERVATIONS, FAIL).",
@@ -285,7 +215,7 @@
                 "x-cdop-field-id": 328,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.status[].verification_audit_checkpoint_status"
+                "x-cdop-field-path": "project.verification[].verification_audit_checkpoint_status"
               },
               "verification_audit_checkpoint_status_reason": {
                 "type": "string",
@@ -293,7 +223,7 @@
                 "x-cdop-field-id": 329,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.status[].verification_audit_checkpoint_status_reason"
+                "x-cdop-field-path": "project.verification[].verification_audit_checkpoint_status_reason"
               },
               "is_current": {
                 "type": "boolean",
@@ -301,24 +231,31 @@
                 "x-cdop-field-id": 330,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "verification.status[].is_current"
+                "x-cdop-field-path": "project.verification[].is_current"
               }
             },
             "required": [
-              "is_current"
+              "is_current",
+              "verification_applied_standard",
+              "verification_claim_type",
+              "verification_credential_issuer_id",
+              "verification_date",
+              "verification_description",
+              "verification_id",
+              "verification_project_id",
+              "verification_quantity_uom",
+              "verification_report_url",
+              "verification_reporting_period_end",
+              "verification_reporting_period_start",
+              "verified_quantity"
             ]
           }
         }
       },
-      "required": [
-        "verification_credential_issuer_id",
-        "verification_id",
-        "verification_project_id",
-        "verification_report_url"
-      ]
+      "required": []
     }
   },
   "required": [
-    "verification"
+    "project"
   ]
 }
