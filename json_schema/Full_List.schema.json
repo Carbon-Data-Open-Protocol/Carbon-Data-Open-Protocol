@@ -1617,17 +1617,7 @@
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "project.crediting_period[].maximum_number_of_crediting_periods"
-              }
-            },
-            "required": []
-          }
-        },
-        "crediting period": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
+              },
               "current_crediting_period_duration": {
                 "type": "integer",
                 "description": "The specific duration (in years) of a single crediting period granted to the project under the applicable methodology and Carbon Crediting Program. For projects with a fixed project crediting period type, this field is equal to the maximum total crediting duration.",
@@ -1638,7 +1628,7 @@
                 "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "project.crediting period[].current_crediting_period_duration"
+                "x-cdop-field-path": "project.crediting_period[].current_crediting_period_duration"
               }
             },
             "required": []
@@ -5283,25 +5273,26 @@
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "unit.credit_block[].block_end"
+              },
+              "block_start": {
+                "type": "integer",
+                "description": "Number indicating the first unit within a credit block",
+                "x-cdop-field-id": 152,
+                "x-cdop-pre-issuance-inclusion": "No",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
+                "x-cdop-mutability": "mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "unit.credit_block[].block_start"
               }
             },
             "required": [
               "block_end",
+              "block_start",
               "quantity"
             ]
           }
-        },
-        "credit_blockblock_start": {
-          "type": "integer",
-          "description": "Number indicating the first unit within a credit block",
-          "x-cdop-field-id": 152,
-          "x-cdop-pre-issuance-inclusion": "No",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Carbon Crediting Program/ Standard Setters",
-          "x-cdop-mutability": "mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "unit.credit_block[]block_start"
         },
         "expected_carbon_credit_price": {
           "type": "number",
@@ -5329,7 +5320,6 @@
         }
       },
       "required": [
-        "credit_blockblock_start",
         "owner_account_id"
       ]
     },
@@ -5607,7 +5597,7 @@
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_impact"
               },
-              "overview_of_the_projects_approach_to_ track_and_quantify": {
+              "overview_of_the_projects_approach_to_track_and_quantify": {
                 "type": "string",
                 "description": "Description of the measuring and monitoring plan for the selected co-benefit",
                 "x-cdop-field-id": 181,
@@ -5617,7 +5607,7 @@
                 "x-cdop-mutability": "Mutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_approach_to_ track_and_quantify"
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_approach_to_track_and_quantify"
               },
               "indicator_id": {
                 "type": "string",
