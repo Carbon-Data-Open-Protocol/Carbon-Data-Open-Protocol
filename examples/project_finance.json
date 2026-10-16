@@ -1,0 +1,107 @@
+{
+  "project": {
+    "financing_options": [
+      "Forward purchase",
+      "Offtake agreement",
+      "Grant",
+      "Concessional debt",
+      "Revenue share"
+    ],
+    "costs_and_revenue": [
+      {
+        "expected_initial_costs": 4800000,
+        "expected_annual_costs": 720000,
+        "expected_annual_revenue": 1132320.0
+      }
+    ],
+    "declaring_entity_name": "Blue Carbon Kenya Ltd",
+    "community_benefit_mechanism_type": [
+      "Revenue sharing",
+      "Local employment",
+      "Community conservation grants",
+      "Livelihood support"
+    ],
+    "funding": [
+      {
+        "project_total_funding_required": 8400000,
+        "project_total_funding_secured": 5650000
+      }
+    ]
+  },
+  "project_stakeholder": {
+    "expected_community_proceeds": 20.0,
+    "counterparty": [
+      {
+        "agreement_counterparty_sector": "Climate finance and environmental commodities",
+        "agreement_counterparty_name": "Coastal Resilience Buyers Ltd (hypothetical LEI: 549300MIDA0000000001)",
+        "agreement_counterparty_role": "Forward purchaser, offtaker, and prepayment provider"
+      }
+    ]
+  },
+  "unit": {
+    "expected_carbon_credit_price": 21.0,
+    "realized_transaction_price": 18.5
+  },
+  "agreement": {
+    "agreement_notes": "Illustrative forward-purchase arrangement for the Mida Creek Mangrove Restoration Project. The buyer prepays 40% of the committed amount, with the balance paid in three 20% tranches after verified issuance and registry transfer for the 2026, 2027, and 2028 vintages. Deliveries are capped at 50,000 tCO2e per eligible vintage and remain subject to methodology compliance, buffer deductions, no-double-counting checks, insurance conditions, and the project community benefit-sharing obligations. All counterparty, insurer, policy, price, volume, date, cost, revenue, and funding details in this record are hypothetical.",
+    "agreement_type": "Forward purchase",
+    "offtake": [
+      {
+        "offtake_agreement_contracted_credit_volume": 150000,
+        "offtake_agreement_contracted_credit_price": 18.5,
+        "offtake_agreement_credit_vintage_start": 2026,
+        "offtake_agreement_credit_vintage_end": 2028,
+        "offtake_agreement_credit_requirements": "Verified Carbon Units representing tCO2e removals from the Mida Creek project; eligible vintages 2026-2028; issued under the Verra VCS using VM0033 version 2.1; verified by an approved validation/verification body; net of applicable buffer contributions; free of prior retirement, cancellation, encumbrance, or double counting; and supported by registry transfer evidence."
+      }
+    ],
+    "date": [
+      {
+        "agreement_effective_date": "2026-03-01",
+        "agreement_expiry_date": "2030-12-31"
+      }
+    ],
+    "agreement_commitment_amount": 2775000.0,
+    "insurance": [
+      {
+        "agreement_insurance_policy_exists": true,
+        "agreement_insurer_name": "Coastal Carbon Assurance PCC (hypothetical)",
+        "agreement_insurance_policy_reference": "MIDA-ND-2026-001-HYP",
+        "agreement_insurance_coverage_type": "Non-delivery and political risk"
+      }
+    ],
+    "agreement_currency": "USD",
+    "agreement_marketplace_or_venue": [
+      "Bilateral over-the-counter agreement",
+      "Verra Registry"
+    ],
+    "collateral_type": [
+      "Future carbon credit receivables",
+      "Project monitoring equipment",
+      "Sponsor support undertaking"
+    ],
+    "project_financing_stage": "Operational scale-up and restoration expansion",
+    "agreement_governing_law": "Laws of the Republic of Kenya",
+    "funding_details": [
+      {
+        "funding_source_category": "Prepayment",
+        "funding_source_expected_disbursement_date": "2026-04-15",
+        "funding_source_disbursement_schedule": "40% after satisfaction of conditions precedent, followed by 20% after each verified issuance and registry transfer for the 2026, 2027, and 2028 vintages.",
+        "funding_conditions_precedent": "Completion of KYC and AML review; evidence of project and carbon rights; confirmation of active registry standing; an updated monitoring plan; an executed community benefit-sharing protocol; and evidence that the non-delivery insurance policy is in force.",
+        "funding_is_fully_committed": true,
+        "funding_commitment_status": "Signed",
+        "funding_commitment_status_reason": "The agreement was executed by both parties on 2026-03-01; only routine documentary conditions remain before the initial prepayment is released.",
+        "is_current": true
+      },
+      {
+        "funding_source_category": "Prepayment",
+        "funding_source_expected_disbursement_date": "2026-05-31",
+        "funding_source_disbursement_schedule": "Proposed 30% upfront payment with the remaining amount payable on delivery.",
+        "funding_conditions_precedent": "Completion of technical, legal, registry, community-benefit, and counterparty due diligence.",
+        "funding_is_fully_committed": false,
+        "funding_commitment_status": "Under negotiation",
+        "funding_commitment_status_reason": "This non-binding term-sheet status was superseded when the parties agreed the final volume, pricing, insurance, and staged-disbursement terms.",
+        "is_current": false
+      }
+    ]
+  }
+}

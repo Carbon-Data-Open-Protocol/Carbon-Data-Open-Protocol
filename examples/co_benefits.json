@@ -1,0 +1,124 @@
+{
+  "cobenefits": {
+    "sdgs_the_project_plans_to_contribute_to": [
+      "SDG 1 - No Poverty",
+      "SDG 5 - Gender Equality",
+      "SDG 8 - Decent Work and Economic Growth",
+      "SDG 13 - Climate Action",
+      "SDG 14 - Life Below Water",
+      "SDG 15 - Life on Land"
+    ],
+    "methods_used_to_assess_sdgs_and_other_cobenefits": [
+      "Climate, Community & Biodiversity Standards (CCB) impact assessment framework",
+      "Verra Sustainable Development Verified Impact Standard (SD VISta) indicator mapping",
+      "Participatory rural appraisal and household socioeconomic baseline survey",
+      "GIS and remote-sensing change detection for mangrove extent and shoreline condition",
+      "Community-based ecological monitoring using fixed transects and permanent sample plots"
+    ],
+    "cobenefit_target": [
+      {
+        "cobenefits_type": "Biodiversity conservation and mangrove habitat restoration",
+        "overview_of_the_projects_impact": "Restore degraded intertidal habitat with native mangrove species, improve habitat connectivity, and increase nursery habitat available to fish, crustaceans, birds, and other coastal wildlife.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Map the restoration boundary annually using satellite imagery and field-verified GIS surveys. Permanent sample plots are assessed twice each year for planted area, species composition, stem density, and seedling survival.",
+        "indicator_id": "CB-BIO-01",
+        "unit_description": "Area of degraded mangrove habitat restored and maintained under active project management",
+        "unit_type": "Area",
+        "unit_symbol": "ha",
+        "unit_monitoring_frequency": "Semi-annually, with annual GIS consolidation",
+        "baseline_value": "0 hectares under project-led restoration at the project start date",
+        "target_value": "1,200 hectares restored and maintained by the end of project year 10",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_baseline_ecological_assessment.pdf"
+      },
+      {
+        "cobenefits_type": "Coastal protection and community climate resilience",
+        "overview_of_the_projects_impact": "Increase natural shoreline protection by restoring mangrove belts that reduce wave energy, stabilize sediments, and lower erosion exposure for nearby settlements and community infrastructure.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Establish fixed shoreline transects and erosion pins, combine field measurements with drone imagery, and confirm protected shoreline segments through annual community hazard-mapping exercises.",
+        "indicator_id": "CB-RES-01",
+        "unit_description": "Length of shoreline with restored mangrove cover providing enhanced natural protection",
+        "unit_type": "Length",
+        "unit_symbol": "km",
+        "unit_monitoring_frequency": "Annually after the main monsoon season",
+        "baseline_value": "0 km classified as enhanced by project intervention",
+        "target_value": "18 km of shoreline with enhanced mangrove-based protection by project year 10",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_shoreline_risk_baseline.pdf"
+      },
+      {
+        "cobenefits_type": "Employment and sustainable local livelihoods",
+        "overview_of_the_projects_impact": "Create paid local employment and contracting opportunities in nursery operations, planting, monitoring, patrols, data collection, and restoration-linked enterprises, with priority for participating coastal communities.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Maintain payroll and contractor records, verify residence through cooperative membership records, remove duplicate individuals, and reconcile the total during each annual social monitoring cycle.",
+        "indicator_id": "CB-LIV-01",
+        "unit_description": "Number of local residents receiving paid project employment or project-funded contracts during a reporting year",
+        "unit_type": "Count",
+        "unit_symbol": "people",
+        "unit_monitoring_frequency": "Quarterly, with annual deduplication and reporting",
+        "baseline_value": "0 local residents receiving project-funded employment before implementation",
+        "target_value": "At least 180 unique local residents receiving paid work or contracts annually by project year 5",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_household_livelihoods_baseline.pdf"
+      },
+      {
+        "cobenefits_type": "Gender inclusion and equitable employment",
+        "overview_of_the_projects_impact": "Increase women's participation in paid restoration, nursery, monitoring, cooperative leadership, and technical roles while applying equal-pay and safe-workplace requirements.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Track sex-disaggregated payroll and contractor records, review role categories and pay bands each quarter, and validate results through confidential worker interviews and cooperative records.",
+        "indicator_id": "CB-GEN-01",
+        "unit_description": "Change in the share of paid project roles held by women compared with the baseline share",
+        "unit_type": "Change",
+        "unit_symbol": "percentage points",
+        "unit_monitoring_frequency": "Quarterly, with annual assurance review",
+        "baseline_value": "22% of comparable paid conservation roles held by women in the baseline survey",
+        "target_value": "+23 percentage points, equivalent to women holding at least 45% of paid project roles by project year 5",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_gender_and_employment_baseline.pdf"
+      },
+      {
+        "cobenefits_type": "Community benefit sharing and inclusive participation",
+        "overview_of_the_projects_impact": "Distribute restoration-linked benefits through local cooperatives and community institutions, supporting household priorities, small-enterprise development, training, and transparent participation in project decisions.",
+        "overview_of_the_projects_approach_to_ track_and_quantify": "Reconcile benefit-payment registers, training attendance, cooperative membership records, and grievance logs. Community representatives review and sign off the consolidated beneficiary list each year.",
+        "indicator_id": "CB-COM-01",
+        "unit_description": "Number of unique community members receiving a documented monetary or in-kind project benefit during the reporting year",
+        "unit_type": "Count",
+        "unit_symbol": "people",
+        "unit_monitoring_frequency": "Semi-annually, with annual beneficiary reconciliation",
+        "baseline_value": "0 community members receiving project-generated benefits before implementation",
+        "target_value": "640 unique community members receiving documented benefits annually by project year 5",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_fpic_and_benefit_sharing_plan.pdf"
+      }
+    ],
+    "cobenefit_impact": [
+      {
+        "cobenefits_type": "Biodiversity conservation and mangrove habitat restoration",
+        "achieved_project_impact": "By the end of the hypothetical 2024 monitoring period, 425 hectares of degraded mangrove habitat had been replanted or placed under assisted natural regeneration and active community monitoring.",
+        "indicator_id": "CB-BIO-01",
+        "achieved_value": "425 hectares",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_ecological_monitoring_report.pdf"
+      },
+      {
+        "cobenefits_type": "Coastal protection and community climate resilience",
+        "achieved_project_impact": "Field and drone surveys identified 7.5 km of shoreline where restored mangrove belts met the project's minimum width, vegetation density, and continuity criteria for enhanced natural protection.",
+        "indicator_id": "CB-RES-01",
+        "achieved_value": "7.5 km",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_shoreline_monitoring_report.pdf"
+      },
+      {
+        "cobenefits_type": "Employment and sustainable local livelihoods",
+        "achieved_project_impact": "During the hypothetical 2024 reporting year, 136 unique local residents received paid work or project-funded contracts across nursery, planting, patrol, monitoring, and data-collection activities.",
+        "indicator_id": "CB-LIV-01",
+        "achieved_value": "136 people",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_employment_register_assurance.pdf"
+      },
+      {
+        "cobenefits_type": "Gender inclusion and equitable employment",
+        "achieved_project_impact": "Women held 41% of paid project roles during the hypothetical 2024 reporting year, compared with a 22% baseline share.",
+        "indicator_id": "CB-GEN-01",
+        "achieved_value": "+19 percentage points, equivalent to 41% of paid roles",
+        "change_type": "Absolute percentage-point change from the baseline share",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_gender_employment_audit.pdf"
+      },
+      {
+        "cobenefits_type": "Community benefit sharing and inclusive participation",
+        "achieved_project_impact": "A reconciled beneficiary register recorded 512 unique community members receiving cooperative distributions, paid training, livelihood inputs, or other documented project-funded benefits during the hypothetical 2024 reporting year.",
+        "indicator_id": "CB-COM-01",
+        "achieved_value": "512 people",
+        "supporting_evidence": "https://example.org/docs/mida_creek/hypothetical_2024_community_benefit_report.pdf"
+      }
+    ]
+  }
+}
