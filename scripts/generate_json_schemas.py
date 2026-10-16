@@ -47,6 +47,34 @@ def normalize_header(value):
     return value.strip("_")
 
 
+def to_snake_case(value):
+    """Convert a field/property name to snake_case: splits camelCase, then collapses
+    spaces, hyphens, and other non-alphanumeric runs into single underscores."""
+    if value is None:
+        return ""
+    value = str(value).strip()
+    value = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", value)
+    value = re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1_\2", value)
+    return normalize_header(value)
+
+
+def normalize_field_path(field_path):
+    """Snake-case each segment of a dotted field path, preserving '[]' array markers."""
+    segments = []
+    # Treat '[]' followed directly by more text (e.g. 'credit_block[]block_start') as a separator.
+    field_path = re.sub(r"\s*\[\s*\]\s*(?=[^.\s])", "[].", str(field_path))
+    for raw_part in field_path.split("."):
+        raw_part = raw_part.strip()
+        if not raw_part:
+            continue
+        is_array = raw_part.replace(" ", "").endswith("[]")
+        part = to_snake_case(raw_part.replace("[]", ""))
+        if not part:
+            continue
+        segments.append(f"{part}[]" if is_array else part)
+    return ".".join(segments)
+
+
 def clean_value(value):
     if value is None:
         return None
@@ -112,7 +140,7 @@ def load_enum_value_lookup(path=ENUM_VALUES_FILE):
             continue
 
         for part in str(header).split("&"):
-            key = normalize_header(part)
+            key = to_snake_case(part)
             if key:
                 lookup[key] = values
 
@@ -187,7 +215,7 @@ def build_base_field_schema(record):
 
     if datatype_key == "enum":
         field_schema["type"] = "string"
-        field_name_key = normalize_header(record.get("field_name"))
+        field_name_key = to_snake_case(record.get("field_name"))
         enum_values = get_enum_lookup().get(field_name_key)
         if enum_values:
             field_schema["enum"] = enum_values
@@ -280,7 +308,7 @@ def add_field_path_property(root_schema, field_path, record):
 
     The first segment is treated as the top-level associated entity.
     """
-    parts = [part.strip() for part in str(field_path).split(".") if part.strip()]
+    parts = normalize_field_path(field_path).split(".")
     if len(parts) < 2:
         raise ValueError(
             f"Invalid field_path '{field_path}' for {record.get('associated_entity')}.{record.get('field_name')} "
@@ -292,7 +320,7 @@ def add_field_path_property(root_schema, field_path, record):
     for i, raw_part in enumerate(parts):
         is_last = i == len(parts) - 1
         is_array = raw_part.endswith("[]")
-        part = raw_part.replace("[]", "")
+        part = raw_part[:-2] if is_array else raw_part
 
         if is_last:
             current.setdefault("properties", {})[part] = build_field_schema(record)
@@ -320,8 +348,8 @@ def add_field_path_property(root_schema, field_path, record):
 
 
 def add_parent_field_property(root_schema, record):
-    entity = normalize_header(record.get("associated_entity"))
-    field_name = normalize_header(record.get("field_name"))
+    entity = to_snake_case(record.get("associated_entity"))
+    field_name = to_snake_case(record.get("field_name"))
     parent_field = record.get("parent_field")
 
     entity_schema = ensure_object_property(root_schema, entity)
@@ -334,7 +362,7 @@ def add_parent_field_property(root_schema, record):
 
         return
 
-    parent_field = normalize_header(parent_field)
+    parent_field = to_snake_case(parent_field)
     parent_schema = entity_schema["properties"].get(parent_field)
 
     if parent_schema is None:
@@ -411,6 +439,15 @@ def worksheet_to_json_schema(ws):
         }
 
         if record.get("associated_entity") and record.get("field_name"):
+            if record.get("field_path"):
+                if re.search(r"\[\s*\]\s*[^.\s]", str(record["field_path"])):
+                    print(
+                        f"Warning: sheet '{ws.title}', {record.get('associated_entity')}.{record.get('field_name')}: "
+                        f"field_path '{record['field_path']}' is missing a '.' after '[]'; inserting one"
+                    )
+                record["field_path"] = normalize_field_path(record["field_path"])
+            if record.get("parent_field"):
+                record["parent_field"] = to_snake_case(record["parent_field"])
             records.append(record)
 
     has_field_path = any(record.get("field_path") for record in records)
