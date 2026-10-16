@@ -103,7 +103,7 @@
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_impact"
               },
-              "overview_of_the_projects_approach_to_ track_and_quantify": {
+              "overview_of_the_projects_approach_to_track_and_quantify": {
                 "type": "string",
                 "description": "Description of the measuring and monitoring plan for the selected co-benefit",
                 "x-cdop-field-id": 181,
@@ -113,7 +113,7 @@
                 "x-cdop-mutability": "Mutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_approach_to_ track_and_quantify"
+                "x-cdop-field-path": "cobenefits.cobenefit_target[].overview_of_the_projects_approach_to_track_and_quantify"
               },
               "indicator_id": {
                 "type": "string",
