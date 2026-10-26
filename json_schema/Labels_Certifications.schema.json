@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "Labels_Certifications.schema.json",
+  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Labels_Certifications.schema.json",
   "title": "Labels_Certifications",
   "type": "object",
   "additionalProperties": true,

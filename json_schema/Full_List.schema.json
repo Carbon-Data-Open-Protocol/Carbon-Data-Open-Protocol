@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "Full_List.schema.json",
+  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Full_List.schema.json",
   "title": "Full List",
   "type": "object",
   "additionalProperties": true,

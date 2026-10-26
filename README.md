@@ -1,7 +1,9 @@
 # Carbon-Data-Open-Protocol
 Repository storing technical specification and documentation for the CDOP schema.
 
-<span style="color:orange">As of May 26, 2026, the supported versions of the CDOP JSON schema files are available under `json_schema/`. Legacy schema files are still available under `json_schema_legacy/`. The supported version of the CDOP JSON schema files reflect breaking changes compared to the legacy schema files. Internal systems will need to be recalibrated to reflect these changes. For those who have adopted the legacy schema files, please refer to the [migration guide](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema_legacy/migration-guide.md) for guidance on migrating over the new supported versions.</span>
+Latest release: [releases/latest](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/releases/latest). The current schema files linked below can include changes that are not released yet.
+
+<span style="color:orange">As of May 26, 2026, the supported versions of the CDOP JSON schema files are available under `json_schema/` (Version 2, release `v2.0.0` and later). Legacy schema files (Version 1) are available in the [`v1.0.0` release](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/releases/tag/v1.0.0). The supported version of the CDOP JSON schema files reflect breaking changes compared to the legacy schema files. Internal systems will need to be recalibrated to reflect these changes. For those who have adopted the legacy schema files, please refer to the [migration guide](/docs/MIGRATION-v1-to-v2.md) for guidance on migrating over the new supported versions.</span>
 
 
 # CDOP Overview	
@@ -25,6 +27,15 @@ The enumerated values lists for the schema can be found [HERE](/docs/CDOP%20Enum
 
 Any other supporting documents and information can be found in the Wiki page of the repository, located [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/wiki).
 
+### Versions
+
+The CDOP JSON schemas use [Semantic Versioning](https://semver.org/). The `VERSION` file holds the version of the latest release, or of the next release when it is in preparation. Each release is a Git tag `vMAJOR.MINOR.PATCH` with a [GitHub release](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/releases). The [change log](/CHANGELOG.md) lists the changes in each release.
+
+- **MAJOR**: a payload that was valid can become invalid. Examples: a field is removed or renamed, a field becomes required, a type changes, or an enum value is removed.
+- **MINOR**: a change that is backward compatible. Examples: a new optional field, a new schema file, or a new enum value.
+- **PATCH**: no change to validation. Examples: descriptions, documentation, or script fixes that give the same schemas.
+
+The `$id` of each schema contains its release, for example `https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Issuances.schema.json`. Use a release URL like this one in your systems. Files on the `main` branch can change before the next release. Releases `v1.0.0` and `v2.0.0` were made after their announcements, and their `$id` values do not contain a version.
 
 
 ## Location
@@ -35,69 +46,61 @@ If it is technically feasible by an organization using this schema, the country 
 
 In the event that any of the associated entities (project, project stakeholder, and/or facility) do not have a conventional address, use the 'alternative address' field as a means of capturing unconventional, partial, etc. aspects of a relevant address.
 
-The Location JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Location_Details.schema.json).
-
-Legacy version [HERE](/json_schema_legacy/location_details.json)
+The current **Location JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Location_Details.schema.json).
 
 ## Project Approach and Details (PAD)
 
 The PAD schema aims to capture all relevant information related to the project’s approach and details, including its crediting program, registry, status, design, project type, methodology, project developer information, validation, and name. The majority of this information would be that which is already included in a project’s design document. 
 
-The PAD JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Project_Approach_Details.schema.json).
-
-Legacy version [HERE](/json_schema_legacy/project_approach_and_details.json)
+The current **PAD JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Project_Approach_Details.schema.json).
 
 ## Disclosures 
 
 The Disclosures schema aims to capture all relevant information related to project disclosures, including attestations (e.g., child labor and land rights), carbon ownership, project developer organization experience and details, public comment, and (if applicable) previous crediting program history. All fields are marked as Public.
 
-The Disclosures JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Disclosures.schema.json).
-
-Legacy version [HERE](/json_schema_legacy/disclosures.json)
+The current **Disclosures JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Disclosures.schema.json).
 
 ## Issuance
 
 The Issuance schema aims to capture all relevant information related to the project’s issuances, including its forecasted issuance volumes, estimated crediting period, date of issuance, and verification.
 
-The Issuance JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Issuances.schema.json).
-
-Legacy version [HERE](/json_schema_legacy/issuances.json)
+The current **Issuance JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Issuances.schema.json).
 
 ## Unit Description
 
 The Unit Description schema aims to capture all relevant information associated with the unit of any particular project. This includes its serial number, status, type, quantity, vintage, and metric among other properties.
 
-The Unit Description JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Unit_Description.schema.json).
+The current **Unit Description JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Unit_Description.schema.json).
 
 ## Crediting Period
 
 The Crediting Period schema aims to capture all relevant information related to the project's crediting period including the crediting period type, current crediting period duration, maximum cumulative crediting duration, and maximum number of crediting periods.
 
-The Crediting Period JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Crediting_Period.schema.json).
+The current **Crediting Period JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Crediting_Period.schema.json).
 
 ## Estimations
 
 The Estimations schema aims to capture all relevant information related to estimations around emissions mitigation per vintage, monitoring period, issuance, and status. It also captures information relevant to estimated annual and total emissions mitigation along with the estimated total years for the project. 
 
-The Estimations JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Estimations.schema.json).
+The current **Estimations JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Estimations.schema.json).
 
 ## Co-Benefits
 
 The Co-Benefits schema aims to capture all relevant information related to a project's contribution to the UN Sustainable Development Goals (SDGs) and other co-benefits, including the assessment methods used, targeted and achieved co-benefit indicators, baseline and target values, and supporting evidence.
 
-The Co-Benefits JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Co-Benefits.schema.json).
+The current **Co-Benefits JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Co_Benefits.schema.json).
 
 ## Durability & Permanence
 
 The Durability & Permanence schema aims to capture all relevant information related to a project's non-permanence risk mitigation, including buffer pool deposits, releases, and reversal coverage, along with the project's overall risk profile.
 
-The Durability & Permanence JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Durability_Permanence.schema.json).
+The current **Durability & Permanence JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Durability_Permanence.schema.json).
 
 ## Project Finance
 
 The Project Finance schema aims to capture all relevant information related to a project's financing, including financing options, expected and realized costs/revenue, funding requirements, offtake and insurance agreements, and other transactional details between the project and its counterparties.
 
-The Project Finance JSON can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Project_Finance.schema.json).
+The current **Project Finance JSON** can be found [HERE](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/blob/main/json_schema/Project_Finance.schema.json).
 
 ## Adoption
 
@@ -145,6 +148,13 @@ python scripts/validate.py my_schema.json --compare --schema json_schema/Disclos
 The `--compare` flag treats the input file as a schema and checks it structurally against the canonical CDOP schema — same properties, types, and required fields. Cosmetic differences (descriptions, `$id`, `title`) are ignored. This is useful for confirming that a custom schema implementation stays in sync with the official CDOP definition.
 
 The script exits with code `0` on success and `1` on failure, making it easy to integrate into CI pipelines. Differences are printed with the JSON path and a description of each issue.
+
+**Validate all examples in `examples/`:**
+```bash
+python scripts/validate_examples.py
+```
+
+The "Validate CDOP Examples" workflow runs this check on each pull request.
 
 ### Legacy Schema Validation
 

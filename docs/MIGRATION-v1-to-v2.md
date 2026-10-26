@@ -2,6 +2,8 @@
 
 ## Purpose
 
+This guide describes the migration from CDOP schema `v1.0.0` (legacy) to `v2.0.0`.
+
 As of May 26, 2026, the supported CDOP JSON Schema files are the generated schemas under `json_schema/`:
 
 - `Location_Details.schema.json`
@@ -11,14 +13,14 @@ As of May 26, 2026, the supported CDOP JSON Schema files are the generated schem
 - `Unit_Description.schema.json`
 - `Crediting_Period.schema.json`
 - `Estimations.schema.json`
-- `Co-Benefits.schema.json`
+- `Co_Benefits.schema.json`
 - `Durability_Permanence.schema.json`
 - `Project_Finance.schema.json`
 - `Full_List.schema.json`
 
-Only `Location_Details`, `Project_Approach_Details`, `Issuances`, and `Disclosures` have a legacy counterpart under `json_schema_legacy/`; the remaining generated schemas (`Unit_Description`, `Crediting_Period`, `Estimations`, `Co-Benefits`, `Durability_Permanence`, `Project_Finance`) are new additions with no legacy equivalent, and `Full_List` is the union of all supported schemas.
+Only `Location_Details`, `Project_Approach_Details`, `Issuances`, and `Disclosures` have a legacy counterpart in `v1.0.0`; the remaining generated schemas (`Unit_Description`, `Crediting_Period`, `Estimations`, `Co_Benefits`, `Durability_Permanence`, `Project_Finance`) are new additions with no legacy equivalent, and `Full_List` is the union of all supported schemas.
 
-Legacy schemas remain under `json_schema_legacy/` for reference, but end users should update validation and submission workflows to align with the standardized schemas in `json_schema/`.
+The legacy schemas and examples are not on the `main` branch. They are available only from the [`v1.0.0` release](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/releases/tag/v1.0.0): the schemas are in the [root folder](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/tree/v1.0.0) and the examples are in [`examples/`](https://github.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/tree/v1.0.0/examples). End users should update validation and submission workflows to align with the standardized schemas in `json_schema/`.
 
 This guide focuses on what existing users need to change in:
 
@@ -35,10 +37,14 @@ Please note, use cases are variable and may fall outside of those covered here.
 
 The new supported files use standardized names and the `.schema.json` suffix. Update any code, configuration, or API documentation that still points to legacy files such as:
 
-- `json_schema_legacy/location_details.json`
-- `json_schema_legacy/project_approach_and_details.json`
-- `json_schema_legacy/issuances.json`
-- `json_schema_legacy/disclosures.json`
+- `location_details.json`
+- `project_approach_and_details.json`
+- `issuances.json`
+- `disclosures.json`
+
+In release `v1.0.0`, these legacy files are in the root folder. Later, they were moved to `json_schema_legacy/`, and then removed from `main`.
+
+From release `v2.0.1`, each schema has a versioned `$id`, for example `https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Issuances.schema.json`. Point to a release tag URL like this one, not to the `main` branch. The `main` branch can change before the next release.
 
 ### 2. Nested entity objects are now the standard contract
 
@@ -146,7 +152,7 @@ A pre-submit adapter should typically:
 
 - rename legacy keys to the new field names
 - move fields into the correct entity object
-- convert legacy arrays of objects into parallel CDOP arrays where needed
+- keep legacy arrays of objects as arrays of objects, with the new field names
 - remove unsupported custom fields
 - ensure missing required sections are created only when valid values exist
 
@@ -190,7 +196,7 @@ then only minor changes should be required.
 
 ### API/validator guidance
 
-- Note that `additionalProperties: true` means your deserializer will accept undeclared fields inside each entity object; enforce a stricter contract in your own validation layer if needed.
+Note that `additionalProperties: true` means your deserializer will accept undeclared fields inside each entity object; enforce a stricter contract in your own validation layer if needed.
 
 ### Project Approach & Details
 
@@ -271,9 +277,7 @@ Notably, the legacy requirement for `project.identifiers` is no longer present i
 
 The legacy schema included enum-like controls and custom extension support in some places. The new standardized schema enforces real `enum` constraints for fields whose CDOP datatype is `enum` (e.g., `crediting_program_name`, `standard_name`, `methodology_name`, `mitigation_type`, `project_sector`, `project_type`, `project_stakeholder_type`, `project_status`), sourced from `docs/CDOP Enumerated Values Lists.xlsx`. 
 
-Recommended action:
-
-- use the values in each field's generated `enum` list rather than free text for statuses, registries, sectors, and stakeholder types
+Recommended action: use the values in each field's generated `enum` list rather than free text for statuses, registries, sectors, and stakeholder types.
 
 
 
@@ -441,6 +445,7 @@ Business validation is still useful for:
 ## Migration Checklist
 
 - Update schema file references to `json_schema/*.schema.json`.
+- Pin schema references to a release tag URL (for example `v2.0.1`), not to `main`.
 - Regenerate typed models or DTOs from the new schema files.
 - Add or update a transformation layer from legacy payload shape to new CDOP payload shape.
 - Note that `additionalProperties: true` is set — extra fields in payloads will not cause schema validation failures.
