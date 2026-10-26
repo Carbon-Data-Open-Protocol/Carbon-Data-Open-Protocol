@@ -225,7 +225,9 @@
       }
     ],
     "initial_standard_version": "4.0",
-    "current_standard_version": "4.5"
+    "current_standard_version": "4.5",
+    "program_identifier": "PROG-VCS-0001",
+    "program_name": "Verra"
   },
   "methodology": {
     "versions": [
@@ -241,83 +243,54 @@
     "current_registry": "Verra",
     "previous": [],
     "current_project_issuance_registry": "Verra",
-    "identification": [
-      {
-        "registry_identifier": 1,
-        "registry_name": "Verra",
-        "registry_link": "https://registry.verra.org/app/projectDetail/VCS/4721"
-      }
-    ],
-    "original": [
-      {
-        "original_registry_identifier": 1,
-        "original_registry_name": "Verra",
-        "original_registry_link": "https://registry.verra.org/app/projectDetail/VCS/4721"
-      }
-    ],
-    "program": [
-      {
-        "program_identifier": 1,
-        "program_name": "Verified Carbon Standard (VCS)"
-      }
-    ],
-    "creation_date": "2023-06-01",
-    "update_date": "2025-05-05"
+    "registry_identifier": "REG-VERRA-0001",
+    "registry_name": "Verra",
+    "registry_website": "https://registry.verra.org"
   },
   "validation": {
     "validation_body_name": "SCS Global Services",
     "validation_date": "2023-05-10",
     "validation_report": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
-    "crediting_period": [
-      {
-        "current_crediting_period_start_date": "2023-01-01",
-        "current_crediting_period_end_date": "2052-12-31",
-        "current_crediting_period_number": 1
-      }
-    ],
-    "date": [
-      {
-        "date_validation_requested": "2022-12-05",
-        "date_validation_planned": "2023-03-06",
-        "date_validation_expiration": "2028-05-10"
-      }
-    ],
-    "lca": [],
-    "validation_event": [
-      {
-        "validation_id": 1,
-        "validation_type": "Project validation",
-        "validation_date": "2023-05-10",
-        "validation_is_planned": false,
-        "validation_period_start_date": "2023-03-06",
-        "validation_period_end_date": "2023-05-10"
-      }
-    ],
-    "report": [
-      {
-        "validation_report_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
-        "validation_report_summary": "SCS Global Services validated the Mida Creek Mangrove Restoration Project against VCS v4.5 and methodology VM0033 v2.1. The validation confirmed the project boundary of approximately 1,200 hectares, the additionality demonstration, the baseline scenario, and the monitoring plan. Four findings were raised during the desk review and site audit, all of which were resolved before the final report was issued. The validation team concluded that the project design conforms to the applied standard and methodology.",
-        "validation_report_version": "1.1"
-      }
-    ],
-    "stage": [
-      {
-        "validation_stages": [
-          "Desk review",
-          "On-site audits and interviews",
-          "Public comment period",
-          "Resolution of findings",
-          "Final validation report issued"
-        ],
-        "validation_stage_description": "Desk review of the project design document and supporting evidence, followed by a site audit at Mida Creek with community and project team interviews, a 30-day public comment period hosted on the registry, resolution of four findings raised by the validation team, and issuance of the final validation report.",
-        "validation_stage_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation"
-      }
-    ],
-    "validation_id": 1,
-    "current_crediting_period_start_date": "2023-01-01",
     "current_crediting_period_end_date": "2052-12-31",
     "current_crediting_period_number": 1,
-    "validation_type": "Validation of Project Design Document"
+    "current_crediting_period_start_date": "2023-01-01",
+    "date_validation_expiration": "2028-05-10",
+    "date_validation_planned": "2023-03-06",
+    "date_validation_requested": "2022-12-05",
+    "lca": [],
+    "validation_project_id": "VCS-4721",
+    "validation_id": 1,
+    "validation_vvb_id": [
+      "VVB-SCS-0021"
+    ],
+    "validation_type": "Project validation",
+    "validation_is_planned": false,
+    "validation_period_end_date": "2023-05-10",
+    "validation_period_start_date": "2023-03-06",
+    "validation_report_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
+    "validation_report_summary": "SCS Global Services (VVB-SCS-0021) validated the Mida Creek Mangrove Restoration Project against VCS v4.5 and methodology VM0033 v2.1. The validation confirmed the project boundary of approximately 1,200 hectares, the additionality demonstration, the baseline scenario, and the monitoring plan. Four findings were raised during the desk review and site audit, all of which were resolved before the final validation report was issued. The validation team concluded that the project design conforms to the applied standard and methodology.",
+    "validation_report_version": "1.1",
+    "validation_stage_description": "Desk review of the project design document and supporting evidence, followed by a site audit at Mida Creek with community and project team interviews, a 30-day public comment period hosted on the registry, resolution of four findings raised by the validation team, and issuance of the final validation report.",
+    "validation_stage_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
+    "validation_stages": [
+      "Desk review",
+      "On-site audits and interviews",
+      "Public comment period",
+      "Resolution of findings",
+      "Final validation report issued"
+    ],
+    "status": [
+      {
+        "validation_status": "Resolution of findings",
+        "validation_status_reason": "Four findings raised during the desk review and site audit were addressed by the project developer and closed by the validation team in April 2023.",
+        "is_current": false
+      },
+      {
+        "validation_status": "Completed",
+        "validation_status_reason": "Final validation report issued on 2023-05-10. The validation is valid until 2028-05-10, after which the project must be revalidated to maintain its registry standing.",
+        "is_current": true
+      }
+    ]
   },
   "issuance": {
     "issuance": [
@@ -580,18 +553,32 @@
       }
     ]
   },
-  "validation_body": {
-    "details": [
+  "project_registry_history": {
+    "project_identifier": "cdop:KEN:VCS-4721",
+    "last_updated_at": "2025-05-05T09:15:00Z",
+    "registrations": [
       {
-        "validation_body_id": "VVB-SCS-0021",
-        "validation_body_name": "SCS Global Services",
-        "validation_body_accreditation": "Accredited to ISO 14065 by the ANSI National Accreditation Board (ANAB); approved Verra VVB for the AFOLU sectoral scope",
-        "validator_name": "Amara Otieno",
-        "validation_body_sectoral_scopes": [
-          "14. Afforestation and reforestation"
-        ],
-        "validation_body_selection": "Selected by the project developer through a competitive tender open to Verra-approved validation and verification bodies with AFOLU sectoral scope accreditation and prior blue carbon experience in East Africa.",
-        "validation_body_team_members_and_roles": "Amara Otieno - Lead Validator; Daniel Mwangi - Technical Reviewer; Priya Raman - Quality Assurance Reviewer"
+        "registry_identifier": "REG-VERRA-0001",
+        "registry_name": "Verra",
+        "registry_project_identifier": "VCS-4721",
+        "registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
+        "registration_date": "2023-06-01",
+        "is_current": true,
+        "program_identifier": "PROG-VCS-0001",
+        "registry_account_identifier": "VCS-ACC-00104518",
+        "registry_account_name": "Blue Carbon Kenya Ltd"
+      }
+    ],
+    "status": [
+      {
+        "registration_status": "Listed",
+        "status_reason": "Project listed on the Verra pipeline on 2022-11-15 following submission of the project description and completion of the registry listing review.",
+        "is_current": false
+      },
+      {
+        "registration_status": "Registered",
+        "status_reason": "Project completed registry review and was approved on 2023-06-01, following validation by SCS Global Services on 2023-05-10. The project has remained with Verra since listing and has not been transferred to another registry.",
+        "is_current": true
       }
     ]
   },
@@ -648,5 +635,19 @@
         "is_current": true
       }
     ]
+  },
+  "vvb": {
+    "vvb_id": "VVB-SCS-0021",
+    "vvb_type": [
+      "Validation body",
+      "Verification body"
+    ],
+    "accreditation": "Accredited to ISO 14065 by the ANSI National Accreditation Board (ANAB); approved by Verra as a validation and verification body for the AFOLU sectoral scope under VCS v4.5.",
+    "name": "SCS Global Services",
+    "sectoral_scopes": [
+      "14. Afforestation and reforestation"
+    ],
+    "selection": "Selected by the project developer through a competitive tender open to Verra-approved validation and verification bodies with AFOLU sectoral scope accreditation and prior blue carbon experience in East Africa. Three bodies were invited, two submitted proposals, and the award was made on technical capability and demonstrated tidal wetland experience rather than on price alone. The same body was retained for periodic verification, with a separate audit team to preserve independence between the validation and verification engagements.",
+    "team_members_and_roles": "Amara Otieno - Lead Validator; Daniel Mwangi - Technical Reviewer; Priya Raman - Quality Assurance Reviewer; Grace Wanjiku - Lead Verifier; Joseph Kamau - Verification Technical Reviewer"
   }
 }
