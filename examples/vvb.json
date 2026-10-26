@@ -1,0 +1,16 @@
+{
+  "vvb": {
+    "vvb_id": "VVB-SCS-0021",
+    "vvb_type": [
+      "Validation body",
+      "Verification body"
+    ],
+    "name": "SCS Global Services",
+    "accreditation": "Accredited to ISO 14065 by the ANSI National Accreditation Board (ANAB); approved by Verra as a validation and verification body for the AFOLU sectoral scope under VCS v4.5.",
+    "sectoral_scopes": [
+      "14. Afforestation and reforestation"
+    ],
+    "selection": "Selected by the project developer through a competitive tender open to Verra-approved validation and verification bodies with AFOLU sectoral scope accreditation and prior blue carbon experience in East Africa. Three bodies were invited, two submitted proposals, and the award was made on technical capability and demonstrated tidal wetland experience rather than on price alone. The same body was retained for periodic verification, with a separate audit team to preserve independence between the validation and verification engagements.",
+    "team_members_and_roles": "Amara Otieno - Lead Validator; Daniel Mwangi - Technical Reviewer; Priya Raman - Quality Assurance Reviewer; Grace Wanjiku - Lead Verifier; Joseph Kamau - Verification Technical Reviewer"
+  }
+}
