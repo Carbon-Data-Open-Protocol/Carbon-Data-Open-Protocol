@@ -8426,24 +8426,28 @@
           "x-cdop-field-path": "vvb.vvb_id"
         },
         "vvb_type": {
-          "type": "string",
-          "description": "Indicate whether the VVB is acting as a validation body or a verification body.",
-          "enum": [
-            "Validation body",
-            "Verification body"
-          ],
-          "x-cdop-field-id": 343,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
-          "x-cdop-mutability": "Mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "vvb.vvb_type"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Indicate whether the VVB is acting as a validation body or a verification body.",
+            "enum": [
+              "Validation body",
+              "Verification body"
+            ],
+            "x-cdop-field-id": 343,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "1..*",
+            "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "vvb.vvb_type"
+          },
+          "minItems": 1
         },
         "accreditation": {
           "type": "string",
-          "description": "List any accreditations of the validation body",
+          "description": "List any accreditations of the VVB",
           "x-cdop-field-id": 344,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -8455,7 +8459,7 @@
         },
         "name": {
           "type": "string",
-          "description": "Name of the validation body",
+          "description": "Name of the VVB",
           "x-cdop-field-id": 345,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
@@ -8469,7 +8473,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "List the sectoral scopes the validation body is accredited to validate",
+            "description": "List the sectoral scopes the VVB is accredited to validate",
             "enum": [
               "1. Energy industries (renewable - / non-renewable sources)",
               "2. Energy distribution",
@@ -8500,7 +8504,7 @@
         },
         "selection": {
           "type": "string",
-          "description": "Describe how the validation body was selected",
+          "description": "Describe how the VVB was selected",
           "x-cdop-field-id": 347,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
@@ -8512,7 +8516,7 @@
         },
         "team_members_and_roles": {
           "type": "string",
-          "description": "List the names of any other validation body team members and their roles (FIRST NAME - LAST NAME, ROLE)",
+          "description": "List the names of any other VVB team members and their roles (FIRST NAME - LAST NAME, ROLE)",
           "x-cdop-field-id": 348,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
