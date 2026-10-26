@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "VVB.schema.json",
+  "title": "VVB",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "vvb": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "vvb_id": {
+          "type": "string",
+          "description": "The identifier of the VVB",
+          "x-cdop-field-id": 341,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "vvb.vvb_id"
+        },
+        "vvb_type": {
+          "type": "string",
+          "description": "Indicate whether the VVB is acting as a validation body or a verification body.",
+          "enum": [
+            "Validation body",
+            "Verification body"
+          ],
+          "x-cdop-field-id": 342,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "vvb.vvb_type"
+        },
+        "accreditation": {
+          "type": "string",
+          "description": "List any accreditations of the validation body",
+          "x-cdop-field-id": 343,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "vvb.accreditation"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the validation body",
+          "x-cdop-field-id": 344,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "vvb.name"
+        },
+        "sectoral_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "List the sectoral scopes the validation body is accredited to validate",
+            "enum": [
+              "1. Energy industries (renewable - / non-renewable sources)",
+              "2. Energy distribution",
+              "3. Energy demand",
+              "4. Manufacturing industries",
+              "5. Chemical industry",
+              "6. Construction",
+              "7. Transport",
+              "8. Mining/Mineral production",
+              "9. Metal production",
+              "10. Fugitive emissions from fuels (solid, oil and gas)",
+              "11. Fugitive emissions from production and consumption of halocarbons and sulphur hexafluoride",
+              "12. Solvents use",
+              "13. Waste handling and disposal",
+              "14. Afforestation and reforestation",
+              "15. Agriculture"
+            ],
+            "x-cdop-field-id": 345,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+            "x-cdop-mutability": "Mutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "vvb.sectoral_scopes"
+          },
+          "minItems": 0
+        },
+        "selection": {
+          "type": "string",
+          "description": "Describe how the validation body was selected",
+          "x-cdop-field-id": 346,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "vvb.selection"
+        },
+        "team_members_and_roles": {
+          "type": "string",
+          "description": "List the names of any other validation body team members and their roles (FIRST NAME - LAST NAME, ROLE)",
+          "x-cdop-field-id": 347,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "vvb.team_members_and_roles"
+        }
+      },
+      "required": [
+        "name",
+        "vvb_id",
+        "vvb_type"
+      ]
+    }
+  },
+  "required": [
+    "vvb"
+  ]
+}

@@ -5,168 +5,436 @@
   "type": "object",
   "additionalProperties": true,
   "properties": {
-    "registry": {
+    "project_registry_history": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "identification": {
+        "project_identifier": {
+          "type": "string",
+          "description": "CDOP project identifier of the project this registry history describes. Join key to the Project entity (same value as project.project_identifier).",
+          "x-cdop-field-id": 261,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project_registry_history.project_identifier"
+        },
+        "last_updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last modification of the source registry record for this project (not of the CDOP payload). Intended to be usable as a synchronisation watermark for incremental (delta) exports.",
+          "x-cdop-field-id": 262,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "project_registry_history.last_updated_at"
+        },
+        "registrations": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": true,
             "properties": {
               "registry_identifier": {
-                "type": "integer",
-                "description": "Describes the current registry, that contains the information about the project, and units",
-                "x-cdop-field-id": 261,
-                "x-cdop-pre-issuance-inclusion": "Yes",
-                "x-cdop-cardinality": "1..1",
-                "x-cdop-data-source": "registry",
-                "x-cdop-public-private": "Public",
-                "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.identification[].registry_identifier"
-              },
-              "registry_name": {
                 "type": "string",
-                "description": "Describes the current registry, that contains the information about the project, and units",
-                "x-cdop-field-id": 262,
-                "x-cdop-pre-issuance-inclusion": "Yes",
-                "x-cdop-cardinality": "1..1",
-                "x-cdop-data-source": "registry",
-                "x-cdop-public-private": "Public",
-                "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.identification[].registry_name"
-              },
-              "registry_link": {
-                "type": "string",
-                "description": "Describes the current registry, that contains the information about the project, and units",
+                "description": "Identifier of the registry on which the project is / was registered, taken from the CDOP registry list. References registry.registry_identifier. Unique across CDOP.",
                 "x-cdop-field-id": 263,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.identification[].registry_link"
-              }
-            },
-            "required": [
-              "registry_identifier",
-              "registry_link",
-              "registry_name"
-            ]
-          }
-        },
-        "original": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "original_registry_identifier": {
-                "type": "integer",
-                "description": "Describes the first registry, where the project was registered",
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_identifier"
+              },
+              "registry_name": {
+                "type": "string",
+                "description": "Name of the registry on which the project is / was registered, from the CDOP controlled registry list.",
+                "enum": [
+                  "American Carbon Registry (ACR)",
+                  "ART Registry",
+                  "Biocarbon Registry (BCR)",
+                  "Carbon Assets Trading System (CATS)",
+                  "CDM Registry",
+                  "Chile National Registry",
+                  "Climate Action Reserve (CAR)",
+                  "Costa Rica National Registry",
+                  "Covalent Registry",
+                  "Cultivo",
+                  "EcoRegistry",
+                  "Equitable Earth",
+                  "Global Carbon Council (GCC)",
+                  "Global Carbon Market Utility (GCMU)",
+                  "Gold Standard",
+                  "Isometric",
+                  "Joint Crediting Mechanism",
+                  "Mexico National Registry",
+                  "MoorFutures",
+                  "Natural Forest Standard (NFS) Registry",
+                  "Open Carbon Protocol",
+                  "Open Earth Foundation",
+                  "PACM Registry",
+                  "Pakistan National Registry",
+                  "Plan Vivo",
+                  "Puro Standard and Registry",
+                  "Registry of China Certified Emission Reduction Trading System",
+                  "Riverse",
+                  "Royal Kingdom of Bhutan",
+                  "Singapore National Registry",
+                  "Sweden National Registry",
+                  "Switzerland National Registry",
+                  "UK Land Carbon Registry",
+                  "UNFCCC International Registry",
+                  "Verra"
+                ],
                 "x-cdop-field-id": 264,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.original[].original_registry_identifier"
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_name"
               },
-              "original_registry_name": {
+              "registry_project_identifier": {
                 "type": "string",
-                "description": "Describes the first registry, where the project was registered",
+                "description": "Identifier assigned to the project by this registry (e.g. \"VCS-1234\"). Unique within the registry identified by registry_identifier.",
                 "x-cdop-field-id": 265,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Immutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.original[].original_registry_name"
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_project_identifier"
               },
-              "original_registry_link": {
+              "registry_project_link": {
                 "type": "string",
-                "description": "Describes the first registry, where the project was registered",
+                "description": "URL of the project's public page on this registry (deep link to the project record, not the registry homepage).",
                 "x-cdop-field-id": 266,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.original[].original_registry_link"
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_project_link"
+              },
+              "registration_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date on which the project was registered on this registry (effective start date of this registration). The earliest registration_date across registrations[] is the original registration.",
+                "x-cdop-field-id": 267,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Immutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.registrations[].registration_date"
+              },
+              "registry_exit_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date on which the project left this registry (transfer out, withdrawal or rejection). Empty while the registration is active.",
+                "x-cdop-field-id": 268,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_exit_date"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "True for the registry that currently holds the project; False for previous registrations.",
+                "x-cdop-field-id": 269,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.registrations[].is_current"
+              },
+              "program_identifier": {
+                "type": "string",
+                "description": "Identifier of the crediting program under which the project is / was registered on this registry. References crediting_program.program_identifier.",
+                "x-cdop-field-id": 273,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "1..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.registrations[].program_identifier"
+              },
+              "registry_account_identifier": {
+                "type": "string",
+                "description": "Identifier of the registry account (e.g. project developer / proponent account) that holds the project on this registry.",
+                "x-cdop-field-id": 274,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_account_identifier"
+              },
+              "registry_account_name": {
+                "type": "string",
+                "description": "Name of the registry account holder for the project on this registry.",
+                "x-cdop-field-id": 275,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.registrations[].registry_account_name"
               }
             },
             "required": [
-              "original_registry_identifier",
-              "original_registry_link",
-              "original_registry_name"
+              "is_current",
+              "program_identifier",
+              "registration_date",
+              "registry_identifier",
+              "registry_name",
+              "registry_project_identifier",
+              "registry_project_link"
             ]
           }
         },
-        "program": {
+        "status": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": true,
             "properties": {
-              "program_identifier": {
-                "type": "integer",
-                "description": "Describes the Crediting Program that the proejct is following for the implementationunits",
-                "x-cdop-field-id": 267,
-                "x-cdop-pre-issuance-inclusion": "Yes",
-                "x-cdop-cardinality": "1..1",
-                "x-cdop-data-source": "crediting program",
-                "x-cdop-public-private": "Public",
-                "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.program[].program_identifier"
-              },
-              "program_name": {
+              "registration_status": {
                 "type": "string",
-                "description": "Describes the Crediting Program that the proejct is following for the implementationunits",
-                "x-cdop-field-id": 268,
+                "description": "Status of the project on this registry. Registries map their internal workflow states into this short normalised list.",
+                "enum": [
+                  "Listed",
+                  "Registered",
+                  "Transferred out",
+                  "Withdrawn",
+                  "Rejected"
+                ],
+                "x-cdop-field-id": 270,
                 "x-cdop-pre-issuance-inclusion": "Yes",
-                "x-cdop-cardinality": "1..1",
-                "x-cdop-data-source": "crediting program",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
                 "x-cdop-public-private": "Public",
                 "x-cdop-schema": "CDOP",
-                "x-cdop-field-path": "registry.program[].program_name"
+                "x-cdop-field-path": "project_registry_history.status[].registration_status"
+              },
+              "status_reason": {
+                "type": "string",
+                "description": "Reason for a transfer, withdrawal or rejection on this registry.",
+                "x-cdop-field-id": 271,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.status[].status_reason"
+              },
+              "is_current": {
+                "type": "boolean",
+                "description": "False for previous statuses, True for the current status.",
+                "x-cdop-field-id": 272,
+                "x-cdop-pre-issuance-inclusion": "Yes",
+                "x-cdop-cardinality": "0..1",
+                "x-cdop-data-source": "registry",
+                "x-cdop-mutability": "Mutable",
+                "x-cdop-public-private": "Public",
+                "x-cdop-schema": "CDOP",
+                "x-cdop-field-path": "project_registry_history.status[].is_current"
               }
             },
-            "required": [
-              "program_identifier",
-              "program_name"
-            ]
+            "required": []
           }
-        },
-        "creation_date": {
-          "type": "string",
-          "format": "date",
-          "description": "Date that the project was first registered",
-          "x-cdop-field-id": 269,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "1..1",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "registry.creation_date"
-        },
-        "update_date": {
-          "type": "string",
-          "format": "date",
-          "description": "Date of the last update",
-          "x-cdop-field-id": 270,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "registry.update_date"
         }
       },
       "required": [
-        "creation_date"
+        "project_identifier"
+      ]
+    },
+    "crediting_program": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "program_identifier": {
+          "type": "string",
+          "description": "Unique identifier of the crediting program (the rules / standard under which credits are issued). Distinct from the registry, which is the system that records projects and units.",
+          "x-cdop-field-id": 276,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "crediting program",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "crediting_program.program_identifier"
+        },
+        "program_name": {
+          "type": "string",
+          "description": "Name of the crediting program, from the CDOP controlled crediting program list.",
+          "enum": [
+            "American Carbon Registry (ACR)",
+            "ACORN",
+            "Architecture for REDD+ Transactions (ART)",
+            "Asia Carbon Institute",
+            "Biocarbon Registry (BCR)",
+            "Carbon Assets Trading System (CATS)",
+            "Carbon Standards International",
+            "CDM",
+            "Cercarbono",
+            "Chile National Registry",
+            "China Certified Emission Reduction Trading System (CCER)",
+            "City Forest Credits",
+            "Climate Action Reserve (CAR)",
+            "Costa Rica National Registry",
+            "Covalent",
+            "Credible Carbon",
+            "Cultivo",
+            "ECO Natural Forest Standard",
+            "EcoRegistry",
+            "Ecosystem Restoration Standard",
+            "Global Carbon Council",
+            "Gold Standard",
+            "Inclusive Carbon Standard",
+            "International Carbon Registry",
+            "Isometric",
+            "IUCN UK Peatland Programme",
+            "Joint Crediting Mechanism",
+            "Mexico National Registry",
+            "MoorFutures",
+            "Open Earth Foundation",
+            "PACM",
+            "Pakistan National Registry",
+            "Plan Vivo",
+            "Puro.earth",
+            "Riverse",
+            "Royal Kingdom of Bhutan",
+            "RUN Carbon Crediting Program",
+            "Singapore National Registry",
+            "SOCIAL CARBON Registry",
+            "Sweden National Registry",
+            "Switzerland National Registry",
+            "Trusted Carbon",
+            "Verra"
+          ],
+          "x-cdop-field-id": 277,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "crediting program",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "crediting_program.program_name"
+        }
+      },
+      "required": [
+        "program_identifier",
+        "program_name"
+      ]
+    },
+    "registry": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "registry_identifier": {
+          "type": "string",
+          "description": "Unique identifier of the registry organisation / system in the CDOP registry list.",
+          "x-cdop-field-id": 278,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "registry.registry_identifier"
+        },
+        "registry_name": {
+          "type": "string",
+          "description": "Official name of the registry organisation / system.",
+          "enum": [
+            "American Carbon Registry (ACR)",
+            "ART Registry",
+            "Biocarbon Registry (BCR)",
+            "Carbon Assets Trading System (CATS)",
+            "CDM Registry",
+            "Chile National Registry",
+            "Climate Action Reserve (CAR)",
+            "Costa Rica National Registry",
+            "Covalent Registry",
+            "Cultivo",
+            "EcoRegistry",
+            "Equitable Earth",
+            "Global Carbon Council (GCC)",
+            "Global Carbon Market Utility (GCMU)",
+            "Gold Standard",
+            "Isometric",
+            "Joint Crediting Mechanism",
+            "Mexico National Registry",
+            "MoorFutures",
+            "Natural Forest Standard (NFS) Registry",
+            "Open Carbon Protocol",
+            "Open Earth Foundation",
+            "PACM Registry",
+            "Pakistan National Registry",
+            "Plan Vivo",
+            "Puro Standard and Registry",
+            "Registry of China Certified Emission Reduction Trading System",
+            "Riverse",
+            "Royal Kingdom of Bhutan",
+            "Singapore National Registry",
+            "Sweden National Registry",
+            "Switzerland National Registry",
+            "UK Land Carbon Registry",
+            "UNFCCC International Registry",
+            "Verra"
+          ],
+          "x-cdop-field-id": 279,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "registry.registry_name"
+        },
+        "registry_website": {
+          "type": "string",
+          "description": "Homepage URL of the registry organisation (as opposed to registry_project_link, the project's page).",
+          "x-cdop-field-id": 280,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "registry",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "registry.registry_website"
+        }
+      },
+      "required": [
+        "registry_identifier",
+        "registry_name"
       ]
     }
   },
   "required": [
+    "crediting_program",
+    "project_registry_history",
     "registry"
   ]
 }
