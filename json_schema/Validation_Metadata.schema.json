@@ -217,6 +217,19 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "validation.validation_id"
         },
+        "validation_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of validation event",
+          "x-cdop-field-id": 304,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "1..1",
+          "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+          "x-cdop-mutability": "Immutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "validation.validation_date"
+        },
         "validation_type": {
           "type": "string",
           "description": "Overview description of LCA system boundary",
@@ -224,7 +237,7 @@
             "Project validation",
             "Program validation"
           ],
-          "x-cdop-field-id": 304,
+          "x-cdop-field-id": 305,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -236,7 +249,7 @@
         "validation_is_planned": {
           "type": "boolean",
           "description": "Indicate whether the valiation event is planned.",
-          "x-cdop-field-id": 305,
+          "x-cdop-field-id": 306,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -249,7 +262,7 @@
           "type": "string",
           "format": "date",
           "description": "End date of the validation event. Estimate if needed.",
-          "x-cdop-field-id": 306,
+          "x-cdop-field-id": 307,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -262,7 +275,7 @@
           "type": "string",
           "format": "date",
           "description": "Start date of the validation event",
-          "x-cdop-field-id": 307,
+          "x-cdop-field-id": 308,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -274,7 +287,7 @@
         "validation_report_link": {
           "type": "string",
           "description": "Link (URL) to the project's validation report (if applicable).",
-          "x-cdop-field-id": 308,
+          "x-cdop-field-id": 309,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -286,7 +299,7 @@
         "validation_report_summary": {
           "type": "string",
           "description": "Enter the validation report's summary",
-          "x-cdop-field-id": 309,
+          "x-cdop-field-id": 310,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -298,7 +311,7 @@
         "validation_report_version": {
           "type": "string",
           "description": "Which version of the validation report is the current version",
-          "x-cdop-field-id": 310,
+          "x-cdop-field-id": 311,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -310,7 +323,7 @@
         "validation_stage_description": {
           "type": "string",
           "description": "Describe the stages of the validation event.",
-          "x-cdop-field-id": 311,
+          "x-cdop-field-id": 312,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -322,7 +335,7 @@
         "validation_stage_document_link": {
           "type": "string",
           "description": "Link (URL) to the document that contains the description and details of the validation event stages",
-          "x-cdop-field-id": 312,
+          "x-cdop-field-id": 313,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -343,7 +356,7 @@
               "Resolution of findings",
               "Final validation report issued"
             ],
-            "x-cdop-field-id": 313,
+            "x-cdop-field-id": 314,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
             "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -372,7 +385,7 @@
                   "Completed",
                   "Not started"
                 ],
-                "x-cdop-field-id": 314,
+                "x-cdop-field-id": 315,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project developer",
@@ -384,7 +397,7 @@
               "validation_status_reason": {
                 "type": "string",
                 "description": "The reason for updating the validation status",
-                "x-cdop-field-id": 315,
+                "x-cdop-field-id": 316,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project developer",
@@ -396,7 +409,7 @@
               "is_current": {
                 "type": "boolean",
                 "description": "False for previous statuses, True for the current status.",
-                "x-cdop-field-id": 316,
+                "x-cdop-field-id": 317,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project developer",
@@ -419,6 +432,7 @@
         "date_validation_expiration",
         "date_validation_planned",
         "date_validation_requested",
+        "validation_date",
         "validation_id",
         "validation_is_planned",
         "validation_period_end_date",
