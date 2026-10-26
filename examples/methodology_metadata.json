@@ -1,0 +1,52 @@
+{
+  "methodology": {
+    "methodology_id": "METH-VCS-VM0033",
+    "details": {
+      "methodology_name": "VCS - VM0033",
+      "crediting_programme": "Verra",
+      "methodology_code": "VM0033"
+    }
+  },
+  "methodology_version": {
+    "methodology_version_id": "METH-VCS-VM0033-V2-1",
+    "methodology_id": "METH-VCS-VM0033",
+    "details": {
+      "version_label": "2.1",
+      "version_publication_date": "2022-12-12",
+      "version_effective_date": "2023-02-01",
+      "version_document_url": "https://verra.org/methodologies/vm0033-methodology-for-tidal-wetland-and-seagrass-restoration-v2-1/"
+    },
+    "status": [
+      {
+        "methodology_version_use_status": "Approved",
+        "is_current": false
+      },
+      {
+        "methodology_version_use_status": "In force",
+        "is_current": true
+      }
+    ]
+  },
+  "project_methodology_history": {
+    "project_methodology_history_id": "PMH-VCS-4721-0001",
+    "project_id": "VCS-4721",
+    "methodology_id": "METH-VCS-VM0033",
+    "methodology_version_id": "METH-VCS-VM0033-V2-1",
+    "use_start_date": "2023-02-01",
+    "status": [
+      {
+        "use_status": "Expected",
+        "is_current": false
+      },
+      {
+        "use_status": "Validated",
+        "use_status_reason": "Program update",
+        "is_current": false
+      },
+      {
+        "use_status": "Active",
+        "is_current": true
+      }
+    ]
+  }
+}
