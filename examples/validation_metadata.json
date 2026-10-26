@@ -9,13 +9,16 @@
     "lca": [],
     "validation_project_id": "VCS-4721",
     "validation_id": 1,
+    "validation_vvb_id": [
+      "VVB-SCS-0021"
+    ],
     "validation_date": "2023-05-10",
     "validation_type": "Project validation",
     "validation_is_planned": false,
     "validation_period_start_date": "2023-03-06",
     "validation_period_end_date": "2023-05-10",
     "validation_report_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
-    "validation_report_summary": "SCS Global Services (VVB-SCS-0021) validated the Mida Creek Mangrove Restoration Project against VCS v4.5 and methodology VM0033 v2.1, with Amara Otieno as lead validator, Daniel Mwangi as technical reviewer, and Priya Raman as quality assurance reviewer. The validation body is accredited to ISO 14065 by the ANSI National Accreditation Board and approved by Verra for the AFOLU sectoral scope (14. Afforestation and reforestation); it was selected through a competitive tender open to Verra-approved validation and verification bodies with prior blue carbon experience in East Africa. The validation confirmed the project boundary of approximately 1,200 hectares, the additionality demonstration, the baseline scenario, and the monitoring plan. Four findings were raised during the desk review and site audit, all of which were resolved before the final validation report was issued. The validation team concluded that the project design conforms to the applied standard and methodology.",
+    "validation_report_summary": "SCS Global Services (VVB-SCS-0021) validated the Mida Creek Mangrove Restoration Project against VCS v4.5 and methodology VM0033 v2.1. The validation confirmed the project boundary of approximately 1,200 hectares, the additionality demonstration, the baseline scenario, and the monitoring plan. Four findings were raised during the desk review and site audit, all of which were resolved before the final validation report was issued. The validation team concluded that the project design conforms to the applied standard and methodology.",
     "validation_report_version": "1.1",
     "validation_stage_description": "Desk review of the project design document and supporting evidence, followed by a site audit at Mida Creek with community and project team interviews, a 30-day public comment period hosted on the registry, resolution of four findings raised by the validation team, and issuance of the final validation report.",
     "validation_stage_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
