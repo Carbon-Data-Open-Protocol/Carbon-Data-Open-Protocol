@@ -33,7 +33,7 @@
               "SDG 16: Peace, Justice and Strong Institutions",
               "SDG 17: Partnerships for the Goals"
             ],
-            "x-cdop-field-id": 177,
+            "x-cdop-field-id": 172,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
             "x-cdop-data-source": "Project Developer",
@@ -49,7 +49,7 @@
           "items": {
             "type": "string",
             "description": "The standardised tool(s) and methods() that were used to assess the project's additional environmental, social, and economic impacts (e.g., Gold Standard SDG Tool, SD VISta, CCB, etc)",
-            "x-cdop-field-id": 178,
+            "x-cdop-field-id": 173,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
             "x-cdop-data-source": "Project Developer",
@@ -82,7 +82,7 @@
                   "Corruption",
                   "Cultural heritage"
                 ],
-                "x-cdop-field-id": 179,
+                "x-cdop-field-id": 174,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project Developer",
@@ -94,7 +94,7 @@
               "overview_of_the_projects_impact": {
                 "type": "string",
                 "description": "Description of the project's expected impact on the selected co-benefit domain",
-                "x-cdop-field-id": 180,
+                "x-cdop-field-id": 175,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -106,7 +106,7 @@
               "overview_of_the_projects_approach_to_ track_and_quantify": {
                 "type": "string",
                 "description": "Description of the measuring and monitoring plan for the selected co-benefit",
-                "x-cdop-field-id": 181,
+                "x-cdop-field-id": 176,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -118,7 +118,7 @@
               "indicator_id": {
                 "type": "string",
                 "description": "Unique ID to distinguish between different indicators of a same co-benefit",
-                "x-cdop-field-id": 182,
+                "x-cdop-field-id": 178,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -130,7 +130,7 @@
               "unit_description": {
                 "type": "string",
                 "description": "The unit used to track and measure the co-benefit (e.g., \"Number of jobs created\" may be a unit of quantification for \"employment and labor\" co-benefit)",
-                "x-cdop-field-id": 183,
+                "x-cdop-field-id": 179,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -150,7 +150,7 @@
                   "Change",
                   "Binary"
                 ],
-                "x-cdop-field-id": 184,
+                "x-cdop-field-id": 180,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -171,7 +171,7 @@
                   "Δ",
                   "Y/N"
                 ],
-                "x-cdop-field-id": 185,
+                "x-cdop-field-id": 181,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -195,7 +195,7 @@
                   "Sporadically",
                   "Other"
                 ],
-                "x-cdop-field-id": 186,
+                "x-cdop-field-id": 182,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -207,7 +207,7 @@
               "baseline_value": {
                 "type": "string",
                 "description": "Measured or estimated starting-point value for the co-benefit before project intervention",
-                "x-cdop-field-id": 187,
+                "x-cdop-field-id": 183,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -219,7 +219,7 @@
               "target_value": {
                 "type": "string",
                 "description": "Planned or projected value for the co-benefit by end of reporting period or project lifetime",
-                "x-cdop-field-id": 188,
+                "x-cdop-field-id": 184,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -231,7 +231,7 @@
               "supporting_evidence": {
                 "type": "string",
                 "description": "Documentation supporting ex-ante claims (e.g., baseline survey report)",
-                "x-cdop-field-id": 189,
+                "x-cdop-field-id": 185,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -268,7 +268,7 @@
                   "Corruption",
                   "Cultural heritage"
                 ],
-                "x-cdop-field-id": 190,
+                "x-cdop-field-id": 186,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project Developer",
@@ -280,7 +280,7 @@
               "achieved_project_impact": {
                 "type": "string",
                 "description": "Description of the impact achieved",
-                "x-cdop-field-id": 191,
+                "x-cdop-field-id": 187,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer / Verification Body / Registry",
@@ -292,7 +292,7 @@
               "indicator_id": {
                 "type": "string",
                 "description": "Unique ID to distinguish between different indicators of a same co-benefit",
-                "x-cdop-field-id": 192,
+                "x-cdop-field-id": 188,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer",
@@ -304,7 +304,7 @@
               "achieved_value": {
                 "type": "string",
                 "description": "Actual measured value for the co-benefit during the reporting period",
-                "x-cdop-field-id": 193,
+                "x-cdop-field-id": 189,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer / Verification Body / Registry",
@@ -322,7 +322,7 @@
                   "Index",
                   "Other"
                 ],
-                "x-cdop-field-id": 194,
+                "x-cdop-field-id": 190,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer / Verification Body / Registry",
@@ -334,7 +334,7 @@
               "supporting_evidence": {
                 "type": "string",
                 "description": "Documentation supporting ex-post outcomes (e.g. Monitoring Report)",
-                "x-cdop-field-id": 195,
+                "x-cdop-field-id": 191,
                 "x-cdop-pre-issuance-inclusion": "No",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project Developer / Verification Body / Registry",

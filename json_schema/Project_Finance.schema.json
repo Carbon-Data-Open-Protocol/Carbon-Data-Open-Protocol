@@ -23,7 +23,7 @@
               "grant",
               "guarantee"
             ],
-            "x-cdop-field-id": 201,
+            "x-cdop-field-id": 196,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Project developer",
@@ -43,7 +43,7 @@
               "expected_initial_costs": {
                 "type": "number",
                 "description": "Expected total initial costs in the current crediting period, including but not limited to CAPEX, implementation costs, data collection costs, registration fees, legal costs, initial VVB fee (USD).",
-                "x-cdop-field-id": 203,
+                "x-cdop-field-id": 198,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project developer",
@@ -55,7 +55,7 @@
               "expected_annual_costs": {
                 "type": "number",
                 "description": "Expected average annual ongoing costs including but not limited to operations, maintenance, data collection, monitoring, ongoing VVB fees, project developer and management overhead (USD).",
-                "x-cdop-field-id": 204,
+                "x-cdop-field-id": 199,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project developer",
@@ -67,7 +67,7 @@
               "expected_annual_revenue": {
                 "type": "number",
                 "description": "Expected average annual revenue of the project (USD).",
-                "x-cdop-field-id": 205,
+                "x-cdop-field-id": 200,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project developer",
@@ -83,7 +83,7 @@
         "declaring_entity_name": {
           "type": "string",
           "description": "Name of the organisation reporting on project's financial agreements (typically the project developer)",
-          "x-cdop-field-id": 207,
+          "x-cdop-field-id": 202,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Project developer",
@@ -104,7 +104,7 @@
               "in_kind",
               "trust_fund"
             ],
-            "x-cdop-field-id": 225,
+            "x-cdop-field-id": 220,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Project developer",
@@ -124,7 +124,7 @@
               "project_total_funding_required": {
                 "type": "number",
                 "description": "Total external and internal funding required for the project to reach planned implementation and operation, in USD. This should include initial setup costs and any additional committed funding need before the project becomes self-sustaining.",
-                "x-cdop-field-id": 232,
+                "x-cdop-field-id": 227,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project developer",
@@ -136,7 +136,7 @@
               "project_total_funding_secured": {
                 "type": "number",
                 "description": "Total funding already secured for the project in USD, including signed equity, grants, debt, prepayments, and sponsor support. Only legally committed or formally awarded funding should be included.",
-                "x-cdop-field-id": 233,
+                "x-cdop-field-id": 228,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project developer",
@@ -164,7 +164,7 @@
         "expected_community_proceeds": {
           "type": "number",
           "description": "Projected percent of expected annual revenue going to Indigenous, tribal, and local communities (%)",
-          "x-cdop-field-id": 202,
+          "x-cdop-field-id": 197,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Project developer",
@@ -271,7 +271,7 @@
                   "U98 - Undifferentiated goods- and services-producing activities of private households for own use",
                   "V99 - Activities of extraterritorial organizations and bodies"
                 ],
-                "x-cdop-field-id": 215,
+                "x-cdop-field-id": 210,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -283,7 +283,7 @@
               "agreement_counterparty_name": {
                 "type": "string",
                 "description": "Name of the organisation involved in a financial agreement with the project, using Legal Entity Identifier (LEI).",
-                "x-cdop-field-id": 216,
+                "x-cdop-field-id": 211,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -303,7 +303,7 @@
                   "grant_provider",
                   "guarantor"
                 ],
-                "x-cdop-field-id": 217,
+                "x-cdop-field-id": 212,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -326,7 +326,7 @@
         "expected_carbon_credit_price": {
           "type": "number",
           "description": "The expected price per carbon credit at which the project is to be sold (USD)",
-          "x-cdop-field-id": 206,
+          "x-cdop-field-id": 201,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Project developer",
@@ -338,7 +338,7 @@
         "realized_transaction_price": {
           "type": "number",
           "description": "Actual price per tCO₂e achieved at point of sale under a financial agreement, in the currency specified by agreement_currency. Distinguishes realized prices from the projected expected_carbon_credit_price.",
-          "x-cdop-field-id": 228,
+          "x-cdop-field-id": 223,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Financial agreement counterparty",
@@ -357,7 +357,7 @@
         "agreement_notes": {
           "type": "string",
           "description": "Freeform text with any additional details about the agreement, its conditions, its parties, or its insurance",
-          "x-cdop-field-id": 208,
+          "x-cdop-field-id": 203,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Financial agreement counterparty",
@@ -378,7 +378,7 @@
             "grant",
             "guarantee"
           ],
-          "x-cdop-field-id": 209,
+          "x-cdop-field-id": 204,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Financial agreement counterparty",
@@ -396,7 +396,7 @@
               "offtake_agreement_contracted_credit_volume": {
                 "type": "integer",
                 "description": "Volume of carbon credits contracted in the offtake agreement in tCO₂e. Required when agreement_type is forward_purchase or offtake_agreement.",
-                "x-cdop-field-id": 210,
+                "x-cdop-field-id": 205,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -408,7 +408,7 @@
               "offtake_agreement_contracted_credit_price": {
                 "type": "number",
                 "description": "Agreed price per tCO₂e of credits in offtake_agreement_contracted_credit_volume. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
-                "x-cdop-field-id": 211,
+                "x-cdop-field-id": 206,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -420,7 +420,7 @@
               "offtake_agreement_credit_vintage_start": {
                 "type": "integer",
                 "description": "Earliest vintage year (ISO 8601 year) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
-                "x-cdop-field-id": 212,
+                "x-cdop-field-id": 207,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -432,7 +432,7 @@
               "offtake_agreement_credit_vintage_end": {
                 "type": "integer",
                 "description": "Latest vintage year (ISO 8601 year) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
-                "x-cdop-field-id": 213,
+                "x-cdop-field-id": 208,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -444,7 +444,7 @@
               "offtake_agreement_credit_requirements": {
                 "type": "string",
                 "description": "Freeform text describing requirements (quality, certification) of credits eligible for delivery under this agreement. Optional when agreement_type is forward_purchase or offtake_agreement, otherwise not applicable.",
-                "x-cdop-field-id": 214,
+                "x-cdop-field-id": 209,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -467,7 +467,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "ISO 8601 date on which the financial arrangement became legally binding",
-                "x-cdop-field-id": 218,
+                "x-cdop-field-id": 213,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -480,7 +480,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "ISO 8601 date on which the arrangement is scheduled to expire or be repaid, if applicable",
-                "x-cdop-field-id": 219,
+                "x-cdop-field-id": 214,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -496,7 +496,7 @@
         "agreement_commitment_amount": {
           "type": "number",
           "description": "Committed amount by a counterparty organisation, in the financial agreement (USD)",
-          "x-cdop-field-id": 220,
+          "x-cdop-field-id": 215,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Financial agreement counterparty",
@@ -514,7 +514,7 @@
               "agreement_insurance_policy_exists": {
                 "type": "boolean",
                 "description": "Whether an insurance policy is in place for this agreement.",
-                "x-cdop-field-id": 221,
+                "x-cdop-field-id": 216,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Carbon Insurance",
@@ -526,7 +526,7 @@
               "agreement_insurer_name": {
                 "type": "string",
                 "description": "Name of the insurer organisation. Required when agreement_insurance_policy_exists is true",
-                "x-cdop-field-id": 222,
+                "x-cdop-field-id": 217,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Carbon Insurance",
@@ -538,7 +538,7 @@
               "agreement_insurance_policy_reference": {
                 "type": "string",
                 "description": "Policy number or reference ID of the insurance policy.",
-                "x-cdop-field-id": 223,
+                "x-cdop-field-id": 218,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Carbon Insurance",
@@ -557,7 +557,7 @@
                   "buffer_depletion",
                   "political_risk"
                 ],
-                "x-cdop-field-id": 224,
+                "x-cdop-field-id": 219,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Carbon Insurance",
@@ -744,7 +744,7 @@
             "ZMW",
             "ZWL"
           ],
-          "x-cdop-field-id": 226,
+          "x-cdop-field-id": 221,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Financial agreement counterparty",
@@ -758,7 +758,7 @@
           "items": {
             "type": "string",
             "description": "Name or identifier of the marketplace, exchange, or trading venue through which credits under this agreement are to be traded or settled.",
-            "x-cdop-field-id": 227,
+            "x-cdop-field-id": 222,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Financial agreement counterparty",
@@ -780,7 +780,7 @@
               "Equipment",
               "None"
             ],
-            "x-cdop-field-id": 229,
+            "x-cdop-field-id": 224,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Project developer",
@@ -808,7 +808,7 @@
             "Authorized",
             "Verified and issuing"
           ],
-          "x-cdop-field-id": 230,
+          "x-cdop-field-id": 225,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Project developer",
@@ -820,7 +820,7 @@
         "agreement_governing_law": {
           "type": "string",
           "description": "Governing law specified in the financial agreement.",
-          "x-cdop-field-id": 231,
+          "x-cdop-field-id": 226,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Financial agreement counterparty",
@@ -846,7 +846,7 @@
                   "Sponsor support",
                   "Other"
                 ],
-                "x-cdop-field-id": 234,
+                "x-cdop-field-id": 229,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -859,7 +859,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "Expected date on which funds under this agreement will be disbursed or become available to the project. Use ISO 8601 date format.",
-                "x-cdop-field-id": 235,
+                "x-cdop-field-id": 230,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -871,7 +871,7 @@
               "funding_source_disbursement_schedule": {
                 "type": "string",
                 "description": "Freeform description of how funding will be released, for example upfront, milestone-based, quarterly, on delivery, or subject to approval steps.",
-                "x-cdop-field-id": 236,
+                "x-cdop-field-id": 231,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -883,7 +883,7 @@
               "funding_conditions_precedent": {
                 "type": "string",
                 "description": "Freeform description of any conditions that must be satisfied before the counterparty is legally or practically required to provide funds, such as due diligence, board approval, registration, permitting, or verification milestones.",
-                "x-cdop-field-id": 237,
+                "x-cdop-field-id": 232,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -895,7 +895,7 @@
               "funding_is_fully_committed": {
                 "type": "boolean",
                 "description": "Whether the funding under this agreement is fully committed and binding, rather than indicative, under discussion, or subject to major unresolved conditions.",
-                "x-cdop-field-id": 238,
+                "x-cdop-field-id": 233,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -916,7 +916,7 @@
                   "Rejected",
                   "Concluded"
                 ],
-                "x-cdop-field-id": 239,
+                "x-cdop-field-id": 234,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -928,7 +928,7 @@
               "funding_commitment_status_reason": {
                 "type": "string",
                 "description": "The reason for updating the unit status",
-                "x-cdop-field-id": 240,
+                "x-cdop-field-id": 235,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
@@ -940,7 +940,7 @@
               "is_current": {
                 "type": "boolean",
                 "description": "False for previous statuses, True for the current status.",
-                "x-cdop-field-id": 241,
+                "x-cdop-field-id": 236,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Financial agreement counterparty",
