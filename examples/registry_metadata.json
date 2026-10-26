@@ -1,26 +1,40 @@
 {
-  "registry": {
-    "identification": [
+  "project_registry_history": {
+    "project_identifier": "cdop:KEN:VCS-4721",
+    "last_updated_at": "2025-05-05T09:15:00Z",
+    "registrations": [
       {
-        "registry_identifier": 1,
+        "registry_identifier": "REG-VERRA-0001",
         "registry_name": "Verra",
-        "registry_link": "https://registry.verra.org/app/projectDetail/VCS/4721"
+        "registry_project_identifier": "VCS-4721",
+        "registry_project_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
+        "registration_date": "2023-06-01",
+        "is_current": true,
+        "program_identifier": "PROG-VCS-0001",
+        "registry_account_identifier": "VCS-ACC-00104518",
+        "registry_account_name": "Blue Carbon Kenya Ltd"
       }
     ],
-    "original": [
+    "status": [
       {
-        "original_registry_identifier": 1,
-        "original_registry_name": "Verra",
-        "original_registry_link": "https://registry.verra.org/app/projectDetail/VCS/4721"
-      }
-    ],
-    "program": [
+        "registration_status": "Listed",
+        "status_reason": "Project listed on the Verra pipeline on 2022-11-15 following submission of the project description and completion of the registry listing review.",
+        "is_current": false
+      },
       {
-        "program_identifier": 1,
-        "program_name": "Verified Carbon Standard (VCS)"
+        "registration_status": "Registered",
+        "status_reason": "Project completed registry review and was approved on 2023-06-01, following validation by SCS Global Services on 2023-05-10. The project has remained with Verra since listing and has not been transferred to another registry.",
+        "is_current": true
       }
-    ],
-    "creation_date": "2023-06-01",
-    "update_date": "2025-05-05"
+    ]
+  },
+  "crediting_program": {
+    "program_identifier": "PROG-VCS-0001",
+    "program_name": "Verra"
+  },
+  "registry": {
+    "registry_identifier": "REG-VERRA-0001",
+    "registry_name": "Verra",
+    "registry_website": "https://registry.verra.org"
   }
 }
