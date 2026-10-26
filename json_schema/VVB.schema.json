@@ -12,7 +12,7 @@
         "vvb_id": {
           "type": "string",
           "description": "The identifier of the VVB",
-          "x-cdop-field-id": 342,
+          "x-cdop-field-id": 343,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -30,7 +30,7 @@
               "Validation body",
               "Verification body"
             ],
-            "x-cdop-field-id": 343,
+            "x-cdop-field-id": 344,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
             "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -44,7 +44,7 @@
         "accreditation": {
           "type": "string",
           "description": "List any accreditations of the VVB",
-          "x-cdop-field-id": 344,
+          "x-cdop-field-id": 345,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -56,7 +56,7 @@
         "name": {
           "type": "string",
           "description": "Name of the VVB",
-          "x-cdop-field-id": 345,
+          "x-cdop-field-id": 346,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -87,7 +87,7 @@
               "14. Afforestation and reforestation",
               "15. Agriculture"
             ],
-            "x-cdop-field-id": 346,
+            "x-cdop-field-id": 347,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -101,7 +101,7 @@
         "selection": {
           "type": "string",
           "description": "Describe how the VVB was selected",
-          "x-cdop-field-id": 347,
+          "x-cdop-field-id": 348,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -113,7 +113,7 @@
         "team_members_and_roles": {
           "type": "string",
           "description": "List the names of any other VVB team members and their roles (FIRST NAME - LAST NAME, ROLE)",
-          "x-cdop-field-id": 348,
+          "x-cdop-field-id": 349,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",

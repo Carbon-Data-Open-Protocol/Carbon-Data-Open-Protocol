@@ -5469,7 +5469,7 @@
           "type": "string",
           "format": "date",
           "description": "Date of validation event",
-          "x-cdop-field-id": 304,
+          "x-cdop-field-id": 305,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5804,6 +5804,22 @@
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "validation.validation_id"
         },
+        "validation_vvb_id": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A globally unique identifier for a validation or verification body (vvb).",
+            "x-cdop-field-id": 304,
+            "x-cdop-pre-issuance-inclusion": "Yes",
+            "x-cdop-cardinality": "0..*",
+            "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+            "x-cdop-mutability": "Immutable",
+            "x-cdop-public-private": "Public",
+            "x-cdop-schema": "CDOP",
+            "x-cdop-field-path": "validation.validation_vvb_id"
+          },
+          "minItems": 0
+        },
         "validation_type": {
           "type": "string",
           "description": "Overview description of LCA system boundary",
@@ -5811,7 +5827,7 @@
             "Project validation",
             "Program validation"
           ],
-          "x-cdop-field-id": 305,
+          "x-cdop-field-id": 306,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5823,7 +5839,7 @@
         "validation_is_planned": {
           "type": "boolean",
           "description": "Indicate whether the valiation event is planned.",
-          "x-cdop-field-id": 306,
+          "x-cdop-field-id": 307,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5836,7 +5852,7 @@
           "type": "string",
           "format": "date",
           "description": "End date of the validation event. Estimate if needed.",
-          "x-cdop-field-id": 307,
+          "x-cdop-field-id": 308,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5849,7 +5865,7 @@
           "type": "string",
           "format": "date",
           "description": "Start date of the validation event",
-          "x-cdop-field-id": 308,
+          "x-cdop-field-id": 309,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5861,7 +5877,7 @@
         "validation_report_link": {
           "type": "string",
           "description": "Link (URL) to the project's validation report (if applicable).",
-          "x-cdop-field-id": 309,
+          "x-cdop-field-id": 310,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5873,7 +5889,7 @@
         "validation_report_summary": {
           "type": "string",
           "description": "Enter the validation report's summary",
-          "x-cdop-field-id": 310,
+          "x-cdop-field-id": 311,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5885,7 +5901,7 @@
         "validation_report_version": {
           "type": "string",
           "description": "Which version of the validation report is the current version",
-          "x-cdop-field-id": 311,
+          "x-cdop-field-id": 312,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5897,7 +5913,7 @@
         "validation_stage_description": {
           "type": "string",
           "description": "Describe the stages of the validation event.",
-          "x-cdop-field-id": 312,
+          "x-cdop-field-id": 313,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5909,7 +5925,7 @@
         "validation_stage_document_link": {
           "type": "string",
           "description": "Link (URL) to the document that contains the description and details of the validation event stages",
-          "x-cdop-field-id": 313,
+          "x-cdop-field-id": 314,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5930,7 +5946,7 @@
               "Resolution of findings",
               "Final validation report issued"
             ],
-            "x-cdop-field-id": 314,
+            "x-cdop-field-id": 315,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
             "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -5959,7 +5975,7 @@
                   "Completed",
                   "Not started"
                 ],
-                "x-cdop-field-id": 315,
+                "x-cdop-field-id": 316,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-data-source": "Project developer",
@@ -5971,7 +5987,7 @@
               "validation_status_reason": {
                 "type": "string",
                 "description": "The reason for updating the validation status",
-                "x-cdop-field-id": 316,
+                "x-cdop-field-id": 317,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project developer",
@@ -5983,7 +5999,7 @@
               "is_current": {
                 "type": "boolean",
                 "description": "False for previous statuses, True for the current status.",
-                "x-cdop-field-id": 317,
+                "x-cdop-field-id": 318,
                 "x-cdop-pre-issuance-inclusion": "Yes",
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-data-source": "Project developer",
@@ -8104,7 +8120,7 @@
         "verification_id": {
           "type": "string",
           "description": "A globally unique identifier for the specific verification event or claim.",
-          "x-cdop-field-id": 318,
+          "x-cdop-field-id": 319,
           "x-cdop-cardinality": "1..1",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "verification.verification_id"
@@ -8114,7 +8130,7 @@
           "items": {
             "type": "string",
             "description": "A globally unique identifier for a validation or verification body (vvb).",
-            "x-cdop-field-id": 319,
+            "x-cdop-field-id": 320,
             "x-cdop-cardinality": "0..*",
             "x-cdop-schema": "CDOP",
             "x-cdop-field-path": "verification.verification_vvb_id"
@@ -8138,7 +8154,7 @@
                   "Water conservation",
                   "Community benefit"
                 ],
-                "x-cdop-field-id": 320,
+                "x-cdop-field-id": 321,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.details[].verification_claim_type"
@@ -8146,7 +8162,7 @@
               "verification_description": {
                 "type": "string",
                 "description": "A concise, human-readable summary of the verification scope and findings.",
-                "x-cdop-field-id": 322,
+                "x-cdop-field-id": 323,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.details[].verification_description"
@@ -8161,7 +8177,7 @@
         "verification_project_id": {
           "type": "string",
           "description": "The unique ID of the underlying project registered on the host registry.",
-          "x-cdop-field-id": 321,
+          "x-cdop-field-id": 322,
           "x-cdop-cardinality": "1..1",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "verification.verification_project_id"
@@ -8176,7 +8192,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "The start date of the monitoring/reporting period being verified.",
-                "x-cdop-field-id": 323,
+                "x-cdop-field-id": 324,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.reporting[].verification_reporting_period_start"
@@ -8185,7 +8201,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "The end date of the monitoring/reporting period being verified.",
-                "x-cdop-field-id": 324,
+                "x-cdop-field-id": 325,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.reporting[].verification_reporting_period_end"
@@ -8194,7 +8210,7 @@
                 "type": "string",
                 "format": "date",
                 "description": "The official date the verification process was completed and signed off.",
-                "x-cdop-field-id": 325,
+                "x-cdop-field-id": 326,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.reporting[].verification_date"
@@ -8216,7 +8232,7 @@
               "verified_quantity": {
                 "type": "number",
                 "description": "The final, audited, and verified net volume for this specific reporting period.",
-                "x-cdop-field-id": 326,
+                "x-cdop-field-id": 327,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.quantity[].verified_quantity"
@@ -8232,7 +8248,7 @@
                   "ha (Hectares)",
                   "kg_plastic (Kilograms of plastic recovered)"
                 ],
-                "x-cdop-field-id": 327,
+                "x-cdop-field-id": 328,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.quantity[].verification_quantity_uom"
@@ -8253,7 +8269,7 @@
               "verification_applied_standard": {
                 "type": "string",
                 "description": "The overarching registry framework (e.g., Verra_VCS_v4.5, Gold_Standard).",
-                "x-cdop-field-id": 328,
+                "x-cdop-field-id": 329,
                 "x-cdop-cardinality": "1..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.standard[].verification_applied_standard"
@@ -8261,7 +8277,7 @@
               "verification_applied_methodology_protocol": {
                 "type": "string",
                 "description": "The specific methodology version applied (e.g., VM0047_v1.0, CAR_Soil_v1.1).",
-                "x-cdop-field-id": 329,
+                "x-cdop-field-id": 330,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.standard[].verification_applied_methodology_protocol"
@@ -8277,7 +8293,7 @@
           "items": {
             "type": "string",
             "description": "The direct, secure hyperlink to the official public verification report PDF.",
-            "x-cdop-field-id": 330,
+            "x-cdop-field-id": 331,
             "x-cdop-cardinality": "1..*",
             "x-cdop-schema": "CDOP",
             "x-cdop-field-path": "verification.verification_report_url"
@@ -8287,7 +8303,7 @@
         "verification_credential_issuer_id": {
           "type": "string",
           "description": "The decentralized identifier (DID) of the entity issuing the digital verification token.",
-          "x-cdop-field-id": 331,
+          "x-cdop-field-id": 332,
           "x-cdop-cardinality": "1..1",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "verification.verification_credential_issuer_id"
@@ -8295,7 +8311,7 @@
         "verification_cryptographic_proof_type": {
           "type": "string",
           "description": "The security protocol used (e.g., Ed25519Signature2020, JSON-LD).",
-          "x-cdop-field-id": 332,
+          "x-cdop-field-id": 333,
           "x-cdop-cardinality": "0..1",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "verification.verification_cryptographic_proof_type"
@@ -8303,7 +8319,7 @@
         "verification_digital_signature_payload": {
           "type": "string",
           "description": "The actual cryptographic signature, payload hash, or verifiable presentation metadata.",
-          "x-cdop-field-id": 333,
+          "x-cdop-field-id": 334,
           "x-cdop-cardinality": "0..1",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "verification.verification_digital_signature_payload"
@@ -8317,7 +8333,7 @@
               "verification_leakage_risk_mitigation": {
                 "type": "boolean",
                 "description": "Indicates if leakage risk is accounted for on this verification event",
-                "x-cdop-field-id": 334,
+                "x-cdop-field-id": 335,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.deductions[].verification_leakage_risk_mitigation"
@@ -8325,7 +8341,7 @@
               "verification_leakage_risk_mitigation_strategy": {
                 "type": "string",
                 "description": "links to or summarizes the mitigation strategy for this verification event",
-                "x-cdop-field-id": 335,
+                "x-cdop-field-id": 336,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.deductions[].verification_leakage_risk_mitigation_strategy"
@@ -8333,7 +8349,7 @@
               "verification_leakage_deduction_quantity": {
                 "type": "number",
                 "description": "Volume deducted for this specific reporting period to account for leakage.",
-                "x-cdop-field-id": 336,
+                "x-cdop-field-id": 337,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.deductions[].verification_leakage_deduction_quantity"
@@ -8341,7 +8357,7 @@
               "verification_uncertainty_deduction_margin": {
                 "type": "number",
                 "description": "Percentage or absolute deduction applied for this specific reporting period for uncertainty.",
-                "x-cdop-field-id": 337,
+                "x-cdop-field-id": 338,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.deductions[].verification_uncertainty_deduction_margin"
@@ -8349,7 +8365,7 @@
               "verification_buffer_pool_deduction_quantity": {
                 "type": "number",
                 "description": "Volume deducted for this specific reporting period and contributed to the buffer pool.",
-                "x-cdop-field-id": 338,
+                "x-cdop-field-id": 339,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.deductions[].verification_buffer_pool_deduction_quantity"
@@ -8374,7 +8390,7 @@
                   "Fail (Non-compliant / verification rejected)",
                   "Pending review (Audit currently in progress)"
                 ],
-                "x-cdop-field-id": 339,
+                "x-cdop-field-id": 340,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.status[].verification_audit_checkpoint_status"
@@ -8382,7 +8398,7 @@
               "verification_audit_checkpoint_status_reason": {
                 "type": "string",
                 "description": "The reason for updating the project status",
-                "x-cdop-field-id": 340,
+                "x-cdop-field-id": 341,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.status[].verification_audit_checkpoint_status_reason"
@@ -8390,7 +8406,7 @@
               "is_current": {
                 "type": "boolean",
                 "description": "False for previous statuses, True for the current status.",
-                "x-cdop-field-id": 341,
+                "x-cdop-field-id": 342,
                 "x-cdop-cardinality": "0..1",
                 "x-cdop-schema": "CDOP",
                 "x-cdop-field-path": "verification.status[].is_current"
@@ -8416,7 +8432,7 @@
         "vvb_id": {
           "type": "string",
           "description": "The identifier of the VVB",
-          "x-cdop-field-id": 342,
+          "x-cdop-field-id": 343,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -8434,7 +8450,7 @@
               "Validation body",
               "Verification body"
             ],
-            "x-cdop-field-id": 343,
+            "x-cdop-field-id": 344,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "1..*",
             "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -8448,7 +8464,7 @@
         "accreditation": {
           "type": "string",
           "description": "List any accreditations of the VVB",
-          "x-cdop-field-id": 344,
+          "x-cdop-field-id": 345,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -8460,7 +8476,7 @@
         "name": {
           "type": "string",
           "description": "Name of the VVB",
-          "x-cdop-field-id": 345,
+          "x-cdop-field-id": 346,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "1..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -8491,7 +8507,7 @@
               "14. Afforestation and reforestation",
               "15. Agriculture"
             ],
-            "x-cdop-field-id": 346,
+            "x-cdop-field-id": 347,
             "x-cdop-pre-issuance-inclusion": "Yes",
             "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -8505,7 +8521,7 @@
         "selection": {
           "type": "string",
           "description": "Describe how the VVB was selected",
-          "x-cdop-field-id": 347,
+          "x-cdop-field-id": 348,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
@@ -8517,7 +8533,7 @@
         "team_members_and_roles": {
           "type": "string",
           "description": "List the names of any other VVB team members and their roles (FIRST NAME - LAST NAME, ROLE)",
-          "x-cdop-field-id": 348,
+          "x-cdop-field-id": 349,
           "x-cdop-pre-issuance-inclusion": "Yes",
           "x-cdop-cardinality": "0..1",
           "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
