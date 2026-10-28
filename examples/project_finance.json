@@ -1,11 +1,11 @@
 {
   "project": {
     "financing_options": [
-      "Forward purchase",
-      "Offtake agreement",
-      "Grant",
-      "Concessional debt",
-      "Revenue share"
+      "forward_purchase",
+      "offtake_agreement",
+      "grant",
+      "debt_financing",
+      "revenue_share"
     ],
     "costs_and_revenue": [
       {
@@ -16,8 +16,8 @@
     ],
     "declaring_entity_name": "Blue Carbon Kenya Ltd",
     "community_benefit_mechanism_type": [
-      "Revenue sharing",
-      "Local employment",
+      "revenue_share",
+      "employment",
       "Community conservation grants",
       "Livelihood support"
     ],
@@ -34,7 +34,7 @@
       {
         "agreement_counterparty_sector": "Climate finance and environmental commodities",
         "agreement_counterparty_name": "Coastal Resilience Buyers Ltd (hypothetical LEI: 549300MIDA0000000001)",
-        "agreement_counterparty_role": "Forward purchaser, offtaker, and prepayment provider"
+        "agreement_counterparty_role": "offtaker"
       }
     ]
   },
@@ -44,7 +44,7 @@
   },
   "agreement": {
     "agreement_notes": "Illustrative forward-purchase arrangement for the Mida Creek Mangrove Restoration Project. The buyer prepays 40% of the committed amount, with the balance paid in three 20% tranches after verified issuance and registry transfer for the 2026, 2027, and 2028 vintages. Deliveries are capped at 50,000 tCO2e per eligible vintage and remain subject to methodology compliance, buffer deductions, no-double-counting checks, insurance conditions, and the project community benefit-sharing obligations. All counterparty, insurer, policy, price, volume, date, cost, revenue, and funding details in this record are hypothetical.",
-    "agreement_type": "Forward purchase",
+    "agreement_type": "forward_purchase",
     "offtake": [
       {
         "offtake_agreement_contracted_credit_volume": 150000,
@@ -76,7 +76,7 @@
     ],
     "collateral_type": [
       "Future carbon credit receivables",
-      "Project monitoring equipment",
+      "Equipment",
       "Sponsor support undertaking"
     ],
     "project_financing_stage": "Operational scale-up and restoration expansion",

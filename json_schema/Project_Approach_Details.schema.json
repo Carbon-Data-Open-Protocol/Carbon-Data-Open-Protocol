@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "Project_Approach_Details.schema.json",
+  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Project_Approach_Details.schema.json",
   "title": "Project Approach & Details",
   "type": "object",
   "additionalProperties": true,

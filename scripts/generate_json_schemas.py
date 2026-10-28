@@ -9,7 +9,9 @@ from openpyxl import load_workbook
 INPUT_FILE = "docs/CDOP_SCHEMA.xlsx"
 ENUM_VALUES_FILE = "docs/CDOP Enumerated Values Lists.xlsx"
 OUTPUT_DIR = "json_schema"
+VERSION_FILE = "VERSION"
 JSON_SCHEMA_VERSION = "https://json-schema.org/draft/2020-12/schema"
+SCHEMA_ID_BASE = "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol"
 
 UNMATCHED_ENUM_FIELDS = []
 
@@ -407,7 +409,14 @@ def schema_has_required(schema):
     return False
 
 
-def worksheet_to_json_schema(ws):
+def read_version(path=VERSION_FILE):
+    version = Path(path).read_text(encoding="utf-8").strip()
+    if not re.fullmatch(r"\d+\.\d+\.\d+", version):
+        raise ValueError(f"{path} must hold a MAJOR.MINOR.PATCH version, got '{version}'")
+    return version
+
+
+def worksheet_to_json_schema(ws, version):
     rows = list(ws.iter_rows(values_only=True))
     if not rows:
         return None
@@ -422,7 +431,7 @@ def worksheet_to_json_schema(ws):
 
     schema = {
         "$schema": JSON_SCHEMA_VERSION,
-        "$id": f"{safe_filename(ws.title)}.schema.json",
+        "$id": f"{SCHEMA_ID_BASE}/v{version}/{OUTPUT_DIR}/{safe_filename(ws.title)}.schema.json",
         "title": ws.title,
         "type": "object",
         "additionalProperties": True,
@@ -495,10 +504,11 @@ def convert_workbook(input_file=INPUT_FILE, output_dir=OUTPUT_DIR):
 
     output_path.mkdir(parents=True, exist_ok=True)
 
+    version = read_version()
     wb = load_workbook(input_path, data_only=True)
 
     for ws in wb.worksheets:
-        schema = worksheet_to_json_schema(ws)
+        schema = worksheet_to_json_schema(ws, version)
         if schema is None:
             continue
 
