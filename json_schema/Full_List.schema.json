@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Full_List.schema.json",
+  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.1.0/json_schema/Full_List.schema.json",
   "title": "Full List",
   "type": "object",
   "additionalProperties": true,
@@ -1948,14 +1948,14 @@
             "description": "The project's ID within the compliance scheme, if applicable.",
             "x-cdop-field-id": 243,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "1..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Market Regulators",
             "x-cdop-mutability": "Mutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP",
             "x-cdop-field-path": "project.compliance_market_id"
           },
-          "minItems": 1
+          "minItems": 0
         },
         "other": {
           "type": "array",
@@ -2196,7 +2196,6 @@
       "required": [
         "carbon_credit_ownership_attestation",
         "carbon_credit_ownership_documentation",
-        "compliance_market_id",
         "current_registry_project_id",
         "declaring_entity_name",
         "estimated_total_years",

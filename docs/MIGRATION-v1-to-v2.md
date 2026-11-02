@@ -44,7 +44,7 @@ The new supported files use standardized names and the `.schema.json` suffix. Up
 
 In release `v1.0.0`, these legacy files are in the root folder. Later, they were moved to `json_schema_legacy/`, and then removed from `main`.
 
-From release `v2.0.1`, each schema has a versioned `$id`, for example `https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Issuances.schema.json`. Point to a release tag URL like this one, not to the `main` branch. The `main` branch can change before the next release.
+From release `v2.1.0`, each schema has a versioned `$id`, for example `https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.1.0/json_schema/Issuances.schema.json`. Point to a release tag URL like this one, not to the `main` branch. The `main` branch can change before the next release.
 
 ### 2. Nested entity objects are now the standard contract
 
@@ -445,7 +445,7 @@ Business validation is still useful for:
 ## Migration Checklist
 
 - Update schema file references to `json_schema/*.schema.json`.
-- Pin schema references to a release tag URL (for example `v2.0.1`), not to `main`.
+- Pin schema references to a release tag URL (for example `v2.1.0`), not to `main`.
 - Regenerate typed models or DTOs from the new schema files.
 - Add or update a transformation layer from legacy payload shape to new CDOP payload shape.
 - Note that `additionalProperties: true` is set — extra fields in payloads will not cause schema validation failures.

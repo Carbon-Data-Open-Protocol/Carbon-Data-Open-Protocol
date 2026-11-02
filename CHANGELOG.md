@@ -2,7 +2,7 @@
 
 All notable changes to the CDOP JSON schemas are in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-The versions follow [Semantic Versioning](https://semver.org/) from `2.0.1`.
+The versions follow [Semantic Versioning](https://semver.org/) from `2.1.0`.
 
 ## [Unreleased]
 
@@ -29,7 +29,9 @@ The first release that uses this release process.
 
 ### Changed
 
-The migration guide moved to `docs/MIGRATION-v1-to-v2.md`.
+- `project.compliance_market_id` is optional (`0..*`) in `Labels_Certifications` and `Full_List`.
+  A project that is not in a compliance scheme can leave it out.
+- The migration guide moved to `docs/MIGRATION-v1-to-v2.md`.
 
 ### Removed
 

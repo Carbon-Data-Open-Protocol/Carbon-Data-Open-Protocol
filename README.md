@@ -35,7 +35,7 @@ The CDOP JSON schemas use [Semantic Versioning](https://semver.org/). The `VERSI
 - **MINOR**: a change that is backward compatible. Examples: a new optional field, a new schema file, or a new enum value.
 - **PATCH**: no change to validation. Examples: descriptions, documentation, or script fixes that give the same schemas.
 
-The `$id` of each schema contains its release, for example `https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.0.1/json_schema/Issuances.schema.json`. Use a release URL like this one in your systems. Files on the `main` branch can change before the next release. Releases `v1.0.0` and `v2.0.0` were made after their announcements, and their `$id` values do not contain a version.
+The `$id` of each schema contains its release, for example `https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.1.0/json_schema/Issuances.schema.json`. Use a release URL like this one in your systems. Files on the `main` branch can change before the next release. Releases `v1.0.0` and `v2.0.0` were made after their announcements, and their `$id` values do not contain a version.
 
 
 ## Location
