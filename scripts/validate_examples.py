@@ -28,6 +28,7 @@ EXAMPLE_SCHEMAS = {
     "estimations.json": "Estimations.schema.json",
     "full_list.json": "Full_List.schema.json",
     "issuances.json": "Issuances.schema.json",
+    "labels_certifications.json": "Labels_Certifications.schema.json",
     "location_details.json": "Location_Details.schema.json",
     "project_approach_and_details.json": "Project_Approach_Details.schema.json",
     "project_finance.json": "Project_Finance.schema.json",

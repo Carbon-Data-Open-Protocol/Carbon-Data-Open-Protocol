@@ -14,6 +14,7 @@ The first release that uses this release process.
 - The `VERSION` file and a release workflow.
 - `scripts/validate_examples.py` and a workflow that validates the examples on each pull request.
 - A link to the latest release in the README.
+- An example for Labels and Certifications: `examples/labels_certifications.json`.
 
 ### Fixed
 
