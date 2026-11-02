@@ -4447,6 +4447,25 @@
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "crediting_program.current_standard_version"
+        },
+        "carbon_standard_level_accreditation": {
+          "type": "string",
+          "description": "Project's crediting standard accreditation",
+          "enum": [
+            "ICVCM",
+            "CORSIA First Phase approved (2024-2026)",
+            "CORSIA Second Phase approved (2027-2029)",
+            "CORSIA Second Phase approved (2030-2032)",
+            "CORSIA Second Phase approved (2033-2035)"
+          ],
+          "x-cdop-field-id": 242,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Demand-side integrity standards",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "crediting_program.carbon_standard_level_accreditation"
         }
       },
       "required": []
@@ -7215,32 +7234,6 @@
       "required": [
         "agreement_type"
       ]
-    },
-    "carbon_crediting_standard": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "carbon_standard_level_accreditation": {
-          "type": "string",
-          "description": "Project's crediting standard accreditation",
-          "enum": [
-            "ICVCM",
-            "CORSIA First Phase approved (2024-2026)",
-            "CORSIA Second Phase approved (2027-2029)",
-            "CORSIA Second Phase approved (2030-2032)",
-            "CORSIA Second Phase approved (2033-2035)"
-          ],
-          "x-cdop-field-id": 242,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "Demand-side integrity standards",
-          "x-cdop-mutability": "Mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "carbon_crediting_standard.carbon_standard_level_accreditation"
-        }
-      },
-      "required": []
     }
   },
   "required": [

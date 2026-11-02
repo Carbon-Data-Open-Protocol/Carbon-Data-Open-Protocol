@@ -23,6 +23,7 @@ The first release that uses this release process.
   - `Full_List`: the array `crediting period` is merged into `crediting_period`.
   - `Full_List`: the required field `unit.credit_blockblock_start` is now `unit.credit_block[].block_start`, the same as in `Unit_Description`.
     If you validate against `Full_List`, put `block_start` in each `credit_block[]` item.
+- `Full_List`: `carbon_crediting_standard.carbon_standard_level_accreditation` is now `crediting_program.carbon_standard_level_accreditation`, the same as in `Labels_Certifications`.
 - The README link to the Co-Benefits schema points to `Co_Benefits.schema.json`.
 - The migration guide says that legacy arrays of objects stay arrays of objects.
 - The examples use only values from the enumerated values lists, and they are valid against their schemas.
