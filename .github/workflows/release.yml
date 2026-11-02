@@ -1,0 +1,106 @@
+name: Release CDOP JSON Schemas
+
+# Two ways to start a release:
+# - Actions tab > "Release CDOP JSON Schemas" > "Run workflow" on main.
+#   The workflow creates the tag v<VERSION> after all checks pass.
+# - Push a tag v<VERSION> from the command line.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check tag matches VERSION
+        run: |
+          version="$(cat VERSION)"
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            if [ "$GITHUB_REF_NAME" != "main" ]; then
+              echo "Run this workflow on main, not $GITHUB_REF_NAME."
+              exit 1
+            fi
+            tag="v$version"
+            if git ls-remote --exit-code --tags origin "refs/tags/$tag" > /dev/null; then
+              echo "Tag $tag already exists. Change VERSION before you make a new release."
+              exit 1
+            fi
+          else
+            tag="$GITHUB_REF_NAME"
+            if [ "$tag" != "v$version" ]; then
+              echo "Tag $tag does not match VERSION ($version)."
+              exit 1
+            fi
+          fi
+          echo "TAG=$tag" >> "$GITHUB_ENV"
+
+      - name: Check generated schemas are up to date
+        run: |
+          python scripts/generate_json_schemas.py
+          if [ -n "$(git status --porcelain -- json_schema/)" ]; then
+            git status --short -- json_schema/
+            echo "json_schema/ is not up to date with the source workbooks and VERSION."
+            exit 1
+          fi
+
+      - name: Validate examples
+        run: |
+          python scripts/validate_examples.py
+
+      - name: Extract release notes
+        run: |
+          mkdir -p dist
+          version="${TAG#v}"
+          if ! grep -qE "^## \[${version//./\\.}\] - [0-9]{4}-[0-9]{2}-[0-9]{2}" CHANGELOG.md; then
+            echo "CHANGELOG.md has no dated section for $version."
+            echo "Rename '## [Unreleased]' to '## [$version] - YYYY-MM-DD'."
+            exit 1
+          fi
+          awk -v heading="## [$version]" '
+            index($0, heading) == 1 { found = 1; next }
+            found && /^## \[/ { exit }
+            found { print }
+          ' CHANGELOG.md > dist/notes.md
+          if [ ! -s dist/notes.md ]; then
+            echo "CHANGELOG.md has no section for $version."
+            exit 1
+          fi
+
+      - name: Build release assets
+        run: |
+          zip -r "dist/cdop-schemas-$TAG.zip" \
+            json_schema examples CHANGELOG.md docs/MIGRATION-v1-to-v2.md LICENSE
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            target=(--target "$GITHUB_SHA")
+          else
+            target=(--verify-tag)
+          fi
+          gh release create "$TAG" \
+            "dist/cdop-schemas-$TAG.zip" \
+            "${target[@]}" \
+            --title "$TAG" \
+            --notes-file dist/notes.md

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "Full_List.schema.json",
+  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.1.0/json_schema/Full_List.schema.json",
   "title": "Full List",
   "type": "object",
   "additionalProperties": true,
@@ -1948,14 +1948,14 @@
             "description": "The project's ID within the compliance scheme, if applicable.",
             "x-cdop-field-id": 243,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "1..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Market Regulators",
             "x-cdop-mutability": "Mutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP",
             "x-cdop-field-path": "project.compliance_market_id"
           },
-          "minItems": 1
+          "minItems": 0
         },
         "other": {
           "type": "array",
@@ -2196,7 +2196,6 @@
       "required": [
         "carbon_credit_ownership_attestation",
         "carbon_credit_ownership_documentation",
-        "compliance_market_id",
         "current_registry_project_id",
         "declaring_entity_name",
         "estimated_total_years",
@@ -4397,7 +4396,7 @@
                   "Peatland Code",
                   "Plan Vivo Standard",
                   "Puro Standard",
-                  "Verificed Carbon Standard (VCS)",
+                  "Verified Carbon Standard (VCS)",
                   "Woodland Carbon Code"
                 ],
                 "x-cdop-field-id": 46,
@@ -4448,6 +4447,25 @@
           "x-cdop-public-private": "Public",
           "x-cdop-schema": "CDOP",
           "x-cdop-field-path": "crediting_program.current_standard_version"
+        },
+        "carbon_standard_level_accreditation": {
+          "type": "string",
+          "description": "Project's crediting standard accreditation",
+          "enum": [
+            "ICVCM",
+            "CORSIA First Phase approved (2024-2026)",
+            "CORSIA Second Phase approved (2027-2029)",
+            "CORSIA Second Phase approved (2030-2032)",
+            "CORSIA Second Phase approved (2033-2035)"
+          ],
+          "x-cdop-field-id": 242,
+          "x-cdop-pre-issuance-inclusion": "Yes",
+          "x-cdop-cardinality": "0..1",
+          "x-cdop-data-source": "Demand-side integrity standards",
+          "x-cdop-mutability": "Mutable",
+          "x-cdop-public-private": "Public",
+          "x-cdop-schema": "CDOP",
+          "x-cdop-field-path": "crediting_program.carbon_standard_level_accreditation"
         }
       },
       "required": []
@@ -7216,32 +7234,6 @@
       "required": [
         "agreement_type"
       ]
-    },
-    "carbon_crediting_standard": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "carbon_standard_level_accreditation": {
-          "type": "string",
-          "description": "Project's crediting standard accreditation",
-          "enum": [
-            "ICVCM",
-            "CORSIA First Phase approved (2024-2026)",
-            "CORSIA Second Phase approved (2027-2029)",
-            "CORSIA Second Phase approved (2030-2032)",
-            "CORSIA Second Phase approved (2033-2035)"
-          ],
-          "x-cdop-field-id": 242,
-          "x-cdop-pre-issuance-inclusion": "Yes",
-          "x-cdop-cardinality": "0..1",
-          "x-cdop-data-source": "Demand-side integrity standards",
-          "x-cdop-mutability": "Mutable",
-          "x-cdop-public-private": "Public",
-          "x-cdop-schema": "CDOP",
-          "x-cdop-field-path": "carbon_crediting_standard.carbon_standard_level_accreditation"
-        }
-      },
-      "required": []
     }
   },
   "required": [

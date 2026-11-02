@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "Labels_Certifications.schema.json",
+  "$id": "https://raw.githubusercontent.com/Carbon-Data-Open-Protocol/Carbon-Data-Open-Protocol/v2.1.0/json_schema/Labels_Certifications.schema.json",
   "title": "Labels_Certifications",
   "type": "object",
   "additionalProperties": true,
@@ -42,14 +42,14 @@
             "description": "The project's ID within the compliance scheme, if applicable.",
             "x-cdop-field-id": 243,
             "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "1..*",
+            "x-cdop-cardinality": "0..*",
             "x-cdop-data-source": "Market Regulators",
             "x-cdop-mutability": "Mutable",
             "x-cdop-public-private": "Public",
             "x-cdop-schema": "CDOP",
             "x-cdop-field-path": "project.compliance_market_id"
           },
-          "minItems": 1
+          "minItems": 0
         },
         "other": {
           "type": "array",
@@ -287,9 +287,7 @@
           }
         }
       },
-      "required": [
-        "compliance_market_id"
-      ]
+      "required": []
     },
     "unit": {
       "type": "object",

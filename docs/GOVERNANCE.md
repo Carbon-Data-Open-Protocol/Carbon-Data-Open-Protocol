@@ -56,6 +56,8 @@ The Contributor initiates a pull request (PR), summarising the proposed changes 
 The Reviewer examines the pull request, assessing both code and documentation for accuracy, completeness, and alignment with project standards. Constructive feedback may be provided, and the Contributor addresses any requested revisions. The Reviewer ensures that Contributors do not review their own submissions, upholding impartiality.
 6. Merging Approved Changes
 Once the Reviewer is satisfied, they approve the pull request. The Administrator then finalises the merge into the main branch, updating repository settings as needed and coordinating any necessary releases or notifications.
+Each change to a schema is recorded under `## [Unreleased]` in `CHANGELOG.md`. Changes collect there until the next release, so several breaking changes can ship together in one MAJOR release.
+To make a release, the Administrator makes one commit on `main` that sets `VERSION` (see "Versions" in the README) and renames `## [Unreleased]` to the version and release date in `CHANGELOG.md`. After the bot commit "Generate CDOP JSON schemas" updates the `$id` of each schema, on the Actions tab, on the Actions tab, the Administrator selects "Release CDOP JSON Schemas" and clicks "Run workflow" on `main`. The workflow checks the schemas and examples. If all checks pass, it creates the tag `v<VERSION>` and publishes the GitHub release.
 7. Viewer Engagement and Feedback
 Viewers observe the progress through GitHub Issues or Discussions, offering feedback, reporting potential problems, and suggesting future improvements. Their participation keeps the project accessible and ensures that updates are responsive to the wider community.
 

@@ -8,6 +8,7 @@ on:
       - "docs/CDOP_SCHEMA.xlsx"
       - "docs/CDOP Enumerated Values Lists.xlsx"
       - "scripts/generate_json_schemas.py"
+      - "VERSION"
       - ".github/workflows/build-json-schemas.yml"
   workflow_dispatch:
 
