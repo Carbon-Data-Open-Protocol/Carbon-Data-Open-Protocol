@@ -18,8 +18,13 @@
     "project_id": "VCS-4721",
     "project_description": "The Mida Creek Mangrove Restoration Project restores and protects approximately 1,200 hectares of degraded mangrove ecosystems along the Kenyan coast. Activities include active replanting of native mangrove species, removal of invasive vegetation, and community-based monitoring. The project generates carbon credits through sequestration and avoidance of further degradation, while delivering co-benefits including biodiversity habitat, coastal protection, and livelihood support for local fishing communities.",
     "project_design_document_link": "https://registry.verra.org/app/projectDetail/VCS/4721",
-    "project_status": "Registered",
-    "project_status_reason": "Project completed registry review and was approved.",
+    "status": [
+      {
+        "project_status": "Registered",
+        "project_status_reason": "Project completed registry review and was approved.",
+        "is_current": true
+      }
+    ],
     "project_registration_date": "2023-06-01",
     "project_list_date": "2022-11-15",
     "mitigation": [
@@ -75,10 +80,14 @@
     "project_governance_structure": "Project governed by a joint steering committee comprising Blue Carbon Kenya Ltd, two elected community representatives, and the Kenya Forest Service. Decisions require 75% approval. Annual external audit of governance processes.",
     "public_comment": true,
     "public_comment_summary": "30-day public comment period held November 2022. Fifteen submissions received; key concerns related to fishing access rights and benefit distribution were addressed in the revised project design document.",
-    "project_crediting_period_type": "Renewable",
-    "maximum_cumulative_crediting_duration": 60,
-    "maximum_number_of_crediting_periods": 2,
-    "current_crediting_period_duration": 30,
+    "crediting_period": [
+      {
+        "project_crediting_period_type": "Renewable",
+        "maximum_cumulative_crediting_duration": 60,
+        "maximum_number_of_crediting_periods": 2,
+        "current_crediting_period_duration": 30
+      }
+    ],
     "estimated_total_years": 30,
     "declaring_entity_name": "Blue Carbon Kenya Ltd",
     "project_level": [
@@ -188,7 +197,7 @@
   "methodology": {
     "versions": [
       {
-        "methodology_name": "VCS - VM0033",
+        "methodology": "VCS - VM0033",
         "version": "2.1",
         "is_current": true,
         "document": "https://verra.org/methodologies/vm0033-methodology-for-tidal-wetland-and-seagrass-restoration-v2-1/"
@@ -201,14 +210,23 @@
     "current_project_issuance_registry": "Verra"
   },
   "validation": {
+    "validation": [
+      {
+        "validation_id": 1,
+        "current_crediting_period_start_date": "2023-01-01",
+        "current_crediting_period_end_date": "2052-12-31",
+        "current_crediting_period_number": 1
+      }
+    ],
     "validation_body_name": "SCS Global Services",
     "validation_date": "2023-05-10",
     "validation_report": "https://registry.verra.org/app/projectDetail/VCS/4721/validation",
-    "validation_id": 1,
-    "current_crediting_period_start_date": "2023-01-01",
-    "current_crediting_period_end_date": "2052-12-31",
-    "current_crediting_period_number": 1,
-    "validation_type": "Validation of Project Design Document"
+    "event": [
+      {
+        "validation_id": 1,
+        "validation_type": "Validation of Project Design Document"
+      }
+    ]
   },
   "issuance": {
     "issuance": [
@@ -226,23 +244,38 @@
     ]
   },
   "unit": {
-    "metric": "tCO2e",
+    "descriptor": [
+      {
+        "metric": "tCO2e",
+        "type": "VCU"
+      }
+    ],
     "owner_account_id": "VCS-ACC-00183722",
-    "retirement_beneficiary": "Acme Corporation",
-    "retirement_detail": "Retired against Acme Corporation's 2024 Scope 3 Land Use & Forestry commitment",
-    "serial_number": "8339-449183249-449183748-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
-    "source_serial_number": "8339-449183000-449184000-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
+    "retirement": [
+      {
+        "retirement_beneficiary": "Acme Corporation",
+        "retirement_detail": "Retired against Acme Corporation's 2024 Scope 3 Land Use & Forestry commitment"
+      }
+    ],
+    "reference": [
+      {
+        "serial_number": "8339-449183249-449183748-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0",
+        "source_serial_number": "8339-449183000-449184000-VCS-VCU-4721-VCS-KEN-14-2023-01012023-31122023-0"
+      }
+    ],
     "status": [
       {
         "status": "Retired",
         "is_current": true
       }
     ],
-    "status_reason": [],
-    "type": "VCU",
-    "quantity": 500,
-    "block_start": 449183249,
-    "block_end": 449183748,
+    "credit_block": [
+      {
+        "quantity": 500,
+        "block_start": 449183249,
+        "block_end": 449183748
+      }
+    ],
     "unit_level": [
       {
         "unit_level_accreditation": "CCP",
@@ -260,32 +293,69 @@
     "vintage": "2023-01-01"
   },
   "estimations": {
-    "estimation_id": 1,
-    "estimation_event_date": "2022-11-01",
-    "estimation_status": "Validated",
-    "estimated_status_reason": "Estimation validated by SCS Global Services during initial project validation in May 2023",
-    "vintage_year": [2023, 2024, 2025, 2026, 2027],
-    "estimated_vintage_emissions_mitigation": [52000, 53500, 54200, 54800, 55100],
-    "estimated_monitoring_period_start_date": [
-      "2023-01-01",
-      "2024-01-01",
-      "2025-01-01",
-      "2026-01-01",
-      "2027-01-01"
+    "estimation_event": [
+      {
+        "estimation_id": 1,
+        "estimation_event_date": "2022-11-01",
+        "estimated_issuance_date": [
+          "2024-06-30",
+          "2025-06-30",
+          "2026-06-30",
+          "2027-06-30",
+          "2028-06-30"
+        ]
+      }
     ],
-    "estimated_monitoring_period_end_date": [
-      "2023-12-31",
-      "2024-12-31",
-      "2025-12-31",
-      "2026-12-31",
-      "2027-12-31"
+    "status": [
+      {
+        "estimation_status": "Validated",
+        "estimated_status_reason": "Estimation validated by SCS Global Services during initial project validation in May 2023",
+        "is_current": true
+      }
     ],
-    "estimated_issuance_date": [
-      "2024-06-30",
-      "2025-06-30",
-      "2026-06-30",
-      "2027-06-30",
-      "2028-06-30"
+    "vintage_mitigation": [
+      {
+        "vintage_year": 2023,
+        "estimated_vintage_emissions_mitigation": 52000
+      },
+      {
+        "vintage_year": 2024,
+        "estimated_vintage_emissions_mitigation": 53500
+      },
+      {
+        "vintage_year": 2025,
+        "estimated_vintage_emissions_mitigation": 54200
+      },
+      {
+        "vintage_year": 2026,
+        "estimated_vintage_emissions_mitigation": 54800
+      },
+      {
+        "vintage_year": 2027,
+        "estimated_vintage_emissions_mitigation": 55100
+      }
+    ],
+    "monitoring": [
+      {
+        "estimated_monitoring_period_start_date": "2023-01-01",
+        "estimated_monitoring_period_end_date": "2023-12-31"
+      },
+      {
+        "estimated_monitoring_period_start_date": "2024-01-01",
+        "estimated_monitoring_period_end_date": "2024-12-31"
+      },
+      {
+        "estimated_monitoring_period_start_date": "2025-01-01",
+        "estimated_monitoring_period_end_date": "2025-12-31"
+      },
+      {
+        "estimated_monitoring_period_start_date": "2026-01-01",
+        "estimated_monitoring_period_end_date": "2026-12-31"
+      },
+      {
+        "estimated_monitoring_period_start_date": "2027-01-01",
+        "estimated_monitoring_period_end_date": "2027-12-31"
+      }
     ]
   },
   "cobenefits": {

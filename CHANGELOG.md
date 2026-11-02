@@ -27,6 +27,8 @@ The first release that uses this release process.
 - The README link to the Co-Benefits schema points to `Co_Benefits.schema.json`.
 - The migration guide says that legacy arrays of objects stay arrays of objects.
 - The examples use only values from the enumerated values lists, and they are valid against their schemas.
+- Each example field is at its schema path, so the validator checks it.
+  Before, 65 fields were at other paths, and `additionalProperties: true` let the validator skip them.
 
 ### Changed
 
