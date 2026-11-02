@@ -18,8 +18,8 @@
     "community_benefit_mechanism_type": [
       "revenue_share",
       "employment",
-      "Community conservation grants",
-      "Livelihood support"
+      "trust_fund",
+      "in_kind"
     ],
     "funding": [
       {
@@ -32,7 +32,7 @@
     "expected_community_proceeds": 20.0,
     "counterparty": [
       {
-        "agreement_counterparty_sector": "Climate finance and environmental commodities",
+        "agreement_counterparty_sector": "L64 - Financial service activities, except insurance and pension funding",
         "agreement_counterparty_name": "Coastal Resilience Buyers Ltd (hypothetical LEI: 549300MIDA0000000001)",
         "agreement_counterparty_role": "offtaker"
       }
@@ -66,7 +66,7 @@
         "agreement_insurance_policy_exists": true,
         "agreement_insurer_name": "Coastal Carbon Assurance PCC (hypothetical)",
         "agreement_insurance_policy_reference": "MIDA-ND-2026-001-HYP",
-        "agreement_insurance_coverage_type": "Non-delivery and political risk"
+        "agreement_insurance_coverage_type": "non-delivery"
       }
     ],
     "agreement_currency": "USD",
@@ -75,11 +75,10 @@
       "Verra Registry"
     ],
     "collateral_type": [
-      "Future carbon credit receivables",
-      "Equipment",
-      "Sponsor support undertaking"
+      "Carbon_rights",
+      "Equipment"
     ],
-    "project_financing_stage": "Operational scale-up and restoration expansion",
+    "project_financing_stage": "Registered",
     "agreement_governing_law": "Laws of the Republic of Kenya",
     "funding_details": [
       {

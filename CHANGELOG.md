@@ -24,6 +24,7 @@ The first release that uses this release process.
     If you validate against `Full_List`, put `block_start` in each `credit_block[]` item.
 - The README link to the Co-Benefits schema points to `Co_Benefits.schema.json`.
 - The migration guide says that legacy arrays of objects stay arrays of objects.
+- The examples use only values from the enumerated values lists, and they are valid against their schemas.
 
 ### Changed
 
@@ -55,7 +56,7 @@ The `$id` of each schema in this release does not contain a version.
 ### Changed
 
 - New file names with the `.schema.json` suffix.
-- Fields are in entity objects, for example `project`, `project_stakeholder`, and `issuance`.
+- Fields are in entity objects, for example `project`, `project_stakeholder`, `registry`, `issuance`, and more.
 - Many fields have new names, for example `project.name` is now `project.project_name`.
 - Top-level entity objects that contain required fields are required.
 - `additionalProperties` is `true`.
