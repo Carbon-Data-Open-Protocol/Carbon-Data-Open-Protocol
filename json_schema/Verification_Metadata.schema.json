@@ -24,16 +24,20 @@
             "x-cdop-field-path": "verification[].verification_id"
           },
           "verification_vvb_id": {
-            "type": "string",
-            "description": "A globally unique identifier for a validation or verification body (vvb).",
-            "x-cdop-field-id": 320,
-            "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "0..1",
-            "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
-            "x-cdop-mutability": "Immutable",
-            "x-cdop-public-private": "Public",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "verification[].verification_vvb_id"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "A globally unique identifier for a validation or verification body (vvb).",
+              "x-cdop-field-id": 320,
+              "x-cdop-pre-issuance-inclusion": "Yes",
+              "x-cdop-cardinality": "0..*",
+              "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+              "x-cdop-mutability": "Immutable",
+              "x-cdop-public-private": "Public",
+              "x-cdop-schema": "CDOP",
+              "x-cdop-field-path": "verification[].verification_vvb_id"
+            },
+            "minItems": 0
           },
           "verification_claim_type": {
             "type": "string",
@@ -175,16 +179,20 @@
             "x-cdop-field-path": "verification[].verification_applied_methodology_protocol"
           },
           "verification_report_url": {
-            "type": "string",
-            "description": "The direct, secure hyperlink to the official public verification report PDF.",
-            "x-cdop-field-id": 331,
-            "x-cdop-pre-issuance-inclusion": "Yes",
-            "x-cdop-cardinality": "1..1",
-            "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
-            "x-cdop-mutability": "Immutable",
-            "x-cdop-public-private": "Public",
-            "x-cdop-schema": "CDOP",
-            "x-cdop-field-path": "verification[].verification_report_url"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The direct, secure hyperlink to the official public verification report PDF.",
+              "x-cdop-field-id": 331,
+              "x-cdop-pre-issuance-inclusion": "Yes",
+              "x-cdop-cardinality": "1..*",
+              "x-cdop-data-source": "Validation and Verification Body (VVB)/ Certification Bodies/ Third Party Auditors",
+              "x-cdop-mutability": "Immutable",
+              "x-cdop-public-private": "Public",
+              "x-cdop-schema": "CDOP",
+              "x-cdop-field-path": "verification[].verification_report_url"
+            },
+            "minItems": 1
           },
           "verification_credential_issuer_id": {
             "type": "string",
