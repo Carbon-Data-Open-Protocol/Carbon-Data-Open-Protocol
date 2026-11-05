@@ -4,7 +4,7 @@ All notable changes to the CDOP JSON schemas are in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 The versions follow [Semantic Versioning](https://semver.org/) from `2.1.0`.
 
-## [Unreleased]
+## [2.1.0] - 2026-11-05
 
 The first release that uses this release process.
 
